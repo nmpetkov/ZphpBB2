@@ -1,18 +1,16 @@
 <?php
-/***********************************************************
- *                 PNphpBB2 * Multi-Block                  *
- *                 ----------------------                  *
- *                  Created 03/17/2003                     *
- *                  Updated 08/26/2003                     *
- *         																								 *	
- * PNphpBB2 MultiBlock for PostNuke .72x and Syndication   *
- * Written by: Carl Slaughter + carls@itsallbutstraw.com   *
- * http://www.itsallbutstraw.com or http://www.pnphpbb.com *
- *                                                         *
- * Using some code from LastXPostsblock by: Damien A.      *
- * http://www.ridelow.com                               	 *
- * Version: 1b                                             *
- ***********************************************************/
+/*
+PNphpBB2 * Multi-Block
+Created 03/17/2003
+  PNphpBB2 MultiBlock for PostNuke .72x and Syndication
+  Written by: Carl Slaughter + carls@itsallbutstraw.com
+  http://www.itsallbutstraw.com or http://www.pnphpbb.com
+
+  Using some code from LastXPostsblock by: Damien A.
+  
+  @nikp N.Petkov: implementation for caching the content, 2010
+  @nikp N.Petkov: refactoring to work in Zikula 1.3, 2012-03-12
+*/
 
 function PNphpBB2_MultiBlockblock_init()
 {
