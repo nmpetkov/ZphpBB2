@@ -1,0 +1,6 @@
+INSTALL
+
+1. Provided code is for upgrading porposes only. It is not tested on fresh install.
+2. To upgrade, copy files, and upgrade from Admin panel, "Extensions".
+3. Make changes to main index.php file of the web site. Unfortunately (for now) have to make manually changes to main index.php file of the site.
+Simply compare this two provided files and see necessary changes.
