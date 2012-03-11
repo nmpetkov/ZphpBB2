@@ -1688,3 +1688,90 @@ function zExecuteSQLobject1row($query){
 	}
 	return false;
 }
+
+/**
+ * Timezone Function, need fot PNphpBB2 (from Zikula 1.2 compat funcs)
+ *
+ * @author Fred B (fredb86)
+ */
+function ml_ftime($datefmt, $timestamp = -1)
+{
+    if (!isset($datefmt)) {
+        return null;
+    }
+
+    if ($timestamp < 0) {
+        $timestamp = time();
+    }
+
+    static $day_of_week_short, $month_short, $day_of_week_long, $month_long, $ml_date, $thezone, $timezone_all, $offset_all, $ml_date;
+
+    if (!isset($ml_date[$datefmt])) {
+        $day_of_week_short = explode(' ', _DAY_OF_WEEK_SHORT);
+        $month_short = explode(' ', _MONTH_SHORT);
+        $day_of_week_long = explode(' ', _DAY_OF_WEEK_LONG);
+        $month_long = explode(' ', _MONTH_LONG);
+
+        $ml_date[$datefmt] = preg_replace('/%a/', $day_of_week_short[(int) strftime('%w', $timestamp)], $datefmt);
+        $ml_date[$datefmt] = preg_replace('/%A/', $day_of_week_long[(int) strftime('%w', $timestamp)], $ml_date[$datefmt]);
+        $ml_date[$datefmt] = preg_replace('/%b/', $month_short[(int) strftime('%m', $timestamp) - 1], $ml_date[$datefmt]);
+        $ml_date[$datefmt] = preg_replace('/%B/', $month_long[(int) strftime('%m', $timestamp) - 1], $ml_date[$datefmt]);
+
+        if (pnUserLoggedIn()) {
+            $thezone = pnUserGetVar(pnUserDynamicAlias('timezone_offset'));
+        } else {
+            $thezone = pnConfigGetVar('timezone_offset');
+        }
+
+        $timezone_all = explode(' ', _TIMEZONES);
+        $offset_all = explode(' ', _TZOFFSETS);
+
+        $indexofzone = 0;
+        $offsetsize = sizeof($offset_all);
+        for($i = 0; $i < $offsetsize; $i++) {
+            if ($offset_all[$i] == $thezone) {
+                $indexofzone = $i;
+            }
+        }
+        $ml_date[$datefmt] = preg_replace('/%Z/', $timezone_all[$indexofzone], $ml_date[$datefmt]);
+    }
+    return strftime($ml_date[$datefmt], $timestamp);
+}
+/** TEMPORARY FIX
+ * Checks the alias and returns PROP_ID.
+ *
+ * @access private
+ * @author F. Chestnut
+ * @since 1.26 - 19/04/2004
+ * @param label $ the alias of the field to check
+ * @return true if found, false if not, void upon error
+ */
+function pnUserDynamicAlias($label)
+{
+    if (empty($label)) {
+        return false;
+    }
+
+    $vars = array(
+        'name' => '_UREALNAME',
+        'email' => '_UREALEMAIL',
+        'femail' => '_UFAKEMAIL',
+        'url' => '_YOURHOMEPAGE',
+        'timezone_offset' => '_TIMEZONEOFFSET',
+        'user_avatar' => '_YOURAVATAR',
+        'user_icq' => '_YICQ',
+        'user_aim' => '_YAIM',
+        'user_yim' => '_YYIM',
+        'user_msnm' => '_YMSNM',
+        'user_from' => '_YLOCATION',
+        'user_occ' => '_YOCCUPATION',
+        'user_intrest' => '_YINTERESTS',
+        'user_sig' => '_SIGNATURE',
+        'bio' => '_EXTRAINFO');
+
+    if (array_key_exists($label, $vars)) {
+        return $vars[$label];
+    }
+
+    return $label;
+}
