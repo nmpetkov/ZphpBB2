@@ -66,7 +66,7 @@ if ($modinfo) {
 }
 
 // N.Petkov: old-old style of loading modules (for ZphpBB2)
-if (true and ($module=='ZphpBB2' or $module=='forum')) {
+if (true and ($module=='ZphpBB2' or $module=='forum')) { // change 'forum' with your module URl (PNphpBB2 or other)
 	define('LOADED_AS_MODULE', '1');
 	$file = FormUtil::getPassedValue('file', 'index', 'GETPOST');
 	$zview = Zikula_View_Theme::getInstance();

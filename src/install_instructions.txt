@@ -1,11 +1,21 @@
 INSTALL
 
-1. Provided code is for upgrading porposes only. It is not tested on fresh install.
-2. Module directory is changed from PNphpBB2 to ZphpBB2. Make folowing changes to database and files:
-	- Cnages in database (use phpMyAdmin or similar tool:
-		- in modules table find record with name=PNphpBB2, cahge it to ZphpBB2, also cahnge field directory=ZphpBB2
-	- Delete modules/PNphpBB2 directory. Keep in mind to backup folders with user uplodaed files (files, avatars). If you are not sure, keep modules/PNphpBB2 folder, but rebame it to modules/ZphpBB2 (in next step - overwride files).
+1. Provided code is for upgrading purposes only. It is not tested on fresh install.
+2. Module directory is changed from PNphpBB2 to ZphpBB2. Make following changes to database and files:
+	Cnages in database (use phpMyAdmin or similar tool:
+		- in modules table find record with name=PNphpBB2, cahge it to ZphpBB2, also change field directory=ZphpBB2
+	Changes in file system:
+		- Delete modules/PNphpBB2 directory. Keep in mind to backup folders with user uploaded files (files, avatars). If you are not sure, keep modules/PNphpBB2 folder, but rename it to modules/ZphpBB2 (in next step - overwrite files).
 3. To upgrade, copy files in website "modules" folder, and upgrade from website Admin panel, "Extensions".
-4. If you like can change display URL for the module (upgraded version suports this). Also from website Admin panel, "Extensions", "edit" icon for this module.
+4. If you like can change display URL for the module (upgraded version supports  this). Also from website Admin panel, "Extensions", "edit" icon for this module.
 5. Make changes to main index.php file of the web site. Unfortunately (for now) have to make manually changes to main index.php file of the site.
-Simply compare this two provided files and see necessary changes.
+Simply compare this two provided files and see necessary changes. If you retain PNphpBB2 module in URL, change fragment `or $module=='forum'` in index.php to ``or $module=='PNphpBB2', or if you specify your own module URL, then change accordingly.
+6. If you like to use "Maximize" link on top forum links, you need to do this:
+	- place in your front theme template (master.tpl or similar), between tags </head> and <body> (or you decide where):
+		{pagegetvar name='sitemaxstate' assign='sitemaxstate'}
+	- then, conditionally show columns or what you like, for example:
+		{if $sitemaxstate eq 0}
+			<div id="theme_contentleft">
+			{blockposition name=left}
+			</div>
+		{/if}
