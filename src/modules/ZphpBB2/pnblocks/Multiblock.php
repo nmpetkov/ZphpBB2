@@ -5,20 +5,19 @@ Created 03/17/2003
   ZphpBB2 MultiBlock for Zikula .72x and Syndication
   Written by: Carl Slaughter + carls@itsallbutstraw.com
   http://www.itsallbutstraw.com or http://www.pnphpbb.com
-
   Using some code from LastXPostsblock by: Damien A.
   
   @nikp N.Petkov: implementation for caching the content, 2010
   @nikp N.Petkov: refactoring to work in Zikula 1.3, 2012-03-12
 */
 
-function ZphpBB2_MultiBlockblock_init()
+function ZphpBB2_Multiblockblock_init()
 {
    // Security
    SecurityUtil::registerPermissionSchema('ZphpBB2_Multiblock::', 'Block ID::');
 }
 
-function ZphpBB2_MultiBlockblock_info()
+function ZphpBB2_Multiblockblock_info()
 {
    // Values
    return array('text_type' => 'ZphpBB2',
@@ -30,13 +29,18 @@ function ZphpBB2_MultiBlockblock_info()
                 'show_preview' => true);
 }
 
-function ZphpBB2_MultiBlockblock_display($blockinfo)
+function ZphpBB2_Multiblockblock_display($blockinfo)
 {
 	if (!SecurityUtil::checkPermission('ZphpBB2_Multiblock::', $blockinfo[bid]."::", ACCESS_READ)) {
    		return;
 	}
 
 	global $bgcolor1, $bgcolor2, $bgcolor3, $bgcolor4, $bgcolor5, $textcolor1, $textcolor2, $textcolor3, $textcolor4;
+
+	// Get variables from content block
+	$vars = BlockUtil::varsFromContent($blockinfo['content']);
+	$vars['module_name'] = ($vars['module_name']) ? $vars['module_name'] : "ZphpBB2";
+	$table_prefix = System::getVar('prefix') . "_phpbb_";
 
 	define('IN_PHPBB', true);
 	// Implementation cached content
@@ -47,7 +51,7 @@ function ZphpBB2_MultiBlockblock_display($blockinfo)
 	$content = "";
 	if ($enable_cache and $cache_time>0) {
 		$cachefilestem = 'ZphpBB2_' . $blockinfo['bid'];
-	    $cachedir = pnConfigGetVar('temp');
+	    $cachedir = System::getVar('temp');
 	    if (StringUtil::right($cachedir, 1)<>'/') $cachedir .= '/';
 	    if (isset($vars['cache_dir']) and !empty($vars['cache_dir'])) $cachedir .= $vars['cache_dir'];
 	    else $cachedir .= 'any_cache';
@@ -65,17 +69,12 @@ function ZphpBB2_MultiBlockblock_display($blockinfo)
 	}
 	if (empty($content)) {
 		// Create output object
-		// Get variables from content block
-		$vars = BlockUtil::varsFromContent($blockinfo['content']);
-		$vars['module_name'] = ($vars['module_name']) ? $vars['module_name'] : "ZphpBB2";
-		$table_prefix = pnConfigGetVar('prefix') . "_phpbb_";
+
 		// include some files
 		$phpbb_root_path = "./modules/" . $vars['module_name'] . "/";
 		include($phpbb_root_path . "extension.inc");
 		include_once($phpbb_root_path . "includes/constants.".$phpEx);
-		if (!function_exists('getpnlanguage')) {
-	  		include_once($phpbb_root_path . "includes/functions.".$phpEx);
-		}
+  		include_once($phpbb_root_path . "includes/functions.".$phpEx);
 		$langfile = $phpbb_root_path . 'pnlang/'.ZLanguage::getLanguageCodeLegacy().'/Multiblock.' . $phpEx;
 		if (!file_exists($langfile)) {
 			$phpbb_root_path . 'pnlang/eng/Multiblock.' . $phpEx;
@@ -130,7 +129,7 @@ function ZphpBB2_MultiBlockblock_display($blockinfo)
 			//just for guests
 			$userstate  = 0; 
 			if (UserUtil::isLoggedIn()) {
-				$uid = pnUserGetVar('uid');
+				$uid = UserUtil::getVar('uid');
 				//permission level for registered users
 				$userstate = AUTH_REG;
 				//are you an board admin?
@@ -458,8 +457,9 @@ function ZphpBB2_MultiBlockblock_display($blockinfo)
 				if (!$txt) {
 						$txt="…";
 				}
-				if (strlen($txt)>=$vars['category_length']) {
-						$txt2=substr($txt,0,$vars['category_length'])."…";
+				$category_length = ($vars['category_length']) ? $vars['category_length'] : 20;
+				if (strlen($txt)>=$category_length) {
+						$txt2=substr($txt, 0, $category_length)."…";
 				} else {
 				   $txt2=$txt;
 				}
@@ -512,7 +512,7 @@ function ZphpBB2_MultiBlockblock_display($blockinfo)
 			$numguests = 0;
 	   		$sessioninfocolumn = &$pntable['session_info_column'];
 	   		$sessioninfotable = $pntable['session_info'];
-		    $activetime = time() - (pnConfigGetVar('secinactivemins') * 60);
+		    $activetime = time() - (System::getVar('secinactivemins') * 60);
 			
 		    // Get list of users on-line
 	   		$query = "SELECT $sessioninfocolumn[uid], count( 1 )
@@ -522,10 +522,9 @@ function ZphpBB2_MultiBlockblock_display($blockinfo)
 	     	$result = zExecuteSQLarray($query);
 			if ($result) $numusers = count($result);
 				
-	   		$query2 = "SELECT $sessioninfocolumn[uid], count( 1 )
-	   						   FROM $sessioninfotable
-				  	     WHERE $sessioninfocolumn[lastused] > $activetime AND $sessioninfocolumn[uid] = '0'
-			  		  		 GROUP BY $sessioninfocolumn[ipaddr]";
+	   		$query2 = "SELECT $sessioninfocolumn[uid], count( 1 ) FROM $sessioninfotable
+				  	    WHERE $sessioninfocolumn[lastused] > $activetime AND $sessioninfocolumn[uid] = '0'
+			  		  	GROUP BY $sessioninfocolumn[ipaddr]";
 	   		$result2 = zExecuteSQLarray($query2);
 			if ($numguests) $numusers = count($result2);
 			$unames = array();
@@ -534,7 +533,7 @@ function ZphpBB2_MultiBlockblock_display($blockinfo)
 				$i++;
 				$num = $r[0];
 			    if ($num > 0){
-					$unames[] = pnUserGetVar('uname', $num);
+					$unames[] = UserUtil::getVar('uname', $num);
 				}
 				if ($i == $vars['num_users' && $vars['num_users'] <> 0]){
 					break;
@@ -550,133 +549,125 @@ function ZphpBB2_MultiBlockblock_display($blockinfo)
 	
 	   		$blockinfo['content'] .= "<table align=\"center\" width=\"98%\" cellpadding=\"0\" cellspacing=\"0\" border=\"0\">";
 				
-				if ($numsections > 0 && $vars['sep_bar_members']) {
-			     $blockinfo['content'] .= "<tr><td colspan=\"10\" height=\"5\" valign=\"top\" align=\"center\"></td></tr>";
-					 $blockinfo['content'] .= "<tr><td colspan=\"10\" height=\"1\" valign=\"top\" align=\"center\" bgcolor=\"" . $textcolor1 . "\"></td></tr>";
-					 $blockinfo['content'] .= "<tr><td colspan=\"10\" height=\"5\" valign=\"top\" align=\"center\"></td></tr>";
-				}
+			if ($numsections > 0 && $vars['sep_bar_members']) {
+				$blockinfo['content'] .= "<tr><td colspan=\"10\" height=\"5\" valign=\"top\" align=\"center\"></td></tr>";
+				$blockinfo['content'] .= "<tr><td colspan=\"10\" height=\"1\" valign=\"top\" align=\"center\" bgcolor=\"" . $textcolor1 . "\"></td></tr>";
+				$blockinfo['content'] .= "<tr><td colspan=\"10\" height=\"5\" valign=\"top\" align=\"center\"></td></tr>";
+			}
 	
-				if ($vars['title_members']) {
-			     $blockinfo['content'] .= "<tr><td colspan=\"10\" align=\"center\" valign=\"top\"><span class=\"z-normal\"><strong>" . _MEMBERS_ONLINE_TITLE . "</strong></span></td></tr>";
-					 $blockinfo['content'] .= "<tr><td colspan=\"10\" height=\"5\" valign=\"top\" align=\"center\"></td></tr></table>";
+			if ($vars['title_members']) {
+				$blockinfo['content'] .= "<tr><td colspan=\"10\" align=\"center\" valign=\"top\"><span class=\"z-normal\"><strong>" . _MEMBERS_ONLINE_TITLE . "</strong></span></td></tr>";
+				$blockinfo['content'] .= "<tr><td colspan=\"10\" height=\"5\" valign=\"top\" align=\"center\"></td></tr></table>";
+			}
+				
+			if ($vars['display_to_annon'] && !UserUtil::isLoggedIn() || UserUtil::isLoggedIn()) {
+				if ($numusers != 0) {
+					$blockinfo['content'] .= '<center><table border="0" width="98%" cellpadding="0" cellspacing="1">';
+					foreach ($unames as $uname) {
+						$uname2=$uname;
+						$uname3=$uname;
+						if (strlen($uname2) > 7) {
+							// Limit title length to avoid wrap
+							$uname2 = strip_tags($uname2, '<a><i><b><ul><li>');
+							$uname2 = mb_substr($uname2,0,7);
+							$uname2 .= "...";
+						}
+						if (strlen($uname3) > 15) {
+							// Limit title length to avoid wrap
+							$uname3 = strip_tags($uname3, '<a><i><b><ul><li>');
+							$uname3 = mb_substr($uname3,0,15);
+							$uname3 .= "...";
+						}
+								 
+						$blockinfo['content'] .= '<tr><td><img src="' . $phpbb_root_path . 'pnimages/arrow_rs.gif" alt=""></td><td><font size="1">';
+						if ($vars['pn_pm']) {
+							$blockinfo['content'] .= '<a href="user.php?op=userinfo&amp;uname=' . $uname . '" title="' . $uname . '">';
+						} else {
+							$blockinfo['content'] .= '<a href="' . $link_url . 'profile&amp;mode=viewprofile&u=' . $uname . '" title="' . $uname . '">';
+						}
+						$blockinfo['content'] .= (UserUtil::getVar('uname') == $uname) ? pnVarPrepForDisplay($uname2) : pnVarPrepForDisplay($uname3) . '</a></font></td>';
+						 
+						$uid = UserUtil::getVar('uid');
+						$username = UserUtil::getVar('uname');
+								 
+						if ($username == $uname) {
+							$column = &$pntable['priv_msgs_column'];
+							if ($vars['pn_pm']) {
+								$unread = DBUtil::selectScalar("SELECT count(*) FROM $pntable[priv_msgs] WHERE $column[read_msg] ='0' and $column[to_userid]=".UserUtil::getVar('uid'));
+								$total = DBUtil::selectScalar("SELECT count(*) FROM $pntable[priv_msgs] WHERE $column[to_userid]=" . UserUtil::getVar('uid'));
+								//$result5 = DBUtil::selectScalar("SELECT pn_from_userid FROM $pntable[priv_msgs] WHERE $column[read_msg] ='0' and $column[to_userid]=" . UserUtil::getVar('uid'));
+							} else {
+								$unread = DBUtil::selectScalar("SELECT count(*) FROM " . $table_prefix . "privmsgs WHERE (privmsgs_type='1' or privmsgs_type='5') and privmsgs_to_userid=" . UserUtil::getVar('uid')); 
+								$total = DBUtil::selectScalar("SELECT count(*) FROM " . $table_prefix . "privmsgs WHERE (privmsgs_type='0' or privmsgs_type='5' or privmsgs_type='1') and privmsgs_to_userid=" . UserUtil::getVar('uid')); 
+								//$result5 = DBUtil::selectScalar("SELECT pn_from_userid FROM " . $table_prefix . "privmsgs WHERE privmsgs_type='0' and privmsgs_to_userid=" . UserUtil::getVar('uid'));
+							}
+							$blockinfo['content'] .= '<td>(';												     					
+							if ($unread >0 ) {
+								// No sound file?
+								if (!empty($vars['pm_sound'])) {
+									$blockinfo['content'] .= ($vars['pm_sound']) ? "<embed src=\"" . $phpbb_root_path . "pnimages/" . $vars['pm_sound'] . "\" width=50 height=20 HIDDEN=TRUE autostart=true autorestart=true loop=false>" : "";
+								}
+								$blockinfo['content'] .= '<SCRIPT>';
+								$blockinfo['content'] .= 'function doBlink() {';
+								$blockinfo['content'] .= 'var blink = document.all.tags("BLINK");';
+								$blockinfo['content'] .= 'for (var i=0; i<blink.length; i++)';
+								$blockinfo['content'] .= 'blink[i].style.visibility = blink[i].style.visibility == "" ? "hidden" : ""';
+								$blockinfo['content'] .= '} function startBlink() {';
+								$blockinfo['content'] .= 'if (document.all)';
+								$blockinfo['content'] .= 'setInterval("doBlink()",500)';
+								$blockinfo['content'] .= '} window.onload = startBlink;';
+								$blockinfo['content'] .= '</SCRIPT>';
+								if ($vars['pn_pm']) {
+									$blockinfo['content'] .= '<a href="' . $pn_link_url . 'Messages&amp;file=index" title="'._UNREAD_PRIVATEMSG.'">';
+									$blockinfo['content'] .= '<font size=1><b><blink>' . pnVarPrepForDisplay($unread) . '</blink></font></b></a><font size=1>|</font>';
+									$blockinfo['content'] .= '<a href="' . $pn_link_url . 'Messages&amp;file=index" title="'._AMT_PRIVATEMSG.'">';
+								} else {
+									$blockinfo['content'] .= '<a href="' . $link_url . 'privmsg&amp;folder=inbox" title="' . _UNREAD_PRIVATEMSG . '">';
+									$blockinfo['content'] .= '<font size=1><b><blink>' . pnVarPrepForDisplay($unread) . '</blink></font></b></a><font size=1>|</font>';
+									$blockinfo['content'] .= '<a href="' . $link_url . 'privmsg&amp;folder=inbox" title="' . _AMT_PRIVATEMSG . '">';
+								}
+								$blockinfo['content'] .= '<font size=1><b>' . pnVarPrepForDisplay($total) . '</b></font></a>)</td>';
+							} else {
+								if ($vars['pn_pm']) {
+									$blockinfo['content'] .= '<a href="' . $pn_link_url . 'Messages&amp;file=index" title="'._UNREAD_PRIVATEMSG.'">';
+									$blockinfo['content'] .= '<font size=1><b>' . pnVarPrepForDisplay($unread) . '</font></b></a><font size=1>|</font>';
+									$blockinfo['content'] .= '<a href="' . $pn_link_url . 'Messages&amp;file=index" title="'._AMT_PRIVATEMSG.'">';
+								} else {
+									$blockinfo['content'] .= '<a href="' . $link_url . 'privmsg&amp;folder=inbox" title="' . _UNREAD_PRIVATEMSG . '">';
+									$blockinfo['content'] .= '<font size=1><b>' . pnVarPrepForDisplay($unread) . '</font></b></a><font size=1>|</font>';
+									$blockinfo['content'] .= '<a href="' . $link_url . 'privmsg&amp;folder=inbox" title="' . _AMT_PRIVATEMSG . '">';
+								}
+								$blockinfo['content'] .= '<font size=1><b>' . pnVarPrepForDisplay($total) . '</b></font></a>)</td>';
+							}
+						} else {
+							$blockinfo['content'].= '<td></td>';
+						}
+						if (UserUtil::isLoggedIn()) {
+							$uid = DBUtil::selectScalar("select uid from " . $pntable[users] . " where uname='" . $uname . "'");
+							if ($vars['pn_pm']) {
+								$blockinfo['content'] .= "<td align=\"right\"><a href=\"" . $pn_link_url . "Messages&amp;file=index";
+								$blockinfo['content'] .= "\" title=\"" . _UNREAD_PRIVATEMSG . "\"><img src=\"" . $phpbb_root_path . "pnimages/pm.gif\" title=\"" . _SEND_PM . "\" align=middle\" border=\"0\"></a></td>";
+							} else {
+								$blockinfo['content'] .= "<td align=\"right\"><a href=\"" . $link_url . "privmsg&amp;mode=post&amp;u=";
+								$blockinfo['content'] .= $uid . "\" title=\"" . _SEND_PM . "\"><img src=\"" . $phpbb_root_path . "pnimages/pm.gif\" title=\"" . _SEND_PM . "\" align=middle\" border=\"0\"></a></td>";
+							}
+						}			 
+						$blockinfo['content'] .= '</tr>';
+					}
+					$blockinfo['content'] .= "</table></center>";
 				}
+			}
 				
-				if ($vars['display_to_annon'] && !UserUtil::isLoggedIn() || UserUtil::isLoggedIn()) {
-			     if ($numusers != 0) {
-		 	 	    	$blockinfo['content'] .= '<center><table border="0" width="98%" cellpadding="0" cellspacing="1">';
-				   foreach ($unames as $uname) {
-				      $uname2=$uname;
-				      $uname3=$uname;
-				      if (strlen($uname2) > 7) {
-			     	   		  // Limit title length to avoid wrap
-				    		  $uname2 = strip_tags($uname2, '<a><i><b><ul><li>');
-				    		  $uname2 = mb_substr($uname2,0,7);
-	   		       		  $uname2 .= "...";
-	   		   		   }
-				 				 if (strlen($uname3) > 15) {
-	   				 	 			// Limit title length to avoid wrap
-	   		        	 	$uname3 = strip_tags($uname3, '<a><i><b><ul><li>');
-	   		        		$uname3 = mb_substr($uname3,0,15);
-	   		    	    	$uname3 .= "...";
-	   		    		 }
-								 
-								 $blockinfo['content'] .= '<tr><td><img src="' . $phpbb_root_path . 'pnimages/arrow_rs.gif" alt=""></td><td><font size="1">';
-								 if ($vars['pn_pm']) {
-								$blockinfo['content'] .= '<a href="user.php?op=userinfo&amp;uname=' . $uname . '" title="' . $uname . '">';
-								 } else {
-								$blockinfo['content'] .= '<a href="' . $link_url . 'profile&amp;mode=viewprofile&u=' . $uname . '" title="' . $uname . '">';
-								 }
-								 $blockinfo['content'] .= (pnUserGetVar('uname') == $uname) ? pnVarPrepForDisplay($uname2) : pnVarPrepForDisplay($uname3) . '</a></font></td>';
-								 
-								 $uid = pnUserGetVar('uid');
-	   		 			 	 $username = pnUserGetVar('uname');
-								 
-								 if ($username == $uname) {
-					   		  	if ($vars['pn_pm']) {
-							    		 $column = &$pntable['priv_msgs_column'];
-	   		 			 		     $result2 = $dbconn->Execute("SELECT count(*) FROM $pntable[priv_msgs] WHERE $column[read_msg] ='0' and $column[to_userid]=".pnUserGetVar('uid'));
-	   		 			 				 list($unread) = $result2->fields;
-	   		 			 				 $result4 = $dbconn->Execute("SELECT count(*) FROM $pntable[priv_msgs] WHERE $column[to_userid]=" . pnUserGetVar('uid'));
-	   		 			 				 list($total) = $result4->fields;
-	   		 			 				 $result5 = $dbconn->Execute("SELECT pn_from_userid FROM $pntable[priv_msgs] WHERE $column[read_msg] ='0' and 
-	   			 			    	 $column[to_userid]=" . pnUserGetVar('uid'));
-										} else {
-	   		               $column = &$pntable['priv_msgs_column'];
-	  				 					 $result2 = $dbconn->Execute("SELECT count(*) FROM " . $table_prefix . "privmsgs WHERE (privmsgs_type='1' or privmsgs_type='5') and privmsgs_to_userid=" . pnUserGetVar('uid')); 
-	      			 				 list($unread) = $result2->fields;
-	   				 					 $result4 = $dbconn->Execute("SELECT count(*) FROM " . $table_prefix . "privmsgs WHERE (privmsgs_type='0' or privmsgs_type='5' or privmsgs_type='1') and privmsgs_to_userid=" . pnUserGetVar('uid')); 
-	      			 				 list($total) = $result4->fields;
-	       			 				 $result5 = $dbconn->Execute("SELECT pn_from_userid FROM " . $table_prefix . "privmsgs WHERE privmsgs_type='0' and privmsgs_to_userid=" . pnUserGetVar('uid'));
-										}
-	                  $blockinfo['content'] .= '<td>(';												     					
-	                  if ($unread >0 ) {
-											 // No sound file?
-											 if (!empty($vars['pm_sound'])) {
-											$blockinfo['content'] .= ($vars['pm_sound']) ? "<embed src=\"" . $phpbb_root_path . "pnimages/" . $vars['pm_sound'] . "\" width=50 height=20 HIDDEN=TRUE autostart=true autorestart=true loop=false>" : "";
-											 }
-	                     $blockinfo['content'] .= '<SCRIPT>';
-	                     $blockinfo['content'] .= 'function doBlink() {';
-	                     $blockinfo['content'] .= 'var blink = document.all.tags("BLINK");';
-	                     $blockinfo['content'] .= 'for (var i=0; i<blink.length; i++)';
-	                     $blockinfo['content'] .= 'blink[i].style.visibility = blink[i].style.visibility == "" ? "hidden" : ""';
-	                     $blockinfo['content'] .= '} function startBlink() {';
-	                     $blockinfo['content'] .= 'if (document.all)';
-	                     $blockinfo['content'] .= 'setInterval("doBlink()",500)';
-	                     $blockinfo['content'] .= '} window.onload = startBlink;';
-	                     $blockinfo['content'] .= '</SCRIPT>';
-	                     if ($vars['pn_pm']) {
-	                        $blockinfo['content'] .= '<a href="' . $pn_link_url . 'Messages&amp;file=index" title="'._UNREAD_PRIVATEMSG.'">';
-	                        $blockinfo['content'] .= '<font size=1><b><blink>' . pnVarPrepForDisplay($unread) . '</blink></font></b></a><font size=1>|</font>';
-	                        $blockinfo['content'] .= '<a href="' . $pn_link_url . 'Messages&amp;file=index" title="'._AMT_PRIVATEMSG.'">';
-	                     } else {
-	                        $blockinfo['content'] .= '<a href="' . $link_url . 'privmsg&amp;folder=inbox" title="' . _UNREAD_PRIVATEMSG . '">';
-	                        $blockinfo['content'] .= '<font size=1><b><blink>' . pnVarPrepForDisplay($unread) . '</blink></font></b></a><font size=1>|</font>';
-	                        $blockinfo['content'] .= '<a href="' . $link_url . 'privmsg&amp;folder=inbox" title="' . _AMT_PRIVATEMSG . '">';
-	                     }
-	                     $blockinfo['content'] .= '<font size=1><b>' . pnVarPrepForDisplay($total) . '</b></font></a>)</td>';
-	                  } else {
-	                     if ($vars['pn_pm']) {
-	                        $blockinfo['content'] .= '<a href="' . $pn_link_url . 'Messages&amp;file=index" title="'._UNREAD_PRIVATEMSG.'">';
-	                        $blockinfo['content'] .= '<font size=1><b>' . pnVarPrepForDisplay($unread) . '</font></b></a><font size=1>|</font>';
-	                        $blockinfo['content'] .= '<a href="' . $pn_link_url . 'Messages&amp;file=index" title="'._AMT_PRIVATEMSG.'">';
-	                     } else {
-	                        $blockinfo['content'] .= '<a href="' . $link_url . 'privmsg&amp;folder=inbox" title="' . _UNREAD_PRIVATEMSG . '">';
-	                        $blockinfo['content'] .= '<font size=1><b>' . pnVarPrepForDisplay($unread) . '</font></b></a><font size=1>|</font>';
-	                        $blockinfo['content'] .= '<a href="' . $link_url . 'privmsg&amp;folder=inbox" title="' . _AMT_PRIVATEMSG . '">';
-	                     }
-	                     $blockinfo['content'] .= '<font size=1><b>' . pnVarPrepForDisplay($total) . '</b></font></a>)</td>';
-	                  }
-	    	         } else {
-	                  $blockinfo['content'].= '<td></td>';
-	               }
-	               if (UserUtil::isLoggedIn()) {
-	               		$result = $dbconn->Execute("select pn_uid from " . $pntable[users] . " where pn_uname='" . $uname . "'");
-	                  list($pn_uid) = $result->fields;
-	                  if ($vars['pn_pm']) {
-	                    $blockinfo['content'] .= "<td align=\"right\"><a href=\"" . $pn_link_url . "Messages&amp;file=index";
-	                    $blockinfo['content'] .= "\" title=\"" . _UNREAD_PRIVATEMSG . "\"><img src=\"" . $phpbb_root_path . "pnimages/pm.gif\" title=\"" . _SEND_PM . "\" align=middle\" border=\"0\"></a></td>";
-	                  } else {
-	                    $blockinfo['content'] .= "<td align=\"right\"><a href=\"" . $link_url . "privmsg&amp;mode=post&amp;u=";
-	                    $blockinfo['content'] .= $pn_uid . "\" title=\"" . _SEND_PM . "\"><img src=\"" . $phpbb_root_path . "pnimages/pm.gif\" title=\"" . _SEND_PM . "\" align=middle\" border=\"0\"></a></td>";
-	                  }
-	                  
-	               }			 
-	               $blockinfo['content'] .= '</tr>';
-	            }
-	            $blockinfo['content'] .= "</table></center>";
-	         }
-	      }
-				
-	      if ($vars['display_to_annon'] && !UserUtil::isLoggedIn() || UserUtil::isLoggedIn()) {
-	         if ($numusers != 0) {	
-	            $blockinfo['content'] .= '<center><table width="98%" border="0" cellpadding="2" cellspacing="1" >';
-	            $blockinfo['content'] .= '<tr><td><center>' . _CURRENTLY . ' ' . pnVarPrepForDisplay($guests) . ' ';
-	            $blockinfo['content'] .= _AND . ' ' . pnVarPrepForDisplay($users) . ' ' . _ONLINE . '</center></td></tr></table></center>';
-	         } else {
-	            $blockinfo['content'] .= '<center><table width="98%" border="0" cellpadding="2" cellspacing="1" >';
-	            $blockinfo['content'] .= '<tr><td><center>' . _NOMEMBERS . '</center></td></tr></table><center>';
-	         }
-	      }
+			if ($vars['display_to_annon'] && !UserUtil::isLoggedIn() || UserUtil::isLoggedIn()) {
+				if ($numusers != 0) {	
+					$blockinfo['content'] .= '<center><table width="98%" border="0" cellpadding="2" cellspacing="1" >';
+					$blockinfo['content'] .= '<tr><td><center>' . _CURRENTLY . ' ' . pnVarPrepForDisplay($guests) . ' ';
+					$blockinfo['content'] .= _AND . ' ' . pnVarPrepForDisplay($users) . ' ' . _ONLINE . '</center></td></tr></table></center>';
+				} else {
+					$blockinfo['content'] .= '<center><table width="98%" border="0" cellpadding="2" cellspacing="1" >';
+					$blockinfo['content'] .= '<tr><td><center>' . _NOMEMBERS . '</center></td></tr></table><center>';
+				}
+			}
 	
 	      if (!UserUtil::isLoggedIn()) {
 	         $blockinfo['content'] .= '<table width="98%" align="center" border="1" cellpadding="2" cellspacing="1">';
@@ -687,7 +678,7 @@ function ZphpBB2_MultiBlockblock_display($blockinfo)
 	            $blockinfo['content'] .= '<tr><td><center><input type="text" name="uname" size="14" maxlength="25"></center></td></tr>';
 	            $blockinfo['content'] .= '<tr><td><center><b>' . _PASSWORD . '</b></center></td></tr>';
 	            $blockinfo['content'] .= '<tr><td><center><input type="password" name="pass" size="14" maxlength="20"></center></td></tr>';
-	            if (pnConfigGetVar('seclevel') != 'High' && $vars['remember_me']) {
+	            if (System::getVar('seclevel') != 'High' && $vars['remember_me']) {
 	               $blockinfo['content'] .= '<tr><td><center><input type="checkbox" value="1" name="rememberme" />&nbsp;' . _REMEMBERME . '</center></td></tr>';
 	            }
 	            $blockinfo['content'] .= '<tr><td><center><input type="submit" value="' . _LOGIN . '"></center>';
@@ -718,29 +709,45 @@ function ZphpBB2_MultiBlockblock_display($blockinfo)
 /**
  * modify block settings
  */
-function ZphpBB2_MultiBlockblock_modify($blockinfo)
+function ZphpBB2_Multiblockblock_modify($blockinfo)
 {
 	// Security check
 	if (!SecurityUtil::checkPermission('ZphpBB2_Multiblock::', $blockinfo[bid]."::", ACCESS_EDIT)) {
       return false;
 	}
 
-	 // Get current content
-	 $vars = pnBlockVarsFromContent($blockinfo['content']);
+	// Get current content
+	$vars = BlockUtil::varsFromContent($blockinfo['content']);
+	$vars['module_name'] = ($vars['module_name']) ? $vars['module_name'] : "ZphpBB2";
+	$table_prefix = System::getVar('prefix') . "_phpbb_";
 
+	define('IN_PHPBB', true);
+	$phpbb_root_path = './modules/' . $vars['module_name'] . '/';
+	if (file_exists($phpbb_root_path)) {
+   		include($phpbb_root_path . 'extension.inc');
+	    include_once($phpbb_root_path . 'includes/constants.'.$phpEx);
+  		include_once($phpbb_root_path . "includes/functions.".$phpEx);
+		$langfile = $phpbb_root_path . 'pnlang/'.ZLanguage::getLanguageCodeLegacy().'/Multiblock.' . $phpEx;
+		if (!file_exists($langfile)) {
+			$phpbb_root_path . 'pnlang/eng/Multiblock.' . $phpEx;
+		}
+		include_once($langfile);
+	} else {
+		return '';
+	}
 	 // Defaults
-	 if (empty($vars)) {
-      $vars['module_name'] 				      = "ZphpBB2";					 // Module directory name for ZphpBB2
-      $vars['module_links']				  		= "0";						 // Use module links insted of index.php
-      $vars['display_posts'] 				 		= "0";								 // Display the last forum posts in block
-      $vars['sep_bar_psosts'] 			 		= "1";								 // Display separator bar
-      $vars['title_posts'] 					= "1";								 // Display title
-      $vars['last_X_posts'] 				 		= 			"5";					 // Show this many recent posts.
-      $vars['last_X_scroll'] 				 		= "0";								 // Scroll last forum posts.
-      $vars['scroll_speed'] 				 		= "2";								 // Scroll speed.
-      $vars['scroll_height'] 				 		= "200";							 // Height of scroll area.
-      $vars['scroll_images'] 				 		= "0";								 // Display images per post.
-      $vars['display_date'] 				 		= "1";								 // Display date in post
+	if (empty($vars)) {
+      $vars['module_name'] = "ZphpBB2";					 // Module directory name for ZphpBB2
+      $vars['module_links'] = "0";						 // Use module links insted of index.php
+      $vars['display_posts'] = "0";								 // Display the last forum posts in block
+      $vars['sep_bar_psosts'] = "1";								 // Display separator bar
+      $vars['title_posts'] = "1";								 // Display title
+      $vars['last_X_posts'] = 			"5";					 // Show this many recent posts.
+      $vars['last_X_scroll'] = "0";								 // Scroll last forum posts.
+      $vars['scroll_speed'] = "2";								 // Scroll speed.
+      $vars['scroll_height'] = "200";							 // Height of scroll area.
+      $vars['scroll_images'] = "0";								 // Display images per post.
+      $vars['display_date'] = "1";								 // Display date in post
       $vars['date_format'] 					= _DATEFORMAT;				 // Default date format
       $vars['display_time'] 				 		= "1";								 // Display time in post
       $vars['time_format'] 					= _TIMEFORMAT;				 // Default time format
@@ -774,57 +781,40 @@ function ZphpBB2_MultiBlockblock_modify($blockinfo)
 
    }
 
-	 if (empty($vars['excluded_forums'])) {
-	 		$vars['excluded_forums'] = array();
-	 }
- 	 if (empty($vars['include_category'])) {
-      $vars['include_category'] = array();
-	 }
+	if (empty($vars['excluded_forums'])) {
+		$vars['excluded_forums'] = array();
+	}
+ 	if (empty($vars['include_category'])) {
+		$vars['include_category'] = array();
+	}
 
-
-	 define('IN_PHPBB', true);
-	 $phpbb_root_path = './modules/' . $vars['module_name'] . '/';
-	 $table_prefix = pnConfigGetVar('prefix') . "_phpbb_";
-
-   if (file_exists($phpbb_root_path)) {
-   		include($phpbb_root_path . 'extension.inc');
-	    include_once($phpbb_root_path . 'includes/constants.'.$phpEx);
-
-    	list($dbconn) = pnDBGetConn();
-		
-    	// Create forum list
-	    $query = "SELECT f.forum_id, f.forum_name, c.cat_title FROM " . FORUMS_TABLE . " f LEFT JOIN " . CATEGORIES_TABLE . " c ON c.cat_id = f.cat_id ORDER BY c.cat_title, f.forum_name";
-    	$result = $dbconn->Execute($query);
-
-    	while (list($forum_id, $forum_name, $cat_title) = $result->fields) {
-	       $result->MoveNext();
-         $selected = in_array($forum_id, $vars['excluded_forums']) ? 1 : 0;
-         $forums[] = array('id' => $forum_id, 'name' => $cat_title . ' / ' . $forum_name, 'selected' => $selected);
-    	}
-	    // Create category list
-    	$query = "SELECT cat_id, cat_title FROM " . CATEGORIES_TABLE . " ORDER BY cat_title";
-	    $result = $dbconn->Execute($query);
-			
-	    while (list($cat_id, $cat_title) = $result->fields)	{
-	       $result->MoveNext();
-    	   $selected = in_array($cat_id, $vars['include_category']) ? 1 : 0;
-	       $category[] = array('id' => $cat_id, 'name' => $cat_title, 'selected' => $selected);
-    	}
-
-   } else {
-	 		$templates[] = array();
-   }
-	 // Create output object
-	 $output = new pnHTML();
+	// Create forum list
+	$query = "SELECT f.forum_id, f.forum_name, c.cat_title FROM " . FORUMS_TABLE . " f LEFT JOIN " . CATEGORIES_TABLE . " c ON c.cat_id = f.cat_id ORDER BY c.cat_title, f.forum_name";
+	$result = zExecuteSQLarray($query);
+	foreach ($result as $r) {
+		list($forum_id, $forum_name, $cat_title) = $r;
+		$selected = in_array($forum_id, $vars['excluded_forums']) ? 1 : 0;
+		$forums[] = array('id' => $forum_id, 'name' => $cat_title . ' / ' . $forum_name, 'selected' => $selected);
+	}
+	// Create category list
+	$query = "SELECT cat_id, cat_title FROM " . CATEGORIES_TABLE . " ORDER BY cat_title";
+	$result = zExecuteSQLarray($query);
+	foreach ($result as $r) {
+		list($cat_id, $cat_title) = $r;
+		$selected = in_array($cat_id, $vars['include_category']) ? 1 : 0;
+		$category[] = array('id' => $cat_id, 'name' => $cat_title, 'selected' => $selected);
+	}
+	// Create output object
+	$output = new pnHTML();
       
-   $output->SetOutputMode(_PNH_RETURNOUTPUT);
-   $settings[] = array('optiontitle' => $output->BoldText("____________________________"));
-   $settings[] = array('optiontitle' => $output->BoldText(_MULTIBLOCK_OPTIONS));
+	$output->SetOutputMode(_PNH_RETURNOUTPUT);
+	$settings[] = array('optiontitle' => $output->BoldText("____________________________"));
+	$settings[] = array('optiontitle' => $output->BoldText(_MULTIBLOCK_OPTIONS));
 
-	 if (!file_exists($phpbb_root_path)) {
-      $settings[] = array('optiontitle' => $output->BoldText(_MODULE_ERROR));
-		  $settings[] = array('optiontitle' => $output->Text(_MODULE_NAME), 'optioncontent' => $output->FormText('module_name',pnVarPrepForDisplay($vars['module_name']),15,20) );
-   } else {
+	if (!file_exists($phpbb_root_path)) {
+		$settings[] = array('optiontitle' => $output->BoldText(_MODULE_ERROR));
+		$settings[] = array('optiontitle' => $output->Text(_MODULE_NAME), 'optioncontent' => $output->FormText('module_name',pnVarPrepForDisplay($vars['module_name']),15,20) );
+	} else {
 		  $settings[] = array('optiontitle' => $output->Text(_MODULE_NAME), 'optioncontent' => $output->FormText('module_name',pnVarPrepForDisplay($vars['module_name']),15,20) );
 		  $settings[] = array('optiontitle' => $output->Text(_MODULE_LINKS), 'optioncontent' => $output->FormCheckbox('module_links',pnVarPrepForDisplay($vars['module_links'])) );
 	 	  $settings[] = array('optiontitle' => $output->Text(_MODULE_LINKS_EXPLAIN));
@@ -888,7 +878,7 @@ function ZphpBB2_MultiBlockblock_modify($blockinfo)
 /**
  * update block settings
  */
-function ZphpBB2_MultiBlockblock_update($blockinfo)
+function ZphpBB2_Multiblockblock_update($blockinfo)
 {
    list($vars['module_name'],
 	 			$vars['module_links'],
