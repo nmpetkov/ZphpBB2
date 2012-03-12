@@ -65,12 +65,12 @@ if ($modinfo) {
     }
 }
 
-// N.Petkov: old-old style of loading modules (for PNphpBB2)
-if (true and ($module=='PNphpBB2' or $module=='forum')) {
+// N.Petkov: old-old style of loading modules (for ZphpBB2)
+if (true and ($module=='ZphpBB2' or $module=='forum')) {
 	define('LOADED_AS_MODULE', '1');
 	$file = FormUtil::getPassedValue('file', 'index', 'GETPOST');
 	$zview = Zikula_View_Theme::getInstance();
-	if ($file=='admin') $noztheme = 1; # PNphpBB2
+	if ($file=='admin') $noztheme = 1; # ZphpBB2
 	$zview->assign('module', $module); // !!!
 	include 'modules/'.$modinfo['directory'].'/'.$file.'.php';
 	if ($noztheme) {

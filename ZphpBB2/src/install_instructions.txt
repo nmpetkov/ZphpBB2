@@ -1,6 +1,11 @@
 INSTALL
 
 1. Provided code is for upgrading porposes only. It is not tested on fresh install.
-2. To upgrade, copy files, and upgrade from Admin panel, "Extensions".
-3. Make changes to main index.php file of the web site. Unfortunately (for now) have to make manually changes to main index.php file of the site.
+2. Module directory is changed from PNphpBB2 to ZphpBB2. Make folowing changes to database and files:
+	- Cnages in database (use phpMyAdmin or similar tool:
+		- in modules table find record with name=PNphpBB2, cahge it to ZphpBB2, also cahnge field directory=ZphpBB2
+	- Delete modules/PNphpBB2 directory. Keep in mind to backup folders with user uplodaed files (files, avatars). If you are not sure, keep modules/PNphpBB2 folder, but rebame it to modules/ZphpBB2 (in next step - overwride files).
+3. To upgrade, copy files in website "modules" folder, and upgrade from website Admin panel, "Extensions".
+4. If you like can change display URL for the module (upgraded version suports this). Also from website Admin panel, "Extensions", "edit" icon for this module.
+5. Make changes to main index.php file of the web site. Unfortunately (for now) have to make manually changes to main index.php file of the site.
 Simply compare this two provided files and see necessary changes.
