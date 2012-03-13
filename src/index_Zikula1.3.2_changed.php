@@ -66,9 +66,14 @@ if ($modinfo) {
 }
 
 // N.Petkov: old-old style of loading modules (for ZphpBB2)
-if (true and ($module=='ZphpBB2' or $module=='forum')) { // change 'forum' with your module URl (PNphpBB2 or other)
+if ($module=='PNphpBB2' or $module=='forum') {
 	define('LOADED_AS_MODULE', '1');
-	$file = FormUtil::getPassedValue('file', 'index', 'GETPOST');
+	if ($type=='admin') {
+		$file = 'admin'; # ZphpBB2
+		$pnadmin = 'admin';
+	} else {
+		$file = FormUtil::getPassedValue('file', 'index', 'GETPOST');
+	}
 	$zview = Zikula_View_Theme::getInstance();
 	if ($file=='admin') $noztheme = 1; # ZphpBB2
 	$zview->assign('module', $module); // !!!

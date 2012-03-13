@@ -27,7 +27,7 @@ if ( $remove_pnphpbb )
   }
 }
 
-$pnadmin = FormUtil::getPassedValue('pnadmin', '', 'GETPOST'); # @nikp N.Petkov: Zikula 1.3
+if (empty($pnadmin)) $pnadmin = FormUtil::getPassedValue('pnadmin', '', 'GETPOST'); # @nikp N.Petkov: Zikula 1.3
 
 if (ereg("admin_",$pnadmin))
 {
