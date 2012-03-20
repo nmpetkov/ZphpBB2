@@ -37,14 +37,19 @@ function ZphpBB2_Multiblockblock_display($blockinfo)
 
 	global $bgcolor1, $bgcolor2, $bgcolor3, $bgcolor4, $bgcolor5, $textcolor1, $textcolor2, $textcolor3, $textcolor4;
 
+	// get module information
+	$modinfo = ModUtil::getInfoFromName("ZphpBB2");
+	if (empty($modinfo['name']) or empty($modinfo['directory'])) {
+		return _MODULE_ERROR;
+	}
+
 	// Get variables from content block
 	$vars = BlockUtil::varsFromContent($blockinfo['content']);
-	$vars['module_name'] = ($vars['module_name']) ? $vars['module_name'] : "ZphpBB2";
 	$table_prefix = System::getVar('prefix') . "_phpbb_";
 
 	define('IN_PHPBB', true);
 	// Implementation cached content
-	$enable_cache = false;
+	$enable_cache = true;
 	$write_to_cache = false;	# flag
 	$cache_time = 180; # seconds
 	if (isset($vars['cache_time'])) $cache_time = $vars['cache_time'];
@@ -71,7 +76,7 @@ function ZphpBB2_Multiblockblock_display($blockinfo)
 		// Create output object
 
 		// include some files
-		$phpbb_root_path = "./modules/" . $vars['module_name'] . "/";
+		$phpbb_root_path = "./modules/" . $modinfo['directory'] . "/";
 		include($phpbb_root_path . "extension.inc");
 		include_once($phpbb_root_path . "includes/constants.".$phpEx);
   		include_once($phpbb_root_path . "includes/functions.".$phpEx);
@@ -81,20 +86,14 @@ function ZphpBB2_Multiblockblock_display($blockinfo)
 		}
 		include_once($langfile);
 
-		if ($vars['module_links']) {
-			$link_url = "modules.php?name=" . $vars['module_name'] . "&amp;file=";
-			$pn_link_url = "modules.php?name=";
-		} else {
-		  $link_url = "index.php?name=" . $vars['module_name'] . "&amp;file=";
-			$pn_link_url = "index.php?name=";
-		}
+		$link_url = "index.php?module=" . $modinfo['url'] . "&amp;file=";
+		$pn_link_url = "index.php?module=";
 		$blockinfo['content'] = "";
 		// Keep track of the number of sections used
 		$numsections = 0;
 
 		if ($vars['display_posts']) {
 			// Defaults some things if they are empty!
-			$vars['module_name'] ? ($vars['module_name']) : "ZphpBB2";		  // Module directory name for ZphpBB2
 			$vars['last_X_posts'] ? ($vars['last_X_posts']) : "5";					// Show this many recent posts.
 			$vars['date_format'] ? ($vars['date_format']) : _DATEFORMAT;		// Default date format
 			$vars['time_format'] ? ($vars['time_format']) : _TIMEFORMAT;		// Default time format
@@ -716,13 +715,18 @@ function ZphpBB2_Multiblockblock_modify($blockinfo)
       return false;
 	}
 
+	// get module information
+	$modinfo = ModUtil::getInfoFromName("ZphpBB2");
+	if (empty($modinfo['name']) or empty($modinfo['directory'])) {
+		return _MODULE_ERROR;
+	}
+	
 	// Get current content
 	$vars = BlockUtil::varsFromContent($blockinfo['content']);
-	$vars['module_name'] = ($vars['module_name']) ? $vars['module_name'] : "ZphpBB2";
 	$table_prefix = System::getVar('prefix') . "_phpbb_";
 
 	define('IN_PHPBB', true);
-	$phpbb_root_path = './modules/' . $vars['module_name'] . '/';
+	$phpbb_root_path = './modules/' . $modinfo['directory'] . '/';
 	if (file_exists($phpbb_root_path)) {
    		include($phpbb_root_path . 'extension.inc');
 	    include_once($phpbb_root_path . 'includes/constants.'.$phpEx);
@@ -737,8 +741,6 @@ function ZphpBB2_Multiblockblock_modify($blockinfo)
 	}
 	 // Defaults
 	if (empty($vars)) {
-      $vars['module_name'] = "ZphpBB2";					 // Module directory name for ZphpBB2
-      $vars['module_links'] = "0";						 // Use module links insted of index.php
       $vars['display_posts'] = "0";								 // Display the last forum posts in block
       $vars['sep_bar_psosts'] = "1";								 // Display separator bar
       $vars['title_posts'] = "1";								 // Display title
@@ -771,15 +773,15 @@ function ZphpBB2_Multiblockblock_modify($blockinfo)
       $vars['title_members'] 				 		= "1";								 // Display title
       $vars['display_login'] 				 		= "0";								 // Display Login Prompt
       $vars['remember_me'] 					= "0";								 // Show the remember me check box
-      $vars['pn_pm'] 								= "0";								 // Yes=1, Use Zikula Private message notification
-	  																											 // No=0, Use ZphpBB2 Private message notification.
+      $vars['pn_pm'] 								= "0";								 // Yes=1, Use Zikula Private message notification, No=0, Use ZphpBB2 Private message notification.
       $vars['pm_sound'] 						    = "james_kirk.wav";		 // Sound to play when personal message arrives
       $vars['info_icon'] 						= "info.gif";					 // Image to display in the anonomious box
       $vars['display_to_annon'] 		 		= "1"; 	 			 				 // Yes=1, Displays users online to anonomious users.
       $vars['login_user_string_length'] = "15";								 // Limit Username Length To Avoid Wrap
-			$vars['num_users'] 								= "10";								 // Maximum number of users to display
-
-   }
+	  $vars['num_users'] 								= "10";								 // Maximum number of users to display
+	}
+	if (empty($vars['cache_dir'])) $vars['cache_dir'] = "any_cache";
+	if (!isset($vars['cache_time'])) $vars['cache_time'] = "120";
 
 	if (empty($vars['excluded_forums'])) {
 		$vars['excluded_forums'] = array();
@@ -808,58 +810,51 @@ function ZphpBB2_Multiblockblock_modify($blockinfo)
 	$output = new pnHTML();
       
 	$output->SetOutputMode(_PNH_RETURNOUTPUT);
-	$settings[] = array('optiontitle' => $output->BoldText("____________________________"));
 	$settings[] = array('optiontitle' => $output->BoldText(_MULTIBLOCK_OPTIONS));
-
-	if (!file_exists($phpbb_root_path)) {
-		$settings[] = array('optiontitle' => $output->BoldText(_MODULE_ERROR));
-		$settings[] = array('optiontitle' => $output->Text(_MODULE_NAME), 'optioncontent' => $output->FormText('module_name',pnVarPrepForDisplay($vars['module_name']),15,20) );
-	} else {
-		  $settings[] = array('optiontitle' => $output->Text(_MODULE_NAME), 'optioncontent' => $output->FormText('module_name',pnVarPrepForDisplay($vars['module_name']),15,20) );
-		  $settings[] = array('optiontitle' => $output->Text(_MODULE_LINKS), 'optioncontent' => $output->FormCheckbox('module_links',pnVarPrepForDisplay($vars['module_links'])) );
-	 	  $settings[] = array('optiontitle' => $output->Text(_MODULE_LINKS_EXPLAIN));
-	 	  $settings[] = array('optiontitle' => $output->BoldText("____________________________"));
-	 	  $settings[] = array('optiontitle' => $output->BoldText(_DISPLAY_POSTS), 'optioncontent' => $output->FormCheckbox('display_posts',pnVarPrepForDisplay($vars['display_posts'])) );
-		  $settings[] = array('optiontitle' => $output->Text(_SEP_BAR), 'optioncontent' => $output->FormCheckbox('sep_bar_psosts',pnVarPrepForDisplay($vars['sep_bar_psosts'])) );
-	 	  $settings[] = array('optiontitle' => $output->Text(_SHOW_TITLE), 'optioncontent' => $output->FormCheckbox('title_posts',pnVarPrepForDisplay($vars['title_posts'])) );
-   		$settings[] = array('optiontitle' => $output->Text(_LAST_X_POSTS), 'optioncontent' => $output->FormText('last_X_posts',pnVarPrepForDisplay($vars['last_X_posts']),2,2) );
-		  $settings[] = array('optiontitle' => $output->Text(_LAST_X_SCROLL), 'optioncontent' => $output->FormCheckbox('last_X_scroll',pnVarPrepForDisplay($vars['last_X_scroll'])) );
-   		$settings[] = array('optiontitle' => $output->Text(_SCROLL_HEIGHT), 'optioncontent' => $output->FormText('scroll_height',pnVarPrepForDisplay($vars['scroll_height']),4,5) );
-   		$settings[] = array('optiontitle' => $output->Text(_SCROLL_SPEED), 'optioncontent' => $output->FormText('scroll_speed',pnVarPrepForDisplay($vars['scroll_speed']),2,2) );
-   		$settings[] = array('optiontitle' => $output->Text(_DISPLAY_DATE), 'optioncontent' => $output->FormCheckBox('display_date',pnVarPrepForDisplay($vars['display_date'])) );
-	    $settings[] = array('optiontitle' => $output->Text(_DATE_FORMAT), 'optioncontent' => $output->FormText('date_format',pnVarPrepForDisplay($vars['date_format']),6,10) );
-   		$settings[] = array('optiontitle' => $output->Text(_DISPLAY_TIME), 'optioncontent' => $output->FormCheckBox('display_time',pnVarPrepForDisplay($vars['display_time'])) );
-			$settings[] = array('optiontitle' => $output->Text(_TIME_FORMAT), 'optioncontent' => $output->FormText('time_format',pnVarPrepForDisplay($vars['time_format']),6,10) );
-	 		$settings[] = array('optiontitle' => $output->Text(_GROUP_TOPICS), 'optioncontent' => $output->FormCheckbox('group_topics',pnVarPrepForDisplay($vars['group_topics'])) );
-   		$settings[] = array('optiontitle' => $output->Text(_TITLE_STRING_LENGTH), 'optioncontent' => $output->FormText('title_string_length',pnVarPrepForDisplay($vars['title_string_length']),2,2) );
-   		$settings[] = array('optiontitle' => $output->Text(_USER_STRING_LENGTH), 'optioncontent' => $output->FormText('user_string_length',pnVarPrepForDisplay($vars['user_string_length']),2,2) );
-			$settings[] = array('optiontitle' => $output->Text(_EXCLUDE_FORUMS), 'optioncontent' => $output->FormSelectMultiple('excluded_forums[]', $forums, true, 5) );
-	 		$settings[] = array('optiontitle' => $output->BoldText("____________________________"));
- 	 		$settings[] = array('optiontitle' => $output->BoldText(_DISPLAY_STATS), 'optioncontent' => $output->FormCheckbox('display_stats',pnVarPrepForDisplay($vars['display_stats'])));
- 	 		$settings[] = array('optiontitle' => $output->Text(_SEP_BAR), 'optioncontent' => $output->FormCheckbox('sep_bar_stats',pnVarPrepForDisplay($vars['sep_bar_stats'])));
- 	 		$settings[] = array('optiontitle' => $output->Text(_SHOW_TITLE), 'optioncontent' => $output->FormCheckbox('title_stats',pnVarPrepForDisplay($vars['title_stats'])));
-	 		$settings[] = array('optiontitle' => $output->BoldText("____________________________"));
- 	 		$settings[] = array('optiontitle' => $output->BoldText(_DISPLAY_CATEGORY), 'optioncontent' => $output->FormCheckbox('display_category',pnVarPrepForDisplay($vars['display_category'])));
- 	 		$settings[] = array('optiontitle' => $output->Text(_SEP_BAR), 'optioncontent' => $output->FormCheckbox('sep_bar_category',pnVarPrepForDisplay($vars['sep_bar_category'])));
- 	 		$settings[] = array('optiontitle' => $output->Text(_SHOW_TITLE), 'optioncontent' => $output->FormCheckbox('title_category',pnVarPrepForDisplay($vars['title_category'])));
-			$settings[] = array('optiontitle' => $output->Text(_CATEGORY_LENGTH), 'optioncontent' => $output->FormText('category_length',pnVarPrepForDisplay($vars['category_length']),2,2) );
-			$settings[] = array('optiontitle' => $output->Text(_INCLUDE_CATEGORY), 'optioncontent' => $output->FormSelectMultiple('include_category[]', $category, true, 5) );
-			$settings[] = array('optiontitle' => $output->Text(_FORUM_DRILLDOWN), 'optioncontent' => $output->FormCheckbox('forum_drilldown',pnVarPrepForDisplay($vars['forum_drilldown'])));
-			$settings[] = array('optiontitle' => $output->Text(_FORUM_DRILLDOWN_MAX), 'optioncontent' => $output->FormText('forum_drilldown_max',pnVarPrepForDisplay($vars['forum_drilldown_max']),2,2) );
-  		$settings[] = array('optiontitle' => $output->BoldText("____________________________"));
-	 		$settings[] = array('optiontitle' => $output->BoldText(_DISPLAY_MEMBERS), 'optioncontent' => $output->FormCheckbox('display_members',pnVarPrepForDisplay($vars['display_members'])) );	 
- 	 		$settings[] = array('optiontitle' => $output->Text(_SEP_BAR), 'optioncontent' => $output->FormCheckbox('sep_bar_members',pnVarPrepForDisplay($vars['sep_bar_members'])));
- 	 		$settings[] = array('optiontitle' => $output->Text(_SHOW_TITLE), 'optioncontent' => $output->FormCheckbox('title_members',pnVarPrepForDisplay($vars['title_members'])));
-			$settings[] = array('optiontitle' => $output->Text(_INFO_ICON), 'optioncontent' => $output->FormText('info_icon',pnVarPrepForDisplay($vars['info_icon']),15,30) );
-	 		$settings[] = array('optiontitle' => $output->Text(_DISPLAY_LOGIN), 'optioncontent' => $output->FormCheckbox('display_login',pnVarPrepForDisplay($vars['display_login'])) );
-			$settings[] = array('optiontitle' => $output->Text(_REMEMBER_ME), 'optioncontent' => $output->FormCheckbox('remember_me',pnVarPrepForDisplay($vars['remember_me'])) );
-			$settings[] = array('optiontitle' => $output->Text(_USE_PN_PM), 'optioncontent' => $output->FormCheckbox('pn_pm',pnVarPrepForDisplay($vars['pn_pm'])));
-			$settings[] = array('optiontitle' => $output->Text(_USE_PM_SOUND), 'optioncontent' => $output->FormText('pm_sound',pnVarPrepForDisplay($vars['pm_sound']),15,30) );
- 			$settings[] = array('optiontitle' => $output->Text(_DISPLAY_TO_ANNON), 'optioncontent' => $output->FormCheckbox('display_to_annon',pnVarPrepForDisplay($vars['display_to_annon'])));
- 			$settings[] = array('optiontitle' => $output->Text(_USER_STRING_LENGTH), 'optioncontent' => $output->FormText('login_user_string_length',pnVarPrepForDisplay($vars['login_user_string_length']),2,2) );
- 			$settings[] = array('optiontitle' => $output->Text(_NUM_USERS), 'optioncontent' => $output->FormText('num_users',pnVarPrepForDisplay($vars['num_users']),3,3) );
-			$settings[] = array('optiontitle' => $output->BoldText("____________________________"));
-   }
+	$settings[] = array('optiontitle' => $output->BoldText("____________________________"));
+   	$settings[] = array('optiontitle' => $output->Text('Cache time (enter positive number in seconds to enable cache)'), 'optioncontent' => $output->FormText('cache_time',pnVarPrepForDisplay($vars['cache_time']),10,20) );
+	$settings[] = array('optiontitle' => $output->Text('Cache directory name (within Zikula Temp directory)'), 'optioncontent' => $output->FormText('cache_dir',pnVarPrepForDisplay($vars['cache_dir']),30,150) );
+	$settings[] = array('optiontitle' => $output->BoldText("____________________________"));
+	$settings[] = array('optiontitle' => $output->BoldText(_DISPLAY_POSTS), 'optioncontent' => $output->FormCheckbox('display_posts',pnVarPrepForDisplay($vars['display_posts'])) );
+	$settings[] = array('optiontitle' => $output->Text(_SEP_BAR), 'optioncontent' => $output->FormCheckbox('sep_bar_psosts',pnVarPrepForDisplay($vars['sep_bar_psosts'])) );
+	$settings[] = array('optiontitle' => $output->Text(_SHOW_TITLE), 'optioncontent' => $output->FormCheckbox('title_posts',pnVarPrepForDisplay($vars['title_posts'])) );
+	$settings[] = array('optiontitle' => $output->Text(_LAST_X_POSTS), 'optioncontent' => $output->FormText('last_X_posts',pnVarPrepForDisplay($vars['last_X_posts']),2,2) );
+	$settings[] = array('optiontitle' => $output->Text(_LAST_X_SCROLL), 'optioncontent' => $output->FormCheckbox('last_X_scroll',pnVarPrepForDisplay($vars['last_X_scroll'])) );
+	$settings[] = array('optiontitle' => $output->Text(_SCROLL_HEIGHT), 'optioncontent' => $output->FormText('scroll_height',pnVarPrepForDisplay($vars['scroll_height']),4,5) );
+	$settings[] = array('optiontitle' => $output->Text(_SCROLL_SPEED), 'optioncontent' => $output->FormText('scroll_speed',pnVarPrepForDisplay($vars['scroll_speed']),2,2) );
+	$settings[] = array('optiontitle' => $output->Text(_DISPLAY_DATE), 'optioncontent' => $output->FormCheckBox('display_date',pnVarPrepForDisplay($vars['display_date'])) );
+	$settings[] = array('optiontitle' => $output->Text(_DATE_FORMAT), 'optioncontent' => $output->FormText('date_format',pnVarPrepForDisplay($vars['date_format']),6,10) );
+	$settings[] = array('optiontitle' => $output->Text(_DISPLAY_TIME), 'optioncontent' => $output->FormCheckBox('display_time',pnVarPrepForDisplay($vars['display_time'])) );
+	$settings[] = array('optiontitle' => $output->Text(_TIME_FORMAT), 'optioncontent' => $output->FormText('time_format',pnVarPrepForDisplay($vars['time_format']),6,10) );
+	$settings[] = array('optiontitle' => $output->Text(_GROUP_TOPICS), 'optioncontent' => $output->FormCheckbox('group_topics',pnVarPrepForDisplay($vars['group_topics'])) );
+	$settings[] = array('optiontitle' => $output->Text(_TITLE_STRING_LENGTH), 'optioncontent' => $output->FormText('title_string_length',pnVarPrepForDisplay($vars['title_string_length']),2,2) );
+	$settings[] = array('optiontitle' => $output->Text(_USER_STRING_LENGTH), 'optioncontent' => $output->FormText('user_string_length',pnVarPrepForDisplay($vars['user_string_length']),2,2) );
+	$settings[] = array('optiontitle' => $output->Text(_EXCLUDE_FORUMS), 'optioncontent' => $output->FormSelectMultiple('excluded_forums[]', $forums, true, 5) );
+	$settings[] = array('optiontitle' => $output->BoldText("____________________________"));
+	$settings[] = array('optiontitle' => $output->BoldText(_DISPLAY_STATS), 'optioncontent' => $output->FormCheckbox('display_stats',pnVarPrepForDisplay($vars['display_stats'])));
+	$settings[] = array('optiontitle' => $output->Text(_SEP_BAR), 'optioncontent' => $output->FormCheckbox('sep_bar_stats',pnVarPrepForDisplay($vars['sep_bar_stats'])));
+	$settings[] = array('optiontitle' => $output->Text(_SHOW_TITLE), 'optioncontent' => $output->FormCheckbox('title_stats',pnVarPrepForDisplay($vars['title_stats'])));
+	$settings[] = array('optiontitle' => $output->BoldText("____________________________"));
+	$settings[] = array('optiontitle' => $output->BoldText(_DISPLAY_CATEGORY), 'optioncontent' => $output->FormCheckbox('display_category',pnVarPrepForDisplay($vars['display_category'])));
+	$settings[] = array('optiontitle' => $output->Text(_SEP_BAR), 'optioncontent' => $output->FormCheckbox('sep_bar_category',pnVarPrepForDisplay($vars['sep_bar_category'])));
+	$settings[] = array('optiontitle' => $output->Text(_SHOW_TITLE), 'optioncontent' => $output->FormCheckbox('title_category',pnVarPrepForDisplay($vars['title_category'])));
+	$settings[] = array('optiontitle' => $output->Text(_CATEGORY_LENGTH), 'optioncontent' => $output->FormText('category_length',pnVarPrepForDisplay($vars['category_length']),2,2) );
+	$settings[] = array('optiontitle' => $output->Text(_INCLUDE_CATEGORY), 'optioncontent' => $output->FormSelectMultiple('include_category[]', $category, true, 5) );
+	$settings[] = array('optiontitle' => $output->Text(_FORUM_DRILLDOWN), 'optioncontent' => $output->FormCheckbox('forum_drilldown',pnVarPrepForDisplay($vars['forum_drilldown'])));
+	$settings[] = array('optiontitle' => $output->Text(_FORUM_DRILLDOWN_MAX), 'optioncontent' => $output->FormText('forum_drilldown_max',pnVarPrepForDisplay($vars['forum_drilldown_max']),2,2) );
+	$settings[] = array('optiontitle' => $output->BoldText("____________________________"));
+	$settings[] = array('optiontitle' => $output->BoldText(_DISPLAY_MEMBERS), 'optioncontent' => $output->FormCheckbox('display_members',pnVarPrepForDisplay($vars['display_members'])) );	 
+	$settings[] = array('optiontitle' => $output->Text(_SEP_BAR), 'optioncontent' => $output->FormCheckbox('sep_bar_members',pnVarPrepForDisplay($vars['sep_bar_members'])));
+	$settings[] = array('optiontitle' => $output->Text(_SHOW_TITLE), 'optioncontent' => $output->FormCheckbox('title_members',pnVarPrepForDisplay($vars['title_members'])));
+	$settings[] = array('optiontitle' => $output->Text(_INFO_ICON), 'optioncontent' => $output->FormText('info_icon',pnVarPrepForDisplay($vars['info_icon']),15,30) );
+	$settings[] = array('optiontitle' => $output->Text(_DISPLAY_LOGIN), 'optioncontent' => $output->FormCheckbox('display_login',pnVarPrepForDisplay($vars['display_login'])) );
+	$settings[] = array('optiontitle' => $output->Text(_REMEMBER_ME), 'optioncontent' => $output->FormCheckbox('remember_me',pnVarPrepForDisplay($vars['remember_me'])) );
+	$settings[] = array('optiontitle' => $output->Text(_USE_PN_PM), 'optioncontent' => $output->FormCheckbox('pn_pm',pnVarPrepForDisplay($vars['pn_pm'])));
+	$settings[] = array('optiontitle' => $output->Text(_USE_PM_SOUND), 'optioncontent' => $output->FormText('pm_sound',pnVarPrepForDisplay($vars['pm_sound']),15,30) );
+	$settings[] = array('optiontitle' => $output->Text(_DISPLAY_TO_ANNON), 'optioncontent' => $output->FormCheckbox('display_to_annon',pnVarPrepForDisplay($vars['display_to_annon'])));
+	$settings[] = array('optiontitle' => $output->Text(_USER_STRING_LENGTH), 'optioncontent' => $output->FormText('login_user_string_length',pnVarPrepForDisplay($vars['login_user_string_length']),2,2) );
+	$settings[] = array('optiontitle' => $output->Text(_NUM_USERS), 'optioncontent' => $output->FormText('num_users',pnVarPrepForDisplay($vars['num_users']),3,3) );
+	$settings[] = array('optiontitle' => $output->BoldText("____________________________"));
 
    $output->SetOutputMode(_PNH_KEEPOUTPUT);
 
@@ -880,86 +875,87 @@ function ZphpBB2_Multiblockblock_modify($blockinfo)
  */
 function ZphpBB2_Multiblockblock_update($blockinfo)
 {
-   list($vars['module_name'],
-	 			$vars['module_links'],
-        $vars['display_posts'],
-	 			$vars['sep_bar_psosts'],
-				$vars['title_posts'],
-	 			$vars['last_X_posts'],
-				$vars['last_X_scroll'],
-				$vars['scroll_height'],
-				$vars['scroll_speed'],
-				$vars['scroll_images'],
-				$vars['display_date'],
-				$vars['date_format'],
-				$vars['display_time'],
-				$vars['time_format'],
-	 			$vars['group_topics'],
-	 			$vars['display_cat_posts'], 
-	 			$vars['title_string_length'],
-				$vars['user_string_length'],
-				$vars['excluded_forums'],
-				$vars['display_stats'],
-	 			$vars['sep_bar_stats'],
-				$vars['title_stats'],
-				$vars['display_category'],
-	 			$vars['sep_bar_category'],
-				$vars['title_category'],
-				$vars['category_length'],
-				$vars['include_category'],
-				$vars['forum_drilldown'],
-				$vars['forum_drilldown_max'],
-				$vars['display_members'],
-	 			$vars['sep_bar_members'],
-				$vars['title_members'],
-				$vars['display_login'],
-				$vars['remember_me'],
-				$vars['pn_pm'],
-				$vars['pm_sound'],
-				$vars['info_icon'],
-				$vars['display_to_annon'],
-     		$vars['login_user_string_length'],
-				$vars['num_users']) = 
-	   		pnVarCleanFromInput('module_name',
-														'module_links',							 
-														'display_posts',
-														'sep_bar_psosts',
-														'title_posts',
-														'last_X_posts',
-														'last_X_scroll',
-														'scroll_height',
-														'scroll_speed',
-														'scroll_images',
-														'display_date',
-														'date_format',
-														'display_time',
-														'time_format',
-														'group_topics', 
-														'display_cat_posts',
-														'title_string_length',
-														'user_string_length',
-														'excluded_forums', 
-														'display_stats',
-														'sep_bar_stats',
-														'title_stats',
-														'display_category',
-	 													'sep_bar_category',
-														'title_category',
-														'category_length',
-														'include_category',
-														'forum_drilldown',
-														'forum_drilldown_max',
-														'display_members',
-	 													'sep_bar_members',
-														'title_members',
-														'display_login',
-														'remember_me',
-														'pn_pm',
-														'pm_sound',
-														'info_icon',
-														'display_to_annon',
-														'login_user_string_length',
-														'num_users');
+   list($vars['cache_time'],
+	    $vars['cache_dir'],
+	    $vars['display_posts'],
+		$vars['sep_bar_psosts'],
+		$vars['title_posts'],
+		$vars['last_X_posts'],
+		$vars['last_X_scroll'],
+		$vars['scroll_height'],
+		$vars['scroll_speed'],
+		$vars['scroll_images'],
+		$vars['display_date'],
+		$vars['date_format'],
+		$vars['display_time'],
+		$vars['time_format'],
+		$vars['group_topics'],
+		$vars['display_cat_posts'], 
+		$vars['title_string_length'],
+		$vars['user_string_length'],
+		$vars['excluded_forums'],
+		$vars['display_stats'],
+		$vars['sep_bar_stats'],
+		$vars['title_stats'],
+		$vars['display_category'],
+		$vars['sep_bar_category'],
+		$vars['title_category'],
+		$vars['category_length'],
+		$vars['include_category'],
+		$vars['forum_drilldown'],
+		$vars['forum_drilldown_max'],
+		$vars['display_members'],
+		$vars['sep_bar_members'],
+		$vars['title_members'],
+		$vars['display_login'],
+		$vars['remember_me'],
+		$vars['pn_pm'],
+		$vars['pm_sound'],
+		$vars['info_icon'],
+		$vars['display_to_annon'],
+		$vars['login_user_string_length'],
+		$vars['num_users']
+		) = pnVarCleanFromInput(
+		'cache_time',
+		'cache_dir',
+		'display_posts',
+		'sep_bar_psosts',
+		'title_posts',
+		'last_X_posts',
+		'last_X_scroll',
+		'scroll_height',
+		'scroll_speed',
+		'scroll_images',
+		'display_date',
+		'date_format',
+		'display_time',
+		'time_format',
+		'group_topics', 
+		'display_cat_posts',
+		'title_string_length',
+		'user_string_length',
+		'excluded_forums', 
+		'display_stats',
+		'sep_bar_stats',
+		'title_stats',
+		'display_category',
+		'sep_bar_category',
+		'title_category',
+		'category_length',
+		'include_category',
+		'forum_drilldown',
+		'forum_drilldown_max',
+		'display_members',
+		'sep_bar_members',
+		'title_members',
+		'display_login',
+		'remember_me',
+		'pn_pm',
+		'pm_sound',
+		'info_icon',
+		'display_to_annon',
+		'login_user_string_length',
+		'num_users');
    $blockinfo['content'] = pnBlockVarsToContent($vars);
 
    return $blockinfo;

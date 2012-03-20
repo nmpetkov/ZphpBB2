@@ -66,7 +66,7 @@ if ($modinfo) {
 }
 
 // N.Petkov: old-old style of loading modules (for ZphpBB2)
-if ($module=='PNphpBB2' or $module=='forum') {
+if (($module=='PNphpBB2' or $module=='forum') and !empty($modinfo['directory'])) {
 	define('LOADED_AS_MODULE', '1');
 	if ($type=='admin') {
 		$file = 'admin'; # ZphpBB2

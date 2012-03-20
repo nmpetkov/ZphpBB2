@@ -104,9 +104,6 @@ define("_GROUP_TOPICS","Show only the last post of every topic");
 define("_TITLE_STRING_LENGTH","Maximal character length of topic titles & categories (0 = full length)");
 
 define("_EXCLUDE_FORUMS","Don't show posts of the following forums (CTRL+LEFT CLICK sets/clears selections)");
-define("_MODULE_NAME", "Zikula module name (Directory name) Default=ZphpBB2");
-define("_MODULE_LINKS", "Use module calls for links to forum.");
-define("_MODULE_LINKS_EXPLAIN", "(Example: http://www.host.com/modules.php?op=modload&name=)");
 define("_MODULE_ERROR", "Module name/path is not valid, or module not installed. Please correct.");
 define("_PREFIX_ERROR", "Forum prefix error, could not locate forum database.");
 define("_TEMPLATE_ERROR","Invalid template settings!");
