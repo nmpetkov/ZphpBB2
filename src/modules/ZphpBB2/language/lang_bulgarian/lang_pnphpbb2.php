@@ -21,7 +21,7 @@
  ***************************************************************************/
 
 //
-// The format of this file is ---> $lang['message'] = iconv('CP1251',_CHARSET, 'text');
+// The format of this file is ---> $lang['message'] = 'text';
 //
 // You should also try to set a locale and a character encoding (plus direction). The encoding and direction
 // will be sent to the template. The locale may or may not work, it's dependent on OS support and the syntax
@@ -29,115 +29,111 @@
 //
 //
 
-if (!defined('_CHARSET')) define('_CHARSET', 'utf-8');
-
 // Profiles/Registration
-$lang['ZphpBB2_Change_Profile'] = iconv('CP1251',_CHARSET, 'Промени профила си в сайта'); # Change Your PostNuke Profile
-$lang['ZphpBB2_Refresh_Profile'] = iconv('CP1251',_CHARSET, 'Опресни профила си в сайта'); # Refresh Your PostNuke Profile
-$lang['ZphpBB2_Profile_Info'] = iconv('CP1251',_CHARSET, 'Тази информация се използва само във форума. Общите данни за форума  и другите секции на сайта се настройват от "Моят профил" в менюто на сайта.'); # This information is used in ZphpBB2 only. All profile information that is shared between PostNuke and ZphpBB2 is set in the PostNuke Profile Settings.
-$lang['ZphpBB2_Get_PN_Avatar'] = iconv('CP1251',_CHARSET, 'От сайта'); # From PostNuke
+$lang['ZphpBB2_Change_Profile'] = 'РџСЂРѕРјРµРЅРё РїСЂРѕС„РёР»Р° СЃРё РІ СЃР°Р№С‚Р°'; # Change Your PostNuke Profile
+$lang['ZphpBB2_Refresh_Profile'] = 'РћРїСЂРµСЃРЅРё РїСЂРѕС„РёР»Р° СЃРё РІ СЃР°Р№С‚Р°'; # Refresh Your PostNuke Profile
+$lang['ZphpBB2_Profile_Info'] = 'РўР°Р·Рё РёРЅС„РѕСЂРјР°С†РёСЏ СЃРµ РёР·РїРѕР»Р·РІР° СЃР°РјРѕ РІСЉРІ С„РѕСЂСѓРјР°. РћР±С‰РёС‚Рµ РґР°РЅРЅРё Р·Р° С„РѕСЂСѓРјР°  Рё РґСЂСѓРіРёС‚Рµ СЃРµРєС†РёРё РЅР° СЃР°Р№С‚Р° СЃРµ РЅР°СЃС‚СЂРѕР№РІР°С‚ РѕС‚ "РњРѕСЏС‚ РїСЂРѕС„РёР»" РІ РјРµРЅСЋС‚Рѕ РЅР° СЃР°Р№С‚Р°.'; # This information is used in ZphpBB2 only. All profile information that is shared between PostNuke and ZphpBB2 is set in the PostNuke Profile Settings.
+$lang['ZphpBB2_Get_PN_Avatar'] = 'РћС‚ СЃР°Р№С‚Р°'; # From PostNuke
 
 // Advanced Quick Reply Mod
-$lang['Post_Image'] = iconv('CP1251',_CHARSET, "Икона"); # Msg Icon
-$lang['Quick_Reply'] = iconv('CP1251',_CHARSET, 'Бърз отговор'); # Quick Reply
-$lang['Quick_quote'] = iconv('CP1251',_CHARSET, 'Цитирай последното съобщение'); # Quote the last message
-$lang['Quick_add_smilies'] = iconv('CP1251',_CHARSET, 'Усмифки'); # Smiles
-$lang['QuoteSelelected'] = iconv('CP1251',_CHARSET, 'Цитирай избраното'); # Quote selected
-$lang['QuoteSelelectedEmpty'] = iconv('CP1251',_CHARSET, 'Изберете текст където и да е на страницата и пробвайте отново'); # Select a text anywhere on a page and try again
-$lang['Quick_Reply_smilies'] = iconv('CP1251',_CHARSET, 'всички'); # all
+$lang['Post_Image'] = "РРєРѕРЅР°"; # Msg Icon
+$lang['Quick_Reply'] = 'Р‘СЉСЂР· РѕС‚РіРѕРІРѕСЂ'; # Quick Reply
+$lang['Quick_quote'] = 'Р¦РёС‚РёСЂР°Р№ РїРѕСЃР»РµРґРЅРѕС‚Рѕ СЃСЉРѕР±С‰РµРЅРёРµ'; # Quote the last message
+$lang['Quick_add_smilies'] = 'РЈСЃРјРёС„РєРё'; # Smiles
+$lang['QuoteSelelected'] = 'Р¦РёС‚РёСЂР°Р№ РёР·Р±СЂР°РЅРѕС‚Рѕ'; # Quote selected
+$lang['QuoteSelelectedEmpty'] = 'РР·Р±РµСЂРµС‚Рµ С‚РµРєСЃС‚ РєСЉРґРµС‚Рѕ Рё РґР° Рµ РЅР° СЃС‚СЂР°РЅРёС†Р°С‚Р° Рё РїСЂРѕР±РІР°Р№С‚Рµ РѕС‚РЅРѕРІРѕ'; # Select a text anywhere on a page and try again
+$lang['Quick_Reply_smilies'] = 'РІСЃРёС‡РєРё'; # all
 
 // Tell-A-Friend Mod
-$lang['Tell_Friend'] = iconv('CP1251',_CHARSET, "Изпрати с e-mail на приятел"); # Email to a Friend.
-$lang['Tell_Friend_Sender_User'] = iconv('CP1251',_CHARSET, "Вашето име:"); # Your Name:
-$lang['Tell_Friend_Sender_Email'] = iconv('CP1251',_CHARSET, "Вашият Email:"); # Your Email:
-$lang['Tell_Friend_Reciever_User'] = iconv('CP1251',_CHARSET, "Името на вашия приятел:"); # Your Friend's Name:
-$lang['Tell_Friend_Reciever_Email'] = iconv('CP1251',_CHARSET, "Email на вашия приятел:"); # Your Friend's Email:
-$lang['Tell_Friend_Msg'] = iconv('CP1251',_CHARSET, "Вашето съобщение:"); # Your message:
-$lang['Tell_Friend_Title'] = iconv('CP1251',_CHARSET, "Изпрати на приятел"); # Tell A Friend
-$lang['Tell_Friend_Body'] = iconv('CP1251',_CHARSET, "Здравей,\nАз току що прочетох тема >>{TOPIC}<< в {SITENAME} и мисля, че може да е интересна и за теб. Това е връзката: {LINK}\n\nПрочети я и ако искаш да отговориш, можеш да се регистрираш в сайта, ако не си го направил вече.");
+$lang['Tell_Friend'] = "РР·РїСЂР°С‚Рё СЃ e-mail РЅР° РїСЂРёСЏС‚РµР»"; # Email to a Friend.
+$lang['Tell_Friend_Sender_User'] = "Р’Р°С€РµС‚Рѕ РёРјРµ:"; # Your Name:
+$lang['Tell_Friend_Sender_Email'] = "Р’Р°С€РёСЏС‚ Email:"; # Your Email:
+$lang['Tell_Friend_Reciever_User'] = "РРјРµС‚Рѕ РЅР° РІР°С€РёСЏ РїСЂРёСЏС‚РµР»:"; # Your Friend's Name:
+$lang['Tell_Friend_Reciever_Email'] = "Email РЅР° РІР°С€РёСЏ РїСЂРёСЏС‚РµР»:"; # Your Friend's Email:
+$lang['Tell_Friend_Msg'] = "Р’Р°С€РµС‚Рѕ СЃСЉРѕР±С‰РµРЅРёРµ:"; # Your message:
+$lang['Tell_Friend_Title'] = "РР·РїСЂР°С‚Рё РЅР° РїСЂРёСЏС‚РµР»"; # Tell A Friend
+$lang['Tell_Friend_Body'] = "Р—РґСЂР°РІРµР№,\nРђР· С‚РѕРєСѓ С‰Рѕ РїСЂРѕС‡РµС‚РѕС… С‚РµРјР° >>{TOPIC}<< РІ {SITENAME} Рё РјРёСЃР»СЏ, С‡Рµ РјРѕР¶Рµ РґР° Рµ РёРЅС‚РµСЂРµСЃРЅР° Рё Р·Р° С‚РµР±. РўРѕРІР° Рµ РІСЂСЉР·РєР°С‚Р°: {LINK}\n\nРџСЂРѕС‡РµС‚Рё СЏ Рё Р°РєРѕ РёСЃРєР°С€ РґР° РѕС‚РіРѕРІРѕСЂРёС€, РјРѕР¶РµС€ РґР° СЃРµ СЂРµРіРёСЃС‚СЂРёСЂР°С€ РІ СЃР°Р№С‚Р°, Р°РєРѕ РЅРµ СЃРё РіРѕ РЅР°РїСЂР°РІРёР» РІРµС‡Рµ.";
 
 // Printable Topic
-$lang['Print_View'] = iconv('CP1251',_CHARSET, "Версия за печат"); # Printable version
+$lang['Print_View'] = "Р’РµСЂСЃРёСЏ Р·Р° РїРµС‡Р°С‚"; # Printable version
 
 // Credits
-$lang['Powered_by'] = iconv('CP1251',_CHARSET, "");
-$lang['PNphpBB_group'] = iconv('CP1251',_CHARSET, "");
-$lang['Credits'] = iconv('CP1251',_CHARSET, "");
+$lang['Powered_by'] = "";
+$lang['PNphpBB_group'] = "";
+$lang['Credits'] = "";
 
 // Full page maximize/minimize
-$lang['ZphpBB2_Minimize'] = iconv('CP1251',_CHARSET, "Минимизирай"); # Minimize
-$lang['ZphpBB2_Maximize'] = iconv('CP1251',_CHARSET, "Максимизирай");  # Maximize
+$lang['ZphpBB2_Minimize'] = "РњРёРЅРёРјРёР·РёСЂР°Р№"; # Minimize
+$lang['ZphpBB2_Maximize'] = "РњР°РєСЃРёРјРёР·РёСЂР°Р№";  # Maximize
 
 // Full page maximize/minimize
-$lang['ZphpBB2_SubForum_Off'] = iconv('CP1251',_CHARSET, "Подкатегория"); # Sub-Category
-$lang['ZphpBB2_SubForum_On'] = iconv('CP1251',_CHARSET, "Подфорум"); # Sub-Forum
+$lang['ZphpBB2_SubForum_Off'] = "РџРѕРґРєР°С‚РµРіРѕСЂРёСЏ"; # Sub-Category
+$lang['ZphpBB2_SubForum_On'] = "РџРѕРґС„РѕСЂСѓРј"; # Sub-Forum
 
 // Hierarchies Mod
 
-$lang['Forum_issub'] = iconv('CP1251',_CHARSET, 'Форумът който сте избрали съдържа подкатегории.<br>Това означава, че не може да има съобщения в него.'); # The forum you selected contains sub categories.<br>Therefore it is not possible to view posts.
+$lang['Forum_issub'] = 'Р¤РѕСЂСѓРјСЉС‚ РєРѕР№С‚Рѕ СЃС‚Рµ РёР·Р±СЂР°Р»Рё СЃСЉРґСЉСЂР¶Р° РїРѕРґРєР°С‚РµРіРѕСЂРёРё.<br>РўРѕРІР° РѕР·РЅР°С‡Р°РІР°, С‡Рµ РЅРµ РјРѕР¶Рµ РґР° РёРјР° СЃСЉРѕР±С‰РµРЅРёСЏ РІ РЅРµРіРѕ.'; # The forum you selected contains sub categories.<br>Therefore it is not possible to view posts.
 
 //MsgIcon Mod
-$lang['Msg_Icons'] = iconv('CP1251',_CHARSET, 'Икона на съобщението'); # Message Icons
-$lang['Msg_Icon_No_Icon'] = iconv('CP1251',_CHARSET, 'Без икона'); # No Icon
-$lang['More_msg_icons'] = iconv('CP1251',_CHARSET, "Още икони"); # View more icons
+$lang['Msg_Icons'] = 'РРєРѕРЅР° РЅР° СЃСЉРѕР±С‰РµРЅРёРµС‚Рѕ'; # Message Icons
+$lang['Msg_Icon_No_Icon'] = 'Р‘РµР· РёРєРѕРЅР°'; # No Icon
+$lang['More_msg_icons'] = "РћС‰Рµ РёРєРѕРЅРё"; # View more icons
 
 //Code Block mod by Daz
-$lang['code_more'] = iconv('CP1251',_CHARSET, "View More of this Code");
-$lang['code_even_more'] = iconv('CP1251',_CHARSET, "View Even More of this Code");
-$lang['code_less'] = iconv('CP1251',_CHARSET, "View Less of this Code");
-$lang['code_select'] = iconv('CP1251',_CHARSET, "Select All of this Code");
+$lang['code_more'] = "View More of this Code";
+$lang['code_even_more'] = "View Even More of this Code";
+$lang['code_less'] = "View Less of this Code";
+$lang['code_select'] = "Select All of this Code";
 
 // Duplicated from phpBB admin language file for admin link :-(
-$lang['Admin'] = iconv('CP1251',_CHARSET, 'Администрация'); # Administration
-$lang['Moderate'] = iconv('CP1251',_CHARSET, 'Модерирайте този форум'); # Moderate this forum
+$lang['Admin'] = 'РђРґРјРёРЅРёСЃС‚СЂР°С†РёСЏ'; # Administration
+$lang['Moderate'] = 'РњРѕРґРµСЂРёСЂР°Р№С‚Рµ С‚РѕР·Рё С„РѕСЂСѓРј'; # Moderate this forum
 
 // New version of the User authorisation levels output
-$lang['Rules_header'] = iconv('CP1251',_CHARSET, 'В този форум вие можете да:'); # In this forum you can:
-$lang['Rules_post'] = iconv('CP1251',_CHARSET, 'Създавате теми'); # Post new topics
-$lang['Rules_reply'] = iconv('CP1251',_CHARSET, 'Отговаряте по теми'); # Reply to topics
-$lang['Rules_edit'] = iconv('CP1251',_CHARSET, 'Редактирате собств.съобщения'); # Edit your posts
-$lang['Rules_delete'] = iconv('CP1251',_CHARSET, 'Изтривате собств.съобщения'); # Delete your posts
-$lang['Rules_vote'] = iconv('CP1251',_CHARSET, 'Гласувате в анкети'); # Vote in polls
-$lang['Rules_attach'] = iconv('CP1251',_CHARSET, 'Прикрепяте файлове'); # Attach files
-$lang['Rules_download'] = iconv('CP1251',_CHARSET, 'Теглите файлове'); # Download files
-$lang['Rules_moderate_table'] = iconv('CP1251',_CHARSET, '%sМодерирате%s');
-//$lang['Rules_moderate'] = iconv('CP1251',_CHARSET, 'Вие <b>можете</b> да %sмодерирате този форум%s'); # You <b>can</b> %smoderate this forum%s // %s replaced by a href links, do not remove! 
+$lang['Rules_header'] = 'Р’ С‚РѕР·Рё С„РѕСЂСѓРј РІРёРµ РјРѕР¶РµС‚Рµ РґР°:'; # In this forum you can:
+$lang['Rules_post'] = 'РЎСЉР·РґР°РІР°С‚Рµ С‚РµРјРё'; # Post new topics
+$lang['Rules_reply'] = 'РћС‚РіРѕРІР°СЂСЏС‚Рµ РїРѕ С‚РµРјРё'; # Reply to topics
+$lang['Rules_edit'] = 'Р РµРґР°РєС‚РёСЂР°С‚Рµ СЃРѕР±СЃС‚РІ.СЃСЉРѕР±С‰РµРЅРёСЏ'; # Edit your posts
+$lang['Rules_delete'] = 'РР·С‚СЂРёРІР°С‚Рµ СЃРѕР±СЃС‚РІ.СЃСЉРѕР±С‰РµРЅРёСЏ'; # Delete your posts
+$lang['Rules_vote'] = 'Р“Р»Р°СЃСѓРІР°С‚Рµ РІ Р°РЅРєРµС‚Рё'; # Vote in polls
+$lang['Rules_attach'] = 'РџСЂРёРєСЂРµРїСЏС‚Рµ С„Р°Р№Р»РѕРІРµ'; # Attach files
+$lang['Rules_download'] = 'РўРµРіР»РёС‚Рµ С„Р°Р№Р»РѕРІРµ'; # Download files
+$lang['Rules_moderate_table'] = '%sРњРѕРґРµСЂРёСЂР°С‚Рµ%s';
+//$lang['Rules_moderate'] = 'Р’РёРµ <b>РјРѕР¶РµС‚Рµ</b> РґР° %sРјРѕРґРµСЂРёСЂР°С‚Рµ С‚РѕР·Рё С„РѕСЂСѓРј%s'; # You <b>can</b> %smoderate this forum%s // %s replaced by a href links, do not remove! 
 
 // Added Re: for replies, Hardcoded in phpBB
-$lang['Re'] = iconv('CP1251',_CHARSET, 'RE:');
+$lang['Re'] = 'RE:';
 
 // Legend
-$lang['Legend'] = iconv('CP1251',_CHARSET, 'Легенда'); # Legend
+$lang['Legend'] = 'Р›РµРіРµРЅРґР°'; # Legend
 
 // User online mod
-$lang['Status'] = iconv('CP1251',_CHARSET, 'Статус: '); # Status: 
-$lang['Online'] = iconv('CP1251',_CHARSET, 'Онлайн!'); # Online
-$lang['Offline'] = iconv('CP1251',_CHARSET, 'Офлайн'); # Offline
+$lang['Status'] = 'РЎС‚Р°С‚СѓСЃ: '; # Status: 
+$lang['Online'] = 'РћРЅР»Р°Р№РЅ!'; # Online
+$lang['Offline'] = 'РћС„Р»Р°Р№РЅ'; # Offline
 
 // Merge topics mod
-$lang['Refresh'] = iconv('CP1251',_CHARSET, 'Опресни'); # Refresh
-$lang['Merge_topics'] = iconv('CP1251',_CHARSET, 'Обедини теми'); # Merge topics
-$lang['Merge_title'] = iconv('CP1251',_CHARSET, 'Заглавие на новата тема'); # New topic title
-$lang['Merge_title_explain'] = iconv('CP1251',_CHARSET, 'This will be the new title of the final topic. Let it blank if you want the system to use the title of the destination topic');
-$lang['Merge_topic_from'] = iconv('CP1251',_CHARSET, 'Тема за обединяване'); # Topic to merge
-$lang['Merge_topic_from_explain'] = iconv('CP1251',_CHARSET, 'This topic will be merge to the other topic. You can input the topic id, the url of the topic, or the url of a post in this topic');
-$lang['Merge_topic_to'] = iconv('CP1251',_CHARSET, 'Тема приемник'); # Destination topic
-$lang['Merge_topic_to_explain'] = iconv('CP1251',_CHARSET, 'This topic will get all the posts of the precedent topic. You can input the topic id, the url of the topic, or the url of a post in this topic');
-$lang['Merge_from_not_found'] = iconv('CP1251',_CHARSET, 'The topic to merge hasn\'t been found');
-$lang['Merge_to_not_found'] = iconv('CP1251',_CHARSET, 'The destination topic hasn\'t been found');
-$lang['Merge_topics_equals'] = iconv('CP1251',_CHARSET, 'You can\'t merge a topic with itself');
-$lang['Merge_from_not_authorized'] = iconv('CP1251',_CHARSET, 'You are not a authorized to moderate topics coming from the forum of the topic to merge');
-$lang['Merge_to_not_authorized'] = iconv('CP1251',_CHARSET, 'You are not a authorized to moderate topics coming from the forum of the destination topic');
-$lang['Merge_poll_from'] = iconv('CP1251',_CHARSET, 'There is a poll on the topic to merge. It will be copied to the destination topic');
-$lang['Merge_poll_from_and_to'] = iconv('CP1251',_CHARSET, 'The destination topic already has got a poll. The poll of the topic to merge will be deleted');
-$lang['Merge_confirm_process'] = iconv('CP1251',_CHARSET, 'Сигурни ли сте че искате да обедините <br />"<b>%s</b>"<br />със<br />"<b>%s</b>"'); # Are you sure you want to merge <br />"<b>%s</b>"<br />to<br />"<b>%s</b>"
-$lang['Merge_topic_done'] = iconv('CP1251',_CHARSET, 'Темите са обединени успешно.'); # The topics have been successfully merged.
+$lang['Refresh'] = 'РћРїСЂРµСЃРЅРё'; # Refresh
+$lang['Merge_topics'] = 'РћР±РµРґРёРЅРё С‚РµРјРё'; # Merge topics
+$lang['Merge_title'] = 'Р—Р°РіР»Р°РІРёРµ РЅР° РЅРѕРІР°С‚Р° С‚РµРјР°'; # New topic title
+$lang['Merge_title_explain'] = 'This will be the new title of the final topic. Let it blank if you want the system to use the title of the destination topic';
+$lang['Merge_topic_from'] = 'РўРµРјР° Р·Р° РѕР±РµРґРёРЅСЏРІР°РЅРµ'; # Topic to merge
+$lang['Merge_topic_from_explain'] = 'This topic will be merge to the other topic. You can input the topic id, the url of the topic, or the url of a post in this topic';
+$lang['Merge_topic_to'] = 'РўРµРјР° РїСЂРёРµРјРЅРёРє'; # Destination topic
+$lang['Merge_topic_to_explain'] = 'This topic will get all the posts of the precedent topic. You can input the topic id, the url of the topic, or the url of a post in this topic';
+$lang['Merge_from_not_found'] = 'The topic to merge hasn\'t been found';
+$lang['Merge_to_not_found'] = 'The destination topic hasn\'t been found';
+$lang['Merge_topics_equals'] = 'You can\'t merge a topic with itself';
+$lang['Merge_from_not_authorized'] = 'You are not a authorized to moderate topics coming from the forum of the topic to merge';
+$lang['Merge_to_not_authorized'] = 'You are not a authorized to moderate topics coming from the forum of the destination topic';
+$lang['Merge_poll_from'] = 'There is a poll on the topic to merge. It will be copied to the destination topic';
+$lang['Merge_poll_from_and_to'] = 'The destination topic already has got a poll. The poll of the topic to merge will be deleted';
+$lang['Merge_confirm_process'] = 'РЎРёРіСѓСЂРЅРё Р»Рё СЃС‚Рµ С‡Рµ РёСЃРєР°С‚Рµ РґР° РѕР±РµРґРёРЅРёС‚Рµ <br />"<b>%s</b>"<br />СЃСЉСЃ<br />"<b>%s</b>"'; # Are you sure you want to merge <br />"<b>%s</b>"<br />to<br />"<b>%s</b>"
+$lang['Merge_topic_done'] = 'РўРµРјРёС‚Рµ СЃР° РѕР±РµРґРёРЅРµРЅРё СѓСЃРїРµС€РЅРѕ.'; # The topics have been successfully merged.
 
 //limited post edit time MOD 
-$lang['edit_time_past'] = iconv('CP1251',_CHARSET, 'Не може да редактирате своето съобщение. Бихте могли да го редактирате в рамките на <b>%d</b> минути след като сте го изпратили.'); # You are not allowed to edit your post. You have to edit your post within <b>%d</b> minutes, after you posted your message.
+$lang['edit_time_past'] = 'РќРµ РјРѕР¶Рµ РґР° СЂРµРґР°РєС‚РёСЂР°С‚Рµ СЃРІРѕРµС‚Рѕ СЃСЉРѕР±С‰РµРЅРёРµ. Р‘РёС…С‚Рµ РјРѕРіР»Рё РґР° РіРѕ СЂРµРґР°РєС‚РёСЂР°С‚Рµ РІ СЂР°РјРєРёС‚Рµ РЅР° <b>%d</b> РјРёРЅСѓС‚Рё СЃР»РµРґ РєР°С‚Рѕ СЃС‚Рµ РіРѕ РёР·РїСЂР°С‚РёР»Рё.'; # You are not allowed to edit your post. You have to edit your post within <b>%d</b> minutes, after you posted your message.
 
 //
 // That's all Folks!
 // -------------------------------------------------
-
-?>

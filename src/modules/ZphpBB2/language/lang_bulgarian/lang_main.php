@@ -31,995 +31,991 @@
 // varies ... give it your best guess!
 //
 
-if (!defined('_CHARSET')) define('_CHARSET', 'utf-8');
-
 //$lang['ENCODING'] = 'windows-1251';
 $lang['ENCODING'] = 'utf-8';
 $lang['DIRECTION'] = 'ltr';
 $lang['LEFT'] = 'left';
 $lang['RIGHT'] = 'right';
 // Begin PNphpBB2 Module
-//$lang['DATE_FORMAT'] =  'd M Y'); // This should be changed to the default date format for your language, php date() format
+//$lang['DATE_FORMAT'] =  'd M Y'; // This should be changed to the default date format for your language, php date() format
 $lang['DATE_FORMAT'] = '%d.%m.%Y';
 // End PNphpBB2 Module
 // This is optional, if you would like a _SHORT_ message output
 // along with our copyright message indicating you are the translator
 // please add it here.
-// $lang['TRANSLATION'] = iconv('CP1251',_CHARSET, '');
+// $lang['TRANSLATION'] = '';
 
 //
 // Common, these terms are used
 // extensively on several pages
 //
-$lang['Forum'] = iconv('CP1251',_CHARSET, 'Форум'); # Forum
-$lang['Category'] = iconv('CP1251',_CHARSET, 'Категория'); # Category
-$lang['Topic'] = iconv('CP1251',_CHARSET, 'Тема'); # Topic
-$lang['Topics'] = iconv('CP1251',_CHARSET, 'Теми'); # Topics
-$lang['Replies'] = iconv('CP1251',_CHARSET, 'Отговори'); # Replies
-$lang['Views'] = iconv('CP1251',_CHARSET, 'Видяно'); # Views
-$lang['Post'] = iconv('CP1251',_CHARSET, 'Съобщение'); # Post
-$lang['Posts'] = iconv('CP1251',_CHARSET, 'Съобщения'); # Posts
-$lang['Posted'] = iconv('CP1251',_CHARSET, 'Изпратено'); # Posted
-$lang['Username'] = iconv('CP1251',_CHARSET, 'Потребителско име'); # Username
-$lang['Password'] = iconv('CP1251',_CHARSET, 'Парола'); # Password
-$lang['Email'] = iconv('CP1251',_CHARSET, 'Email');
-$lang['Poster'] = iconv('CP1251',_CHARSET, 'Изпратил'); # Poster
-$lang['Author'] = iconv('CP1251',_CHARSET, 'Автор'); # Author
-$lang['Time'] = iconv('CP1251',_CHARSET, 'Време'); # Time
-$lang['Hours'] = iconv('CP1251',_CHARSET, 'Часове'); # Hours
-$lang['Message'] = iconv('CP1251',_CHARSET, 'Съобщение'); # Message
+$lang['Forum'] = 'Р¤РѕСЂСѓРј'; # Forum
+$lang['Category'] = 'РљР°С‚РµРіРѕСЂРёСЏ'; # Category
+$lang['Topic'] = 'РўРµРјР°'; # Topic
+$lang['Topics'] = 'РўРµРјРё'; # Topics
+$lang['Replies'] = 'РћС‚РіРѕРІРѕСЂРё'; # Replies
+$lang['Views'] = 'Р’РёРґСЏРЅРѕ'; # Views
+$lang['Post'] = 'РЎСЉРѕР±С‰РµРЅРёРµ'; # Post
+$lang['Posts'] = 'РЎСЉРѕР±С‰РµРЅРёСЏ'; # Posts
+$lang['Posted'] = 'РР·РїСЂР°С‚РµРЅРѕ'; # Posted
+$lang['Username'] = 'РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРѕ РёРјРµ'; # Username
+$lang['Password'] = 'РџР°СЂРѕР»Р°'; # Password
+$lang['Email'] = 'Email';
+$lang['Poster'] = 'РР·РїСЂР°С‚РёР»'; # Poster
+$lang['Author'] = 'РђРІС‚РѕСЂ'; # Author
+$lang['Time'] = 'Р’СЂРµРјРµ'; # Time
+$lang['Hours'] = 'Р§Р°СЃРѕРІРµ'; # Hours
+$lang['Message'] = 'РЎСЉРѕР±С‰РµРЅРёРµ'; # Message
 
-$lang['1_Day'] = iconv('CP1251',_CHARSET, '1 ден'); # 1 Day
-$lang['7_Days'] = iconv('CP1251',_CHARSET, '7 дни'); # 7 Days
-$lang['2_Weeks'] = iconv('CP1251',_CHARSET, '2 седмици'); # 2 Weeks
-$lang['1_Month'] = iconv('CP1251',_CHARSET, '1 месец'); # 1 Month
-$lang['3_Months'] = iconv('CP1251',_CHARSET, '3 месеца'); # 3 Months
-$lang['6_Months'] = iconv('CP1251',_CHARSET, '6 месеца'); # 6 Months
-$lang['1_Year'] = iconv('CP1251',_CHARSET, '1 година'); # 1 Year
+$lang['1_Day'] = '1 РґРµРЅ'; # 1 Day
+$lang['7_Days'] = '7 РґРЅРё'; # 7 Days
+$lang['2_Weeks'] = '2 СЃРµРґРјРёС†Рё'; # 2 Weeks
+$lang['1_Month'] = '1 РјРµСЃРµС†'; # 1 Month
+$lang['3_Months'] = '3 РјРµСЃРµС†Р°'; # 3 Months
+$lang['6_Months'] = '6 РјРµСЃРµС†Р°'; # 6 Months
+$lang['1_Year'] = '1 РіРѕРґРёРЅР°'; # 1 Year
 
-$lang['Go'] = iconv('CP1251',_CHARSET, 'OK'); # Go
-$lang['Jump_to'] = iconv('CP1251',_CHARSET, 'Отиди на'); # Jump to
-$lang['Submit'] = iconv('CP1251',_CHARSET, 'Изпрати'); # Submit
-$lang['Reset'] = iconv('CP1251',_CHARSET, 'Нулирай'); # Reset
-$lang['Cancel'] = iconv('CP1251',_CHARSET, 'Отмени'); # Cancel
-$lang['Preview'] = iconv('CP1251',_CHARSET, 'Преглед'); # Preview
-$lang['Confirm'] = iconv('CP1251',_CHARSET, 'Потвърди'); # Confirm
-$lang['Spellcheck'] = iconv('CP1251',_CHARSET, 'Правопис'); # Spellcheck
-$lang['Yes'] = iconv('CP1251',_CHARSET, 'Да'); # Yes
-$lang['No'] = iconv('CP1251',_CHARSET, 'Не'); # No
-$lang['Enabled'] = iconv('CP1251',_CHARSET, 'Активно'); # Enabled
-$lang['Disabled'] = iconv('CP1251',_CHARSET, 'Неактивно'); # Disabled
-$lang['Error'] = iconv('CP1251',_CHARSET, 'Грешка'); # Error
+$lang['Go'] = 'OK'; # Go
+$lang['Jump_to'] = 'РћС‚РёРґРё РЅР°'; # Jump to
+$lang['Submit'] = 'РР·РїСЂР°С‚Рё'; # Submit
+$lang['Reset'] = 'РќСѓР»РёСЂР°Р№'; # Reset
+$lang['Cancel'] = 'РћС‚РјРµРЅРё'; # Cancel
+$lang['Preview'] = 'РџСЂРµРіР»РµРґ'; # Preview
+$lang['Confirm'] = 'РџРѕС‚РІСЉСЂРґРё'; # Confirm
+$lang['Spellcheck'] = 'РџСЂР°РІРѕРїРёСЃ'; # Spellcheck
+$lang['Yes'] = 'Р”Р°'; # Yes
+$lang['No'] = 'РќРµ'; # No
+$lang['Enabled'] = 'РђРєС‚РёРІРЅРѕ'; # Enabled
+$lang['Disabled'] = 'РќРµР°РєС‚РёРІРЅРѕ'; # Disabled
+$lang['Error'] = 'Р“СЂРµС€РєР°'; # Error
 
-$lang['Next'] = iconv('CP1251',_CHARSET, 'Следваща'); # Next
-$lang['Previous'] = iconv('CP1251',_CHARSET, 'Предишна'); # Previous
-$lang['Goto_page'] = iconv('CP1251',_CHARSET, 'Отиди на страница'); # Goto page
-$lang['Joined'] = iconv('CP1251',_CHARSET, 'От'); # Joined
-$lang['IP_Address'] = iconv('CP1251',_CHARSET, 'IP адрес'); # IP Address
+$lang['Next'] = 'РЎР»РµРґРІР°С‰Р°'; # Next
+$lang['Previous'] = 'РџСЂРµРґРёС€РЅР°'; # Previous
+$lang['Goto_page'] = 'РћС‚РёРґРё РЅР° СЃС‚СЂР°РЅРёС†Р°'; # Goto page
+$lang['Joined'] = 'РћС‚'; # Joined
+$lang['IP_Address'] = 'IP Р°РґСЂРµСЃ'; # IP Address
 
-$lang['Select_forum'] = iconv('CP1251',_CHARSET, 'Изберете форум'); # Select a forum
-$lang['View_latest_post'] = iconv('CP1251',_CHARSET, 'Вижте последното съобщение'); # View latest post
-$lang['View_newest_post'] = iconv('CP1251',_CHARSET, 'Вижте най-новото съобщение'); # View newest post
-$lang['Page_of'] = iconv('CP1251',_CHARSET, 'Страница <b>%d</b> от <b>%d</b>'); # Page <b>%d</b> of <b>%d</b>
+$lang['Select_forum'] = 'РР·Р±РµСЂРµС‚Рµ С„РѕСЂСѓРј'; # Select a forum
+$lang['View_latest_post'] = 'Р’РёР¶С‚Рµ РїРѕСЃР»РµРґРЅРѕС‚Рѕ СЃСЉРѕР±С‰РµРЅРёРµ'; # View latest post
+$lang['View_newest_post'] = 'Р’РёР¶С‚Рµ РЅР°Р№-РЅРѕРІРѕС‚Рѕ СЃСЉРѕР±С‰РµРЅРёРµ'; # View newest post
+$lang['Page_of'] = 'РЎС‚СЂР°РЅРёС†Р° <b>%d</b> РѕС‚ <b>%d</b>'; # Page <b>%d</b> of <b>%d</b>
 
-$lang['ICQ'] = iconv('CP1251',_CHARSET, 'ICQ номер');
-$lang['AIM'] = iconv('CP1251',_CHARSET, 'AIM адрес');
-$lang['MSNM'] = iconv('CP1251',_CHARSET, 'MSN Messenger');
-$lang['YIM'] = iconv('CP1251',_CHARSET, 'Yahoo Messenger');
+$lang['ICQ'] = 'ICQ РЅРѕРјРµСЂ';
+$lang['AIM'] = 'AIM Р°РґСЂРµСЃ';
+$lang['MSNM'] = 'MSN Messenger';
+$lang['YIM'] = 'Yahoo Messenger';
 
-$lang['Forum_Index'] = iconv('CP1251',_CHARSET, 'Форуми'); # %s Forum Index // eg. sitename Forum Index, %s can be removed if you prefer
+$lang['Forum_Index'] = 'Р¤РѕСЂСѓРјРё'; # %s Forum Index // eg. sitename Forum Index, %s can be removed if you prefer
 
-$lang['Post_new_topic'] = iconv('CP1251',_CHARSET, 'Нова тема'); # Post new topic
-$lang['Reply_to_topic'] = iconv('CP1251',_CHARSET, 'Отговори на темата'); # Reply to topic
-$lang['Reply_with_quote'] = iconv('CP1251',_CHARSET, 'Отговори с цитиране'); # Reply with quote
+$lang['Post_new_topic'] = 'РќРѕРІР° С‚РµРјР°'; # Post new topic
+$lang['Reply_to_topic'] = 'РћС‚РіРѕРІРѕСЂРё РЅР° С‚РµРјР°С‚Р°'; # Reply to topic
+$lang['Reply_with_quote'] = 'РћС‚РіРѕРІРѕСЂРё СЃ С†РёС‚РёСЂР°РЅРµ'; # Reply with quote
 
-$lang['Click_return_topic'] = iconv('CP1251',_CHARSET, '%sНазад към темата%s'); # Click %sHere%s to return to the topic// %s's here are for uris, do not remove!
-$lang['Click_return_login'] = iconv('CP1251',_CHARSET, '%sОпитай отново%s'); # Click %sHere%s to try again
-$lang['Click_return_forum'] = iconv('CP1251',_CHARSET, '%sНазад към форума%s'); # Click %sHere%s to return to the forum
-$lang['Click_view_message'] = iconv('CP1251',_CHARSET, '%sПреглед на вашето съобщение%s'); # Click %sHere%s to view your message
-$lang['Click_return_modcp'] = iconv('CP1251',_CHARSET, '%sНазад към панела на модератора%s'); # Click %sHere%s to return to the Moderator Control Panel
-$lang['Click_return_group'] = iconv('CP1251',_CHARSET, '%sНазад към информацията за групата%s'); # Click %sHere%s to return to group information
+$lang['Click_return_topic'] = '%sРќР°Р·Р°Рґ РєСЉРј С‚РµРјР°С‚Р°%s'; # Click %sHere%s to return to the topic// %s's here are for uris, do not remove!
+$lang['Click_return_login'] = '%sРћРїРёС‚Р°Р№ РѕС‚РЅРѕРІРѕ%s'; # Click %sHere%s to try again
+$lang['Click_return_forum'] = '%sРќР°Р·Р°Рґ РєСЉРј С„РѕСЂСѓРјР°%s'; # Click %sHere%s to return to the forum
+$lang['Click_view_message'] = '%sРџСЂРµРіР»РµРґ РЅР° РІР°С€РµС‚Рѕ СЃСЉРѕР±С‰РµРЅРёРµ%s'; # Click %sHere%s to view your message
+$lang['Click_return_modcp'] = '%sРќР°Р·Р°Рґ РєСЉРј РїР°РЅРµР»Р° РЅР° РјРѕРґРµСЂР°С‚РѕСЂР°%s'; # Click %sHere%s to return to the Moderator Control Panel
+$lang['Click_return_group'] = '%sРќР°Р·Р°Рґ РєСЉРј РёРЅС„РѕСЂРјР°С†РёСЏС‚Р° Р·Р° РіСЂСѓРїР°С‚Р°%s'; # Click %sHere%s to return to group information
 
-$lang['Admin_panel'] = iconv('CP1251',_CHARSET, 'Администриране'); # Go to Administration Panel
+$lang['Admin_panel'] = 'РђРґРјРёРЅРёСЃС‚СЂРёСЂР°РЅРµ'; # Go to Administration Panel
 
-$lang['Board_disable'] = iconv('CP1251',_CHARSET, 'Същаляваме, но този форум в момента не е достъпен, моля опитайте по-късно'); # Sorry but this board is currently unavailable, please try again later
+$lang['Board_disable'] = 'РЎСЉС‰Р°Р»СЏРІР°РјРµ, РЅРѕ С‚РѕР·Рё С„РѕСЂСѓРј РІ РјРѕРјРµРЅС‚Р° РЅРµ Рµ РґРѕСЃС‚СЉРїРµРЅ, РјРѕР»СЏ РѕРїРёС‚Р°Р№С‚Рµ РїРѕ-РєСЉСЃРЅРѕ'; # Sorry but this board is currently unavailable, please try again later
 
 
 //
 // Global Header strings
 //
-$lang['Registered_users'] = iconv('CP1251',_CHARSET, 'Регистрирани потребители:'); # Registered Users:
-$lang['Browsing_forum'] = iconv('CP1251',_CHARSET, 'Потребители във форума:'); # Users browsing this forum:
-$lang['Online_users_zero_total'] = iconv('CP1251',_CHARSET, 'Има общо <b>0</b> потребителя онлайн: '); # In total there are <b>0</b> users online :: 
-$lang['Online_users_total'] = iconv('CP1251',_CHARSET, 'Има общо <b>%d</b> потребителя онлайн: '); # In total there are <b>%d</b> users online :: 
-$lang['Online_user_total'] = iconv('CP1251',_CHARSET, 'Има общо <b>%d</b> потребител онлайн: '); # In total there is <b>%d</b> user online :: 
-$lang['Reg_users_zero_total'] = iconv('CP1251',_CHARSET, '0 регистрирани, '); # 0 Registered, 
-$lang['Reg_users_total'] = iconv('CP1251',_CHARSET, '%d регистрирани, '); # %d Registered, 
-$lang['Reg_user_total'] = iconv('CP1251',_CHARSET, '%d регистриран, '); # %d Registered, 
-$lang['Hidden_users_zero_total'] = iconv('CP1251',_CHARSET, '0 скрити и '); # 0 Hidden and 
-$lang['Hidden_user_total'] = iconv('CP1251',_CHARSET, '%d скрит и '); # %d Hidden and 
-$lang['Hidden_users_total'] = iconv('CP1251',_CHARSET, '%d скрити и '); # %d Hidden and 
-$lang['Guest_users_zero_total'] = iconv('CP1251',_CHARSET, '0 гости'); # 0 Guests
-$lang['Guest_users_total'] = iconv('CP1251',_CHARSET, '%d гости'); # %d Guests
-$lang['Guest_user_total'] = iconv('CP1251',_CHARSET, '%d гост'); # %d Guest
-$lang['Record_online_users'] = iconv('CP1251',_CHARSET, 'Най-много е имало <b>%s</b> на %s'); # Most users ever online was <b>%s</b> on %s // first %s = number of users, second %s is the date.
+$lang['Registered_users'] = 'Р РµРіРёСЃС‚СЂРёСЂР°РЅРё РїРѕС‚СЂРµР±РёС‚РµР»Рё:'; # Registered Users:
+$lang['Browsing_forum'] = 'РџРѕС‚СЂРµР±РёС‚РµР»Рё РІСЉРІ С„РѕСЂСѓРјР°:'; # Users browsing this forum:
+$lang['Online_users_zero_total'] = 'РРјР° РѕР±С‰Рѕ <b>0</b> РїРѕС‚СЂРµР±РёС‚РµР»СЏ РѕРЅР»Р°Р№РЅ: '; # In total there are <b>0</b> users online :: 
+$lang['Online_users_total'] = 'РРјР° РѕР±С‰Рѕ <b>%d</b> РїРѕС‚СЂРµР±РёС‚РµР»СЏ РѕРЅР»Р°Р№РЅ: '; # In total there are <b>%d</b> users online :: 
+$lang['Online_user_total'] = 'РРјР° РѕР±С‰Рѕ <b>%d</b> РїРѕС‚СЂРµР±РёС‚РµР» РѕРЅР»Р°Р№РЅ: '; # In total there is <b>%d</b> user online :: 
+$lang['Reg_users_zero_total'] = '0 СЂРµРіРёСЃС‚СЂРёСЂР°РЅРё, '; # 0 Registered, 
+$lang['Reg_users_total'] = '%d СЂРµРіРёСЃС‚СЂРёСЂР°РЅРё, '; # %d Registered, 
+$lang['Reg_user_total'] = '%d СЂРµРіРёСЃС‚СЂРёСЂР°РЅ, '; # %d Registered, 
+$lang['Hidden_users_zero_total'] = '0 СЃРєСЂРёС‚Рё Рё '; # 0 Hidden and 
+$lang['Hidden_user_total'] = '%d СЃРєСЂРёС‚ Рё '; # %d Hidden and 
+$lang['Hidden_users_total'] = '%d СЃРєСЂРёС‚Рё Рё '; # %d Hidden and 
+$lang['Guest_users_zero_total'] = '0 РіРѕСЃС‚Рё'; # 0 Guests
+$lang['Guest_users_total'] = '%d РіРѕСЃС‚Рё'; # %d Guests
+$lang['Guest_user_total'] = '%d РіРѕСЃС‚'; # %d Guest
+$lang['Record_online_users'] = 'РќР°Р№-РјРЅРѕРіРѕ Рµ РёРјР°Р»Рѕ <b>%s</b> РЅР° %s'; # Most users ever online was <b>%s</b> on %s // first %s = number of users, second %s is the date.
 
-$lang['Admin_online_color'] = iconv('CP1251',_CHARSET, '%sАдминистратор%s'); # %sAdministrator%s
-$lang['Mod_online_color'] = iconv('CP1251',_CHARSET, '%sМодератор%s'); # %sModerator%s
+$lang['Admin_online_color'] = '%sРђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ%s'; # %sAdministrator%s
+$lang['Mod_online_color'] = '%sРњРѕРґРµСЂР°С‚РѕСЂ%s'; # %sModerator%s
 
-$lang['You_last_visit'] = iconv('CP1251',_CHARSET, 'Последното ви посещение е на %s'); # You last visited on %s // %s replaced by date/time
-$lang['Current_time'] = iconv('CP1251',_CHARSET, 'Сега е %s'); # The time now is %s
+$lang['You_last_visit'] = 'РџРѕСЃР»РµРґРЅРѕС‚Рѕ РІРё РїРѕСЃРµС‰РµРЅРёРµ Рµ РЅР° %s'; # You last visited on %s // %s replaced by date/time
+$lang['Current_time'] = 'РЎРµРіР° Рµ %s'; # The time now is %s
 
-$lang['Search_new'] = iconv('CP1251',_CHARSET, 'Вижте само новите съобщения'); # View posts since last visit
-$lang['Search_your_posts'] = iconv('CP1251',_CHARSET, 'Вижте собствените съобщения'); # View your posts
-$lang['Search_unanswered'] = iconv('CP1251',_CHARSET, 'Вижте съобщенията без отговор'); # View unanswered posts
+$lang['Search_new'] = 'Р’РёР¶С‚Рµ СЃР°РјРѕ РЅРѕРІРёС‚Рµ СЃСЉРѕР±С‰РµРЅРёСЏ'; # View posts since last visit
+$lang['Search_your_posts'] = 'Р’РёР¶С‚Рµ СЃРѕР±СЃС‚РІРµРЅРёС‚Рµ СЃСЉРѕР±С‰РµРЅРёСЏ'; # View your posts
+$lang['Search_unanswered'] = 'Р’РёР¶С‚Рµ СЃСЉРѕР±С‰РµРЅРёСЏС‚Р° Р±РµР· РѕС‚РіРѕРІРѕСЂ'; # View unanswered posts
 
-$lang['Register'] = iconv('CP1251',_CHARSET, 'Регистрация'); # Register
-$lang['Profile'] = iconv('CP1251',_CHARSET, 'Профил'); # Profile
-$lang['Edit_profile'] = iconv('CP1251',_CHARSET, 'Редактирай своя профил'); # Edit your profile
-$lang['Search'] = iconv('CP1251',_CHARSET, 'Търси'); # Search
-$lang['Memberlist'] = iconv('CP1251',_CHARSET, 'Потребители'); # Memberlist
-$lang['FAQ'] = iconv('CP1251',_CHARSET, 'Помощ'); # FAQ
-$lang['BBCode_guide'] = iconv('CP1251',_CHARSET, 'BBCode наръчник'); # BBCode Guide
-$lang['Usergroups'] = iconv('CP1251',_CHARSET, 'Потреб.групи'); # Usergroups
-$lang['Last_Post'] = iconv('CP1251',_CHARSET, 'Посл.съобщение'); # Last Post
-$lang['Moderator'] = iconv('CP1251',_CHARSET, 'Модератор'); # Moderator
-$lang['Moderators'] = iconv('CP1251',_CHARSET, 'Модератори'); # Moderators
+$lang['Register'] = 'Р РµРіРёСЃС‚СЂР°С†РёСЏ'; # Register
+$lang['Profile'] = 'РџСЂРѕС„РёР»'; # Profile
+$lang['Edit_profile'] = 'Р РµРґР°РєС‚РёСЂР°Р№ СЃРІРѕСЏ РїСЂРѕС„РёР»'; # Edit your profile
+$lang['Search'] = 'РўСЉСЂСЃРё'; # Search
+$lang['Memberlist'] = 'РџРѕС‚СЂРµР±РёС‚РµР»Рё'; # Memberlist
+$lang['FAQ'] = 'РџРѕРјРѕС‰'; # FAQ
+$lang['BBCode_guide'] = 'BBCode РЅР°СЂСЉС‡РЅРёРє'; # BBCode Guide
+$lang['Usergroups'] = 'РџРѕС‚СЂРµР±.РіСЂСѓРїРё'; # Usergroups
+$lang['Last_Post'] = 'РџРѕСЃР».СЃСЉРѕР±С‰РµРЅРёРµ'; # Last Post
+$lang['Moderator'] = 'РњРѕРґРµСЂР°С‚РѕСЂ'; # Moderator
+$lang['Moderators'] = 'РњРѕРґРµСЂР°С‚РѕСЂРё'; # Moderators
 
 
 //
 // Stats block text
 //
-$lang['Posted_articles_zero_total'] = iconv('CP1251',_CHARSET, 'Има общо <b>0</b> съобщения'); # Our users have posted a total of <b>0</b> article // Number of posts
-$lang['Posted_articles_total'] = iconv('CP1251',_CHARSET, 'Има общо <b>%d</b> съобщения'); # Our users have posted a total of <b>%d</b> articles // Number of posts
-$lang['Posted_article_total'] = iconv('CP1251',_CHARSET, 'Има общо <b>%d</b> съобщение'); # Our users have posted a total of <b>%d</b> article // Number of posts
-$lang['Registered_users_zero_total'] = iconv('CP1251',_CHARSET, 'Има <b>0</b> регистрирани потребители'); # We have <b>0</b> registered users // # registered users
-$lang['Registered_users_total'] = iconv('CP1251',_CHARSET, 'Има <b>%d</b> регистрирани потребители'); # We have <b>%d</b> registered users // # registered users
-$lang['Registered_user_total'] = iconv('CP1251',_CHARSET, 'Има <b>%d</b> регистриран потребител'); # We have <b>%d</b> registered user // # registered users
-$lang['Newest_user'] = iconv('CP1251',_CHARSET, 'Последният регистрирал се потребител е <b>%s%s%s</b>'); # The newest registered user is <b>%s%s%s</b> // a href, username, /a 
+$lang['Posted_articles_zero_total'] = 'РРјР° РѕР±С‰Рѕ <b>0</b> СЃСЉРѕР±С‰РµРЅРёСЏ'; # Our users have posted a total of <b>0</b> article // Number of posts
+$lang['Posted_articles_total'] = 'РРјР° РѕР±С‰Рѕ <b>%d</b> СЃСЉРѕР±С‰РµРЅРёСЏ'; # Our users have posted a total of <b>%d</b> articles // Number of posts
+$lang['Posted_article_total'] = 'РРјР° РѕР±С‰Рѕ <b>%d</b> СЃСЉРѕР±С‰РµРЅРёРµ'; # Our users have posted a total of <b>%d</b> article // Number of posts
+$lang['Registered_users_zero_total'] = 'РРјР° <b>0</b> СЂРµРіРёСЃС‚СЂРёСЂР°РЅРё РїРѕС‚СЂРµР±РёС‚РµР»Рё'; # We have <b>0</b> registered users // # registered users
+$lang['Registered_users_total'] = 'РРјР° <b>%d</b> СЂРµРіРёСЃС‚СЂРёСЂР°РЅРё РїРѕС‚СЂРµР±РёС‚РµР»Рё'; # We have <b>%d</b> registered users // # registered users
+$lang['Registered_user_total'] = 'РРјР° <b>%d</b> СЂРµРіРёСЃС‚СЂРёСЂР°РЅ РїРѕС‚СЂРµР±РёС‚РµР»'; # We have <b>%d</b> registered user // # registered users
+$lang['Newest_user'] = 'РџРѕСЃР»РµРґРЅРёСЏС‚ СЂРµРіРёСЃС‚СЂРёСЂР°Р» СЃРµ РїРѕС‚СЂРµР±РёС‚РµР» Рµ <b>%s%s%s</b>'; # The newest registered user is <b>%s%s%s</b> // a href, username, /a 
 
-$lang['No_new_posts_last_visit'] = iconv('CP1251',_CHARSET, 'Няма новости от последното ви посещение'); # No new posts since your last visit
-$lang['No_new_posts'] = iconv('CP1251',_CHARSET, 'Няма нови'); # No new posts
-$lang['New_posts'] = iconv('CP1251',_CHARSET, 'Има нови'); # New posts
-$lang['New_post'] = iconv('CP1251',_CHARSET, 'Ново'); # New post
-$lang['No_new_posts_hot'] = iconv('CP1251',_CHARSET, 'Няма нови [ популярна ]'); # No new posts [ Popular ]
-$lang['New_posts_hot'] = iconv('CP1251',_CHARSET, 'Има нови [ популярна ]'); # New posts [ Popular ]
-$lang['No_new_posts_locked'] = iconv('CP1251',_CHARSET, 'Няма нови [ заключена ]'); # No new posts [ Locked ]
-$lang['New_posts_locked'] = iconv('CP1251',_CHARSET, 'Има нови [ заключена ]'); # New posts [ Locked ]
-$lang['Forum_is_locked'] = iconv('CP1251',_CHARSET, 'Форумът е заключен'); # Forum is locked
+$lang['No_new_posts_last_visit'] = 'РќСЏРјР° РЅРѕРІРѕСЃС‚Рё РѕС‚ РїРѕСЃР»РµРґРЅРѕС‚Рѕ РІРё РїРѕСЃРµС‰РµРЅРёРµ'; # No new posts since your last visit
+$lang['No_new_posts'] = 'РќСЏРјР° РЅРѕРІРё'; # No new posts
+$lang['New_posts'] = 'РРјР° РЅРѕРІРё'; # New posts
+$lang['New_post'] = 'РќРѕРІРѕ'; # New post
+$lang['No_new_posts_hot'] = 'РќСЏРјР° РЅРѕРІРё [ РїРѕРїСѓР»СЏСЂРЅР° ]'; # No new posts [ Popular ]
+$lang['New_posts_hot'] = 'РРјР° РЅРѕРІРё [ РїРѕРїСѓР»СЏСЂРЅР° ]'; # New posts [ Popular ]
+$lang['No_new_posts_locked'] = 'РќСЏРјР° РЅРѕРІРё [ Р·Р°РєР»СЋС‡РµРЅР° ]'; # No new posts [ Locked ]
+$lang['New_posts_locked'] = 'РРјР° РЅРѕРІРё [ Р·Р°РєР»СЋС‡РµРЅР° ]'; # New posts [ Locked ]
+$lang['Forum_is_locked'] = 'Р¤РѕСЂСѓРјСЉС‚ Рµ Р·Р°РєР»СЋС‡РµРЅ'; # Forum is locked
 
 
 //
 // Login
 //
-$lang['Enter_password'] = iconv('CP1251',_CHARSET, 'За вход въведете потребителско име и парола'); # Please enter your username and password to login
-$lang['Login'] = iconv('CP1251',_CHARSET, 'Вход'); # Login
-$lang['Logout'] = iconv('CP1251',_CHARSET, 'Изход'); # Logout
+$lang['Enter_password'] = 'Р—Р° РІС…РѕРґ РІСЉРІРµРґРµС‚Рµ РїРѕС‚СЂРµР±РёС‚РµР»СЃРєРѕ РёРјРµ Рё РїР°СЂРѕР»Р°'; # Please enter your username and password to login
+$lang['Login'] = 'Р’С…РѕРґ'; # Login
+$lang['Logout'] = 'РР·С…РѕРґ'; # Logout
 
-$lang['Forgotten_password'] = iconv('CP1251',_CHARSET, 'Забравил съм си паролата'); # I forgot my password
+$lang['Forgotten_password'] = 'Р—Р°Р±СЂР°РІРёР» СЃСЉРј СЃРё РїР°СЂРѕР»Р°С‚Р°'; # I forgot my password
 
-$lang['Log_me_in'] = iconv('CP1251',_CHARSET, 'Запомни регистрацията ми'); # Log me on automatically each visit
+$lang['Log_me_in'] = 'Р—Р°РїРѕРјРЅРё СЂРµРіРёСЃС‚СЂР°С†РёСЏС‚Р° РјРё'; # Log me on automatically each visit
 
-$lang['Error_login'] = iconv('CP1251',_CHARSET, 'Невалидно потребителско име или парола'); # You have specified an incorrect or inactive username or an invalid password
+$lang['Error_login'] = 'РќРµРІР°Р»РёРґРЅРѕ РїРѕС‚СЂРµР±РёС‚РµР»СЃРєРѕ РёРјРµ РёР»Рё РїР°СЂРѕР»Р°'; # You have specified an incorrect or inactive username or an invalid password
 
 
 //
 // Index page
 //
-$lang['Index'] = iconv('CP1251',_CHARSET, 'Индекс'); # Index
-$lang['No_Posts'] = iconv('CP1251',_CHARSET, 'Няма съобщения'); # No Posts
-$lang['No_forums'] = iconv('CP1251',_CHARSET, 'Няма налични форуми'); # This board has no forums
+$lang['Index'] = 'РРЅРґРµРєСЃ'; # Index
+$lang['No_Posts'] = 'РќСЏРјР° СЃСЉРѕР±С‰РµРЅРёСЏ'; # No Posts
+$lang['No_forums'] = 'РќСЏРјР° РЅР°Р»РёС‡РЅРё С„РѕСЂСѓРјРё'; # This board has no forums
 
-$lang['Private_Message'] = iconv('CP1251',_CHARSET, 'Лично съобщение'); # Private Message
-$lang['Private_Messages'] = iconv('CP1251',_CHARSET, 'Лични съобщения'); # Private Messages
-$lang['Who_is_Online'] = iconv('CP1251',_CHARSET, 'Кой е онлайн'); # Who is Online
+$lang['Private_Message'] = 'Р›РёС‡РЅРѕ СЃСЉРѕР±С‰РµРЅРёРµ'; # Private Message
+$lang['Private_Messages'] = 'Р›РёС‡РЅРё СЃСЉРѕР±С‰РµРЅРёСЏ'; # Private Messages
+$lang['Who_is_Online'] = 'РљРѕР№ Рµ РѕРЅР»Р°Р№РЅ'; # Who is Online
 
-$lang['Mark_all_forums'] = iconv('CP1251',_CHARSET, 'Маркирай форумите като прочетени'); # Mark all forums read
-$lang['Forums_marked_read'] = iconv('CP1251',_CHARSET, 'Всички форуми са маркирани като прочетени'); # All forums have been marked read
+$lang['Mark_all_forums'] = 'РњР°СЂРєРёСЂР°Р№ С„РѕСЂСѓРјРёС‚Рµ РєР°С‚Рѕ РїСЂРѕС‡РµС‚РµРЅРё'; # Mark all forums read
+$lang['Forums_marked_read'] = 'Р’СЃРёС‡РєРё С„РѕСЂСѓРјРё СЃР° РјР°СЂРєРёСЂР°РЅРё РєР°С‚Рѕ РїСЂРѕС‡РµС‚РµРЅРё'; # All forums have been marked read
 
 
 //
 // Viewforum
 //
-$lang['View_forum'] = iconv('CP1251',_CHARSET, 'Виж форум'); # View Forum
+$lang['View_forum'] = 'Р’РёР¶ С„РѕСЂСѓРј'; # View Forum
 
-$lang['Forum_not_exist'] = iconv('CP1251',_CHARSET, 'Избраният форум не съществува'); # The forum you selected does not exist
-$lang['Reached_on_error'] = iconv('CP1251',_CHARSET, 'Достигнахте тази страница след грешка'); # You have reached this page in error
+$lang['Forum_not_exist'] = 'РР·Р±СЂР°РЅРёСЏС‚ С„РѕСЂСѓРј РЅРµ СЃСЉС‰РµСЃС‚РІСѓРІР°'; # The forum you selected does not exist
+$lang['Reached_on_error'] = 'Р”РѕСЃС‚РёРіРЅР°С…С‚Рµ С‚Р°Р·Рё СЃС‚СЂР°РЅРёС†Р° СЃР»РµРґ РіСЂРµС€РєР°'; # You have reached this page in error
 
-$lang['Display_topics'] = iconv('CP1251',_CHARSET, 'Покажи темите отпреди'); # Display topics from previous
-$lang['All_Topics'] = iconv('CP1251',_CHARSET, 'Всички теми'); # All Topics
+$lang['Display_topics'] = 'РџРѕРєР°Р¶Рё С‚РµРјРёС‚Рµ РѕС‚РїСЂРµРґРё'; # Display topics from previous
+$lang['All_Topics'] = 'Р’СЃРёС‡РєРё С‚РµРјРё'; # All Topics
 
-$lang['Topic_Announcement'] = iconv('CP1251',_CHARSET, '<b>Обявление:</b>'); # <b>Announcement:</b>
-$lang['Topic_Sticky'] = iconv('CP1251',_CHARSET, '<b>Проблемно:</b>'); # <b>Sticky:</b>
-$lang['Topic_Moved'] = iconv('CP1251',_CHARSET, '<b>Преместен:</b>'); # <b>Moved:</b>
-$lang['Topic_Poll'] = iconv('CP1251',_CHARSET, '<b>[ Анкета ]</b>'); # <b>[ Poll ]</b>
+$lang['Topic_Announcement'] = '<b>РћР±СЏРІР»РµРЅРёРµ:</b>'; # <b>Announcement:</b>
+$lang['Topic_Sticky'] = '<b>РџСЂРѕР±Р»РµРјРЅРѕ:</b>'; # <b>Sticky:</b>
+$lang['Topic_Moved'] = '<b>РџСЂРµРјРµСЃС‚РµРЅ:</b>'; # <b>Moved:</b>
+$lang['Topic_Poll'] = '<b>[ РђРЅРєРµС‚Р° ]</b>'; # <b>[ Poll ]</b>
 
-$lang['Mark_all_topics'] = iconv('CP1251',_CHARSET, 'Маркирай всичко като прочетено'); # Mark all topics read
-$lang['Topics_marked_read'] = iconv('CP1251',_CHARSET, 'Темите в този форум сега са маркирани като прочетени'); # The topics for this forum have now been marked read
+$lang['Mark_all_topics'] = 'РњР°СЂРєРёСЂР°Р№ РІСЃРёС‡РєРѕ РєР°С‚Рѕ РїСЂРѕС‡РµС‚РµРЅРѕ'; # Mark all topics read
+$lang['Topics_marked_read'] = 'РўРµРјРёС‚Рµ РІ С‚РѕР·Рё С„РѕСЂСѓРј СЃРµРіР° СЃР° РјР°СЂРєРёСЂР°РЅРё РєР°С‚Рѕ РїСЂРѕС‡РµС‚РµРЅРё'; # The topics for this forum have now been marked read
 
-$lang['Rules_post_can'] = iconv('CP1251',_CHARSET, '<b>можете</b> да създавате теми'); # You <b>can</b> post new topics in this forum
-$lang['Rules_post_cannot'] = iconv('CP1251',_CHARSET, '<b>не можете</b> да създавате теми'); # You <b>cannot</b> post new topics in this forum
-$lang['Rules_reply_can'] = iconv('CP1251',_CHARSET, '<b>можете</b> да отговаряте'); # You <b>can</b> reply to topics in this forum
-$lang['Rules_reply_cannot'] = iconv('CP1251',_CHARSET, '<b>не можете</b> да отговаряте'); # You <b>cannot</b> reply to topics in this forum
-$lang['Rules_edit_can'] = iconv('CP1251',_CHARSET, '<b>можете</b> променяте свои съобщения'); # You <b>can</b> edit your posts in this forum
-$lang['Rules_edit_cannot'] = iconv('CP1251',_CHARSET, '<b>не можете</b> променяте свои съобщения'); # You <b>cannot</b> edit your posts in this forum
-$lang['Rules_delete_can'] = iconv('CP1251',_CHARSET, '<b>можете</b> изтривате свои съобщения'); # You <b>can</b> delete your posts in this forum
-$lang['Rules_delete_cannot'] = iconv('CP1251',_CHARSET, '<b>не можете</b> изтривате свои съобщения'); # You <b>cannot</b> delete your posts in this forum
-$lang['Rules_vote_can'] = iconv('CP1251',_CHARSET, '<b>можете</b> гласувате в анкети'); # You <b>can</b> vote in polls in this forum
-$lang['Rules_vote_cannot'] = iconv('CP1251',_CHARSET, '<b>не можете</b> гласувате на анкети'); # You <b>cannot</b> vote in polls in this forum
-$lang['Rules_moderate'] = iconv('CP1251',_CHARSET, '<b>можете</b> %sда модерирате този форум%s'); # You <b>can</b> %smoderate this forum%s // %s replaced by a href links, do not remove! 
+$lang['Rules_post_can'] = '<b>РјРѕР¶РµС‚Рµ</b> РґР° СЃСЉР·РґР°РІР°С‚Рµ С‚РµРјРё'; # You <b>can</b> post new topics in this forum
+$lang['Rules_post_cannot'] = '<b>РЅРµ РјРѕР¶РµС‚Рµ</b> РґР° СЃСЉР·РґР°РІР°С‚Рµ С‚РµРјРё'; # You <b>cannot</b> post new topics in this forum
+$lang['Rules_reply_can'] = '<b>РјРѕР¶РµС‚Рµ</b> РґР° РѕС‚РіРѕРІР°СЂСЏС‚Рµ'; # You <b>can</b> reply to topics in this forum
+$lang['Rules_reply_cannot'] = '<b>РЅРµ РјРѕР¶РµС‚Рµ</b> РґР° РѕС‚РіРѕРІР°СЂСЏС‚Рµ'; # You <b>cannot</b> reply to topics in this forum
+$lang['Rules_edit_can'] = '<b>РјРѕР¶РµС‚Рµ</b> РїСЂРѕРјРµРЅСЏС‚Рµ СЃРІРѕРё СЃСЉРѕР±С‰РµРЅРёСЏ'; # You <b>can</b> edit your posts in this forum
+$lang['Rules_edit_cannot'] = '<b>РЅРµ РјРѕР¶РµС‚Рµ</b> РїСЂРѕРјРµРЅСЏС‚Рµ СЃРІРѕРё СЃСЉРѕР±С‰РµРЅРёСЏ'; # You <b>cannot</b> edit your posts in this forum
+$lang['Rules_delete_can'] = '<b>РјРѕР¶РµС‚Рµ</b> РёР·С‚СЂРёРІР°С‚Рµ СЃРІРѕРё СЃСЉРѕР±С‰РµРЅРёСЏ'; # You <b>can</b> delete your posts in this forum
+$lang['Rules_delete_cannot'] = '<b>РЅРµ РјРѕР¶РµС‚Рµ</b> РёР·С‚СЂРёРІР°С‚Рµ СЃРІРѕРё СЃСЉРѕР±С‰РµРЅРёСЏ'; # You <b>cannot</b> delete your posts in this forum
+$lang['Rules_vote_can'] = '<b>РјРѕР¶РµС‚Рµ</b> РіР»Р°СЃСѓРІР°С‚Рµ РІ Р°РЅРєРµС‚Рё'; # You <b>can</b> vote in polls in this forum
+$lang['Rules_vote_cannot'] = '<b>РЅРµ РјРѕР¶РµС‚Рµ</b> РіР»Р°СЃСѓРІР°С‚Рµ РЅР° Р°РЅРєРµС‚Рё'; # You <b>cannot</b> vote in polls in this forum
+$lang['Rules_moderate'] = '<b>РјРѕР¶РµС‚Рµ</b> %sРґР° РјРѕРґРµСЂРёСЂР°С‚Рµ С‚РѕР·Рё С„РѕСЂСѓРј%s'; # You <b>can</b> %smoderate this forum%s // %s replaced by a href links, do not remove! 
 
-$lang['No_topics_post_one'] = iconv('CP1251',_CHARSET, 'Няма съобщения в този форум<br />Изберете <b>Нова тема</b> на тази страница за да изпратите съобщение'); # There are no posts in this forum<br />Click on the <b>Post New Topic</b> link on this page to post one
+$lang['No_topics_post_one'] = 'РќСЏРјР° СЃСЉРѕР±С‰РµРЅРёСЏ РІ С‚РѕР·Рё С„РѕСЂСѓРј<br />РР·Р±РµСЂРµС‚Рµ <b>РќРѕРІР° С‚РµРјР°</b> РЅР° С‚Р°Р·Рё СЃС‚СЂР°РЅРёС†Р° Р·Р° РґР° РёР·РїСЂР°С‚РёС‚Рµ СЃСЉРѕР±С‰РµРЅРёРµ'; # There are no posts in this forum<br />Click on the <b>Post New Topic</b> link on this page to post one
 
 
 //
 // Viewtopic
 //
-$lang['View_topic'] = iconv('CP1251',_CHARSET, 'View topic');
+$lang['View_topic'] = 'View topic';
 
-$lang['Guest'] = iconv('CP1251',_CHARSET, 'Гост'); # Guest
-$lang['Post_subject'] = iconv('CP1251',_CHARSET, 'Заглавие'); # Post subject
-$lang['View_next_topic'] = iconv('CP1251',_CHARSET, 'Следваща тема'); # View next topic
-$lang['View_previous_topic'] = iconv('CP1251',_CHARSET, 'Предишна тема'); # View previous topic
-$lang['Submit_vote'] = iconv('CP1251',_CHARSET, 'Гласувам'); # Submit Vote
-$lang['View_results'] = iconv('CP1251',_CHARSET, 'Резултати'); # View Results
+$lang['Guest'] = 'Р“РѕСЃС‚'; # Guest
+$lang['Post_subject'] = 'Р—Р°РіР»Р°РІРёРµ'; # Post subject
+$lang['View_next_topic'] = 'РЎР»РµРґРІР°С‰Р° С‚РµРјР°'; # View next topic
+$lang['View_previous_topic'] = 'РџСЂРµРґРёС€РЅР° С‚РµРјР°'; # View previous topic
+$lang['Submit_vote'] = 'Р“Р»Р°СЃСѓРІР°Рј'; # Submit Vote
+$lang['View_results'] = 'Р РµР·СѓР»С‚Р°С‚Рё'; # View Results
 
-$lang['No_newer_topics'] = iconv('CP1251',_CHARSET, 'Няма по-нови теми в този форум'); # There are no newer topics in this forum
-$lang['No_older_topics'] = iconv('CP1251',_CHARSET, 'Няма по-стари теми в този форум'); # There are no older topics in this forum
-$lang['Topic_post_not_exist'] = iconv('CP1251',_CHARSET, 'Поисканата тема/съобщение не съществува'); # The topic or post you requested does not exist
-$lang['No_posts_topic'] = iconv('CP1251',_CHARSET, 'Няма съобщения за тази тема'); # No posts exist for this topic
+$lang['No_newer_topics'] = 'РќСЏРјР° РїРѕ-РЅРѕРІРё С‚РµРјРё РІ С‚РѕР·Рё С„РѕСЂСѓРј'; # There are no newer topics in this forum
+$lang['No_older_topics'] = 'РќСЏРјР° РїРѕ-СЃС‚Р°СЂРё С‚РµРјРё РІ С‚РѕР·Рё С„РѕСЂСѓРј'; # There are no older topics in this forum
+$lang['Topic_post_not_exist'] = 'РџРѕРёСЃРєР°РЅР°С‚Р° С‚РµРјР°/СЃСЉРѕР±С‰РµРЅРёРµ РЅРµ СЃСЉС‰РµСЃС‚РІСѓРІР°'; # The topic or post you requested does not exist
+$lang['No_posts_topic'] = 'РќСЏРјР° СЃСЉРѕР±С‰РµРЅРёСЏ Р·Р° С‚Р°Р·Рё С‚РµРјР°'; # No posts exist for this topic
 
-$lang['Display_posts'] = iconv('CP1251',_CHARSET, 'Покажи съобщенията от предишните'); # Display posts from previous
-$lang['All_Posts'] = iconv('CP1251',_CHARSET, 'Всички съобщения'); # All Posts
-$lang['Newest_First'] = iconv('CP1251',_CHARSET, 'Новите първи'); # Newest First
-$lang['Oldest_First'] = iconv('CP1251',_CHARSET, 'Старите първи'); # Oldest First
+$lang['Display_posts'] = 'РџРѕРєР°Р¶Рё СЃСЉРѕР±С‰РµРЅРёСЏС‚Р° РѕС‚ РїСЂРµРґРёС€РЅРёС‚Рµ'; # Display posts from previous
+$lang['All_Posts'] = 'Р’СЃРёС‡РєРё СЃСЉРѕР±С‰РµРЅРёСЏ'; # All Posts
+$lang['Newest_First'] = 'РќРѕРІРёС‚Рµ РїСЉСЂРІРё'; # Newest First
+$lang['Oldest_First'] = 'РЎС‚Р°СЂРёС‚Рµ РїСЉСЂРІРё'; # Oldest First
 
-$lang['Back_to_top'] = iconv('CP1251',_CHARSET, 'Назад в началото'); # Back to top
+$lang['Back_to_top'] = 'РќР°Р·Р°Рґ РІ РЅР°С‡Р°Р»РѕС‚Рѕ'; # Back to top
 
-$lang['Read_profile'] = iconv('CP1251',_CHARSET, 'Профил на потребителя'); # View users profile
-$lang['Send_email'] = iconv('CP1251',_CHARSET, 'Изпращане на email  до потребителя'); # Send email to user
-$lang['Visit_website'] = iconv('CP1251',_CHARSET, 'Посещение на web сайта на изпращача'); # Visit posters website
-$lang['ICQ_status'] = iconv('CP1251',_CHARSET, 'ICQ статус'); # ICQ Status
-$lang['Edit_delete_post'] = iconv('CP1251',_CHARSET, 'Промяна/изтриване'); # Edit/Delete this post
-$lang['View_IP'] = iconv('CP1251',_CHARSET, 'IP на изпращача'); # View IP of poster
-$lang['Delete_post'] = iconv('CP1251',_CHARSET, 'Изтриване'); # Delete this post
+$lang['Read_profile'] = 'РџСЂРѕС„РёР» РЅР° РїРѕС‚СЂРµР±РёС‚РµР»СЏ'; # View users profile
+$lang['Send_email'] = 'РР·РїСЂР°С‰Р°РЅРµ РЅР° email  РґРѕ РїРѕС‚СЂРµР±РёС‚РµР»СЏ'; # Send email to user
+$lang['Visit_website'] = 'РџРѕСЃРµС‰РµРЅРёРµ РЅР° web СЃР°Р№С‚Р° РЅР° РёР·РїСЂР°С‰Р°С‡Р°'; # Visit posters website
+$lang['ICQ_status'] = 'ICQ СЃС‚Р°С‚СѓСЃ'; # ICQ Status
+$lang['Edit_delete_post'] = 'РџСЂРѕРјСЏРЅР°/РёР·С‚СЂРёРІР°РЅРµ'; # Edit/Delete this post
+$lang['View_IP'] = 'IP РЅР° РёР·РїСЂР°С‰Р°С‡Р°'; # View IP of poster
+$lang['Delete_post'] = 'РР·С‚СЂРёРІР°РЅРµ'; # Delete this post
 
-$lang['wrote'] = iconv('CP1251',_CHARSET, 'написа'); # wrote // proceeds the username and is followed by the quoted text
-$lang['Quote'] = iconv('CP1251',_CHARSET, 'Цитат'); # Quote // comes before bbcode quote output.
-$lang['Code'] = iconv('CP1251',_CHARSET, 'Код'); # Code // comes before bbcode code output.
+$lang['wrote'] = 'РЅР°РїРёСЃР°'; # wrote // proceeds the username and is followed by the quoted text
+$lang['Quote'] = 'Р¦РёС‚Р°С‚'; # Quote // comes before bbcode quote output.
+$lang['Code'] = 'РљРѕРґ'; # Code // comes before bbcode code output.
 
-$lang['Edited_time_total'] = iconv('CP1251',_CHARSET, 'Последно редактирана от %s на %s, редактирана общо %d път'); # Last edited by %s on %s, edited %d time in total // Last edited by me on 12 Oct 2001, edited 1 time in total
-$lang['Edited_times_total'] = iconv('CP1251',_CHARSET, 'Последно редактирана от %s на %s, редактирана общо %d пъти'); # Last edited by %s on %s, edited %d times in total // Last edited by me on 12 Oct 2001, edited 2 times in total
+$lang['Edited_time_total'] = 'РџРѕСЃР»РµРґРЅРѕ СЂРµРґР°РєС‚РёСЂР°РЅР° РѕС‚ %s РЅР° %s, СЂРµРґР°РєС‚РёСЂР°РЅР° РѕР±С‰Рѕ %d РїСЉС‚'; # Last edited by %s on %s, edited %d time in total // Last edited by me on 12 Oct 2001, edited 1 time in total
+$lang['Edited_times_total'] = 'РџРѕСЃР»РµРґРЅРѕ СЂРµРґР°РєС‚РёСЂР°РЅР° РѕС‚ %s РЅР° %s, СЂРµРґР°РєС‚РёСЂР°РЅР° РѕР±С‰Рѕ %d РїСЉС‚Рё'; # Last edited by %s on %s, edited %d times in total // Last edited by me on 12 Oct 2001, edited 2 times in total
 
-$lang['Lock_topic'] = iconv('CP1251',_CHARSET, 'Заключи тази тема'); # Lock this topic
-$lang['Unlock_topic'] = iconv('CP1251',_CHARSET, 'Отключи тази тема'); # Unlock this topic
-$lang['Move_topic'] = iconv('CP1251',_CHARSET, 'Премести тази тема'); # Move this topic
-$lang['Delete_topic'] = iconv('CP1251',_CHARSET, 'Изтрий тази тема'); # Delete this topic
-$lang['Split_topic'] = iconv('CP1251',_CHARSET, 'Раздели тази тема'); # Split this topic
+$lang['Lock_topic'] = 'Р—Р°РєР»СЋС‡Рё С‚Р°Р·Рё С‚РµРјР°'; # Lock this topic
+$lang['Unlock_topic'] = 'РћС‚РєР»СЋС‡Рё С‚Р°Р·Рё С‚РµРјР°'; # Unlock this topic
+$lang['Move_topic'] = 'РџСЂРµРјРµСЃС‚Рё С‚Р°Р·Рё С‚РµРјР°'; # Move this topic
+$lang['Delete_topic'] = 'РР·С‚СЂРёР№ С‚Р°Р·Рё С‚РµРјР°'; # Delete this topic
+$lang['Split_topic'] = 'Р Р°Р·РґРµР»Рё С‚Р°Р·Рё С‚РµРјР°'; # Split this topic
 
-$lang['Stop_watching_topic'] = iconv('CP1251',_CHARSET, 'Спри следенето на тази тема'); # Stop watching this topic
-$lang['Start_watching_topic'] = iconv('CP1251',_CHARSET, 'Следи тази тема за отговори'); # Watch this topic for replies
-$lang['No_longer_watching'] = iconv('CP1251',_CHARSET, 'Следенето на тази тема за вас е прекратено'); # You are no longer watching this topic
-$lang['You_are_watching'] = iconv('CP1251',_CHARSET, 'Сега тази тема се следи за вас'); # You are now watching this topic
+$lang['Stop_watching_topic'] = 'РЎРїСЂРё СЃР»РµРґРµРЅРµС‚Рѕ РЅР° С‚Р°Р·Рё С‚РµРјР°'; # Stop watching this topic
+$lang['Start_watching_topic'] = 'РЎР»РµРґРё С‚Р°Р·Рё С‚РµРјР° Р·Р° РѕС‚РіРѕРІРѕСЂРё'; # Watch this topic for replies
+$lang['No_longer_watching'] = 'РЎР»РµРґРµРЅРµС‚Рѕ РЅР° С‚Р°Р·Рё С‚РµРјР° Р·Р° РІР°СЃ Рµ РїСЂРµРєСЂР°С‚РµРЅРѕ'; # You are no longer watching this topic
+$lang['You_are_watching'] = 'РЎРµРіР° С‚Р°Р·Рё С‚РµРјР° СЃРµ СЃР»РµРґРё Р·Р° РІР°СЃ'; # You are now watching this topic
 
-$lang['Total_votes'] = iconv('CP1251',_CHARSET, 'Общо гласове'); # Total Votes
+$lang['Total_votes'] = 'РћР±С‰Рѕ РіР»Р°СЃРѕРІРµ'; # Total Votes
 
 //
 // Posting/Replying (Not private messaging!)
 //
-$lang['Message_body'] = iconv('CP1251',_CHARSET, 'Съобщение'); # Message body
-$lang['Topic_review'] = iconv('CP1251',_CHARSET, 'Преглед на темата'); # Topic review
+$lang['Message_body'] = 'РЎСЉРѕР±С‰РµРЅРёРµ'; # Message body
+$lang['Topic_review'] = 'РџСЂРµРіР»РµРґ РЅР° С‚РµРјР°С‚Р°'; # Topic review
 
-$lang['No_post_mode'] = iconv('CP1251',_CHARSET, 'Не е оказан тип на съобщението'); # No post mode specified // If posting.php is called without a mode (newtopic/reply/delete/etc, shouldn't be shown normaly)
+$lang['No_post_mode'] = 'РќРµ Рµ РѕРєР°Р·Р°РЅ С‚РёРї РЅР° СЃСЉРѕР±С‰РµРЅРёРµС‚Рѕ'; # No post mode specified // If posting.php is called without a mode (newtopic/reply/delete/etc, shouldn't be shown normaly)
 
-$lang['Post_a_new_topic'] = iconv('CP1251',_CHARSET, 'Създаване на нова тема'); # Post a new topic
-$lang['Post_a_reply'] = iconv('CP1251',_CHARSET, 'Изпращане на отговор'); # Post a reply
-$lang['Post_topic_as'] = iconv('CP1251',_CHARSET, 'Изпрати темата като'); # Post topic as
-$lang['Edit_Post'] = iconv('CP1251',_CHARSET, 'Редакция'); # Edit post
-$lang['Options'] = iconv('CP1251',_CHARSET, 'Възможности'); # Options
+$lang['Post_a_new_topic'] = 'РЎСЉР·РґР°РІР°РЅРµ РЅР° РЅРѕРІР° С‚РµРјР°'; # Post a new topic
+$lang['Post_a_reply'] = 'РР·РїСЂР°С‰Р°РЅРµ РЅР° РѕС‚РіРѕРІРѕСЂ'; # Post a reply
+$lang['Post_topic_as'] = 'РР·РїСЂР°С‚Рё С‚РµРјР°С‚Р° РєР°С‚Рѕ'; # Post topic as
+$lang['Edit_Post'] = 'Р РµРґР°РєС†РёСЏ'; # Edit post
+$lang['Options'] = 'Р’СЉР·РјРѕР¶РЅРѕСЃС‚Рё'; # Options
 
-$lang['Post_Announcement'] = iconv('CP1251',_CHARSET, 'Обявление'); # Announcement
-$lang['Post_Sticky'] = iconv('CP1251',_CHARSET, 'Проблемно'); # Sticky
-$lang['Post_Normal'] = iconv('CP1251',_CHARSET, 'Нормално'); # Normal
+$lang['Post_Announcement'] = 'РћР±СЏРІР»РµРЅРёРµ'; # Announcement
+$lang['Post_Sticky'] = 'РџСЂРѕР±Р»РµРјРЅРѕ'; # Sticky
+$lang['Post_Normal'] = 'РќРѕСЂРјР°Р»РЅРѕ'; # Normal
 
-$lang['Confirm_delete'] = iconv('CP1251',_CHARSET, 'Сигурни ли сте, че искате да изтриете това съобщение'); # Are you sure you want to delete this post?
-$lang['Confirm_delete_poll'] = iconv('CP1251',_CHARSET, 'Сигурни ли сте, че искате да изтриете тази анкета'); # Are you sure you want to delete this poll?
+$lang['Confirm_delete'] = 'РЎРёРіСѓСЂРЅРё Р»Рё СЃС‚Рµ, С‡Рµ РёСЃРєР°С‚Рµ РґР° РёР·С‚СЂРёРµС‚Рµ С‚РѕРІР° СЃСЉРѕР±С‰РµРЅРёРµ'; # Are you sure you want to delete this post?
+$lang['Confirm_delete_poll'] = 'РЎРёРіСѓСЂРЅРё Р»Рё СЃС‚Рµ, С‡Рµ РёСЃРєР°С‚Рµ РґР° РёР·С‚СЂРёРµС‚Рµ С‚Р°Р·Рё Р°РЅРєРµС‚Р°'; # Are you sure you want to delete this poll?
 
-$lang['Flood_Error'] = iconv('CP1251',_CHARSET, 'Не можете толкова скоро да изпращате ново съобщение, опитайте по-късно'); # You cannot make another post so soon after your last, please try again in a short while
-$lang['Empty_subject'] = iconv('CP1251',_CHARSET, 'Трябва да има заглавие на новата тема'); # You must specify a subject when posting a new topic
-$lang['Empty_message'] = iconv('CP1251',_CHARSET, 'Трябва да има текст на съобщението/темата'); # You must enter a message when posting
-$lang['Forum_locked'] = iconv('CP1251',_CHARSET, 'Този форум е заключен, можете само да отговаряте или редактирате'); # This forum is locked you cannot post, reply to or edit topics
-$lang['Topic_locked'] = iconv('CP1251',_CHARSET, 'Тази тема е заключена, не можете да отговаряте или редактирате'); # This topic is locked you cannot edit posts or make replies
-$lang['No_post_id'] = iconv('CP1251',_CHARSET, 'Трябва да изберете съобщение за редактиране'); # You must select a post to edit
-$lang['No_topic_id'] = iconv('CP1251',_CHARSET, 'Трябва да изберете тема за да отговорите'); # You must select a topic to reply to
-$lang['No_valid_mode'] = iconv('CP1251',_CHARSET, 'Не може да извършите тази операция, моля върнете се и опитайте отново'); # You can only post, reply edit or quote messages, please return and try again
-$lang['No_such_post'] = iconv('CP1251',_CHARSET, 'Няма такова съобщение, моля върнете се и опитайте отново'); # There is no such post, please return and try again
-$lang['Edit_own_posts'] = iconv('CP1251',_CHARSET, 'Съжаляваме, но можете да редактирате само собствени съобщения'); # Sorry but you can only edit your own posts
-$lang['Delete_own_posts'] = iconv('CP1251',_CHARSET, 'Съжаляваме, но можете да изтривате само собствени съобщения'); # Sorry but you can only delete your own posts
-$lang['Cannot_delete_replied'] = iconv('CP1251',_CHARSET, 'Съжаляваме, но не можете да изтривате теми, по които е отговаряно'); # Sorry but you may not delete posts that have been replied to
-$lang['Cannot_delete_poll'] = iconv('CP1251',_CHARSET, 'Съжаляваме, но не можете да изтривате активна анкета'); # Sorry but you cannot delete an active poll
-$lang['Empty_poll_title'] = iconv('CP1251',_CHARSET, 'Трябва да въведете заглавие на анкетата'); # You must enter a title for your poll
-$lang['To_few_poll_options'] = iconv('CP1251',_CHARSET, 'Трябва да въведете най-малко две възможности за отговор'); # You must enter at least two poll options
-$lang['To_many_poll_options'] = iconv('CP1251',_CHARSET, 'Не може да има толкова много възможности за отговор'); # You have tried to enter too many poll options
-$lang['Post_has_no_poll'] = iconv('CP1251',_CHARSET, 'По тази тема няма анкета'); # This post has no poll
-$lang['Already_voted'] = iconv('CP1251',_CHARSET, 'Вие вече сте гласували в тази анкета'); # You have already voted in this poll
-$lang['No_vote_option'] = iconv('CP1251',_CHARSET, 'При гласуване трябва да изберете някакъв отговор'); # You must specify an option when voting
+$lang['Flood_Error'] = 'РќРµ РјРѕР¶РµС‚Рµ С‚РѕР»РєРѕРІР° СЃРєРѕСЂРѕ РґР° РёР·РїСЂР°С‰Р°С‚Рµ РЅРѕРІРѕ СЃСЉРѕР±С‰РµРЅРёРµ, РѕРїРёС‚Р°Р№С‚Рµ РїРѕ-РєСЉСЃРЅРѕ'; # You cannot make another post so soon after your last, please try again in a short while
+$lang['Empty_subject'] = 'РўСЂСЏР±РІР° РґР° РёРјР° Р·Р°РіР»Р°РІРёРµ РЅР° РЅРѕРІР°С‚Р° С‚РµРјР°'; # You must specify a subject when posting a new topic
+$lang['Empty_message'] = 'РўСЂСЏР±РІР° РґР° РёРјР° С‚РµРєСЃС‚ РЅР° СЃСЉРѕР±С‰РµРЅРёРµС‚Рѕ/С‚РµРјР°С‚Р°'; # You must enter a message when posting
+$lang['Forum_locked'] = 'РўРѕР·Рё С„РѕСЂСѓРј Рµ Р·Р°РєР»СЋС‡РµРЅ, РјРѕР¶РµС‚Рµ СЃР°РјРѕ РґР° РѕС‚РіРѕРІР°СЂСЏС‚Рµ РёР»Рё СЂРµРґР°РєС‚РёСЂР°С‚Рµ'; # This forum is locked you cannot post, reply to or edit topics
+$lang['Topic_locked'] = 'РўР°Р·Рё С‚РµРјР° Рµ Р·Р°РєР»СЋС‡РµРЅР°, РЅРµ РјРѕР¶РµС‚Рµ РґР° РѕС‚РіРѕРІР°СЂСЏС‚Рµ РёР»Рё СЂРµРґР°РєС‚РёСЂР°С‚Рµ'; # This topic is locked you cannot edit posts or make replies
+$lang['No_post_id'] = 'РўСЂСЏР±РІР° РґР° РёР·Р±РµСЂРµС‚Рµ СЃСЉРѕР±С‰РµРЅРёРµ Р·Р° СЂРµРґР°РєС‚РёСЂР°РЅРµ'; # You must select a post to edit
+$lang['No_topic_id'] = 'РўСЂСЏР±РІР° РґР° РёР·Р±РµСЂРµС‚Рµ С‚РµРјР° Р·Р° РґР° РѕС‚РіРѕРІРѕСЂРёС‚Рµ'; # You must select a topic to reply to
+$lang['No_valid_mode'] = 'РќРµ РјРѕР¶Рµ РґР° РёР·РІСЉСЂС€РёС‚Рµ С‚Р°Р·Рё РѕРїРµСЂР°С†РёСЏ, РјРѕР»СЏ РІСЉСЂРЅРµС‚Рµ СЃРµ Рё РѕРїРёС‚Р°Р№С‚Рµ РѕС‚РЅРѕРІРѕ'; # You can only post, reply edit or quote messages, please return and try again
+$lang['No_such_post'] = 'РќСЏРјР° С‚Р°РєРѕРІР° СЃСЉРѕР±С‰РµРЅРёРµ, РјРѕР»СЏ РІСЉСЂРЅРµС‚Рµ СЃРµ Рё РѕРїРёС‚Р°Р№С‚Рµ РѕС‚РЅРѕРІРѕ'; # There is no such post, please return and try again
+$lang['Edit_own_posts'] = 'РЎСЉР¶Р°Р»СЏРІР°РјРµ, РЅРѕ РјРѕР¶РµС‚Рµ РґР° СЂРµРґР°РєС‚РёСЂР°С‚Рµ СЃР°РјРѕ СЃРѕР±СЃС‚РІРµРЅРё СЃСЉРѕР±С‰РµРЅРёСЏ'; # Sorry but you can only edit your own posts
+$lang['Delete_own_posts'] = 'РЎСЉР¶Р°Р»СЏРІР°РјРµ, РЅРѕ РјРѕР¶РµС‚Рµ РґР° РёР·С‚СЂРёРІР°С‚Рµ СЃР°РјРѕ СЃРѕР±СЃС‚РІРµРЅРё СЃСЉРѕР±С‰РµРЅРёСЏ'; # Sorry but you can only delete your own posts
+$lang['Cannot_delete_replied'] = 'РЎСЉР¶Р°Р»СЏРІР°РјРµ, РЅРѕ РЅРµ РјРѕР¶РµС‚Рµ РґР° РёР·С‚СЂРёРІР°С‚Рµ С‚РµРјРё, РїРѕ РєРѕРёС‚Рѕ Рµ РѕС‚РіРѕРІР°СЂСЏРЅРѕ'; # Sorry but you may not delete posts that have been replied to
+$lang['Cannot_delete_poll'] = 'РЎСЉР¶Р°Р»СЏРІР°РјРµ, РЅРѕ РЅРµ РјРѕР¶РµС‚Рµ РґР° РёР·С‚СЂРёРІР°С‚Рµ Р°РєС‚РёРІРЅР° Р°РЅРєРµС‚Р°'; # Sorry but you cannot delete an active poll
+$lang['Empty_poll_title'] = 'РўСЂСЏР±РІР° РґР° РІСЉРІРµРґРµС‚Рµ Р·Р°РіР»Р°РІРёРµ РЅР° Р°РЅРєРµС‚Р°С‚Р°'; # You must enter a title for your poll
+$lang['To_few_poll_options'] = 'РўСЂСЏР±РІР° РґР° РІСЉРІРµРґРµС‚Рµ РЅР°Р№-РјР°Р»РєРѕ РґРІРµ РІСЉР·РјРѕР¶РЅРѕСЃС‚Рё Р·Р° РѕС‚РіРѕРІРѕСЂ'; # You must enter at least two poll options
+$lang['To_many_poll_options'] = 'РќРµ РјРѕР¶Рµ РґР° РёРјР° С‚РѕР»РєРѕРІР° РјРЅРѕРіРѕ РІСЉР·РјРѕР¶РЅРѕСЃС‚Рё Р·Р° РѕС‚РіРѕРІРѕСЂ'; # You have tried to enter too many poll options
+$lang['Post_has_no_poll'] = 'РџРѕ С‚Р°Р·Рё С‚РµРјР° РЅСЏРјР° Р°РЅРєРµС‚Р°'; # This post has no poll
+$lang['Already_voted'] = 'Р’РёРµ РІРµС‡Рµ СЃС‚Рµ РіР»Р°СЃСѓРІР°Р»Рё РІ С‚Р°Р·Рё Р°РЅРєРµС‚Р°'; # You have already voted in this poll
+$lang['No_vote_option'] = 'РџСЂРё РіР»Р°СЃСѓРІР°РЅРµ С‚СЂСЏР±РІР° РґР° РёР·Р±РµСЂРµС‚Рµ РЅСЏРєР°РєСЉРІ РѕС‚РіРѕРІРѕСЂ'; # You must specify an option when voting
 
-$lang['Add_poll'] = iconv('CP1251',_CHARSET, 'Добави анкета'); # Add a Poll
-$lang['Add_poll_explain'] = iconv('CP1251',_CHARSET, 'Ако не искате да има анкета към темата - оставете полетата празни'); # If you do not want to add a poll to your topic leave the fields blank
-$lang['Poll_question'] = iconv('CP1251',_CHARSET, 'Въпрос за анкетата'); # Poll question
-$lang['Poll_option'] = iconv('CP1251',_CHARSET, 'Възможност за отговор'); # Poll option
-$lang['Add_option'] = iconv('CP1251',_CHARSET, 'Добави възможност'); # Add option
-$lang['Update'] = iconv('CP1251',_CHARSET, 'Промени'); # Update
-$lang['Delete'] = iconv('CP1251',_CHARSET, 'Изтрий'); # Delete
-$lang['Poll_for'] = iconv('CP1251',_CHARSET, 'Анкетата да е активна'); # Run poll for
-$lang['Days'] = iconv('CP1251',_CHARSET, 'дни'); # Days // This is used for the Run poll for ... Days + in admin_forums for pruning
-$lang['Poll_for_explain'] = iconv('CP1251',_CHARSET, '[ Оставете празно или 0 за да няма ограничение във времето ]'); # [ Enter 0 or leave blank for a never ending poll ]
-$lang['Delete_poll'] = iconv('CP1251',_CHARSET, 'Изтрий анкетата'); # Delete Poll
+$lang['Add_poll'] = 'Р”РѕР±Р°РІРё Р°РЅРєРµС‚Р°'; # Add a Poll
+$lang['Add_poll_explain'] = 'РђРєРѕ РЅРµ РёСЃРєР°С‚Рµ РґР° РёРјР° Р°РЅРєРµС‚Р° РєСЉРј С‚РµРјР°С‚Р° - РѕСЃС‚Р°РІРµС‚Рµ РїРѕР»РµС‚Р°С‚Р° РїСЂР°Р·РЅРё'; # If you do not want to add a poll to your topic leave the fields blank
+$lang['Poll_question'] = 'Р’СЉРїСЂРѕСЃ Р·Р° Р°РЅРєРµС‚Р°С‚Р°'; # Poll question
+$lang['Poll_option'] = 'Р’СЉР·РјРѕР¶РЅРѕСЃС‚ Р·Р° РѕС‚РіРѕРІРѕСЂ'; # Poll option
+$lang['Add_option'] = 'Р”РѕР±Р°РІРё РІСЉР·РјРѕР¶РЅРѕСЃС‚'; # Add option
+$lang['Update'] = 'РџСЂРѕРјРµРЅРё'; # Update
+$lang['Delete'] = 'РР·С‚СЂРёР№'; # Delete
+$lang['Poll_for'] = 'РђРЅРєРµС‚Р°С‚Р° РґР° Рµ Р°РєС‚РёРІРЅР°'; # Run poll for
+$lang['Days'] = 'РґРЅРё'; # Days // This is used for the Run poll for ... Days + in admin_forums for pruning
+$lang['Poll_for_explain'] = '[ РћСЃС‚Р°РІРµС‚Рµ РїСЂР°Р·РЅРѕ РёР»Рё 0 Р·Р° РґР° РЅСЏРјР° РѕРіСЂР°РЅРёС‡РµРЅРёРµ РІСЉРІ РІСЂРµРјРµС‚Рѕ ]'; # [ Enter 0 or leave blank for a never ending poll ]
+$lang['Delete_poll'] = 'РР·С‚СЂРёР№ Р°РЅРєРµС‚Р°С‚Р°'; # Delete Poll
 
-$lang['Disable_HTML_post'] = iconv('CP1251',_CHARSET, 'Деактивирай HTML'); # Disable HTML in this post
-$lang['Disable_BBCode_post'] = iconv('CP1251',_CHARSET, 'Деактивирай BBCode'); # Disable BBCode in this post
-$lang['Disable_Smilies_post'] = iconv('CP1251',_CHARSET, 'Деактивирай Усмивки'); # Disable Smilies in this post
+$lang['Disable_HTML_post'] = 'Р”РµР°РєС‚РёРІРёСЂР°Р№ HTML'; # Disable HTML in this post
+$lang['Disable_BBCode_post'] = 'Р”РµР°РєС‚РёРІРёСЂР°Р№ BBCode'; # Disable BBCode in this post
+$lang['Disable_Smilies_post'] = 'Р”РµР°РєС‚РёРІРёСЂР°Р№ РЈСЃРјРёРІРєРё'; # Disable Smilies in this post
 
-$lang['HTML_is_ON'] = iconv('CP1251',_CHARSET, 'HTML е <u>активен</u>'); # HTML is <u>ON</u>
-$lang['HTML_is_OFF'] = iconv('CP1251',_CHARSET, 'HTML е <u>неактивен</u>'); # HTML is <u>OFF</u>
-$lang['BBCode_is_ON'] = iconv('CP1251',_CHARSET, '%sBBCode%s е <u>активен</u>'); # %sBBCode%s is <u>ON</u> // %s are replaced with URI pointing to FAQ
-$lang['BBCode_is_OFF'] = iconv('CP1251',_CHARSET, '%sBBCode%s е <u>неактивен</u>'); # %sBBCode%s is <u>OFF</u>
-$lang['Smilies_are_ON'] = iconv('CP1251',_CHARSET, 'Усмивките са <u>активни</u>'); # Smilies are <u>ON</u>
-$lang['Smilies_are_OFF'] = iconv('CP1251',_CHARSET, 'Усмивките са <u>неактивни</u>'); # Smilies are <u>OFF</u>
+$lang['HTML_is_ON'] = 'HTML Рµ <u>Р°РєС‚РёРІРµРЅ</u>'; # HTML is <u>ON</u>
+$lang['HTML_is_OFF'] = 'HTML Рµ <u>РЅРµР°РєС‚РёРІРµРЅ</u>'; # HTML is <u>OFF</u>
+$lang['BBCode_is_ON'] = '%sBBCode%s Рµ <u>Р°РєС‚РёРІРµРЅ</u>'; # %sBBCode%s is <u>ON</u> // %s are replaced with URI pointing to FAQ
+$lang['BBCode_is_OFF'] = '%sBBCode%s Рµ <u>РЅРµР°РєС‚РёРІРµРЅ</u>'; # %sBBCode%s is <u>OFF</u>
+$lang['Smilies_are_ON'] = 'РЈСЃРјРёРІРєРёС‚Рµ СЃР° <u>Р°РєС‚РёРІРЅРё</u>'; # Smilies are <u>ON</u>
+$lang['Smilies_are_OFF'] = 'РЈСЃРјРёРІРєРёС‚Рµ СЃР° <u>РЅРµР°РєС‚РёРІРЅРё</u>'; # Smilies are <u>OFF</u>
 
-$lang['Attach_signature'] = iconv('CP1251',_CHARSET, 'Добави подписа ми (може да се променя в профила)'); # Attach signature (signatures can be changed in profile)
-$lang['Notify'] = iconv('CP1251',_CHARSET, 'Известете ме когато е изпратен отговор'); # Notify me when a reply is posted
-$lang['Delete_post'] = iconv('CP1251',_CHARSET, 'Изтрий това съобщение'); # Delete this post
+$lang['Attach_signature'] = 'Р”РѕР±Р°РІРё РїРѕРґРїРёСЃР° РјРё (РјРѕР¶Рµ РґР° СЃРµ РїСЂРѕРјРµРЅСЏ РІ РїСЂРѕС„РёР»Р°)'; # Attach signature (signatures can be changed in profile)
+$lang['Notify'] = 'РР·РІРµСЃС‚РµС‚Рµ РјРµ РєРѕРіР°С‚Рѕ Рµ РёР·РїСЂР°С‚РµРЅ РѕС‚РіРѕРІРѕСЂ'; # Notify me when a reply is posted
+$lang['Delete_post'] = 'РР·С‚СЂРёР№ С‚РѕРІР° СЃСЉРѕР±С‰РµРЅРёРµ'; # Delete this post
 
-$lang['Stored'] = iconv('CP1251',_CHARSET, 'Съобщението ви е прието успешно'); # Your message has been entered successfully
-$lang['Deleted'] = iconv('CP1251',_CHARSET, 'Съобщението ви е изтрито успешно'); # Your message has been deleted successfully
-$lang['Poll_delete'] = iconv('CP1251',_CHARSET, 'Анкетата ви е изтрита успешно'); # Your poll has been deleted successfully
-$lang['Vote_cast'] = iconv('CP1251',_CHARSET, 'Гласът ви е зачетен'); # Your vote has been cast
+$lang['Stored'] = 'РЎСЉРѕР±С‰РµРЅРёРµС‚Рѕ РІРё Рµ РїСЂРёРµС‚Рѕ СѓСЃРїРµС€РЅРѕ'; # Your message has been entered successfully
+$lang['Deleted'] = 'РЎСЉРѕР±С‰РµРЅРёРµС‚Рѕ РІРё Рµ РёР·С‚СЂРёС‚Рѕ СѓСЃРїРµС€РЅРѕ'; # Your message has been deleted successfully
+$lang['Poll_delete'] = 'РђРЅРєРµС‚Р°С‚Р° РІРё Рµ РёР·С‚СЂРёС‚Р° СѓСЃРїРµС€РЅРѕ'; # Your poll has been deleted successfully
+$lang['Vote_cast'] = 'Р“Р»Р°СЃСЉС‚ РІРё Рµ Р·Р°С‡РµС‚РµРЅ'; # Your vote has been cast
 
-$lang['Topic_reply_notification'] = iconv('CP1251',_CHARSET, 'Topic Reply Notification');
+$lang['Topic_reply_notification'] = 'Topic Reply Notification';
 
-$lang['bbcode_b_help'] = iconv('CP1251',_CHARSET, 'Удебелен: [b]текст[/b]  (alt+b)'); # Bold text: [b]text[/b]  (alt+b)
-$lang['bbcode_i_help'] = iconv('CP1251',_CHARSET, 'Наклонен: [i]текст[/i]  (alt+i)'); # Italic text: [i]text[/i]  (alt+i)
-$lang['bbcode_u_help'] = iconv('CP1251',_CHARSET, 'Подчертан: [u]текст[/u]  (alt+u)'); # Underline text: [u]text[/u]  (alt+u)
-$lang['bbcode_q_help'] = iconv('CP1251',_CHARSET, 'Цитиран: [quote]текст[/quote]  (alt+q)'); # Quote text: [quote]text[/quote]  (alt+q)
-$lang['bbcode_c_help'] = iconv('CP1251',_CHARSET, 'Кодове: [code]код[/code]  (alt+c)'); # Code display: [code]code[/code]  (alt+c)
-$lang['bbcode_l_help'] = iconv('CP1251',_CHARSET, 'Списък: [list]текст[/list] (alt+l)'); # List: [list]text[/list] (alt+l)
-$lang['bbcode_o_help'] = iconv('CP1251',_CHARSET, 'Подреден списък: [list=]текст[/list]  (alt+o)'); # Ordered list: [list=]text[/list]  (alt+o)
-$lang['bbcode_p_help'] = iconv('CP1251',_CHARSET, 'Изображение: [img]http://image_url[/img]  (alt+p)'); # Insert image: [img]http://image_url[/img]  (alt+p)
-$lang['bbcode_w_help'] = iconv('CP1251',_CHARSET, 'Връзка: [url]http://url[/url] или [url=http://url]URL текст[/url]  (alt+w)'); # Insert URL: [url]http://url[/url] or [url=http://url]URL text[/url]  (alt+w)
-$lang['bbcode_a_help'] = iconv('CP1251',_CHARSET, 'Затваря всички отворени bbCode кодове'); # Close all open bbCode tags
-$lang['bbcode_s_help'] = iconv('CP1251',_CHARSET, 'Цвят на шрифта: [color=red]текст[/color]  Съвет: важи още color=#FF0000'); # Font color: [color=red]text[/color]  Tip: you can also use color=#FF0000
-$lang['bbcode_f_help'] = iconv('CP1251',_CHARSET, 'Размер на шрифта: [size=x-small]текст[/size]'); # Font size: [size=x-small]small text[/size]
+$lang['bbcode_b_help'] = 'РЈРґРµР±РµР»РµРЅ: [b]С‚РµРєСЃС‚[/b]  (alt+b)'; # Bold text: [b]text[/b]  (alt+b)
+$lang['bbcode_i_help'] = 'РќР°РєР»РѕРЅРµРЅ: [i]С‚РµРєСЃС‚[/i]  (alt+i)'; # Italic text: [i]text[/i]  (alt+i)
+$lang['bbcode_u_help'] = 'РџРѕРґС‡РµСЂС‚Р°РЅ: [u]С‚РµРєСЃС‚[/u]  (alt+u)'; # Underline text: [u]text[/u]  (alt+u)
+$lang['bbcode_q_help'] = 'Р¦РёС‚РёСЂР°РЅ: [quote]С‚РµРєСЃС‚[/quote]  (alt+q)'; # Quote text: [quote]text[/quote]  (alt+q)
+$lang['bbcode_c_help'] = 'РљРѕРґРѕРІРµ: [code]РєРѕРґ[/code]  (alt+c)'; # Code display: [code]code[/code]  (alt+c)
+$lang['bbcode_l_help'] = 'РЎРїРёСЃСЉРє: [list]С‚РµРєСЃС‚[/list] (alt+l)'; # List: [list]text[/list] (alt+l)
+$lang['bbcode_o_help'] = 'РџРѕРґСЂРµРґРµРЅ СЃРїРёСЃСЉРє: [list=]С‚РµРєСЃС‚[/list]  (alt+o)'; # Ordered list: [list=]text[/list]  (alt+o)
+$lang['bbcode_p_help'] = 'РР·РѕР±СЂР°Р¶РµРЅРёРµ: [img]http://image_url[/img]  (alt+p)'; # Insert image: [img]http://image_url[/img]  (alt+p)
+$lang['bbcode_w_help'] = 'Р’СЂСЉР·РєР°: [url]http://url[/url] РёР»Рё [url=http://url]URL С‚РµРєСЃС‚[/url]  (alt+w)'; # Insert URL: [url]http://url[/url] or [url=http://url]URL text[/url]  (alt+w)
+$lang['bbcode_a_help'] = 'Р—Р°С‚РІР°СЂСЏ РІСЃРёС‡РєРё РѕС‚РІРѕСЂРµРЅРё bbCode РєРѕРґРѕРІРµ'; # Close all open bbCode tags
+$lang['bbcode_s_help'] = 'Р¦РІСЏС‚ РЅР° С€СЂРёС„С‚Р°: [color=red]С‚РµРєСЃС‚[/color]  РЎСЉРІРµС‚: РІР°Р¶Рё РѕС‰Рµ color=#FF0000'; # Font color: [color=red]text[/color]  Tip: you can also use color=#FF0000
+$lang['bbcode_f_help'] = 'Р Р°Р·РјРµСЂ РЅР° С€СЂРёС„С‚Р°: [size=x-small]С‚РµРєСЃС‚[/size]'; # Font size: [size=x-small]small text[/size]
 
-$lang['Emoticons'] = iconv('CP1251',_CHARSET, 'Усмивки'); # Emoticons
-$lang['More_emoticons'] = iconv('CP1251',_CHARSET, 'Още усмивки'); # View more Emoticons
+$lang['Emoticons'] = 'РЈСЃРјРёРІРєРё'; # Emoticons
+$lang['More_emoticons'] = 'РћС‰Рµ СѓСЃРјРёРІРєРё'; # View more Emoticons
 
-$lang['Font_color'] = iconv('CP1251',_CHARSET, 'Шрифт - цвят'); # Font colour
-$lang['color_default'] = iconv('CP1251',_CHARSET, 'Обикновен'); # Default
-$lang['color_dark_red'] = iconv('CP1251',_CHARSET, 'Тъмно червен'); # Dark Red
-$lang['color_red'] = iconv('CP1251',_CHARSET, 'Червен'); # Red
-$lang['color_orange'] = iconv('CP1251',_CHARSET, 'Оранжев'); # Orange
-$lang['color_brown'] = iconv('CP1251',_CHARSET, 'Кафяв'); # Brown
-$lang['color_yellow'] = iconv('CP1251',_CHARSET, 'Жълт'); # Yellow
-$lang['color_green'] = iconv('CP1251',_CHARSET, 'Зелен'); # Green
-$lang['color_olive'] = iconv('CP1251',_CHARSET, 'Маслинен'); # Olive
-$lang['color_cyan'] = iconv('CP1251',_CHARSET, 'Синьозелен'); # Cyan
-$lang['color_blue'] = iconv('CP1251',_CHARSET, 'Син'); # Blue
-$lang['color_dark_blue'] = iconv('CP1251',_CHARSET, 'Тъмно син'); # Dark Blue
-$lang['color_indigo'] = iconv('CP1251',_CHARSET, 'Мастилено'); # Indigo
-$lang['color_violet'] = iconv('CP1251',_CHARSET, 'Виолетов'); # Violet
-$lang['color_white'] = iconv('CP1251',_CHARSET, 'Бял'); # White
-$lang['color_black'] = iconv('CP1251',_CHARSET, 'Черен'); # Black
+$lang['Font_color'] = 'РЁСЂРёС„С‚ - С†РІСЏС‚'; # Font colour
+$lang['color_default'] = 'РћР±РёРєРЅРѕРІРµРЅ'; # Default
+$lang['color_dark_red'] = 'РўСЉРјРЅРѕ С‡РµСЂРІРµРЅ'; # Dark Red
+$lang['color_red'] = 'Р§РµСЂРІРµРЅ'; # Red
+$lang['color_orange'] = 'РћСЂР°РЅР¶РµРІ'; # Orange
+$lang['color_brown'] = 'РљР°С„СЏРІ'; # Brown
+$lang['color_yellow'] = 'Р–СЉР»С‚'; # Yellow
+$lang['color_green'] = 'Р—РµР»РµРЅ'; # Green
+$lang['color_olive'] = 'РњР°СЃР»РёРЅРµРЅ'; # Olive
+$lang['color_cyan'] = 'РЎРёРЅСЊРѕР·РµР»РµРЅ'; # Cyan
+$lang['color_blue'] = 'РЎРёРЅ'; # Blue
+$lang['color_dark_blue'] = 'РўСЉРјРЅРѕ СЃРёРЅ'; # Dark Blue
+$lang['color_indigo'] = 'РњР°СЃС‚РёР»РµРЅРѕ'; # Indigo
+$lang['color_violet'] = 'Р’РёРѕР»РµС‚РѕРІ'; # Violet
+$lang['color_white'] = 'Р‘СЏР»'; # White
+$lang['color_black'] = 'Р§РµСЂРµРЅ'; # Black
 
-$lang['Font_size'] = iconv('CP1251',_CHARSET, 'Размер'); # Font size
-$lang['font_tiny'] = iconv('CP1251',_CHARSET, 'Дребен'); # Tiny
-$lang['font_small'] = iconv('CP1251',_CHARSET, 'Малък'); # Small
-$lang['font_normal'] = iconv('CP1251',_CHARSET, 'Нормален'); # Normal
-$lang['font_large'] = iconv('CP1251',_CHARSET, 'Голям'); # Large
-$lang['font_huge'] = iconv('CP1251',_CHARSET, 'Огромен'); # Huge
+$lang['Font_size'] = 'Р Р°Р·РјРµСЂ'; # Font size
+$lang['font_tiny'] = 'Р”СЂРµР±РµРЅ'; # Tiny
+$lang['font_small'] = 'РњР°Р»СЉРє'; # Small
+$lang['font_normal'] = 'РќРѕСЂРјР°Р»РµРЅ'; # Normal
+$lang['font_large'] = 'Р“РѕР»СЏРј'; # Large
+$lang['font_huge'] = 'РћРіСЂРѕРјРµРЅ'; # Huge
 
-$lang['Close_Tags'] = iconv('CP1251',_CHARSET, 'Затвори кодове'); # Close Tags
-$lang['Styles_tip'] = iconv('CP1251',_CHARSET, 'Съвет: стиловете се прилагат към избрания текст'); # Tip: Styles can be applied quickly to selected text
+$lang['Close_Tags'] = 'Р—Р°С‚РІРѕСЂРё РєРѕРґРѕРІРµ'; # Close Tags
+$lang['Styles_tip'] = 'РЎСЉРІРµС‚: СЃС‚РёР»РѕРІРµС‚Рµ СЃРµ РїСЂРёР»Р°РіР°С‚ РєСЉРј РёР·Р±СЂР°РЅРёСЏ С‚РµРєСЃС‚'; # Tip: Styles can be applied quickly to selected text
 
 
 //
 // Private Messaging
 //
-$lang['Private_Messaging'] = iconv('CP1251',_CHARSET, 'Лични съобщения'); # Private Messaging
+$lang['Private_Messaging'] = 'Р›РёС‡РЅРё СЃСЉРѕР±С‰РµРЅРёСЏ'; # Private Messaging
 
-$lang['Login_check_pm'] = iconv('CP1251',_CHARSET, 'Регистрирайте се за да проверите своите лични съобщения'); # Login to check your private messages
-$lang['New_pms'] = iconv('CP1251',_CHARSET, 'Имате %d нови съобщения'); # You have %d new messages // You have 2 new messages
-$lang['New_pm'] = iconv('CP1251',_CHARSET, 'Имате %d ново съобщение'); # You have %d new message // You have 1 new message
-$lang['No_new_pm'] = iconv('CP1251',_CHARSET, 'Нямате нови съобщения'); # You have no new messages
-$lang['Unread_pms'] = iconv('CP1251',_CHARSET, 'Имате %d непрочетени съощения'); # You have %d unread messages
-$lang['Unread_pm'] = iconv('CP1251',_CHARSET, 'Имате %d непрочетено съощение'); # You have %d unread message
-$lang['No_unread_pm'] = iconv('CP1251',_CHARSET, 'Нямате непрочетени съощения'); # You have no unread messages
-$lang['You_new_pm'] = iconv('CP1251',_CHARSET, 'Имате 1 ново лично съобщение'); # A new private message is waiting for you in your Inbox
-$lang['You_new_pms'] = iconv('CP1251',_CHARSET, 'Имате нови лични съобщения'); # New private messages are waiting for you in your Inbox
-$lang['You_no_new_pm'] = iconv('CP1251',_CHARSET, 'Нямате нови лични съобщения'); # No new private messages are waiting for you
+$lang['Login_check_pm'] = 'Р РµРіРёСЃС‚СЂРёСЂР°Р№С‚Рµ СЃРµ Р·Р° РґР° РїСЂРѕРІРµСЂРёС‚Рµ СЃРІРѕРёС‚Рµ Р»РёС‡РЅРё СЃСЉРѕР±С‰РµРЅРёСЏ'; # Login to check your private messages
+$lang['New_pms'] = 'РРјР°С‚Рµ %d РЅРѕРІРё СЃСЉРѕР±С‰РµРЅРёСЏ'; # You have %d new messages // You have 2 new messages
+$lang['New_pm'] = 'РРјР°С‚Рµ %d РЅРѕРІРѕ СЃСЉРѕР±С‰РµРЅРёРµ'; # You have %d new message // You have 1 new message
+$lang['No_new_pm'] = 'РќСЏРјР°С‚Рµ РЅРѕРІРё СЃСЉРѕР±С‰РµРЅРёСЏ'; # You have no new messages
+$lang['Unread_pms'] = 'РРјР°С‚Рµ %d РЅРµРїСЂРѕС‡РµС‚РµРЅРё СЃСЉРѕС‰РµРЅРёСЏ'; # You have %d unread messages
+$lang['Unread_pm'] = 'РРјР°С‚Рµ %d РЅРµРїСЂРѕС‡РµС‚РµРЅРѕ СЃСЉРѕС‰РµРЅРёРµ'; # You have %d unread message
+$lang['No_unread_pm'] = 'РќСЏРјР°С‚Рµ РЅРµРїСЂРѕС‡РµС‚РµРЅРё СЃСЉРѕС‰РµРЅРёСЏ'; # You have no unread messages
+$lang['You_new_pm'] = 'РРјР°С‚Рµ 1 РЅРѕРІРѕ Р»РёС‡РЅРѕ СЃСЉРѕР±С‰РµРЅРёРµ'; # A new private message is waiting for you in your Inbox
+$lang['You_new_pms'] = 'РРјР°С‚Рµ РЅРѕРІРё Р»РёС‡РЅРё СЃСЉРѕР±С‰РµРЅРёСЏ'; # New private messages are waiting for you in your Inbox
+$lang['You_no_new_pm'] = 'РќСЏРјР°С‚Рµ РЅРѕРІРё Р»РёС‡РЅРё СЃСЉРѕР±С‰РµРЅРёСЏ'; # No new private messages are waiting for you
 
-$lang['Unread_message'] = iconv('CP1251',_CHARSET, 'Непрочетено съобщение'); # Unread message
-$lang['Read_message'] = iconv('CP1251',_CHARSET, 'Прочетено съобщение'); # Read message
+$lang['Unread_message'] = 'РќРµРїСЂРѕС‡РµС‚РµРЅРѕ СЃСЉРѕР±С‰РµРЅРёРµ'; # Unread message
+$lang['Read_message'] = 'РџСЂРѕС‡РµС‚РµРЅРѕ СЃСЉРѕР±С‰РµРЅРёРµ'; # Read message
 
-$lang['Read_pm'] = iconv('CP1251',_CHARSET, 'Прочети съобщението'); # Read message
-$lang['Post_new_pm'] = iconv('CP1251',_CHARSET, 'Изпрати съобщение'); # Post message
-$lang['Post_reply_pm'] = iconv('CP1251',_CHARSET, 'Отговори на съобщението'); # Reply to message
-$lang['Post_quote_pm'] = iconv('CP1251',_CHARSET, 'Цитирай съобщението'); # Quote message
-$lang['Edit_pm'] = iconv('CP1251',_CHARSET, 'Редактирай съобщението'); # Edit message
+$lang['Read_pm'] = 'РџСЂРѕС‡РµС‚Рё СЃСЉРѕР±С‰РµРЅРёРµС‚Рѕ'; # Read message
+$lang['Post_new_pm'] = 'РР·РїСЂР°С‚Рё СЃСЉРѕР±С‰РµРЅРёРµ'; # Post message
+$lang['Post_reply_pm'] = 'РћС‚РіРѕРІРѕСЂРё РЅР° СЃСЉРѕР±С‰РµРЅРёРµС‚Рѕ'; # Reply to message
+$lang['Post_quote_pm'] = 'Р¦РёС‚РёСЂР°Р№ СЃСЉРѕР±С‰РµРЅРёРµС‚Рѕ'; # Quote message
+$lang['Edit_pm'] = 'Р РµРґР°РєС‚РёСЂР°Р№ СЃСЉРѕР±С‰РµРЅРёРµС‚Рѕ'; # Edit message
 
-$lang['Inbox'] = iconv('CP1251',_CHARSET, 'Входящи'); # Inbox
-$lang['Outbox'] = iconv('CP1251',_CHARSET, 'Изходящи'); # Outbox
-$lang['Savebox'] = iconv('CP1251',_CHARSET, 'Запазени'); # Savebox
-$lang['Sentbox'] = iconv('CP1251',_CHARSET, 'Изпратени'); # Sentbox
-$lang['Flag'] = iconv('CP1251',_CHARSET, 'Флаг'); # Flag
-$lang['Subject'] = iconv('CP1251',_CHARSET, 'Заглавие'); # Subject
-$lang['From'] = iconv('CP1251',_CHARSET, 'От'); # From
-$lang['To'] = iconv('CP1251',_CHARSET, 'За'); # To
-$lang['Date'] = iconv('CP1251',_CHARSET, 'Дата'); # Date
-$lang['Mark'] = iconv('CP1251',_CHARSET, 'Маркирай'); # Mark
-$lang['Sent'] = iconv('CP1251',_CHARSET, 'Изпрати'); # Sent
-$lang['Saved'] = iconv('CP1251',_CHARSET, 'Запазено'); # Saved
-$lang['Delete_marked'] = iconv('CP1251',_CHARSET, 'Изтрий маркираните'); # Delete Marked
-$lang['Delete_all'] = iconv('CP1251',_CHARSET, 'Изтрий всички'); # Delete All
-$lang['Save_marked'] = iconv('CP1251',_CHARSET, 'Запази маркираните'); # Save Marked
-$lang['Save_message'] = iconv('CP1251',_CHARSET, 'Запази съобщението'); # Save Message
-$lang['Delete_message'] = iconv('CP1251',_CHARSET, 'Изтрий съобщението'); # Delete Message
+$lang['Inbox'] = 'Р’С…РѕРґСЏС‰Рё'; # Inbox
+$lang['Outbox'] = 'РР·С…РѕРґСЏС‰Рё'; # Outbox
+$lang['Savebox'] = 'Р—Р°РїР°Р·РµРЅРё'; # Savebox
+$lang['Sentbox'] = 'РР·РїСЂР°С‚РµРЅРё'; # Sentbox
+$lang['Flag'] = 'Р¤Р»Р°Рі'; # Flag
+$lang['Subject'] = 'Р—Р°РіР»Р°РІРёРµ'; # Subject
+$lang['From'] = 'РћС‚'; # From
+$lang['To'] = 'Р—Р°'; # To
+$lang['Date'] = 'Р”Р°С‚Р°'; # Date
+$lang['Mark'] = 'РњР°СЂРєРёСЂР°Р№'; # Mark
+$lang['Sent'] = 'РР·РїСЂР°С‚Рё'; # Sent
+$lang['Saved'] = 'Р—Р°РїР°Р·РµРЅРѕ'; # Saved
+$lang['Delete_marked'] = 'РР·С‚СЂРёР№ РјР°СЂРєРёСЂР°РЅРёС‚Рµ'; # Delete Marked
+$lang['Delete_all'] = 'РР·С‚СЂРёР№ РІСЃРёС‡РєРё'; # Delete All
+$lang['Save_marked'] = 'Р—Р°РїР°Р·Рё РјР°СЂРєРёСЂР°РЅРёС‚Рµ'; # Save Marked
+$lang['Save_message'] = 'Р—Р°РїР°Р·Рё СЃСЉРѕР±С‰РµРЅРёРµС‚Рѕ'; # Save Message
+$lang['Delete_message'] = 'РР·С‚СЂРёР№ СЃСЉРѕР±С‰РµРЅРёРµС‚Рѕ'; # Delete Message
 
-$lang['Display_messages'] = iconv('CP1251',_CHARSET, 'Покажи съобщенията отпреди'); # Display messages from previous // Followed by number of days/weeks/months
-$lang['All_Messages'] = iconv('CP1251',_CHARSET, 'Всички съобщения'); # All Messages
+$lang['Display_messages'] = 'РџРѕРєР°Р¶Рё СЃСЉРѕР±С‰РµРЅРёСЏС‚Р° РѕС‚РїСЂРµРґРё'; # Display messages from previous // Followed by number of days/weeks/months
+$lang['All_Messages'] = 'Р’СЃРёС‡РєРё СЃСЉРѕР±С‰РµРЅРёСЏ'; # All Messages
 
-$lang['No_messages_folder'] = iconv('CP1251',_CHARSET, 'Нямате съобщения в тази папка'); # You have no messages in this folder
+$lang['No_messages_folder'] = 'РќСЏРјР°С‚Рµ СЃСЉРѕР±С‰РµРЅРёСЏ РІ С‚Р°Р·Рё РїР°РїРєР°'; # You have no messages in this folder
 
-$lang['PM_disabled'] = iconv('CP1251',_CHARSET, 'Изпращането на лични съобщения е деактивирано за този форум'); # Private messaging has been disabled on this board
-$lang['Cannot_send_privmsg'] = iconv('CP1251',_CHARSET, 'Съжаляваме, но администратора ви е забранил да изпращате лични съобщения'); # Sorry but the administrator has prevented you from sending private messages
-$lang['No_to_user'] = iconv('CP1251',_CHARSET, 'Трябва да укажете потребителско име за да изпратите това съобщение'); # You must specify a username to send this message
-$lang['No_such_user'] = iconv('CP1251',_CHARSET, 'Съжаляваме, но няма такъв потребител'); # Sorry but no such user exists
+$lang['PM_disabled'] = 'РР·РїСЂР°С‰Р°РЅРµС‚Рѕ РЅР° Р»РёС‡РЅРё СЃСЉРѕР±С‰РµРЅРёСЏ Рµ РґРµР°РєС‚РёРІРёСЂР°РЅРѕ Р·Р° С‚РѕР·Рё С„РѕСЂСѓРј'; # Private messaging has been disabled on this board
+$lang['Cannot_send_privmsg'] = 'РЎСЉР¶Р°Р»СЏРІР°РјРµ, РЅРѕ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР° РІРё Рµ Р·Р°Р±СЂР°РЅРёР» РґР° РёР·РїСЂР°С‰Р°С‚Рµ Р»РёС‡РЅРё СЃСЉРѕР±С‰РµРЅРёСЏ'; # Sorry but the administrator has prevented you from sending private messages
+$lang['No_to_user'] = 'РўСЂСЏР±РІР° РґР° СѓРєР°Р¶РµС‚Рµ РїРѕС‚СЂРµР±РёС‚РµР»СЃРєРѕ РёРјРµ Р·Р° РґР° РёР·РїСЂР°С‚РёС‚Рµ С‚РѕРІР° СЃСЉРѕР±С‰РµРЅРёРµ'; # You must specify a username to send this message
+$lang['No_such_user'] = 'РЎСЉР¶Р°Р»СЏРІР°РјРµ, РЅРѕ РЅСЏРјР° С‚Р°РєСЉРІ РїРѕС‚СЂРµР±РёС‚РµР»'; # Sorry but no such user exists
 
-$lang['Disable_HTML_pm'] = iconv('CP1251',_CHARSET, 'Деактивирай HTML'); # Disable HTML in this message
-$lang['Disable_BBCode_pm'] = iconv('CP1251',_CHARSET, 'Деактивирай BBCode'); # Disable BBCode in this message
-$lang['Disable_Smilies_pm'] = iconv('CP1251',_CHARSET, 'Деактивирай Усмивки'); # Disable Smilies in this message
+$lang['Disable_HTML_pm'] = 'Р”РµР°РєС‚РёРІРёСЂР°Р№ HTML'; # Disable HTML in this message
+$lang['Disable_BBCode_pm'] = 'Р”РµР°РєС‚РёРІРёСЂР°Р№ BBCode'; # Disable BBCode in this message
+$lang['Disable_Smilies_pm'] = 'Р”РµР°РєС‚РёРІРёСЂР°Р№ РЈСЃРјРёРІРєРё'; # Disable Smilies in this message
 
-$lang['Message_sent'] = iconv('CP1251',_CHARSET, 'Съобщението ви е изпратено'); # Your message has been sent
+$lang['Message_sent'] = 'РЎСЉРѕР±С‰РµРЅРёРµС‚Рѕ РІРё Рµ РёР·РїСЂР°С‚РµРЅРѕ'; # Your message has been sent
 
-$lang['Click_return_inbox'] = iconv('CP1251',_CHARSET, '%sОбратно към вашата пощенска кутия%s');
-$lang['Click_return_index'] = iconv('CP1251',_CHARSET, '%sОбратно към индекса с форуми%s');
+$lang['Click_return_inbox'] = '%sРћР±СЂР°С‚РЅРѕ РєСЉРј РІР°С€Р°С‚Р° РїРѕС‰РµРЅСЃРєР° РєСѓС‚РёСЏ%s';
+$lang['Click_return_index'] = '%sРћР±СЂР°С‚РЅРѕ РєСЉРј РёРЅРґРµРєСЃР° СЃ С„РѕСЂСѓРјРё%s';
 
-$lang['Send_a_new_message'] = iconv('CP1251',_CHARSET, 'Ново лично съобщение'); # Send a new private message
-$lang['Send_a_reply'] = iconv('CP1251',_CHARSET, 'Отговор на лично съобщение'); # Reply to a private message
-$lang['Edit_message'] = iconv('CP1251',_CHARSET, 'Редакция на лично съобщение'); # Edit private message
+$lang['Send_a_new_message'] = 'РќРѕРІРѕ Р»РёС‡РЅРѕ СЃСЉРѕР±С‰РµРЅРёРµ'; # Send a new private message
+$lang['Send_a_reply'] = 'РћС‚РіРѕРІРѕСЂ РЅР° Р»РёС‡РЅРѕ СЃСЉРѕР±С‰РµРЅРёРµ'; # Reply to a private message
+$lang['Edit_message'] = 'Р РµРґР°РєС†РёСЏ РЅР° Р»РёС‡РЅРѕ СЃСЉРѕР±С‰РµРЅРёРµ'; # Edit private message
 
-$lang['Notification_subject'] = iconv('CP1251',_CHARSET, 'Пристигнали са нови лични съобщения'); # New Private Message has arrived
+$lang['Notification_subject'] = 'РџСЂРёСЃС‚РёРіРЅР°Р»Рё СЃР° РЅРѕРІРё Р»РёС‡РЅРё СЃСЉРѕР±С‰РµРЅРёСЏ'; # New Private Message has arrived
 
-$lang['Find_username'] = iconv('CP1251',_CHARSET, 'Намери потребител'); # Find a username
-$lang['Find'] = iconv('CP1251',_CHARSET, 'Намери'); # Find
-$lang['No_match'] = iconv('CP1251',_CHARSET, 'Няма открити'); # No matches found
+$lang['Find_username'] = 'РќР°РјРµСЂРё РїРѕС‚СЂРµР±РёС‚РµР»'; # Find a username
+$lang['Find'] = 'РќР°РјРµСЂРё'; # Find
+$lang['No_match'] = 'РќСЏРјР° РѕС‚РєСЂРёС‚Рё'; # No matches found
 
-$lang['No_post_id'] = iconv('CP1251',_CHARSET, 'Не е указано ID при изпращането'); # No post ID was specified
-$lang['No_such_folder'] = iconv('CP1251',_CHARSET, 'Няма такава папка'); # No such folder exists
-$lang['No_folder'] = iconv('CP1251',_CHARSET, 'Няма указана папка'); # No folder specified
+$lang['No_post_id'] = 'РќРµ Рµ СѓРєР°Р·Р°РЅРѕ ID РїСЂРё РёР·РїСЂР°С‰Р°РЅРµС‚Рѕ'; # No post ID was specified
+$lang['No_such_folder'] = 'РќСЏРјР° С‚Р°РєР°РІР° РїР°РїРєР°'; # No such folder exists
+$lang['No_folder'] = 'РќСЏРјР° СѓРєР°Р·Р°РЅР° РїР°РїРєР°'; # No folder specified
 
-$lang['Mark_all'] = iconv('CP1251',_CHARSET, 'Маркирай всички'); # Mark all
-$lang['Unmark_all'] = iconv('CP1251',_CHARSET, 'Отмаркирай всички'); # Unmark all
+$lang['Mark_all'] = 'РњР°СЂРєРёСЂР°Р№ РІСЃРёС‡РєРё'; # Mark all
+$lang['Unmark_all'] = 'РћС‚РјР°СЂРєРёСЂР°Р№ РІСЃРёС‡РєРё'; # Unmark all
 
-$lang['Confirm_delete_pm'] = iconv('CP1251',_CHARSET, 'Сигурни ли сте, че искате да изтриете това съобщение'); # Are you sure you want to delete this message?
-$lang['Confirm_delete_pms'] = iconv('CP1251',_CHARSET, 'Сигурни ли сте, че искате да изтриете тези съобщения'); # Are you sure you want to delete these messages?
+$lang['Confirm_delete_pm'] = 'РЎРёРіСѓСЂРЅРё Р»Рё СЃС‚Рµ, С‡Рµ РёСЃРєР°С‚Рµ РґР° РёР·С‚СЂРёРµС‚Рµ С‚РѕРІР° СЃСЉРѕР±С‰РµРЅРёРµ'; # Are you sure you want to delete this message?
+$lang['Confirm_delete_pms'] = 'РЎРёРіСѓСЂРЅРё Р»Рё СЃС‚Рµ, С‡Рµ РёСЃРєР°С‚Рµ РґР° РёР·С‚СЂРёРµС‚Рµ С‚РµР·Рё СЃСЉРѕР±С‰РµРЅРёСЏ'; # Are you sure you want to delete these messages?
 
-$lang['Inbox_size'] = iconv('CP1251',_CHARSET, 'Папка входящи е запълнена %d%%'); # Your Inbox is %d%% full // eg. Your Inbox is 50% full
-$lang['Sentbox_size'] = iconv('CP1251',_CHARSET, 'Папка изпратени е запълнена %d%%'); # Your Sentbox is %d%% full
-$lang['Savebox_size'] = iconv('CP1251',_CHARSET, 'Папка запазени е запълнена %d%%'); # Your Savebox is %d%% full
+$lang['Inbox_size'] = 'РџР°РїРєР° РІС…РѕРґСЏС‰Рё Рµ Р·Р°РїСЉР»РЅРµРЅР° %d%%'; # Your Inbox is %d%% full // eg. Your Inbox is 50% full
+$lang['Sentbox_size'] = 'РџР°РїРєР° РёР·РїСЂР°С‚РµРЅРё Рµ Р·Р°РїСЉР»РЅРµРЅР° %d%%'; # Your Sentbox is %d%% full
+$lang['Savebox_size'] = 'РџР°РїРєР° Р·Р°РїР°Р·РµРЅРё Рµ Р·Р°РїСЉР»РЅРµРЅР° %d%%'; # Your Savebox is %d%% full
 
-$lang['Click_view_privmsg'] = iconv('CP1251',_CHARSET, '%sКъм вашата папка входящи%s'); # Click %sHere%s to visit your Inbox
+$lang['Click_view_privmsg'] = '%sРљСЉРј РІР°С€Р°С‚Р° РїР°РїРєР° РІС…РѕРґСЏС‰Рё%s'; # Click %sHere%s to visit your Inbox
 
 
 //
 // Profiles/Registration
 //
-$lang['Viewing_user_profile'] = iconv('CP1251',_CHARSET, 'Профил на: %s'); # Viewing profile :: %s // %s is username 
-$lang['About_user'] = iconv('CP1251',_CHARSET, 'Всичко за %s'); # All about %s // %s is username
+$lang['Viewing_user_profile'] = 'РџСЂРѕС„РёР» РЅР°: %s'; # Viewing profile :: %s // %s is username 
+$lang['About_user'] = 'Р’СЃРёС‡РєРѕ Р·Р° %s'; # All about %s // %s is username
 
-$lang['Preferences'] = iconv('CP1251',_CHARSET, 'Характеристики'); # Preferences
-$lang['Items_required'] = iconv('CP1251',_CHARSET, 'Обектите маркирани със * са задължителни, освен ако не е указано друго'); # Items marked with a * are required unless stated otherwise
-$lang['Registration_info'] = iconv('CP1251',_CHARSET, 'Информация за регистрацията'); # Registration Information
-$lang['Profile_info'] = iconv('CP1251',_CHARSET, 'Информация за профила'); # Profile Information
-$lang['Profile_info_warn'] = iconv('CP1251',_CHARSET, 'Тази информация е видима за останалите'); # This information will be publicly viewable
-$lang['Avatar_panel'] = iconv('CP1251',_CHARSET, 'Аватар (образ) - контролен панел'); # Avatar control panel
-$lang['Avatar_gallery'] = iconv('CP1251',_CHARSET, 'Галерия с образи'); # Avatar gallery
+$lang['Preferences'] = 'РҐР°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё'; # Preferences
+$lang['Items_required'] = 'РћР±РµРєС‚РёС‚Рµ РјР°СЂРєРёСЂР°РЅРё СЃСЉСЃ * СЃР° Р·Р°РґСЉР»Р¶РёС‚РµР»РЅРё, РѕСЃРІРµРЅ Р°РєРѕ РЅРµ Рµ СѓРєР°Р·Р°РЅРѕ РґСЂСѓРіРѕ'; # Items marked with a * are required unless stated otherwise
+$lang['Registration_info'] = 'РРЅС„РѕСЂРјР°С†РёСЏ Р·Р° СЂРµРіРёСЃС‚СЂР°С†РёСЏС‚Р°'; # Registration Information
+$lang['Profile_info'] = 'РРЅС„РѕСЂРјР°С†РёСЏ Р·Р° РїСЂРѕС„РёР»Р°'; # Profile Information
+$lang['Profile_info_warn'] = 'РўР°Р·Рё РёРЅС„РѕСЂРјР°С†РёСЏ Рµ РІРёРґРёРјР° Р·Р° РѕСЃС‚Р°РЅР°Р»РёС‚Рµ'; # This information will be publicly viewable
+$lang['Avatar_panel'] = 'РђРІР°С‚Р°СЂ (РѕР±СЂР°Р·) - РєРѕРЅС‚СЂРѕР»РµРЅ РїР°РЅРµР»'; # Avatar control panel
+$lang['Avatar_gallery'] = 'Р“Р°Р»РµСЂРёСЏ СЃ РѕР±СЂР°Р·Рё'; # Avatar gallery
 
 
-$lang['Website'] = iconv('CP1251',_CHARSET, 'Web сайт'); # Website
-$lang['Location'] = iconv('CP1251',_CHARSET, 'Местонахождение'); # Location
-$lang['Contact'] = iconv('CP1251',_CHARSET, 'За контакт с'); # Contact
-$lang['Email_address'] = iconv('CP1251',_CHARSET, 'Email адрес'); # Email address
-$lang['Email'] = iconv('CP1251',_CHARSET, 'Email');
-$lang['Send_private_message'] = iconv('CP1251',_CHARSET, 'Изпрати лично съобщение'); # Send private message
-$lang['Hidden_email'] = iconv('CP1251',_CHARSET, '[ скрит ]'); # [ Hidden ]
-$lang['Search_user_posts'] = iconv('CP1251',_CHARSET, 'Търси за съобщения от този потребител'); # Search for posts by this user
-$lang['Interests'] = iconv('CP1251',_CHARSET, 'Интереси'); # Interests
-$lang['Occupation'] = iconv('CP1251',_CHARSET, 'Професия'); # Occupation
-$lang['Poster_rank'] = iconv('CP1251',_CHARSET, 'Ранк във Форума'); # Poster rank
+$lang['Website'] = 'Web СЃР°Р№С‚'; # Website
+$lang['Location'] = 'РњРµСЃС‚РѕРЅР°С…РѕР¶РґРµРЅРёРµ'; # Location
+$lang['Contact'] = 'Р—Р° РєРѕРЅС‚Р°РєС‚ СЃ'; # Contact
+$lang['Email_address'] = 'Email Р°РґСЂРµСЃ'; # Email address
+$lang['Email'] = 'Email';
+$lang['Send_private_message'] = 'РР·РїСЂР°С‚Рё Р»РёС‡РЅРѕ СЃСЉРѕР±С‰РµРЅРёРµ'; # Send private message
+$lang['Hidden_email'] = '[ СЃРєСЂРёС‚ ]'; # [ Hidden ]
+$lang['Search_user_posts'] = 'РўСЉСЂСЃРё Р·Р° СЃСЉРѕР±С‰РµРЅРёСЏ РѕС‚ С‚РѕР·Рё РїРѕС‚СЂРµР±РёС‚РµР»'; # Search for posts by this user
+$lang['Interests'] = 'РРЅС‚РµСЂРµСЃРё'; # Interests
+$lang['Occupation'] = 'РџСЂРѕС„РµСЃРёСЏ'; # Occupation
+$lang['Poster_rank'] = 'Р Р°РЅРє РІСЉРІ Р¤РѕСЂСѓРјР°'; # Poster rank
 
-$lang['Total_posts'] = iconv('CP1251',_CHARSET, 'Общо съобщения'); # Total posts
-$lang['User_post_pct_stats'] = iconv('CP1251',_CHARSET, '%.2f%% от всички'); # %.2f%% of total // 1.25% of total
-$lang['User_post_day_stats'] = iconv('CP1251',_CHARSET, '%.2f на ден'); # %.2f posts per day // 1.5 posts per day
-$lang['Search_user_posts'] = iconv('CP1251',_CHARSET, 'Намери всички съобщения на %s'); # Find all posts by %s // Find all posts by username
+$lang['Total_posts'] = 'РћР±С‰Рѕ СЃСЉРѕР±С‰РµРЅРёСЏ'; # Total posts
+$lang['User_post_pct_stats'] = '%.2f%% РѕС‚ РІСЃРёС‡РєРё'; # %.2f%% of total // 1.25% of total
+$lang['User_post_day_stats'] = '%.2f РЅР° РґРµРЅ'; # %.2f posts per day // 1.5 posts per day
+$lang['Search_user_posts'] = 'РќР°РјРµСЂРё РІСЃРёС‡РєРё СЃСЉРѕР±С‰РµРЅРёСЏ РЅР° %s'; # Find all posts by %s // Find all posts by username
 
-$lang['No_user_id_specified'] = iconv('CP1251',_CHARSET, 'Съжаляваме, но този потребител не съществува'); # Sorry but that user does not exist
-$lang['Wrong_Profile'] = iconv('CP1251',_CHARSET, 'Не можете да променяте чужд профил.'); # You cannot modify a profile that is not your own.
+$lang['No_user_id_specified'] = 'РЎСЉР¶Р°Р»СЏРІР°РјРµ, РЅРѕ С‚РѕР·Рё РїРѕС‚СЂРµР±РёС‚РµР» РЅРµ СЃСЉС‰РµСЃС‚РІСѓРІР°'; # Sorry but that user does not exist
+$lang['Wrong_Profile'] = 'РќРµ РјРѕР¶РµС‚Рµ РґР° РїСЂРѕРјРµРЅСЏС‚Рµ С‡СѓР¶Рґ РїСЂРѕС„РёР».'; # You cannot modify a profile that is not your own.
 
-$lang['Only_one_avatar'] = iconv('CP1251',_CHARSET, 'Може да бъде указан само един аватар (образ)'); # Only one type of avatar can be specified
-$lang['File_no_data'] = iconv('CP1251',_CHARSET, 'Файла на URL-а който сте подали не съдържа данни'); # The file at the URL you gave contains no data
-$lang['No_connection_URL'] = iconv('CP1251',_CHARSET, 'Не може да се осъществи връзка с URL-а който сте подали'); # A connection could not be made to the URL you gave
-$lang['Incomplete_URL'] = iconv('CP1251',_CHARSET, 'URL-ът който сте въвели е непълен'); # The URL you entered is incomplete
-$lang['Wrong_remote_avatar_format'] = iconv('CP1251',_CHARSET, 'URL-ът на отдалечения образ е невалиден'); # The URL of the remote avatar is not valid
-$lang['No_send_account_inactive'] = iconv('CP1251',_CHARSET, 'Съжаляваме, но паролата не може да бъде получена, защото профила ви е декативиран. Моля обърнете се към администратора'); # Sorry, but your password cannot be retrieved because your account is currently inactive. Please contact the forum administrator for more information
+$lang['Only_one_avatar'] = 'РњРѕР¶Рµ РґР° Р±СЉРґРµ СѓРєР°Р·Р°РЅ СЃР°РјРѕ РµРґРёРЅ Р°РІР°С‚Р°СЂ (РѕР±СЂР°Р·)'; # Only one type of avatar can be specified
+$lang['File_no_data'] = 'Р¤Р°Р№Р»Р° РЅР° URL-Р° РєРѕР№С‚Рѕ СЃС‚Рµ РїРѕРґР°Р»Рё РЅРµ СЃСЉРґСЉСЂР¶Р° РґР°РЅРЅРё'; # The file at the URL you gave contains no data
+$lang['No_connection_URL'] = 'РќРµ РјРѕР¶Рµ РґР° СЃРµ РѕСЃСЉС‰РµСЃС‚РІРё РІСЂСЉР·РєР° СЃ URL-Р° РєРѕР№С‚Рѕ СЃС‚Рµ РїРѕРґР°Р»Рё'; # A connection could not be made to the URL you gave
+$lang['Incomplete_URL'] = 'URL-СЉС‚ РєРѕР№С‚Рѕ СЃС‚Рµ РІСЉРІРµР»Рё Рµ РЅРµРїСЉР»РµРЅ'; # The URL you entered is incomplete
+$lang['Wrong_remote_avatar_format'] = 'URL-СЉС‚ РЅР° РѕС‚РґР°Р»РµС‡РµРЅРёСЏ РѕР±СЂР°Р· Рµ РЅРµРІР°Р»РёРґРµРЅ'; # The URL of the remote avatar is not valid
+$lang['No_send_account_inactive'] = 'РЎСЉР¶Р°Р»СЏРІР°РјРµ, РЅРѕ РїР°СЂРѕР»Р°С‚Р° РЅРµ РјРѕР¶Рµ РґР° Р±СЉРґРµ РїРѕР»СѓС‡РµРЅР°, Р·Р°С‰РѕС‚Рѕ РїСЂРѕС„РёР»Р° РІРё Рµ РґРµРєР°С‚РёРІРёСЂР°РЅ. РњРѕР»СЏ РѕР±СЉСЂРЅРµС‚Рµ СЃРµ РєСЉРј Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°'; # Sorry, but your password cannot be retrieved because your account is currently inactive. Please contact the forum administrator for more information
 
-$lang['Always_smile'] = iconv('CP1251',_CHARSET, 'Винаги да са активни усмивките'); # Always enable Smilies
-$lang['Always_html'] = iconv('CP1251',_CHARSET, 'Винаги да е активен HTML'); # Always allow HTML
-$lang['Always_bbcode'] = iconv('CP1251',_CHARSET, 'Винаги да е активен BBCode'); # Always allow BBCode
-$lang['Always_add_sig'] = iconv('CP1251',_CHARSET, 'Винаги да се добавя подписа ми'); # Always attach my signature
-$lang['Always_notify'] = iconv('CP1251',_CHARSET, 'Винаги ме информирайте за отговори'); # Always notify me of replies
-$lang['Always_notify_explain'] = iconv('CP1251',_CHARSET, 'Когато някой отговори на тема отворена от вас, ви се изпраща email. Това може да се променя при създаването на тема'); # Sends an email when someone replies to a topic you have posted in. This can be changed whenever you post
+$lang['Always_smile'] = 'Р’РёРЅР°РіРё РґР° СЃР° Р°РєС‚РёРІРЅРё СѓСЃРјРёРІРєРёС‚Рµ'; # Always enable Smilies
+$lang['Always_html'] = 'Р’РёРЅР°РіРё РґР° Рµ Р°РєС‚РёРІРµРЅ HTML'; # Always allow HTML
+$lang['Always_bbcode'] = 'Р’РёРЅР°РіРё РґР° Рµ Р°РєС‚РёРІРµРЅ BBCode'; # Always allow BBCode
+$lang['Always_add_sig'] = 'Р’РёРЅР°РіРё РґР° СЃРµ РґРѕР±Р°РІСЏ РїРѕРґРїРёСЃР° РјРё'; # Always attach my signature
+$lang['Always_notify'] = 'Р’РёРЅР°РіРё РјРµ РёРЅС„РѕСЂРјРёСЂР°Р№С‚Рµ Р·Р° РѕС‚РіРѕРІРѕСЂРё'; # Always notify me of replies
+$lang['Always_notify_explain'] = 'РљРѕРіР°С‚Рѕ РЅСЏРєРѕР№ РѕС‚РіРѕРІРѕСЂРё РЅР° С‚РµРјР° РѕС‚РІРѕСЂРµРЅР° РѕС‚ РІР°СЃ, РІРё СЃРµ РёР·РїСЂР°С‰Р° email. РўРѕРІР° РјРѕР¶Рµ РґР° СЃРµ РїСЂРѕРјРµРЅСЏ РїСЂРё СЃСЉР·РґР°РІР°РЅРµС‚Рѕ РЅР° С‚РµРјР°'; # Sends an email when someone replies to a topic you have posted in. This can be changed whenever you post
 
-$lang['Board_style'] = iconv('CP1251',_CHARSET, 'Стил за форума'); # Board Style
-$lang['Board_lang'] = iconv('CP1251',_CHARSET, 'Език за форума'); # Board Language
-$lang['No_themes'] = iconv('CP1251',_CHARSET, 'Няма теми в базата данни'); # No Themes In database
-$lang['Timezone'] = iconv('CP1251',_CHARSET, 'Часова зона'); # Timezone
-$lang['Date_format'] = iconv('CP1251',_CHARSET, 'Формат за дати'); # Date format
-$lang['Date_format_explain'] = iconv('CP1251',_CHARSET, 'Синтаксисът е както във функцията <a href=\'http://www.php.net/date\' target=\'_other\'>date()</a>'); # The syntax used is identical to the PHP <a href=\'http://www.php.net/date\' target=\'_other\'>date()</a> function
-$lang['Signature'] = iconv('CP1251',_CHARSET, 'Подпис'); # Signature
-$lang['Signature_explain'] = iconv('CP1251',_CHARSET, 'Това е блок от текст, който може да се добавя към вашите съобщения. Ограничението е %d знака'); # This is a block of text that can be added to posts you make. There is a %d character limit
-$lang['Public_view_email'] = iconv('CP1251',_CHARSET, 'Винаги да се показва Email адреса ми'); # Always show my Email Address
+$lang['Board_style'] = 'РЎС‚РёР» Р·Р° С„РѕСЂСѓРјР°'; # Board Style
+$lang['Board_lang'] = 'Р•Р·РёРє Р·Р° С„РѕСЂСѓРјР°'; # Board Language
+$lang['No_themes'] = 'РќСЏРјР° С‚РµРјРё РІ Р±Р°Р·Р°С‚Р° РґР°РЅРЅРё'; # No Themes In database
+$lang['Timezone'] = 'Р§Р°СЃРѕРІР° Р·РѕРЅР°'; # Timezone
+$lang['Date_format'] = 'Р¤РѕСЂРјР°С‚ Р·Р° РґР°С‚Рё'; # Date format
+$lang['Date_format_explain'] = 'РЎРёРЅС‚Р°РєСЃРёСЃСЉС‚ Рµ РєР°РєС‚Рѕ РІСЉРІ С„СѓРЅРєС†РёСЏС‚Р° <a href=\'http://www.php.net/date\' target=\'_other\'>date()</a>'; # The syntax used is identical to the PHP <a href=\'http://www.php.net/date\' target=\'_other\'>date()</a> function
+$lang['Signature'] = 'РџРѕРґРїРёСЃ'; # Signature
+$lang['Signature_explain'] = 'РўРѕРІР° Рµ Р±Р»РѕРє РѕС‚ С‚РµРєСЃС‚, РєРѕР№С‚Рѕ РјРѕР¶Рµ РґР° СЃРµ РґРѕР±Р°РІСЏ РєСЉРј РІР°С€РёС‚Рµ СЃСЉРѕР±С‰РµРЅРёСЏ. РћРіСЂР°РЅРёС‡РµРЅРёРµС‚Рѕ Рµ %d Р·РЅР°РєР°'; # This is a block of text that can be added to posts you make. There is a %d character limit
+$lang['Public_view_email'] = 'Р’РёРЅР°РіРё РґР° СЃРµ РїРѕРєР°Р·РІР° Email Р°РґСЂРµСЃР° РјРё'; # Always show my Email Address
 
-$lang['Current_password'] = iconv('CP1251',_CHARSET, 'Текуща парола'); # Current password
-$lang['New_password'] = iconv('CP1251',_CHARSET, 'Нова парола'); # New password
-$lang['Confirm_password'] = iconv('CP1251',_CHARSET, 'Потвърди паролата'); # Confirm password
-$lang['Confirm_password_explain'] = iconv('CP1251',_CHARSET, 'Трябва да потвърдите текущата си парола преди да въведете нова или да смените email адреса си'); # You must confirm your current password if you wish to change it or alter your email address
-$lang['password_if_changed'] = iconv('CP1251',_CHARSET, 'Трябва да въведете парола само ако искате да я смените'); # You only need to supply a password if you want to change it
-$lang['password_confirm_if_changed'] = iconv('CP1251',_CHARSET, 'Трябва да потвърдите паролата си само ако сте я променили по-горе'); # You only need to confirm your password if you changed it above
+$lang['Current_password'] = 'РўРµРєСѓС‰Р° РїР°СЂРѕР»Р°'; # Current password
+$lang['New_password'] = 'РќРѕРІР° РїР°СЂРѕР»Р°'; # New password
+$lang['Confirm_password'] = 'РџРѕС‚РІСЉСЂРґРё РїР°СЂРѕР»Р°С‚Р°'; # Confirm password
+$lang['Confirm_password_explain'] = 'РўСЂСЏР±РІР° РґР° РїРѕС‚РІСЉСЂРґРёС‚Рµ С‚РµРєСѓС‰Р°С‚Р° СЃРё РїР°СЂРѕР»Р° РїСЂРµРґРё РґР° РІСЉРІРµРґРµС‚Рµ РЅРѕРІР° РёР»Рё РґР° СЃРјРµРЅРёС‚Рµ email Р°РґСЂРµСЃР° СЃРё'; # You must confirm your current password if you wish to change it or alter your email address
+$lang['password_if_changed'] = 'РўСЂСЏР±РІР° РґР° РІСЉРІРµРґРµС‚Рµ РїР°СЂРѕР»Р° СЃР°РјРѕ Р°РєРѕ РёСЃРєР°С‚Рµ РґР° СЏ СЃРјРµРЅРёС‚Рµ'; # You only need to supply a password if you want to change it
+$lang['password_confirm_if_changed'] = 'РўСЂСЏР±РІР° РґР° РїРѕС‚РІСЉСЂРґРёС‚Рµ РїР°СЂРѕР»Р°С‚Р° СЃРё СЃР°РјРѕ Р°РєРѕ СЃС‚Рµ СЏ РїСЂРѕРјРµРЅРёР»Рё РїРѕ-РіРѕСЂРµ'; # You only need to confirm your password if you changed it above
 
-$lang['Avatar'] = iconv('CP1251',_CHARSET, 'Аватар (образ)'); # Avatar
-$lang['Avatar_explain'] = iconv('CP1251',_CHARSET, 'Показва се малко изображение под вашите данни в съобщенията. Само едно изображение се показва, ширината му не може да надвишава %d пиксела, височината %d пиксела, размера на файла да не надвишава %d Kb.'); # Displays a small graphic image below your details in posts. Only one image can be displayed at a time, its width can be no greater than %d pixels, a height no greater than %d pixels and a file size no more than %dkB. $lang['Upload_Avatar_file'] = iconv('CP1251',_CHARSET, 'Upload Avatar from your machine');
-$lang['Upload_Avatar_file'] = iconv('CP1251',_CHARSET, 'Качете аватар (образ) от вашия компютър'); # Upload Avatar from your machine
-$lang['Upload_Avatar_URL'] = iconv('CP1251',_CHARSET, 'Качете аватар (образ) от зададен URL'); # Upload Avatar from a URL
-$lang['Upload_Avatar_URL_explain'] = iconv('CP1251',_CHARSET, 'Въведете адреса на аватара (образа), от където той ще бъде копиран тук.'); # Enter the URL of the location containing the Avatar image, it will be copied to this site.
-$lang['Pick_local_Avatar'] = iconv('CP1251',_CHARSET, 'Изберете аватар (образ) от галерията'); # Select Avatar from the gallery
-$lang['Link_remote_Avatar'] = iconv('CP1251',_CHARSET, 'Динамичен аватар (образ)'); # Link to off-site Avatar
-$lang['Link_remote_Avatar_explain'] = iconv('CP1251',_CHARSET, 'Въведете URL, от където образа ще се зарежда директно.'); # Enter the URL of the location containing the Avatar image you wish to link to.
-$lang['Avatar_URL'] = iconv('CP1251',_CHARSET, 'Адрес на аватара (образа)'); # URL of Avatar Image
-$lang['Select_from_gallery'] = iconv('CP1251',_CHARSET, 'Изберете аватар (образ) от галерията'); # Select Avatar from gallery
-$lang['View_avatar_gallery'] = iconv('CP1251',_CHARSET, 'Вижте галерията'); # Show gallery
+$lang['Avatar'] = 'РђРІР°С‚Р°СЂ (РѕР±СЂР°Р·)'; # Avatar
+$lang['Avatar_explain'] = 'РџРѕРєР°Р·РІР° СЃРµ РјР°Р»РєРѕ РёР·РѕР±СЂР°Р¶РµРЅРёРµ РїРѕРґ РІР°С€РёС‚Рµ РґР°РЅРЅРё РІ СЃСЉРѕР±С‰РµРЅРёСЏС‚Р°. РЎР°РјРѕ РµРґРЅРѕ РёР·РѕР±СЂР°Р¶РµРЅРёРµ СЃРµ РїРѕРєР°Р·РІР°, С€РёСЂРёРЅР°С‚Р° РјСѓ РЅРµ РјРѕР¶Рµ РґР° РЅР°РґРІРёС€Р°РІР° %d РїРёРєСЃРµР»Р°, РІРёСЃРѕС‡РёРЅР°С‚Р° %d РїРёРєСЃРµР»Р°, СЂР°Р·РјРµСЂР° РЅР° С„Р°Р№Р»Р° РґР° РЅРµ РЅР°РґРІРёС€Р°РІР° %d Kb.'; # Displays a small graphic image below your details in posts. Only one image can be displayed at a time, its width can be no greater than %d pixels, a height no greater than %d pixels and a file size no more than %dkB. $lang['Upload_Avatar_file'] = 'Upload Avatar from your machine';
+$lang['Upload_Avatar_file'] = 'РљР°С‡РµС‚Рµ Р°РІР°С‚Р°СЂ (РѕР±СЂР°Р·) РѕС‚ РІР°С€РёСЏ РєРѕРјРїСЋС‚СЉСЂ'; # Upload Avatar from your machine
+$lang['Upload_Avatar_URL'] = 'РљР°С‡РµС‚Рµ Р°РІР°С‚Р°СЂ (РѕР±СЂР°Р·) РѕС‚ Р·Р°РґР°РґРµРЅ URL'; # Upload Avatar from a URL
+$lang['Upload_Avatar_URL_explain'] = 'Р’СЉРІРµРґРµС‚Рµ Р°РґСЂРµСЃР° РЅР° Р°РІР°С‚Р°СЂР° (РѕР±СЂР°Р·Р°), РѕС‚ РєСЉРґРµС‚Рѕ С‚РѕР№ С‰Рµ Р±СЉРґРµ РєРѕРїРёСЂР°РЅ С‚СѓРє.'; # Enter the URL of the location containing the Avatar image, it will be copied to this site.
+$lang['Pick_local_Avatar'] = 'РР·Р±РµСЂРµС‚Рµ Р°РІР°С‚Р°СЂ (РѕР±СЂР°Р·) РѕС‚ РіР°Р»РµСЂРёСЏС‚Р°'; # Select Avatar from the gallery
+$lang['Link_remote_Avatar'] = 'Р”РёРЅР°РјРёС‡РµРЅ Р°РІР°С‚Р°СЂ (РѕР±СЂР°Р·)'; # Link to off-site Avatar
+$lang['Link_remote_Avatar_explain'] = 'Р’СЉРІРµРґРµС‚Рµ URL, РѕС‚ РєСЉРґРµС‚Рѕ РѕР±СЂР°Р·Р° С‰Рµ СЃРµ Р·Р°СЂРµР¶РґР° РґРёСЂРµРєС‚РЅРѕ.'; # Enter the URL of the location containing the Avatar image you wish to link to.
+$lang['Avatar_URL'] = 'РђРґСЂРµСЃ РЅР° Р°РІР°С‚Р°СЂР° (РѕР±СЂР°Р·Р°)'; # URL of Avatar Image
+$lang['Select_from_gallery'] = 'РР·Р±РµСЂРµС‚Рµ Р°РІР°С‚Р°СЂ (РѕР±СЂР°Р·) РѕС‚ РіР°Р»РµСЂРёСЏС‚Р°'; # Select Avatar from gallery
+$lang['View_avatar_gallery'] = 'Р’РёР¶С‚Рµ РіР°Р»РµСЂРёСЏС‚Р°'; # Show gallery
 
-$lang['Select_avatar'] = iconv('CP1251',_CHARSET, 'Изберете аватар (образ)'); # Select avatar
-$lang['Return_profile'] = iconv('CP1251',_CHARSET, 'Върнете се обратно'); # Cancel avatar
-$lang['Select_category'] = iconv('CP1251',_CHARSET, 'Изберете категория'); # Select category
+$lang['Select_avatar'] = 'РР·Р±РµСЂРµС‚Рµ Р°РІР°С‚Р°СЂ (РѕР±СЂР°Р·)'; # Select avatar
+$lang['Return_profile'] = 'Р’СЉСЂРЅРµС‚Рµ СЃРµ РѕР±СЂР°С‚РЅРѕ'; # Cancel avatar
+$lang['Select_category'] = 'РР·Р±РµСЂРµС‚Рµ РєР°С‚РµРіРѕСЂРёСЏ'; # Select category
 
-$lang['Delete_Image'] = iconv('CP1251',_CHARSET, 'Изтрий'); # Delete Image
-$lang['Current_Image'] = iconv('CP1251',_CHARSET, 'Текущо изображение'); # Current Image
+$lang['Delete_Image'] = 'РР·С‚СЂРёР№'; # Delete Image
+$lang['Current_Image'] = 'РўРµРєСѓС‰Рѕ РёР·РѕР±СЂР°Р¶РµРЅРёРµ'; # Current Image
 
-$lang['Notify_on_privmsg'] = iconv('CP1251',_CHARSET, 'Информирайте ме при ново лично съобщение'); # Notify on new Private Message
-$lang['Popup_on_privmsg'] = iconv('CP1251',_CHARSET, 'Съобщение в прозорец при ново лично съобщение'); # Pop up window on new Private Message
-$lang['Popup_on_privmsg_explain'] = iconv('CP1251',_CHARSET, 'Ще бъдете информирани от системата така, че да не можете да го пропуснете'); # Some templates may open a new window to inform you when new private messages arrive
-$lang['Hide_user'] = iconv('CP1251',_CHARSET, 'Да се скрива ли вашия онлайн статус'); # Hide your online status
+$lang['Notify_on_privmsg'] = 'РРЅС„РѕСЂРјРёСЂР°Р№С‚Рµ РјРµ РїСЂРё РЅРѕРІРѕ Р»РёС‡РЅРѕ СЃСЉРѕР±С‰РµРЅРёРµ'; # Notify on new Private Message
+$lang['Popup_on_privmsg'] = 'РЎСЉРѕР±С‰РµРЅРёРµ РІ РїСЂРѕР·РѕСЂРµС† РїСЂРё РЅРѕРІРѕ Р»РёС‡РЅРѕ СЃСЉРѕР±С‰РµРЅРёРµ'; # Pop up window on new Private Message
+$lang['Popup_on_privmsg_explain'] = 'Р©Рµ Р±СЉРґРµС‚Рµ РёРЅС„РѕСЂРјРёСЂР°РЅРё РѕС‚ СЃРёСЃС‚РµРјР°С‚Р° С‚Р°РєР°, С‡Рµ РґР° РЅРµ РјРѕР¶РµС‚Рµ РґР° РіРѕ РїСЂРѕРїСѓСЃРЅРµС‚Рµ'; # Some templates may open a new window to inform you when new private messages arrive
+$lang['Hide_user'] = 'Р”Р° СЃРµ СЃРєСЂРёРІР° Р»Рё РІР°С€РёСЏ РѕРЅР»Р°Р№РЅ СЃС‚Р°С‚СѓСЃ'; # Hide your online status
 
-$lang['Profile_updated'] = iconv('CP1251',_CHARSET, 'Профилът ви е променен'); # Your profile has been updated
-$lang['Profile_updated_inactive'] = iconv('CP1251',_CHARSET, 'Профилът ви е променен, но вие сте подменили основни данни, така че сега профила ви не е активен. Проверете си email-а, за да видите как да го активирате отново, или ако се налага активиране от администратора, моля изчакайте докато това стане'); # Your profile has been updated, however you have changed vital details thus your account is now inactive. Check your email to find out how to reactivate your account, or if admin activation is require wait for the administrator to reactivate your account
+$lang['Profile_updated'] = 'РџСЂРѕС„РёР»СЉС‚ РІРё Рµ РїСЂРѕРјРµРЅРµРЅ'; # Your profile has been updated
+$lang['Profile_updated_inactive'] = 'РџСЂРѕС„РёР»СЉС‚ РІРё Рµ РїСЂРѕРјРµРЅРµРЅ, РЅРѕ РІРёРµ СЃС‚Рµ РїРѕРґРјРµРЅРёР»Рё РѕСЃРЅРѕРІРЅРё РґР°РЅРЅРё, С‚Р°РєР° С‡Рµ СЃРµРіР° РїСЂРѕС„РёР»Р° РІРё РЅРµ Рµ Р°РєС‚РёРІРµРЅ. РџСЂРѕРІРµСЂРµС‚Рµ СЃРё email-Р°, Р·Р° РґР° РІРёРґРёС‚Рµ РєР°Рє РґР° РіРѕ Р°РєС‚РёРІРёСЂР°С‚Рµ РѕС‚РЅРѕРІРѕ, РёР»Рё Р°РєРѕ СЃРµ РЅР°Р»Р°РіР° Р°РєС‚РёРІРёСЂР°РЅРµ РѕС‚ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°, РјРѕР»СЏ РёР·С‡Р°РєР°Р№С‚Рµ РґРѕРєР°С‚Рѕ С‚РѕРІР° СЃС‚Р°РЅРµ'; # Your profile has been updated, however you have changed vital details thus your account is now inactive. Check your email to find out how to reactivate your account, or if admin activation is require wait for the administrator to reactivate your account
 
-$lang['Password_mismatch'] = iconv('CP1251',_CHARSET, 'Паролите, които сте въвели не съвпадат'); # The passwords you entered did not match
-$lang['Current_password_mismatch'] = iconv('CP1251',_CHARSET, 'Паролата, която сте въвели не съвпада с тази в базата'); # The current password you supplied does not match that stored in the database
-$lang['Password_long'] = iconv('CP1251',_CHARSET, 'Паролата ви неможе да е по-дълга от 32 символа!'); # Your password must be no more than 32 characters
-$lang['Too_many_registers'] = iconv('CP1251',_CHARSET, 'Направихте твърде много опити за регистрация. Моля опитайте по-късно.'); # You have made too many registration attempts. Please try again later.
-$lang['Username_taken'] = iconv('CP1251',_CHARSET, 'Потребителското име, което сте въвели е заето!'); # Sorry but this username has already been taken
-$lang['Username_invalid'] = iconv('CP1251',_CHARSET, 'Потребителското име, което сте въвели е заето, забранено, или съдържа невалидни символи, като например \" !'); # Sorry but this username contains an invalid character such as \'
-$lang['Username_disallowed'] = iconv('CP1251',_CHARSET, 'Потребителското име, което сте въвели е забранено!'); # Sorry but this username has been disallowed
-$lang['Email_taken'] = iconv('CP1251',_CHARSET, 'Email адреса, който сте въвели, е вече използван от друг потребител!'); # Sorry but that email address is already registered to a user
-$lang['Email_banned'] = iconv('CP1251',_CHARSET, 'Email адреса, който сте въвели, е баннат!'); # Sorry but this email address has been banned
-$lang['Email_invalid'] = iconv('CP1251',_CHARSET, 'Email адреса, който сте въвели, е невалиден!'); # Sorry but this email address is invalid
-$lang['Signature_too_long'] = iconv('CP1251',_CHARSET, 'Подписът ви е прекалено дълъг'); # Your signature is too long
-$lang['Fields_empty'] = iconv('CP1251',_CHARSET, 'Трябва да попълните задължителните полета'); # You must fill in the required fields
-$lang['Avatar_filetype'] = iconv('CP1251',_CHARSET, 'Образа трябва да е .jpg, .gif или .png'); # The avatar filetype must be .jpg, .gif or .png
-$lang['Avatar_filesize'] = iconv('CP1251',_CHARSET, 'Размера на файла на образа трябва да е по-малко от %dkB'); // The avatar image file size must be less than 6 kB # The avatar image file size must be less than %d kB
-$lang['Avatar_imagesize'] = iconv('CP1251',_CHARSET, 'Образа трябва да има основа по-малка от %d пиксела и височина по-малка от %d пиксела');  # The avatar must be less than %d pixels wide and %d pixels high
+$lang['Password_mismatch'] = 'РџР°СЂРѕР»РёС‚Рµ, РєРѕРёС‚Рѕ СЃС‚Рµ РІСЉРІРµР»Рё РЅРµ СЃСЉРІРїР°РґР°С‚'; # The passwords you entered did not match
+$lang['Current_password_mismatch'] = 'РџР°СЂРѕР»Р°С‚Р°, РєРѕСЏС‚Рѕ СЃС‚Рµ РІСЉРІРµР»Рё РЅРµ СЃСЉРІРїР°РґР° СЃ С‚Р°Р·Рё РІ Р±Р°Р·Р°С‚Р°'; # The current password you supplied does not match that stored in the database
+$lang['Password_long'] = 'РџР°СЂРѕР»Р°С‚Р° РІРё РЅРµРјРѕР¶Рµ РґР° Рµ РїРѕ-РґСЉР»РіР° РѕС‚ 32 СЃРёРјРІРѕР»Р°!'; # Your password must be no more than 32 characters
+$lang['Too_many_registers'] = 'РќР°РїСЂР°РІРёС…С‚Рµ С‚РІСЉСЂРґРµ РјРЅРѕРіРѕ РѕРїРёС‚Рё Р·Р° СЂРµРіРёСЃС‚СЂР°С†РёСЏ. РњРѕР»СЏ РѕРїРёС‚Р°Р№С‚Рµ РїРѕ-РєСЉСЃРЅРѕ.'; # You have made too many registration attempts. Please try again later.
+$lang['Username_taken'] = 'РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРѕС‚Рѕ РёРјРµ, РєРѕРµС‚Рѕ СЃС‚Рµ РІСЉРІРµР»Рё Рµ Р·Р°РµС‚Рѕ!'; # Sorry but this username has already been taken
+$lang['Username_invalid'] = 'РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРѕС‚Рѕ РёРјРµ, РєРѕРµС‚Рѕ СЃС‚Рµ РІСЉРІРµР»Рё Рµ Р·Р°РµС‚Рѕ, Р·Р°Р±СЂР°РЅРµРЅРѕ, РёР»Рё СЃСЉРґСЉСЂР¶Р° РЅРµРІР°Р»РёРґРЅРё СЃРёРјРІРѕР»Рё, РєР°С‚Рѕ РЅР°РїСЂРёРјРµСЂ \" !'; # Sorry but this username contains an invalid character such as \'
+$lang['Username_disallowed'] = 'РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРѕС‚Рѕ РёРјРµ, РєРѕРµС‚Рѕ СЃС‚Рµ РІСЉРІРµР»Рё Рµ Р·Р°Р±СЂР°РЅРµРЅРѕ!'; # Sorry but this username has been disallowed
+$lang['Email_taken'] = 'Email Р°РґСЂРµСЃР°, РєРѕР№С‚Рѕ СЃС‚Рµ РІСЉРІРµР»Рё, Рµ РІРµС‡Рµ РёР·РїРѕР»Р·РІР°РЅ РѕС‚ РґСЂСѓРі РїРѕС‚СЂРµР±РёС‚РµР»!'; # Sorry but that email address is already registered to a user
+$lang['Email_banned'] = 'Email Р°РґСЂРµСЃР°, РєРѕР№С‚Рѕ СЃС‚Рµ РІСЉРІРµР»Рё, Рµ Р±Р°РЅРЅР°С‚!'; # Sorry but this email address has been banned
+$lang['Email_invalid'] = 'Email Р°РґСЂРµСЃР°, РєРѕР№С‚Рѕ СЃС‚Рµ РІСЉРІРµР»Рё, Рµ РЅРµРІР°Р»РёРґРµРЅ!'; # Sorry but this email address is invalid
+$lang['Signature_too_long'] = 'РџРѕРґРїРёСЃСЉС‚ РІРё Рµ РїСЂРµРєР°Р»РµРЅРѕ РґСЉР»СЉРі'; # Your signature is too long
+$lang['Fields_empty'] = 'РўСЂСЏР±РІР° РґР° РїРѕРїСЉР»РЅРёС‚Рµ Р·Р°РґСЉР»Р¶РёС‚РµР»РЅРёС‚Рµ РїРѕР»РµС‚Р°'; # You must fill in the required fields
+$lang['Avatar_filetype'] = 'РћР±СЂР°Р·Р° С‚СЂСЏР±РІР° РґР° Рµ .jpg, .gif РёР»Рё .png'; # The avatar filetype must be .jpg, .gif or .png
+$lang['Avatar_filesize'] = 'Р Р°Р·РјРµСЂР° РЅР° С„Р°Р№Р»Р° РЅР° РѕР±СЂР°Р·Р° С‚СЂСЏР±РІР° РґР° Рµ РїРѕ-РјР°Р»РєРѕ РѕС‚ %dkB'; // The avatar image file size must be less than 6 kB # The avatar image file size must be less than %d kB
+$lang['Avatar_imagesize'] = 'РћР±СЂР°Р·Р° С‚СЂСЏР±РІР° РґР° РёРјР° РѕСЃРЅРѕРІР° РїРѕ-РјР°Р»РєР° РѕС‚ %d РїРёРєСЃРµР»Р° Рё РІРёСЃРѕС‡РёРЅР° РїРѕ-РјР°Р»РєР° РѕС‚ %d РїРёРєСЃРµР»Р°';  # The avatar must be less than %d pixels wide and %d pixels high
 
-$lang['Welcome_subject'] = iconv('CP1251',_CHARSET, 'Добре дошли на %s Форумите'); // Welcome to my.com forums # Welcome to %s Forums
-$lang['New_account_subject'] = iconv('CP1251',_CHARSET, 'Нов потребител'); # New user account
-$lang['Account_activated_subject'] = iconv('CP1251',_CHARSET, 'Потребителя е активиран'); # Account Activated
+$lang['Welcome_subject'] = 'Р”РѕР±СЂРµ РґРѕС€Р»Рё РЅР° %s Р¤РѕСЂСѓРјРёС‚Рµ'; // Welcome to my.com forums # Welcome to %s Forums
+$lang['New_account_subject'] = 'РќРѕРІ РїРѕС‚СЂРµР±РёС‚РµР»'; # New user account
+$lang['Account_activated_subject'] = 'РџРѕС‚СЂРµР±РёС‚РµР»СЏ Рµ Р°РєС‚РёРІРёСЂР°РЅ'; # Account Activated
 
-$lang['Account_added'] = iconv('CP1251',_CHARSET, 'Благодарим ви, че се регистрирахте. Вашия потребител е създаден. Можете да влезете с вашите име и парола'); # Thank you for registering, your account has been created. You may now login with your username and password
-$lang['Account_inactive'] = iconv('CP1251',_CHARSET, 'Вашият потребител е създаден. Тези форуми изискват лично активиране на потребителя и в тази връзка на мейла ви е изпратен ключ за активиране. Моля проверете мейла си за повече информация'); # Your account has been created. However, this forum requires account activation, an activation key has been sent to the email address you provided. Please check your email for further information
-$lang['Account_inactive_admin'] = iconv('CP1251',_CHARSET, 'Вашият потребител е създаден. Тези форуми изискват активиране на потребителя от администратор и в тази връзка на администраторите е изпратен мейл. Ще бъдете информиран, когато активират потребителя ви.'); # Your account has been created. However, this forum requires account activation by the administrator. An email has been sent to them and you will be informed when your account has been activated
-$lang['Account_active'] = iconv('CP1251',_CHARSET, 'Потребителят ви е активиран. Благодарим ви, че се регистрирахте.'); # Your account has now been activated. Thank you for registering
-$lang['Account_active_admin'] = iconv('CP1251',_CHARSET, 'Потребителят ви е активиран.'); # The account has now been activated
-$lang['Reactivate'] = iconv('CP1251',_CHARSET, 'Ре-активирайте потребителя си!'); # Reactivate your account!
-$lang['Already_activated'] = iconv('CP1251',_CHARSET, 'Вече сте активирали потребителя си'); # You have already activated your account
-$lang['COPPA'] = iconv('CP1251',_CHARSET, 'Потребителя ви създаден, но трябва да бъде одобрен. Моля проверете мейла си за повече информация.'); # Your account has been created but has to be approved, please check your email for details.
+$lang['Account_added'] = 'Р‘Р»Р°РіРѕРґР°СЂРёРј РІРё, С‡Рµ СЃРµ СЂРµРіРёСЃС‚СЂРёСЂР°С…С‚Рµ. Р’Р°С€РёСЏ РїРѕС‚СЂРµР±РёС‚РµР» Рµ СЃСЉР·РґР°РґРµРЅ. РњРѕР¶РµС‚Рµ РґР° РІР»РµР·РµС‚Рµ СЃ РІР°С€РёС‚Рµ РёРјРµ Рё РїР°СЂРѕР»Р°'; # Thank you for registering, your account has been created. You may now login with your username and password
+$lang['Account_inactive'] = 'Р’Р°С€РёСЏС‚ РїРѕС‚СЂРµР±РёС‚РµР» Рµ СЃСЉР·РґР°РґРµРЅ. РўРµР·Рё С„РѕСЂСѓРјРё РёР·РёСЃРєРІР°С‚ Р»РёС‡РЅРѕ Р°РєС‚РёРІРёСЂР°РЅРµ РЅР° РїРѕС‚СЂРµР±РёС‚РµР»СЏ Рё РІ С‚Р°Р·Рё РІСЂСЉР·РєР° РЅР° РјРµР№Р»Р° РІРё Рµ РёР·РїСЂР°С‚РµРЅ РєР»СЋС‡ Р·Р° Р°РєС‚РёРІРёСЂР°РЅРµ. РњРѕР»СЏ РїСЂРѕРІРµСЂРµС‚Рµ РјРµР№Р»Р° СЃРё Р·Р° РїРѕРІРµС‡Рµ РёРЅС„РѕСЂРјР°С†РёСЏ'; # Your account has been created. However, this forum requires account activation, an activation key has been sent to the email address you provided. Please check your email for further information
+$lang['Account_inactive_admin'] = 'Р’Р°С€РёСЏС‚ РїРѕС‚СЂРµР±РёС‚РµР» Рµ СЃСЉР·РґР°РґРµРЅ. РўРµР·Рё С„РѕСЂСѓРјРё РёР·РёСЃРєРІР°С‚ Р°РєС‚РёРІРёСЂР°РЅРµ РЅР° РїРѕС‚СЂРµР±РёС‚РµР»СЏ РѕС‚ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂ Рё РІ С‚Р°Р·Рё РІСЂСЉР·РєР° РЅР° Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂРёС‚Рµ Рµ РёР·РїСЂР°С‚РµРЅ РјРµР№Р». Р©Рµ Р±СЉРґРµС‚Рµ РёРЅС„РѕСЂРјРёСЂР°РЅ, РєРѕРіР°С‚Рѕ Р°РєС‚РёРІРёСЂР°С‚ РїРѕС‚СЂРµР±РёС‚РµР»СЏ РІРё.'; # Your account has been created. However, this forum requires account activation by the administrator. An email has been sent to them and you will be informed when your account has been activated
+$lang['Account_active'] = 'РџРѕС‚СЂРµР±РёС‚РµР»СЏС‚ РІРё Рµ Р°РєС‚РёРІРёСЂР°РЅ. Р‘Р»Р°РіРѕРґР°СЂРёРј РІРё, С‡Рµ СЃРµ СЂРµРіРёСЃС‚СЂРёСЂР°С…С‚Рµ.'; # Your account has now been activated. Thank you for registering
+$lang['Account_active_admin'] = 'РџРѕС‚СЂРµР±РёС‚РµР»СЏС‚ РІРё Рµ Р°РєС‚РёРІРёСЂР°РЅ.'; # The account has now been activated
+$lang['Reactivate'] = 'Р Рµ-Р°РєС‚РёРІРёСЂР°Р№С‚Рµ РїРѕС‚СЂРµР±РёС‚РµР»СЏ СЃРё!'; # Reactivate your account!
+$lang['Already_activated'] = 'Р’РµС‡Рµ СЃС‚Рµ Р°РєС‚РёРІРёСЂР°Р»Рё РїРѕС‚СЂРµР±РёС‚РµР»СЏ СЃРё'; # You have already activated your account
+$lang['COPPA'] = 'РџРѕС‚СЂРµР±РёС‚РµР»СЏ РІРё СЃСЉР·РґР°РґРµРЅ, РЅРѕ С‚СЂСЏР±РІР° РґР° Р±СЉРґРµ РѕРґРѕР±СЂРµРЅ. РњРѕР»СЏ РїСЂРѕРІРµСЂРµС‚Рµ РјРµР№Р»Р° СЃРё Р·Р° РїРѕРІРµС‡Рµ РёРЅС„РѕСЂРјР°С†РёСЏ.'; # Your account has been created but has to be approved, please check your email for details.
 
-$lang['Registration'] = iconv('CP1251',_CHARSET, 'Условия за регистрация'); # Registration Agreement Terms
-$lang['Reg_agreement'] = iconv('CP1251',_CHARSET, 'Въпреки, че администраторите и модераторите на този форум ще се опитат да премахнат или да променят възмжно най-бързо всеки материал, носещ вреда, невъзможно е да бъдат прегледани всички съобщения. Вие разбирате, че всички съобщения на тези форуми изразяват личното мнение на съответните им автори, а не на администраторите, модераторите или уебмастъра (като изключим съобщенията, пуснати от тези хора), и следователно те не носят никаква отговорност.<br /><br />Приемате да не пишете никакъв груб, неприличен, вулгарен, заплашителен, сексуално-ориентиран или всякакъв друг материал, който нарушава законите. Такова поведение може да доведе до моменталното и постоянното ви изгонване от форумите (както и уведомяването на вашия доставчик). IP адресите, от които са направени всички съобщения се записват и могат да бъдат използвани в такива случаи. Приемате, че уебмастъра, администратора и модераторите на този форум  имат правото да премахват, променят или заключват всяка тема по всяко време, ако намерят за уместно. Като потребител одобрявате записването на всяка информация, която въведете, в базата данни. Въпреки, че тази информация няма да бъде предоставяна на трети страни без вашето одобрение, уебмастъра, администратора и модераторите на този форум не могат да бъдат отговорни за всякакви хакерски атаки, които могат да доведат до разкриване на данните.<br /><br />Тази форум система използва cookies, за да записва информация на вашия компютър. Тези cookies не съдържат никаква информация за вас; използват се само за да подобрят функционалността на форумите. Мейл адреса ви се използва само за потвърждение на детайлите по регистрацията и паролата ви (и за изпращане на нови пароли, ако случайно забравите текущата си).<br /><br />Избирайки <b>Съгласен съм...</b> вие приемате горепосочените условия'); # While the administrators and moderators of this forum will attempt to remove or edit any generally objectionable material as quickly as possible, it is impossible to review every message. Therefore you acknowledge that all posts made to these forums express the views and opinions of the author and not the administrators, moderators or webmaster (except for posts by these people) and hence will not be held liable.<br /><br />You agree not to post any abusive, obscene, vulgar, slanderous, hateful, threatening, sexually-orientated or any other material that may violate any applicable laws. Doing so may lead to you being immediately and permanently banned (and your service provider being informed). The IP address of all posts is recorded to aid in enforcing these conditions. You agree that the webmaster, administrator and moderators of this forum have the right to remove, edit, move or close any topic at any time should they see fit. As a user you agree to any information you	have entered above being stored in a database. While this information will not be disclosed to any third party without your consent the webmaster, administrator and moderators cannot be held responsible for any hacking attempt that may lead to the data being compromised.<br /><br />This forum system uses cookies to store information on your local computer. These cookies do not contain any of the information you have entered above, they serve only to improve your viewing pleasure. The email address is used only for confirming your registration details and password (and for sending new passwords should you forget your current one).<br /><br />By clicking Register below you agree to be bound by these conditions.
+$lang['Registration'] = 'РЈСЃР»РѕРІРёСЏ Р·Р° СЂРµРіРёСЃС‚СЂР°С†РёСЏ'; # Registration Agreement Terms
+$lang['Reg_agreement'] = 'Р’СЉРїСЂРµРєРё, С‡Рµ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂРёС‚Рµ Рё РјРѕРґРµСЂР°С‚РѕСЂРёС‚Рµ РЅР° С‚РѕР·Рё С„РѕСЂСѓРј С‰Рµ СЃРµ РѕРїРёС‚Р°С‚ РґР° РїСЂРµРјР°С…РЅР°С‚ РёР»Рё РґР° РїСЂРѕРјРµРЅСЏС‚ РІСЉР·РјР¶РЅРѕ РЅР°Р№-Р±СЉСЂР·Рѕ РІСЃРµРєРё РјР°С‚РµСЂРёР°Р», РЅРѕСЃРµС‰ РІСЂРµРґР°, РЅРµРІСЉР·РјРѕР¶РЅРѕ Рµ РґР° Р±СЉРґР°С‚ РїСЂРµРіР»РµРґР°РЅРё РІСЃРёС‡РєРё СЃСЉРѕР±С‰РµРЅРёСЏ. Р’РёРµ СЂР°Р·Р±РёСЂР°С‚Рµ, С‡Рµ РІСЃРёС‡РєРё СЃСЉРѕР±С‰РµРЅРёСЏ РЅР° С‚РµР·Рё С„РѕСЂСѓРјРё РёР·СЂР°Р·СЏРІР°С‚ Р»РёС‡РЅРѕС‚Рѕ РјРЅРµРЅРёРµ РЅР° СЃСЉРѕС‚РІРµС‚РЅРёС‚Рµ РёРј Р°РІС‚РѕСЂРё, Р° РЅРµ РЅР° Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂРёС‚Рµ, РјРѕРґРµСЂР°С‚РѕСЂРёС‚Рµ РёР»Рё СѓРµР±РјР°СЃС‚СЉСЂР° (РєР°С‚Рѕ РёР·РєР»СЋС‡РёРј СЃСЉРѕР±С‰РµРЅРёСЏС‚Р°, РїСѓСЃРЅР°С‚Рё РѕС‚ С‚РµР·Рё С…РѕСЂР°), Рё СЃР»РµРґРѕРІР°С‚РµР»РЅРѕ С‚Рµ РЅРµ РЅРѕСЃСЏС‚ РЅРёРєР°РєРІР° РѕС‚РіРѕРІРѕСЂРЅРѕСЃС‚.<br /><br />РџСЂРёРµРјР°С‚Рµ РґР° РЅРµ РїРёС€РµС‚Рµ РЅРёРєР°РєСЉРІ РіСЂСѓР±, РЅРµРїСЂРёР»РёС‡РµРЅ, РІСѓР»РіР°СЂРµРЅ, Р·Р°РїР»Р°С€РёС‚РµР»РµРЅ, СЃРµРєСЃСѓР°Р»РЅРѕ-РѕСЂРёРµРЅС‚РёСЂР°РЅ РёР»Рё РІСЃСЏРєР°РєСЉРІ РґСЂСѓРі РјР°С‚РµСЂРёР°Р», РєРѕР№С‚Рѕ РЅР°СЂСѓС€Р°РІР° Р·Р°РєРѕРЅРёС‚Рµ. РўР°РєРѕРІР° РїРѕРІРµРґРµРЅРёРµ РјРѕР¶Рµ РґР° РґРѕРІРµРґРµ РґРѕ РјРѕРјРµРЅС‚Р°Р»РЅРѕС‚Рѕ Рё РїРѕСЃС‚РѕСЏРЅРЅРѕС‚Рѕ РІРё РёР·РіРѕРЅРІР°РЅРµ РѕС‚ С„РѕСЂСѓРјРёС‚Рµ (РєР°РєС‚Рѕ Рё СѓРІРµРґРѕРјСЏРІР°РЅРµС‚Рѕ РЅР° РІР°С€РёСЏ РґРѕСЃС‚Р°РІС‡РёРє). IP Р°РґСЂРµСЃРёС‚Рµ, РѕС‚ РєРѕРёС‚Рѕ СЃР° РЅР°РїСЂР°РІРµРЅРё РІСЃРёС‡РєРё СЃСЉРѕР±С‰РµРЅРёСЏ СЃРµ Р·Р°РїРёСЃРІР°С‚ Рё РјРѕРіР°С‚ РґР° Р±СЉРґР°С‚ РёР·РїРѕР»Р·РІР°РЅРё РІ С‚Р°РєРёРІР° СЃР»СѓС‡Р°Рё. РџСЂРёРµРјР°С‚Рµ, С‡Рµ СѓРµР±РјР°СЃС‚СЉСЂР°, Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР° Рё РјРѕРґРµСЂР°С‚РѕСЂРёС‚Рµ РЅР° С‚РѕР·Рё С„РѕСЂСѓРј  РёРјР°С‚ РїСЂР°РІРѕС‚Рѕ РґР° РїСЂРµРјР°С…РІР°С‚, РїСЂРѕРјРµРЅСЏС‚ РёР»Рё Р·Р°РєР»СЋС‡РІР°С‚ РІСЃСЏРєР° С‚РµРјР° РїРѕ РІСЃСЏРєРѕ РІСЂРµРјРµ, Р°РєРѕ РЅР°РјРµСЂСЏС‚ Р·Р° СѓРјРµСЃС‚РЅРѕ. РљР°С‚Рѕ РїРѕС‚СЂРµР±РёС‚РµР» РѕРґРѕР±СЂСЏРІР°С‚Рµ Р·Р°РїРёСЃРІР°РЅРµС‚Рѕ РЅР° РІСЃСЏРєР° РёРЅС„РѕСЂРјР°С†РёСЏ, РєРѕСЏС‚Рѕ РІСЉРІРµРґРµС‚Рµ, РІ Р±Р°Р·Р°С‚Р° РґР°РЅРЅРё. Р’СЉРїСЂРµРєРё, С‡Рµ С‚Р°Р·Рё РёРЅС„РѕСЂРјР°С†РёСЏ РЅСЏРјР° РґР° Р±СЉРґРµ РїСЂРµРґРѕСЃС‚Р°РІСЏРЅР° РЅР° С‚СЂРµС‚Рё СЃС‚СЂР°РЅРё Р±РµР· РІР°С€РµС‚Рѕ РѕРґРѕР±СЂРµРЅРёРµ, СѓРµР±РјР°СЃС‚СЉСЂР°, Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР° Рё РјРѕРґРµСЂР°С‚РѕСЂРёС‚Рµ РЅР° С‚РѕР·Рё С„РѕСЂСѓРј РЅРµ РјРѕРіР°С‚ РґР° Р±СЉРґР°С‚ РѕС‚РіРѕРІРѕСЂРЅРё Р·Р° РІСЃСЏРєР°РєРІРё С…Р°РєРµСЂСЃРєРё Р°С‚Р°РєРё, РєРѕРёС‚Рѕ РјРѕРіР°С‚ РґР° РґРѕРІРµРґР°С‚ РґРѕ СЂР°Р·РєСЂРёРІР°РЅРµ РЅР° РґР°РЅРЅРёС‚Рµ.<br /><br />РўР°Р·Рё С„РѕСЂСѓРј СЃРёСЃС‚РµРјР° РёР·РїРѕР»Р·РІР° cookies, Р·Р° РґР° Р·Р°РїРёСЃРІР° РёРЅС„РѕСЂРјР°С†РёСЏ РЅР° РІР°С€РёСЏ РєРѕРјРїСЋС‚СЉСЂ. РўРµР·Рё cookies РЅРµ СЃСЉРґСЉСЂР¶Р°С‚ РЅРёРєР°РєРІР° РёРЅС„РѕСЂРјР°С†РёСЏ Р·Р° РІР°СЃ; РёР·РїРѕР»Р·РІР°С‚ СЃРµ СЃР°РјРѕ Р·Р° РґР° РїРѕРґРѕР±СЂСЏС‚ С„СѓРЅРєС†РёРѕРЅР°Р»РЅРѕСЃС‚С‚Р° РЅР° С„РѕСЂСѓРјРёС‚Рµ. РњРµР№Р» Р°РґСЂРµСЃР° РІРё СЃРµ РёР·РїРѕР»Р·РІР° СЃР°РјРѕ Р·Р° РїРѕС‚РІСЉСЂР¶РґРµРЅРёРµ РЅР° РґРµС‚Р°Р№Р»РёС‚Рµ РїРѕ СЂРµРіРёСЃС‚СЂР°С†РёСЏС‚Р° Рё РїР°СЂРѕР»Р°С‚Р° РІРё (Рё Р·Р° РёР·РїСЂР°С‰Р°РЅРµ РЅР° РЅРѕРІРё РїР°СЂРѕР»Рё, Р°РєРѕ СЃР»СѓС‡Р°Р№РЅРѕ Р·Р°Р±СЂР°РІРёС‚Рµ С‚РµРєСѓС‰Р°С‚Р° СЃРё).<br /><br />РР·Р±РёСЂР°Р№РєРё <b>РЎСЉРіР»Р°СЃРµРЅ СЃСЉРј...</b> РІРёРµ РїСЂРёРµРјР°С‚Рµ РіРѕСЂРµРїРѕСЃРѕС‡РµРЅРёС‚Рµ СѓСЃР»РѕРІРёСЏ'; # While the administrators and moderators of this forum will attempt to remove or edit any generally objectionable material as quickly as possible, it is impossible to review every message. Therefore you acknowledge that all posts made to these forums express the views and opinions of the author and not the administrators, moderators or webmaster (except for posts by these people) and hence will not be held liable.<br /><br />You agree not to post any abusive, obscene, vulgar, slanderous, hateful, threatening, sexually-orientated or any other material that may violate any applicable laws. Doing so may lead to you being immediately and permanently banned (and your service provider being informed). The IP address of all posts is recorded to aid in enforcing these conditions. You agree that the webmaster, administrator and moderators of this forum have the right to remove, edit, move or close any topic at any time should they see fit. As a user you agree to any information you	have entered above being stored in a database. While this information will not be disclosed to any third party without your consent the webmaster, administrator and moderators cannot be held responsible for any hacking attempt that may lead to the data being compromised.<br /><br />This forum system uses cookies to store information on your local computer. These cookies do not contain any of the information you have entered above, they serve only to improve your viewing pleasure. The email address is used only for confirming your registration details and password (and for sending new passwords should you forget your current one).<br /><br />By clicking Register below you agree to be bound by these conditions.
 
-$lang['Agree_under_13'] = iconv('CP1251',_CHARSET, 'Съгласен съм с тези условия и възрастта ми е <b>под</b> 13 години'); # I Agree to these terms and am <b>under</b> 13 years of age
-$lang['Agree_over_13'] = iconv('CP1251',_CHARSET, 'Съгласен съм с тези условия и възрастта ми е <b>над</b> 13 години'); # I Agree to these terms and am <b>over</b> 13 years of age
-$lang['Agree_not'] = iconv('CP1251',_CHARSET, 'Не съм съгласен с тези условия'); # I do not agree to these terms
+$lang['Agree_under_13'] = 'РЎСЉРіР»Р°СЃРµРЅ СЃСЉРј СЃ С‚РµР·Рё СѓСЃР»РѕРІРёСЏ Рё РІСЉР·СЂР°СЃС‚С‚Р° РјРё Рµ <b>РїРѕРґ</b> 13 РіРѕРґРёРЅРё'; # I Agree to these terms and am <b>under</b> 13 years of age
+$lang['Agree_over_13'] = 'РЎСЉРіР»Р°СЃРµРЅ СЃСЉРј СЃ С‚РµР·Рё СѓСЃР»РѕРІРёСЏ Рё РІСЉР·СЂР°СЃС‚С‚Р° РјРё Рµ <b>РЅР°Рґ</b> 13 РіРѕРґРёРЅРё'; # I Agree to these terms and am <b>over</b> 13 years of age
+$lang['Agree_not'] = 'РќРµ СЃСЉРј СЃСЉРіР»Р°СЃРµРЅ СЃ С‚РµР·Рё СѓСЃР»РѕРІРёСЏ'; # I do not agree to these terms
 
-$lang['Wrong_activation'] = iconv('CP1251',_CHARSET, 'Ключът за активация, който сте въвели не съвпада с базата данни!'); # The activation key you supplied does not match any in the database
-$lang['Send_password'] = iconv('CP1251',_CHARSET, 'Изпратете ми нова парола!');  # Send me a new password
-$lang['Password_updated'] = iconv('CP1251',_CHARSET, 'Зададена ви е нова парола. Моля проверете мейла си за иформация как да я активирате!'); # A new password has been created, please check your email for details on how to activate it
-$lang['No_email_match'] = iconv('CP1251',_CHARSET, 'Email адреса, който сте въвели, не съвпада със записания мейл за това потребителско име'); # The email address you supplied does not match the one listed for that username
-$lang['New_password_activation'] = iconv('CP1251',_CHARSET, 'Активиране на нова парола'); # New password activation
-$lang['Password_activated'] = iconv('CP1251',_CHARSET, 'Потребителят ви е ре-активиран. Влезте с новата парола, която получихте по мейла.'); # Your account has been re-activated. To logon please use the password supplied in the email you received
+$lang['Wrong_activation'] = 'РљР»СЋС‡СЉС‚ Р·Р° Р°РєС‚РёРІР°С†РёСЏ, РєРѕР№С‚Рѕ СЃС‚Рµ РІСЉРІРµР»Рё РЅРµ СЃСЉРІРїР°РґР° СЃ Р±Р°Р·Р°С‚Р° РґР°РЅРЅРё!'; # The activation key you supplied does not match any in the database
+$lang['Send_password'] = 'РР·РїСЂР°С‚РµС‚Рµ РјРё РЅРѕРІР° РїР°СЂРѕР»Р°!';  # Send me a new password
+$lang['Password_updated'] = 'Р—Р°РґР°РґРµРЅР° РІРё Рµ РЅРѕРІР° РїР°СЂРѕР»Р°. РњРѕР»СЏ РїСЂРѕРІРµСЂРµС‚Рµ РјРµР№Р»Р° СЃРё Р·Р° РёС„РѕСЂРјР°С†РёСЏ РєР°Рє РґР° СЏ Р°РєС‚РёРІРёСЂР°С‚Рµ!'; # A new password has been created, please check your email for details on how to activate it
+$lang['No_email_match'] = 'Email Р°РґСЂРµСЃР°, РєРѕР№С‚Рѕ СЃС‚Рµ РІСЉРІРµР»Рё, РЅРµ СЃСЉРІРїР°РґР° СЃСЉСЃ Р·Р°РїРёСЃР°РЅРёСЏ РјРµР№Р» Р·Р° С‚РѕРІР° РїРѕС‚СЂРµР±РёС‚РµР»СЃРєРѕ РёРјРµ'; # The email address you supplied does not match the one listed for that username
+$lang['New_password_activation'] = 'РђРєС‚РёРІРёСЂР°РЅРµ РЅР° РЅРѕРІР° РїР°СЂРѕР»Р°'; # New password activation
+$lang['Password_activated'] = 'РџРѕС‚СЂРµР±РёС‚РµР»СЏС‚ РІРё Рµ СЂРµ-Р°РєС‚РёРІРёСЂР°РЅ. Р’Р»РµР·С‚Рµ СЃ РЅРѕРІР°С‚Р° РїР°СЂРѕР»Р°, РєРѕСЏС‚Рѕ РїРѕР»СѓС‡РёС…С‚Рµ РїРѕ РјРµР№Р»Р°.'; # Your account has been re-activated. To logon please use the password supplied in the email you received
 
-$lang['Send_email_msg'] = iconv('CP1251',_CHARSET, 'Изпратете email'); # Send an email message
-$lang['No_user_specified'] = iconv('CP1251',_CHARSET, 'Трябва да изберете потребител'); # No user was specified
-$lang['User_prevent_email'] = iconv('CP1251',_CHARSET, 'Този потребител предпочита да не получава поща. Можете да му изпратите лично съобщение'); # This user does not wish to receive email. Try sending them a private message
-$lang['User_not_exist'] = iconv('CP1251',_CHARSET, 'Този потребител не съществува'); # That user does not exist
-$lang['CC_email'] = iconv('CP1251',_CHARSET, 'Изпратете копие на email-а до себе си'); # Send a copy of this email to yourself
-$lang['Email_message_desc'] = iconv('CP1251',_CHARSET, 'Това съобщение ще бъде изпратено като обикновен текст, не включвайте HTML или BBCode. Адреса на подателя ще бъде вашия мейл адрес.'); # This message will be sent as plain text, do not include any HTML or BBCode. The return address for this message will be set to your email address.
-$lang['Flood_email_limit'] = iconv('CP1251',_CHARSET, 'Не можете да изпратите нов email толкова скоро. Моля изчакайте няколко минути'); # You cannot send another email at this time, try again later
-$lang['Recipient'] = iconv('CP1251',_CHARSET, 'Получател'); # Recipient
-$lang['Email_sent'] = iconv('CP1251',_CHARSET, 'Email-ът е изпратен'); # The email has been sent
-$lang['Send_email'] = iconv('CP1251',_CHARSET, 'Изпрати email-a'); # Send email
-$lang['Empty_subject_email'] = iconv('CP1251',_CHARSET, 'Трябва да въведете заглавие на email-a'); # You must specify a subject for the email
-$lang['Empty_message_email'] = iconv('CP1251',_CHARSET, 'Трябва да въведете съобщение, което да бъде изпратено'); # You must enter a message to be emailed
+$lang['Send_email_msg'] = 'РР·РїСЂР°С‚РµС‚Рµ email'; # Send an email message
+$lang['No_user_specified'] = 'РўСЂСЏР±РІР° РґР° РёР·Р±РµСЂРµС‚Рµ РїРѕС‚СЂРµР±РёС‚РµР»'; # No user was specified
+$lang['User_prevent_email'] = 'РўРѕР·Рё РїРѕС‚СЂРµР±РёС‚РµР» РїСЂРµРґРїРѕС‡РёС‚Р° РґР° РЅРµ РїРѕР»СѓС‡Р°РІР° РїРѕС‰Р°. РњРѕР¶РµС‚Рµ РґР° РјСѓ РёР·РїСЂР°С‚РёС‚Рµ Р»РёС‡РЅРѕ СЃСЉРѕР±С‰РµРЅРёРµ'; # This user does not wish to receive email. Try sending them a private message
+$lang['User_not_exist'] = 'РўРѕР·Рё РїРѕС‚СЂРµР±РёС‚РµР» РЅРµ СЃСЉС‰РµСЃС‚РІСѓРІР°'; # That user does not exist
+$lang['CC_email'] = 'РР·РїСЂР°С‚РµС‚Рµ РєРѕРїРёРµ РЅР° email-Р° РґРѕ СЃРµР±Рµ СЃРё'; # Send a copy of this email to yourself
+$lang['Email_message_desc'] = 'РўРѕРІР° СЃСЉРѕР±С‰РµРЅРёРµ С‰Рµ Р±СЉРґРµ РёР·РїСЂР°С‚РµРЅРѕ РєР°С‚Рѕ РѕР±РёРєРЅРѕРІРµРЅ С‚РµРєСЃС‚, РЅРµ РІРєР»СЋС‡РІР°Р№С‚Рµ HTML РёР»Рё BBCode. РђРґСЂРµСЃР° РЅР° РїРѕРґР°С‚РµР»СЏ С‰Рµ Р±СЉРґРµ РІР°С€РёСЏ РјРµР№Р» Р°РґСЂРµСЃ.'; # This message will be sent as plain text, do not include any HTML or BBCode. The return address for this message will be set to your email address.
+$lang['Flood_email_limit'] = 'РќРµ РјРѕР¶РµС‚Рµ РґР° РёР·РїСЂР°С‚РёС‚Рµ РЅРѕРІ email С‚РѕР»РєРѕРІР° СЃРєРѕСЂРѕ. РњРѕР»СЏ РёР·С‡Р°РєР°Р№С‚Рµ РЅСЏРєРѕР»РєРѕ РјРёРЅСѓС‚Рё'; # You cannot send another email at this time, try again later
+$lang['Recipient'] = 'РџРѕР»СѓС‡Р°С‚РµР»'; # Recipient
+$lang['Email_sent'] = 'Email-СЉС‚ Рµ РёР·РїСЂР°С‚РµРЅ'; # The email has been sent
+$lang['Send_email'] = 'РР·РїСЂР°С‚Рё email-a'; # Send email
+$lang['Empty_subject_email'] = 'РўСЂСЏР±РІР° РґР° РІСЉРІРµРґРµС‚Рµ Р·Р°РіР»Р°РІРёРµ РЅР° email-a'; # You must specify a subject for the email
+$lang['Empty_message_email'] = 'РўСЂСЏР±РІР° РґР° РІСЉРІРµРґРµС‚Рµ СЃСЉРѕР±С‰РµРЅРёРµ, РєРѕРµС‚Рѕ РґР° Р±СЉРґРµ РёР·РїСЂР°С‚РµРЅРѕ'; # You must enter a message to be emailed
 
 //
 // Visual confirmation system strings
 //
-$lang['Confirm_code_wrong'] = iconv('CP1251',_CHARSET, 'The confirmation code you entered was incorrect');
-$lang['Too_many_registers'] = iconv('CP1251',_CHARSET, 'You have exceeded the number of registration attempts for this session. Please try again later.');
-$lang['Confirm_code_impaired'] = iconv('CP1251',_CHARSET, 'If you are visually impaired or cannot otherwise read this code please contact the %sAdministrator%s for help.');
-$lang['Confirm_code'] = iconv('CP1251',_CHARSET, 'Confirmation code');
-$lang['Confirm_code_explain'] = iconv('CP1251',_CHARSET, 'Enter the code exactly as you see it. The code is case sensitive and zero has a diagonal line through it.');
+$lang['Confirm_code_wrong'] = 'The confirmation code you entered was incorrect';
+$lang['Too_many_registers'] = 'You have exceeded the number of registration attempts for this session. Please try again later.';
+$lang['Confirm_code_impaired'] = 'If you are visually impaired or cannot otherwise read this code please contact the %sAdministrator%s for help.';
+$lang['Confirm_code'] = 'Confirmation code';
+$lang['Confirm_code_explain'] = 'Enter the code exactly as you see it. The code is case sensitive and zero has a diagonal line through it.';
 
 //
 // Memberslist
 //
-$lang['Select_sort_method'] = iconv('CP1251',_CHARSET, 'Метод за сортиране'); # Select sort method
-$lang['Sort'] = iconv('CP1251',_CHARSET, 'Сортирай'); # Sort
-$lang['Sort_Top_Ten'] = iconv('CP1251',_CHARSET, 'Най-активни'); # Top Ten Posters
-$lang['Sort_Joined'] = iconv('CP1251',_CHARSET, 'Дата на присъединяване'); # Joined Date
-$lang['Sort_Username'] = iconv('CP1251',_CHARSET, 'Потребителско име'); # Username
-$lang['Sort_Location'] = iconv('CP1251',_CHARSET, 'Местоположение'); # Location
-$lang['Sort_Posts'] = iconv('CP1251',_CHARSET, 'Общо съобщения'); # Total posts
-$lang['Sort_Email'] = iconv('CP1251',_CHARSET, 'Email');
-$lang['Sort_Website'] = iconv('CP1251',_CHARSET, 'Web сайт'); # Website
-$lang['Sort_Ascending'] = iconv('CP1251',_CHARSET, 'Възходяща'); # Ascending
-$lang['Sort_Descending'] = iconv('CP1251',_CHARSET, 'Низходяща'); # Descending
-$lang['Order'] = iconv('CP1251',_CHARSET, 'Подредба'); # Order
+$lang['Select_sort_method'] = 'РњРµС‚РѕРґ Р·Р° СЃРѕСЂС‚РёСЂР°РЅРµ'; # Select sort method
+$lang['Sort'] = 'РЎРѕСЂС‚РёСЂР°Р№'; # Sort
+$lang['Sort_Top_Ten'] = 'РќР°Р№-Р°РєС‚РёРІРЅРё'; # Top Ten Posters
+$lang['Sort_Joined'] = 'Р”Р°С‚Р° РЅР° РїСЂРёСЃСЉРµРґРёРЅСЏРІР°РЅРµ'; # Joined Date
+$lang['Sort_Username'] = 'РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРѕ РёРјРµ'; # Username
+$lang['Sort_Location'] = 'РњРµСЃС‚РѕРїРѕР»РѕР¶РµРЅРёРµ'; # Location
+$lang['Sort_Posts'] = 'РћР±С‰Рѕ СЃСЉРѕР±С‰РµРЅРёСЏ'; # Total posts
+$lang['Sort_Email'] = 'Email';
+$lang['Sort_Website'] = 'Web СЃР°Р№С‚'; # Website
+$lang['Sort_Ascending'] = 'Р’СЉР·С…РѕРґСЏС‰Р°'; # Ascending
+$lang['Sort_Descending'] = 'РќРёР·С…РѕРґСЏС‰Р°'; # Descending
+$lang['Order'] = 'РџРѕРґСЂРµРґР±Р°'; # Order
 
 
 //
 // Group control panel
 //
-$lang['Group_Control_Panel'] = iconv('CP1251',_CHARSET, 'Контролен панел на групата'); # Group Control Panel
-$lang['Group_member_details'] = iconv('CP1251',_CHARSET, 'Детайли за групата'); # Group Membership Details
-$lang['Group_member_join'] = iconv('CP1251',_CHARSET, 'Присъединяване към група'); # Join a Group
+$lang['Group_Control_Panel'] = 'РљРѕРЅС‚СЂРѕР»РµРЅ РїР°РЅРµР» РЅР° РіСЂСѓРїР°С‚Р°'; # Group Control Panel
+$lang['Group_member_details'] = 'Р”РµС‚Р°Р№Р»Рё Р·Р° РіСЂСѓРїР°С‚Р°'; # Group Membership Details
+$lang['Group_member_join'] = 'РџСЂРёСЃСЉРµРґРёРЅСЏРІР°РЅРµ РєСЉРј РіСЂСѓРїР°'; # Join a Group
 
-$lang['Group_Information'] = iconv('CP1251',_CHARSET, 'Информация за групата'); # Group Information
-$lang['Group_name'] = iconv('CP1251',_CHARSET, 'Име на групата'); # Group name
-$lang['Group_description'] = iconv('CP1251',_CHARSET, 'Описание на групата'); # Group description
-$lang['Group_membership'] = iconv('CP1251',_CHARSET, 'Членство в групата'); # Group membership
-$lang['Group_Members'] = iconv('CP1251',_CHARSET, 'Членове на групата'); # Group Members
-$lang['Group_Moderator'] = iconv('CP1251',_CHARSET, 'Модератор на групата'); # Group Moderator
-$lang['Pending_members'] = iconv('CP1251',_CHARSET, 'Чакащи кандидатури'); # Pending Members
+$lang['Group_Information'] = 'РРЅС„РѕСЂРјР°С†РёСЏ Р·Р° РіСЂСѓРїР°С‚Р°'; # Group Information
+$lang['Group_name'] = 'РРјРµ РЅР° РіСЂСѓРїР°С‚Р°'; # Group name
+$lang['Group_description'] = 'РћРїРёСЃР°РЅРёРµ РЅР° РіСЂСѓРїР°С‚Р°'; # Group description
+$lang['Group_membership'] = 'Р§Р»РµРЅСЃС‚РІРѕ РІ РіСЂСѓРїР°С‚Р°'; # Group membership
+$lang['Group_Members'] = 'Р§Р»РµРЅРѕРІРµ РЅР° РіСЂСѓРїР°С‚Р°'; # Group Members
+$lang['Group_Moderator'] = 'РњРѕРґРµСЂР°С‚РѕСЂ РЅР° РіСЂСѓРїР°С‚Р°'; # Group Moderator
+$lang['Pending_members'] = 'Р§Р°РєР°С‰Рё РєР°РЅРґРёРґР°С‚СѓСЂРё'; # Pending Members
 
-$lang['Group_type'] = iconv('CP1251',_CHARSET, 'Тип на групата'); # Group type
-$lang['Group_open'] = iconv('CP1251',_CHARSET, 'Отворена група'); # Open group
-$lang['Group_closed'] = iconv('CP1251',_CHARSET, 'Затворена група'); # Closed group
-$lang['Group_hidden'] = iconv('CP1251',_CHARSET, 'Скрита група'); # Hidden group
+$lang['Group_type'] = 'РўРёРї РЅР° РіСЂСѓРїР°С‚Р°'; # Group type
+$lang['Group_open'] = 'РћС‚РІРѕСЂРµРЅР° РіСЂСѓРїР°'; # Open group
+$lang['Group_closed'] = 'Р—Р°С‚РІРѕСЂРµРЅР° РіСЂСѓРїР°'; # Closed group
+$lang['Group_hidden'] = 'РЎРєСЂРёС‚Р° РіСЂСѓРїР°'; # Hidden group
 
-$lang['Current_memberships'] = iconv('CP1251',_CHARSET, 'Групи, в които сте член'); # Current memberships
-$lang['Non_member_groups'] = iconv('CP1251',_CHARSET, 'Групи, в които не сте член'); # Non-member groups
-$lang['Memberships_pending'] = iconv('CP1251',_CHARSET, 'Чакащи кандидатури'); # Memberships pending
+$lang['Current_memberships'] = 'Р“СЂСѓРїРё, РІ РєРѕРёС‚Рѕ СЃС‚Рµ С‡Р»РµРЅ'; # Current memberships
+$lang['Non_member_groups'] = 'Р“СЂСѓРїРё, РІ РєРѕРёС‚Рѕ РЅРµ СЃС‚Рµ С‡Р»РµРЅ'; # Non-member groups
+$lang['Memberships_pending'] = 'Р§Р°РєР°С‰Рё РєР°РЅРґРёРґР°С‚СѓСЂРё'; # Memberships pending
 
-$lang['No_groups_exist'] = iconv('CP1251',_CHARSET, 'Няма налични групи'); # No Groups Exist
-$lang['Group_not_exist'] = iconv('CP1251',_CHARSET, 'Тази потребителска група не съществува'); # That user group does not exist
+$lang['No_groups_exist'] = 'РќСЏРјР° РЅР°Р»РёС‡РЅРё РіСЂСѓРїРё'; # No Groups Exist
+$lang['Group_not_exist'] = 'РўР°Р·Рё РїРѕС‚СЂРµР±РёС‚РµР»СЃРєР° РіСЂСѓРїР° РЅРµ СЃСЉС‰РµСЃС‚РІСѓРІР°'; # That user group does not exist
 
-$lang['Join_group'] = iconv('CP1251',_CHARSET, 'Присъединете се към групата'); # Join Group
-$lang['No_group_members'] = iconv('CP1251',_CHARSET, 'Тази група няма членове'); # This group has no members
-$lang['Group_hidden_members'] = iconv('CP1251',_CHARSET, 'Тази група е скрита - не можете да видите членовете й'); # This group is hidden, you cannot view its membership
-$lang['No_pending_group_members'] = iconv('CP1251',_CHARSET, 'Тази група няма чакащи кандидатури'); # This group has no pending members
-$lang['Group_joined'] = iconv('CP1251',_CHARSET, 'Заявката ви за приемане в групата е изпратена успешно<br />Ще бъдете уведомени, когато кандидатурата ви бъде одобрена от модератора на групата'); # You have successfully subscribed to this group<br />You will be notified when your subscription is approved by the group moderator
-$lang['Group_request'] = iconv('CP1251',_CHARSET, 'Получена е заявка за приемане в групата ви'); # A request to join your group has been made
-$lang['Group_approved'] = iconv('CP1251',_CHARSET, 'Вашата кандидатура е одобрена'); # Your request has been approved
-$lang['Group_added'] = iconv('CP1251',_CHARSET, 'Приет сте за член на тази група');  # You have been added to this usergroup
-$lang['Already_member_group'] = iconv('CP1251',_CHARSET, 'Вече сте член на тази група'); # You are already a member of this group
-$lang['User_is_member_group'] = iconv('CP1251',_CHARSET, 'Потребителя вече е член на тази група'); # User is already a member of this group
-$lang['Group_type_updated'] = iconv('CP1251',_CHARSET, 'Типа на групата е променен успешно'); # Successfully updated group type
+$lang['Join_group'] = 'РџСЂРёСЃСЉРµРґРёРЅРµС‚Рµ СЃРµ РєСЉРј РіСЂСѓРїР°С‚Р°'; # Join Group
+$lang['No_group_members'] = 'РўР°Р·Рё РіСЂСѓРїР° РЅСЏРјР° С‡Р»РµРЅРѕРІРµ'; # This group has no members
+$lang['Group_hidden_members'] = 'РўР°Р·Рё РіСЂСѓРїР° Рµ СЃРєСЂРёС‚Р° - РЅРµ РјРѕР¶РµС‚Рµ РґР° РІРёРґРёС‚Рµ С‡Р»РµРЅРѕРІРµС‚Рµ Р№'; # This group is hidden, you cannot view its membership
+$lang['No_pending_group_members'] = 'РўР°Р·Рё РіСЂСѓРїР° РЅСЏРјР° С‡Р°РєР°С‰Рё РєР°РЅРґРёРґР°С‚СѓСЂРё'; # This group has no pending members
+$lang['Group_joined'] = 'Р—Р°СЏРІРєР°С‚Р° РІРё Р·Р° РїСЂРёРµРјР°РЅРµ РІ РіСЂСѓРїР°С‚Р° Рµ РёР·РїСЂР°С‚РµРЅР° СѓСЃРїРµС€РЅРѕ<br />Р©Рµ Р±СЉРґРµС‚Рµ СѓРІРµРґРѕРјРµРЅРё, РєРѕРіР°С‚Рѕ РєР°РЅРґРёРґР°С‚СѓСЂР°С‚Р° РІРё Р±СЉРґРµ РѕРґРѕР±СЂРµРЅР° РѕС‚ РјРѕРґРµСЂР°С‚РѕСЂР° РЅР° РіСЂСѓРїР°С‚Р°'; # You have successfully subscribed to this group<br />You will be notified when your subscription is approved by the group moderator
+$lang['Group_request'] = 'РџРѕР»СѓС‡РµРЅР° Рµ Р·Р°СЏРІРєР° Р·Р° РїСЂРёРµРјР°РЅРµ РІ РіСЂСѓРїР°С‚Р° РІРё'; # A request to join your group has been made
+$lang['Group_approved'] = 'Р’Р°С€Р°С‚Р° РєР°РЅРґРёРґР°С‚СѓСЂР° Рµ РѕРґРѕР±СЂРµРЅР°'; # Your request has been approved
+$lang['Group_added'] = 'РџСЂРёРµС‚ СЃС‚Рµ Р·Р° С‡Р»РµРЅ РЅР° С‚Р°Р·Рё РіСЂСѓРїР°';  # You have been added to this usergroup
+$lang['Already_member_group'] = 'Р’РµС‡Рµ СЃС‚Рµ С‡Р»РµРЅ РЅР° С‚Р°Р·Рё РіСЂСѓРїР°'; # You are already a member of this group
+$lang['User_is_member_group'] = 'РџРѕС‚СЂРµР±РёС‚РµР»СЏ РІРµС‡Рµ Рµ С‡Р»РµРЅ РЅР° С‚Р°Р·Рё РіСЂСѓРїР°'; # User is already a member of this group
+$lang['Group_type_updated'] = 'РўРёРїР° РЅР° РіСЂСѓРїР°С‚Р° Рµ РїСЂРѕРјРµРЅРµРЅ СѓСЃРїРµС€РЅРѕ'; # Successfully updated group type
 
-$lang['Could_not_add_user'] = iconv('CP1251',_CHARSET, 'Избрания потребител не съществува'); # The user you selected does not exist
-$lang['Could_not_anon_user'] = iconv('CP1251',_CHARSET, 'Не можете да добавяте анонимни потребители към групата'); # You cannot make Anonymous a group member
+$lang['Could_not_add_user'] = 'РР·Р±СЂР°РЅРёСЏ РїРѕС‚СЂРµР±РёС‚РµР» РЅРµ СЃСЉС‰РµСЃС‚РІСѓРІР°'; # The user you selected does not exist
+$lang['Could_not_anon_user'] = 'РќРµ РјРѕР¶РµС‚Рµ РґР° РґРѕР±Р°РІСЏС‚Рµ Р°РЅРѕРЅРёРјРЅРё РїРѕС‚СЂРµР±РёС‚РµР»Рё РєСЉРј РіСЂСѓРїР°С‚Р°'; # You cannot make Anonymous a group member
 
-$lang['Confirm_unsub'] = iconv('CP1251',_CHARSET, 'Сигурни ли сте, че искате да напуснете групата?'); # Are you sure you want to unsubscribe from this group?
-$lang['Confirm_unsub_pending'] = iconv('CP1251',_CHARSET, 'Вашата кандидатура все още не е одобрена, сигурни ли сте, че искате да напуснете групата?'); # Your subscription to this group has not yet been approved, are you sure you want to unsubscribe?
+$lang['Confirm_unsub'] = 'РЎРёРіСѓСЂРЅРё Р»Рё СЃС‚Рµ, С‡Рµ РёСЃРєР°С‚Рµ РґР° РЅР°РїСѓСЃРЅРµС‚Рµ РіСЂСѓРїР°С‚Р°?'; # Are you sure you want to unsubscribe from this group?
+$lang['Confirm_unsub_pending'] = 'Р’Р°С€Р°С‚Р° РєР°РЅРґРёРґР°С‚СѓСЂР° РІСЃРµ РѕС‰Рµ РЅРµ Рµ РѕРґРѕР±СЂРµРЅР°, СЃРёРіСѓСЂРЅРё Р»Рё СЃС‚Рµ, С‡Рµ РёСЃРєР°С‚Рµ РґР° РЅР°РїСѓСЃРЅРµС‚Рµ РіСЂСѓРїР°С‚Р°?'; # Your subscription to this group has not yet been approved, are you sure you want to unsubscribe?
 
-$lang['Unsub_success'] = iconv('CP1251',_CHARSET, 'Успешно напуснахте тази група'); # You have been un-subscribed from this group.
+$lang['Unsub_success'] = 'РЈСЃРїРµС€РЅРѕ РЅР°РїСѓСЃРЅР°С…С‚Рµ С‚Р°Р·Рё РіСЂСѓРїР°'; # You have been un-subscribed from this group.
 
-$lang['Approve_selected'] = iconv('CP1251',_CHARSET, 'Одобрете селектираните'); # Approve Selected
-$lang['Deny_selected'] = iconv('CP1251',_CHARSET, 'Отхвърлете селетираните'); # Deny Selected
-$lang['Not_logged_in'] = iconv('CP1251',_CHARSET, 'Трябва да сте влезли, за да се присъедините към дадена група'); # You must be logged in to join a group.
-$lang['Remove_selected'] = iconv('CP1251',_CHARSET, 'Премахнете селектираните'); # Remove Selected
-$lang['Add_member'] = iconv('CP1251',_CHARSET, 'Добавете член'); # Add Member
-$lang['Not_group_moderator'] = iconv('CP1251',_CHARSET, 'Не можете да изпълните това действие, защото не сте модератор на тази група'); # You are not this groups moderator therefor you cannot preform that action.
+$lang['Approve_selected'] = 'РћРґРѕР±СЂРµС‚Рµ СЃРµР»РµРєС‚РёСЂР°РЅРёС‚Рµ'; # Approve Selected
+$lang['Deny_selected'] = 'РћС‚С…РІСЉСЂР»РµС‚Рµ СЃРµР»РµС‚РёСЂР°РЅРёС‚Рµ'; # Deny Selected
+$lang['Not_logged_in'] = 'РўСЂСЏР±РІР° РґР° СЃС‚Рµ РІР»РµР·Р»Рё, Р·Р° РґР° СЃРµ РїСЂРёСЃСЉРµРґРёРЅРёС‚Рµ РєСЉРј РґР°РґРµРЅР° РіСЂСѓРїР°'; # You must be logged in to join a group.
+$lang['Remove_selected'] = 'РџСЂРµРјР°С…РЅРµС‚Рµ СЃРµР»РµРєС‚РёСЂР°РЅРёС‚Рµ'; # Remove Selected
+$lang['Add_member'] = 'Р”РѕР±Р°РІРµС‚Рµ С‡Р»РµРЅ'; # Add Member
+$lang['Not_group_moderator'] = 'РќРµ РјРѕР¶РµС‚Рµ РґР° РёР·РїСЉР»РЅРёС‚Рµ С‚РѕРІР° РґРµР№СЃС‚РІРёРµ, Р·Р°С‰РѕС‚Рѕ РЅРµ СЃС‚Рµ РјРѕРґРµСЂР°С‚РѕСЂ РЅР° С‚Р°Р·Рё РіСЂСѓРїР°'; # You are not this groups moderator therefor you cannot preform that action.
 
-$lang['Login_to_join'] = iconv('CP1251',_CHARSET, 'Влезте, за да можете да се присъедините към групата или да я модерирате'); # Login to join or manage group memberships
-$lang['This_open_group'] = iconv('CP1251',_CHARSET, 'Това е отворена група, кликнете, за да кандидатствате за членство'); # This is an open group, click to request membership
-$lang['This_closed_group'] = iconv('CP1251',_CHARSET, 'Това е затворена група, нови членове не се приемат'); # This is a closed group, no more users accepted
-$lang['This_hidden_group'] = iconv('CP1251',_CHARSET, 'Това е скрита група, автоматичното добавяне на потребители не е разрешено'); # This is a hidden group, automatic user addition is not allowed
-$lang['Member_this_group'] = iconv('CP1251',_CHARSET, 'Вие сте член на тази група'); # You are a member of this group
-$lang['Pending_this_group'] = iconv('CP1251',_CHARSET, 'Кандидатурата ви за тази група чака одобрение'); # Your membership of this group is pending
-$lang['Are_group_moderator'] = iconv('CP1251',_CHARSET, 'Вие сте модератора на групата'); # You are the group moderator
-$lang['None'] = iconv('CP1251',_CHARSET, 'няма'); # None
+$lang['Login_to_join'] = 'Р’Р»РµР·С‚Рµ, Р·Р° РґР° РјРѕР¶РµС‚Рµ РґР° СЃРµ РїСЂРёСЃСЉРµРґРёРЅРёС‚Рµ РєСЉРј РіСЂСѓРїР°С‚Р° РёР»Рё РґР° СЏ РјРѕРґРµСЂРёСЂР°С‚Рµ'; # Login to join or manage group memberships
+$lang['This_open_group'] = 'РўРѕРІР° Рµ РѕС‚РІРѕСЂРµРЅР° РіСЂСѓРїР°, РєР»РёРєРЅРµС‚Рµ, Р·Р° РґР° РєР°РЅРґРёРґР°С‚СЃС‚РІР°С‚Рµ Р·Р° С‡Р»РµРЅСЃС‚РІРѕ'; # This is an open group, click to request membership
+$lang['This_closed_group'] = 'РўРѕРІР° Рµ Р·Р°С‚РІРѕСЂРµРЅР° РіСЂСѓРїР°, РЅРѕРІРё С‡Р»РµРЅРѕРІРµ РЅРµ СЃРµ РїСЂРёРµРјР°С‚'; # This is a closed group, no more users accepted
+$lang['This_hidden_group'] = 'РўРѕРІР° Рµ СЃРєСЂРёС‚Р° РіСЂСѓРїР°, Р°РІС‚РѕРјР°С‚РёС‡РЅРѕС‚Рѕ РґРѕР±Р°РІСЏРЅРµ РЅР° РїРѕС‚СЂРµР±РёС‚РµР»Рё РЅРµ Рµ СЂР°Р·СЂРµС€РµРЅРѕ'; # This is a hidden group, automatic user addition is not allowed
+$lang['Member_this_group'] = 'Р’РёРµ СЃС‚Рµ С‡Р»РµРЅ РЅР° С‚Р°Р·Рё РіСЂСѓРїР°'; # You are a member of this group
+$lang['Pending_this_group'] = 'РљР°РЅРґРёРґР°С‚СѓСЂР°С‚Р° РІРё Р·Р° С‚Р°Р·Рё РіСЂСѓРїР° С‡Р°РєР° РѕРґРѕР±СЂРµРЅРёРµ'; # Your membership of this group is pending
+$lang['Are_group_moderator'] = 'Р’РёРµ СЃС‚Рµ РјРѕРґРµСЂР°С‚РѕСЂР° РЅР° РіСЂСѓРїР°С‚Р°'; # You are the group moderator
+$lang['None'] = 'РЅСЏРјР°'; # None
 
-$lang['Subscribe'] = iconv('CP1251',_CHARSET, 'Запишете се'); # Subscribe
-$lang['Unsubscribe'] = iconv('CP1251',_CHARSET, 'Отпишете се'); #Unsubscribe
-$lang['View_Information'] = iconv('CP1251',_CHARSET, 'Информация'); # View Information
+$lang['Subscribe'] = 'Р—Р°РїРёС€РµС‚Рµ СЃРµ'; # Subscribe
+$lang['Unsubscribe'] = 'РћС‚РїРёС€РµС‚Рµ СЃРµ'; #Unsubscribe
+$lang['View_Information'] = 'РРЅС„РѕСЂРјР°С†РёСЏ'; # View Information
 
 
 //
 // Search
 //
-$lang['Search_query'] = iconv('CP1251',_CHARSET, 'Критерии за търсене'); # Search Query
-$lang['Search_options'] = iconv('CP1251',_CHARSET, 'Опции'); # Search Options
+$lang['Search_query'] = 'РљСЂРёС‚РµСЂРёРё Р·Р° С‚СЉСЂСЃРµРЅРµ'; # Search Query
+$lang['Search_options'] = 'РћРїС†РёРё'; # Search Options
 
-$lang['Search_keywords'] = iconv('CP1251',_CHARSET, 'Търсете по думи'); # Search for Keywords
-$lang['Search_keywords_explain'] = iconv('CP1251',_CHARSET, 'Ползвайте <u>AND</u>, за да определите думи, които трябва да присъстват в резултатите, <u>OR</u> за такива, които могат да са в резултатите и <u>NOT</u> за думи, които не трябва да са в резултатите. Можете да ползвайте * като маска. Пример: *ива* връща Иванов, отбивам и коприва.'); # You can use <u>AND</u> to define words which must be in the results, <u>OR</u> to define words which may be in the result and <u>NOT</u> to define words which should not be in the result. Use * as a wildcard for partial matches
-$lang['Search_author'] = iconv('CP1251',_CHARSET, 'Тръсете по автор'); # Search for Author
-$lang['Search_author_explain'] = iconv('CP1251',_CHARSET, 'Използвайте * като маска.'); # Use * as a wildcard for partial matches
-$lang['Search_for_any'] = iconv('CP1251',_CHARSET, 'Търси за коя да е от въведените думи'); # Search for any terms or use query as entered
-$lang['Search_for_all'] = iconv('CP1251',_CHARSET, 'Търси за всички въведени думи'); # Search for all terms
-$lang['Search_title_msg'] = iconv('CP1251',_CHARSET, 'Търси в заглавието и съдържанието на мненията'); # Search topic title and message text
-$lang['Search_msg_only'] = iconv('CP1251',_CHARSET, 'Търси само в съдържанието на мненията'); # Search message text only
+$lang['Search_keywords'] = 'РўСЉСЂСЃРµС‚Рµ РїРѕ РґСѓРјРё'; # Search for Keywords
+$lang['Search_keywords_explain'] = 'РџРѕР»Р·РІР°Р№С‚Рµ <u>AND</u>, Р·Р° РґР° РѕРїСЂРµРґРµР»РёС‚Рµ РґСѓРјРё, РєРѕРёС‚Рѕ С‚СЂСЏР±РІР° РґР° РїСЂРёСЃСЉСЃС‚РІР°С‚ РІ СЂРµР·СѓР»С‚Р°С‚РёС‚Рµ, <u>OR</u> Р·Р° С‚Р°РєРёРІР°, РєРѕРёС‚Рѕ РјРѕРіР°С‚ РґР° СЃР° РІ СЂРµР·СѓР»С‚Р°С‚РёС‚Рµ Рё <u>NOT</u> Р·Р° РґСѓРјРё, РєРѕРёС‚Рѕ РЅРµ С‚СЂСЏР±РІР° РґР° СЃР° РІ СЂРµР·СѓР»С‚Р°С‚РёС‚Рµ. РњРѕР¶РµС‚Рµ РґР° РїРѕР»Р·РІР°Р№С‚Рµ * РєР°С‚Рѕ РјР°СЃРєР°. РџСЂРёРјРµСЂ: *РёРІР°* РІСЂСЉС‰Р° РРІР°РЅРѕРІ, РѕС‚Р±РёРІР°Рј Рё РєРѕРїСЂРёРІР°.'; # You can use <u>AND</u> to define words which must be in the results, <u>OR</u> to define words which may be in the result and <u>NOT</u> to define words which should not be in the result. Use * as a wildcard for partial matches
+$lang['Search_author'] = 'РўСЂСЉСЃРµС‚Рµ РїРѕ Р°РІС‚РѕСЂ'; # Search for Author
+$lang['Search_author_explain'] = 'РР·РїРѕР»Р·РІР°Р№С‚Рµ * РєР°С‚Рѕ РјР°СЃРєР°.'; # Use * as a wildcard for partial matches
+$lang['Search_for_any'] = 'РўСЉСЂСЃРё Р·Р° РєРѕСЏ РґР° Рµ РѕС‚ РІСЉРІРµРґРµРЅРёС‚Рµ РґСѓРјРё'; # Search for any terms or use query as entered
+$lang['Search_for_all'] = 'РўСЉСЂСЃРё Р·Р° РІСЃРёС‡РєРё РІСЉРІРµРґРµРЅРё РґСѓРјРё'; # Search for all terms
+$lang['Search_title_msg'] = 'РўСЉСЂСЃРё РІ Р·Р°РіР»Р°РІРёРµС‚Рѕ Рё СЃСЉРґСЉСЂР¶Р°РЅРёРµС‚Рѕ РЅР° РјРЅРµРЅРёСЏС‚Р°'; # Search topic title and message text
+$lang['Search_msg_only'] = 'РўСЉСЂСЃРё СЃР°РјРѕ РІ СЃСЉРґСЉСЂР¶Р°РЅРёРµС‚Рѕ РЅР° РјРЅРµРЅРёСЏС‚Р°'; # Search message text only
 
-$lang['Return_first'] = iconv('CP1251',_CHARSET, 'Покажи първите'); // followed by xxx characters in a select box # Return first
-$lang['characters_posts'] = iconv('CP1251',_CHARSET, 'символа от мнението'); # characters of posts
+$lang['Return_first'] = 'РџРѕРєР°Р¶Рё РїСЉСЂРІРёС‚Рµ'; // followed by xxx characters in a select box # Return first
+$lang['characters_posts'] = 'СЃРёРјРІРѕР»Р° РѕС‚ РјРЅРµРЅРёРµС‚Рѕ'; # characters of posts
 
-$lang['Search_previous'] = iconv('CP1251',_CHARSET, 'От преди'); // followed by days, weeks, months, year, all in a select box # Search previous
+$lang['Search_previous'] = 'РћС‚ РїСЂРµРґРё'; // followed by days, weeks, months, year, all in a select box # Search previous
 
-$lang['Sort_by'] = iconv('CP1251',_CHARSET, 'Сортирай по'); # Sort by
-$lang['Sort_Time'] = iconv('CP1251',_CHARSET, 'Време'); # Post Time
-$lang['Sort_Post_Subject'] = iconv('CP1251',_CHARSET, 'Заглавие на мнение'); # Post Subject
-$lang['Sort_Topic_Title'] = iconv('CP1251',_CHARSET, 'Заглавие на тема'); # Topic Title
-$lang['Sort_Author'] = iconv('CP1251',_CHARSET, 'Автор'); # Author
-$lang['Sort_Forum'] = iconv('CP1251',_CHARSET, 'Форум'); # Forum
+$lang['Sort_by'] = 'РЎРѕСЂС‚РёСЂР°Р№ РїРѕ'; # Sort by
+$lang['Sort_Time'] = 'Р’СЂРµРјРµ'; # Post Time
+$lang['Sort_Post_Subject'] = 'Р—Р°РіР»Р°РІРёРµ РЅР° РјРЅРµРЅРёРµ'; # Post Subject
+$lang['Sort_Topic_Title'] = 'Р—Р°РіР»Р°РІРёРµ РЅР° С‚РµРјР°'; # Topic Title
+$lang['Sort_Author'] = 'РђРІС‚РѕСЂ'; # Author
+$lang['Sort_Forum'] = 'Р¤РѕСЂСѓРј'; # Forum
 
-$lang['Display_results'] = iconv('CP1251',_CHARSET, 'Покажи резултатите като'); # Display results as
-$lang['All_available'] = iconv('CP1251',_CHARSET, 'Всички налични'); # All available
-$lang['No_searchable_forums'] = iconv('CP1251',_CHARSET, 'Не ви е разрешено да търсите из тези форуми!'); # You do not have permissions to search any forum on this site
+$lang['Display_results'] = 'РџРѕРєР°Р¶Рё СЂРµР·СѓР»С‚Р°С‚РёС‚Рµ РєР°С‚Рѕ'; # Display results as
+$lang['All_available'] = 'Р’СЃРёС‡РєРё РЅР°Р»РёС‡РЅРё'; # All available
+$lang['No_searchable_forums'] = 'РќРµ РІРё Рµ СЂР°Р·СЂРµС€РµРЅРѕ РґР° С‚СЉСЂСЃРёС‚Рµ РёР· С‚РµР·Рё С„РѕСЂСѓРјРё!'; # You do not have permissions to search any forum on this site
 
-$lang['No_search_match'] = iconv('CP1251',_CHARSET, 'Няма открити теми или съобщения в резултат на търсенето'); # No topics or posts met your search criteria
-$lang['Found_search_match'] = iconv('CP1251',_CHARSET, 'При търсенето са открити %d тема/съобщение'); # Search found %d match // eg. Search found 1 match
-$lang['Found_search_matches'] = iconv('CP1251',_CHARSET, 'При търсенето са открити %d теми/съобщения'); # Search found %d matches // eg. Search found 24 matches
+$lang['No_search_match'] = 'РќСЏРјР° РѕС‚РєСЂРёС‚Рё С‚РµРјРё РёР»Рё СЃСЉРѕР±С‰РµРЅРёСЏ РІ СЂРµР·СѓР»С‚Р°С‚ РЅР° С‚СЉСЂСЃРµРЅРµС‚Рѕ'; # No topics or posts met your search criteria
+$lang['Found_search_match'] = 'РџСЂРё С‚СЉСЂСЃРµРЅРµС‚Рѕ СЃР° РѕС‚РєСЂРёС‚Рё %d С‚РµРјР°/СЃСЉРѕР±С‰РµРЅРёРµ'; # Search found %d match // eg. Search found 1 match
+$lang['Found_search_matches'] = 'РџСЂРё С‚СЉСЂСЃРµРЅРµС‚Рѕ СЃР° РѕС‚РєСЂРёС‚Рё %d С‚РµРјРё/СЃСЉРѕР±С‰РµРЅРёСЏ'; # Search found %d matches // eg. Search found 24 matches
 
-$lang['Close_window'] = iconv('CP1251',_CHARSET, 'Затворете прозореца'); # Close Window
+$lang['Close_window'] = 'Р—Р°С‚РІРѕСЂРµС‚Рµ РїСЂРѕР·РѕСЂРµС†Р°'; # Close Window
 
 
 //
 // Auth related entries
 //
 // Note the %s will be replaced with one of the following 'user' arrays
-$lang['Sorry_auth_announce'] = iconv('CP1251',_CHARSET, 'Само %s могат да пускат СЪОБЩЕНИЯ в този форум'); # Sorry but only %s can post announcements in this forum
-$lang['Sorry_auth_sticky'] = iconv('CP1251',_CHARSET, 'Само %s могат да пускат Важни теми в този форум');  # Sorry but only %s can post sticky messages in this forum
-$lang['Sorry_auth_read'] = iconv('CP1251',_CHARSET, 'Само %s могат да четат теми в този форум');  # Sorry but only %s can read topics in this forum
-$lang['Sorry_auth_post'] = iconv('CP1251',_CHARSET, 'Само %s могат да пускат теми в този форум');  # Sorry but only %s can post topics in this forum
-$lang['Sorry_auth_reply'] = iconv('CP1251',_CHARSET, 'Само %s могат да отговарят в този форум');  # Sorry but only %s can reply to posts in this forum
-$lang['Sorry_auth_edit'] = iconv('CP1251',_CHARSET, 'Само %s могат да променят мнения в този форум');  # Sorry but only %s can edit posts in this forum
-$lang['Sorry_auth_delete'] = iconv('CP1251',_CHARSET, 'Само %s могат да изтриват мнения в този форум'); # Sorry but only %s can delete posts in this forum
-$lang['Sorry_auth_vote'] = iconv('CP1251',_CHARSET, 'Само %s canмогат да гласуват на анкети в този форум'); # Sorry but only %s can vote in polls in this forum
+$lang['Sorry_auth_announce'] = 'РЎР°РјРѕ %s РјРѕРіР°С‚ РґР° РїСѓСЃРєР°С‚ РЎРЄРћР‘Р©Р•РќРРЇ РІ С‚РѕР·Рё С„РѕСЂСѓРј'; # Sorry but only %s can post announcements in this forum
+$lang['Sorry_auth_sticky'] = 'РЎР°РјРѕ %s РјРѕРіР°С‚ РґР° РїСѓСЃРєР°С‚ Р’Р°Р¶РЅРё С‚РµРјРё РІ С‚РѕР·Рё С„РѕСЂСѓРј';  # Sorry but only %s can post sticky messages in this forum
+$lang['Sorry_auth_read'] = 'РЎР°РјРѕ %s РјРѕРіР°С‚ РґР° С‡РµС‚Р°С‚ С‚РµРјРё РІ С‚РѕР·Рё С„РѕСЂСѓРј';  # Sorry but only %s can read topics in this forum
+$lang['Sorry_auth_post'] = 'РЎР°РјРѕ %s РјРѕРіР°С‚ РґР° РїСѓСЃРєР°С‚ С‚РµРјРё РІ С‚РѕР·Рё С„РѕСЂСѓРј';  # Sorry but only %s can post topics in this forum
+$lang['Sorry_auth_reply'] = 'РЎР°РјРѕ %s РјРѕРіР°С‚ РґР° РѕС‚РіРѕРІР°СЂСЏС‚ РІ С‚РѕР·Рё С„РѕСЂСѓРј';  # Sorry but only %s can reply to posts in this forum
+$lang['Sorry_auth_edit'] = 'РЎР°РјРѕ %s РјРѕРіР°С‚ РґР° РїСЂРѕРјРµРЅСЏС‚ РјРЅРµРЅРёСЏ РІ С‚РѕР·Рё С„РѕСЂСѓРј';  # Sorry but only %s can edit posts in this forum
+$lang['Sorry_auth_delete'] = 'РЎР°РјРѕ %s РјРѕРіР°С‚ РґР° РёР·С‚СЂРёРІР°С‚ РјРЅРµРЅРёСЏ РІ С‚РѕР·Рё С„РѕСЂСѓРј'; # Sorry but only %s can delete posts in this forum
+$lang['Sorry_auth_vote'] = 'РЎР°РјРѕ %s canРјРѕРіР°С‚ РґР° РіР»Р°СЃСѓРІР°С‚ РЅР° Р°РЅРєРµС‚Рё РІ С‚РѕР·Рё С„РѕСЂСѓРј'; # Sorry but only %s can vote in polls in this forum
 
 // These replace the %s in the above strings
-$lang['Auth_Anonymous_Users'] = iconv('CP1251',_CHARSET, '"<b>Анонимни потребители</b>'); # <b>anonymous users</b>
-$lang['Auth_Registered_Users'] = iconv('CP1251',_CHARSET, '<b>Регистрирани потребители</b>'); # <b>registered users</b>
-$lang['Auth_Users_granted_access'] = iconv('CP1251',_CHARSET, '<b>Потребители със специални права</b>'); # <b>users granted special access</b>
-$lang['Auth_Moderators'] = iconv('CP1251',_CHARSET, '<b>Модератори</b>'); # <b>moderators</b>
-$lang['Auth_Administrators'] = iconv('CP1251',_CHARSET, '<b>Администратори</b>'); # <b>administrators</b>
+$lang['Auth_Anonymous_Users'] = '"<b>РђРЅРѕРЅРёРјРЅРё РїРѕС‚СЂРµР±РёС‚РµР»Рё</b>'; # <b>anonymous users</b>
+$lang['Auth_Registered_Users'] = '<b>Р РµРіРёСЃС‚СЂРёСЂР°РЅРё РїРѕС‚СЂРµР±РёС‚РµР»Рё</b>'; # <b>registered users</b>
+$lang['Auth_Users_granted_access'] = '<b>РџРѕС‚СЂРµР±РёС‚РµР»Рё СЃСЉСЃ СЃРїРµС†РёР°Р»РЅРё РїСЂР°РІР°</b>'; # <b>users granted special access</b>
+$lang['Auth_Moderators'] = '<b>РњРѕРґРµСЂР°С‚РѕСЂРё</b>'; # <b>moderators</b>
+$lang['Auth_Administrators'] = '<b>РђРґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂРё</b>'; # <b>administrators</b>
 
-$lang['Not_Moderator'] = iconv('CP1251',_CHARSET, 'Вие не сте модератор на този форум'); # You are not a moderator of this forum
-$lang['Not_Authorised'] = iconv('CP1251',_CHARSET, 'Нямате право'); # Not Authorised
+$lang['Not_Moderator'] = 'Р’РёРµ РЅРµ СЃС‚Рµ РјРѕРґРµСЂР°С‚РѕСЂ РЅР° С‚РѕР·Рё С„РѕСЂСѓРј'; # You are not a moderator of this forum
+$lang['Not_Authorised'] = 'РќСЏРјР°С‚Рµ РїСЂР°РІРѕ'; # Not Authorised
 
-$lang['You_been_banned'] = iconv('CP1251',_CHARSET, 'Вие имате ограничение на достъпа до този форум.<br />Моля свържете се с администраторите за повече информация.'); # You have been banned from this forum<br />Please contact the webmaster or board administrator for more information
+$lang['You_been_banned'] = 'Р’РёРµ РёРјР°С‚Рµ РѕРіСЂР°РЅРёС‡РµРЅРёРµ РЅР° РґРѕСЃС‚СЉРїР° РґРѕ С‚РѕР·Рё С„РѕСЂСѓРј.<br />РњРѕР»СЏ СЃРІСЉСЂР¶РµС‚Рµ СЃРµ СЃ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂРёС‚Рµ Р·Р° РїРѕРІРµС‡Рµ РёРЅС„РѕСЂРјР°С†РёСЏ.'; # You have been banned from this forum<br />Please contact the webmaster or board administrator for more information
 
 
 //
 // Viewonline
 //
-$lang['Reg_users_zero_online'] = iconv('CP1251',_CHARSET, 'Има 0 Регистрирани и '); // There ae 5 Registered and # There are 0 Registered users and 
-$lang['Reg_users_online'] = iconv('CP1251',_CHARSET, 'Има %d Регистрирани и '); // There ae 5 Registered and # There are %d Registered users and 
-$lang['Reg_user_online'] = iconv('CP1251',_CHARSET, 'Има %d Регистриран и '); // There ae 5 Registered and # There is %d Registered user and 
-$lang['Hidden_users_zero_online'] = iconv('CP1251',_CHARSET, '0 Скрити потребители онлайн'); // 6 Hidden users online # 0 Hidden users online
-$lang['Hidden_users_online'] = iconv('CP1251',_CHARSET, '"%d Скрити потребители онлайн'); // 6 Hidden users online # %d Hidden users online
-$lang['Hidden_user_online'] = iconv('CP1251',_CHARSET, '"%d Скрит потребител онлайн'); // 6 Hidden users online # %d Hidden user online
-$lang['Guest_users_online'] = iconv('CP1251',_CHARSET, 'Има %d Гости онлайн'); // There are 10 Guest users online # There are %d Guest users online
-$lang['Guest_users_zero_online'] = iconv('CP1251',_CHARSET, 'Има 0 Гости онлайн'); // There are 10 Guest users online # There are 0 Guest users online
-$lang['Guest_user_online'] = iconv('CP1251',_CHARSET, 'Има %d Гост онлайн'); // There is 1 Guest user online # There is %d Guest user online
-$lang['No_users_browsing'] = iconv('CP1251',_CHARSET, 'Няма потребители, разглеждащи този форум'); # There are no users currently browsing this forum
+$lang['Reg_users_zero_online'] = 'РРјР° 0 Р РµРіРёСЃС‚СЂРёСЂР°РЅРё Рё '; // There ae 5 Registered and # There are 0 Registered users and 
+$lang['Reg_users_online'] = 'РРјР° %d Р РµРіРёСЃС‚СЂРёСЂР°РЅРё Рё '; // There ae 5 Registered and # There are %d Registered users and 
+$lang['Reg_user_online'] = 'РРјР° %d Р РµРіРёСЃС‚СЂРёСЂР°РЅ Рё '; // There ae 5 Registered and # There is %d Registered user and 
+$lang['Hidden_users_zero_online'] = '0 РЎРєСЂРёС‚Рё РїРѕС‚СЂРµР±РёС‚РµР»Рё РѕРЅР»Р°Р№РЅ'; // 6 Hidden users online # 0 Hidden users online
+$lang['Hidden_users_online'] = '"%d РЎРєСЂРёС‚Рё РїРѕС‚СЂРµР±РёС‚РµР»Рё РѕРЅР»Р°Р№РЅ'; // 6 Hidden users online # %d Hidden users online
+$lang['Hidden_user_online'] = '"%d РЎРєСЂРёС‚ РїРѕС‚СЂРµР±РёС‚РµР» РѕРЅР»Р°Р№РЅ'; // 6 Hidden users online # %d Hidden user online
+$lang['Guest_users_online'] = 'РРјР° %d Р“РѕСЃС‚Рё РѕРЅР»Р°Р№РЅ'; // There are 10 Guest users online # There are %d Guest users online
+$lang['Guest_users_zero_online'] = 'РРјР° 0 Р“РѕСЃС‚Рё РѕРЅР»Р°Р№РЅ'; // There are 10 Guest users online # There are 0 Guest users online
+$lang['Guest_user_online'] = 'РРјР° %d Р“РѕСЃС‚ РѕРЅР»Р°Р№РЅ'; // There is 1 Guest user online # There is %d Guest user online
+$lang['No_users_browsing'] = 'РќСЏРјР° РїРѕС‚СЂРµР±РёС‚РµР»Рё, СЂР°Р·РіР»РµР¶РґР°С‰Рё С‚РѕР·Рё С„РѕСЂСѓРј'; # There are no users currently browsing this forum
 
-$lang['Online_explain'] = iconv('CP1251',_CHARSET, 'Данните са за последните 5 минути'); # This data is based on users active over the past five minutes
+$lang['Online_explain'] = 'Р”Р°РЅРЅРёС‚Рµ СЃР° Р·Р° РїРѕСЃР»РµРґРЅРёС‚Рµ 5 РјРёРЅСѓС‚Рё'; # This data is based on users active over the past five minutes
 
-$lang['Forum_Location'] = iconv('CP1251',_CHARSET, 'Мостоположение на форума'); # Forum Location
-$lang['Last_updated'] = iconv('CP1251',_CHARSET, 'Последна промяна'); # Last Updated
+$lang['Forum_Location'] = 'РњРѕСЃС‚РѕРїРѕР»РѕР¶РµРЅРёРµ РЅР° С„РѕСЂСѓРјР°'; # Forum Location
+$lang['Last_updated'] = 'РџРѕСЃР»РµРґРЅР° РїСЂРѕРјСЏРЅР°'; # Last Updated
 
-$lang['Forum_index'] = iconv('CP1251',_CHARSET, 'Форуми'); # Forum index
-$lang['Logging_on'] = iconv('CP1251',_CHARSET, 'Влиза'); # Logging on
-$lang['Posting_message'] = iconv('CP1251',_CHARSET, 'Пише мнение'); # Posting a message
-$lang['Searching_forums'] = iconv('CP1251',_CHARSET, 'Търси из форумите'); # Searching forums
-$lang['Viewing_profile'] = iconv('CP1251',_CHARSET, 'Разглежда профил'); # Viewing profile
-$lang['Viewing_online'] = iconv('CP1251',_CHARSET, 'Проверява кой е онлайн'); # Viewing who is online
-$lang['Viewing_member_list'] = iconv('CP1251',_CHARSET, 'Гледа списъка с членовете'); # Viewing member list
-$lang['Viewing_priv_msgs'] = iconv('CP1251',_CHARSET, 'Чете личните си съобщения'); # Viewing Private Messages
-$lang['Viewing_FAQ'] = iconv('CP1251',_CHARSET, 'Чете FAQ'); # Viewing FAQ
+$lang['Forum_index'] = 'Р¤РѕСЂСѓРјРё'; # Forum index
+$lang['Logging_on'] = 'Р’Р»РёР·Р°'; # Logging on
+$lang['Posting_message'] = 'РџРёС€Рµ РјРЅРµРЅРёРµ'; # Posting a message
+$lang['Searching_forums'] = 'РўСЉСЂСЃРё РёР· С„РѕСЂСѓРјРёС‚Рµ'; # Searching forums
+$lang['Viewing_profile'] = 'Р Р°Р·РіР»РµР¶РґР° РїСЂРѕС„РёР»'; # Viewing profile
+$lang['Viewing_online'] = 'РџСЂРѕРІРµСЂСЏРІР° РєРѕР№ Рµ РѕРЅР»Р°Р№РЅ'; # Viewing who is online
+$lang['Viewing_member_list'] = 'Р“Р»РµРґР° СЃРїРёСЃСЉРєР° СЃ С‡Р»РµРЅРѕРІРµС‚Рµ'; # Viewing member list
+$lang['Viewing_priv_msgs'] = 'Р§РµС‚Рµ Р»РёС‡РЅРёС‚Рµ СЃРё СЃСЉРѕР±С‰РµРЅРёСЏ'; # Viewing Private Messages
+$lang['Viewing_FAQ'] = 'Р§РµС‚Рµ FAQ'; # Viewing FAQ
 
 
 //
 // Moderator Control Panel
 //
-$lang['Mod_CP'] = iconv('CP1251',_CHARSET, 'Модераторски панел'); # Moderator Control Panel
-$lang['Mod_CP_explain'] = iconv('CP1251',_CHARSET, 'С помощта на формата по-долу можете да извършвате масова модерация на този форум. Можете да заключвате, отключвате, премествате или изтривате избрани теми.'); # Using the form below you can perform mass moderation operations on this forum. You can lock, unlock, move or delete any number of topics.
+$lang['Mod_CP'] = 'РњРѕРґРµСЂР°С‚РѕСЂСЃРєРё РїР°РЅРµР»'; # Moderator Control Panel
+$lang['Mod_CP_explain'] = 'РЎ РїРѕРјРѕС‰С‚Р° РЅР° С„РѕСЂРјР°С‚Р° РїРѕ-РґРѕР»Сѓ РјРѕР¶РµС‚Рµ РґР° РёР·РІСЉСЂС€РІР°С‚Рµ РјР°СЃРѕРІР° РјРѕРґРµСЂР°С†РёСЏ РЅР° С‚РѕР·Рё С„РѕСЂСѓРј. РњРѕР¶РµС‚Рµ РґР° Р·Р°РєР»СЋС‡РІР°С‚Рµ, РѕС‚РєР»СЋС‡РІР°С‚Рµ, РїСЂРµРјРµСЃС‚РІР°С‚Рµ РёР»Рё РёР·С‚СЂРёРІР°С‚Рµ РёР·Р±СЂР°РЅРё С‚РµРјРё.'; # Using the form below you can perform mass moderation operations on this forum. You can lock, unlock, move or delete any number of topics.
 
-$lang['Select'] = iconv('CP1251',_CHARSET, 'Избери'); # Select
-$lang['Delete'] = iconv('CP1251',_CHARSET, 'Изтрий'); # Delete
-$lang['Move'] = iconv('CP1251',_CHARSET, 'Премести'); # Move
-$lang['Lock'] = iconv('CP1251',_CHARSET, 'Заключи'); # Lock
-$lang['Unlock'] = iconv('CP1251',_CHARSET, 'Отключи'); # Unlock
+$lang['Select'] = 'РР·Р±РµСЂРё'; # Select
+$lang['Delete'] = 'РР·С‚СЂРёР№'; # Delete
+$lang['Move'] = 'РџСЂРµРјРµСЃС‚Рё'; # Move
+$lang['Lock'] = 'Р—Р°РєР»СЋС‡Рё'; # Lock
+$lang['Unlock'] = 'РћС‚РєР»СЋС‡Рё'; # Unlock
 
-$lang['Topics_Removed'] = iconv('CP1251',_CHARSET, 'Избраните теми са премахнати от базата.'); # The selected topics have been successfully removed from the database.
-$lang['Topics_Locked'] = iconv('CP1251',_CHARSET, 'Избраните теми са заключени'); # The selected topics have been locked
-$lang['Topics_Moved'] = iconv('CP1251',_CHARSET, 'Избраните теми са преместени'); # The selected topics have been moved
-$lang['Topics_Unlocked'] = iconv('CP1251',_CHARSET, 'Избраните теми са отключени'); # The selected topics have been unlocked
-$lang['No_Topics_Moved'] = iconv('CP1251',_CHARSET, 'No topics were moved');
+$lang['Topics_Removed'] = 'РР·Р±СЂР°РЅРёС‚Рµ С‚РµРјРё СЃР° РїСЂРµРјР°С…РЅР°С‚Рё РѕС‚ Р±Р°Р·Р°С‚Р°.'; # The selected topics have been successfully removed from the database.
+$lang['Topics_Locked'] = 'РР·Р±СЂР°РЅРёС‚Рµ С‚РµРјРё СЃР° Р·Р°РєР»СЋС‡РµРЅРё'; # The selected topics have been locked
+$lang['Topics_Moved'] = 'РР·Р±СЂР°РЅРёС‚Рµ С‚РµРјРё СЃР° РїСЂРµРјРµСЃС‚РµРЅРё'; # The selected topics have been moved
+$lang['Topics_Unlocked'] = 'РР·Р±СЂР°РЅРёС‚Рµ С‚РµРјРё СЃР° РѕС‚РєР»СЋС‡РµРЅРё'; # The selected topics have been unlocked
+$lang['No_Topics_Moved'] = 'No topics were moved';
 
-$lang['Confirm_delete_topic'] = iconv('CP1251',_CHARSET, 'Сигурни ли сте, че искате да изтриете избраните теми?'); # Are you sure you want to remove the selected topic/s?
-$lang['Confirm_lock_topic'] = iconv('CP1251',_CHARSET, 'Сигурни ли сте, че искате да заключите избраните теми?'); # Are you sure you want to lock the selected topic/s?
-$lang['Confirm_unlock_topic'] = iconv('CP1251',_CHARSET, 'Сигурни ли сте, че искате да отключите избраните теми?'); # Are you sure you want to unlock the selected topic/s?
-$lang['Confirm_move_topic'] = iconv('CP1251',_CHARSET, 'Сигурни ли сте, че искате да преместите избраните?'); # Are you sure you want to move the selected topic/s?
+$lang['Confirm_delete_topic'] = 'РЎРёРіСѓСЂРЅРё Р»Рё СЃС‚Рµ, С‡Рµ РёСЃРєР°С‚Рµ РґР° РёР·С‚СЂРёРµС‚Рµ РёР·Р±СЂР°РЅРёС‚Рµ С‚РµРјРё?'; # Are you sure you want to remove the selected topic/s?
+$lang['Confirm_lock_topic'] = 'РЎРёРіСѓСЂРЅРё Р»Рё СЃС‚Рµ, С‡Рµ РёСЃРєР°С‚Рµ РґР° Р·Р°РєР»СЋС‡РёС‚Рµ РёР·Р±СЂР°РЅРёС‚Рµ С‚РµРјРё?'; # Are you sure you want to lock the selected topic/s?
+$lang['Confirm_unlock_topic'] = 'РЎРёРіСѓСЂРЅРё Р»Рё СЃС‚Рµ, С‡Рµ РёСЃРєР°С‚Рµ РґР° РѕС‚РєР»СЋС‡РёС‚Рµ РёР·Р±СЂР°РЅРёС‚Рµ С‚РµРјРё?'; # Are you sure you want to unlock the selected topic/s?
+$lang['Confirm_move_topic'] = 'РЎРёРіСѓСЂРЅРё Р»Рё СЃС‚Рµ, С‡Рµ РёСЃРєР°С‚Рµ РґР° РїСЂРµРјРµСЃС‚РёС‚Рµ РёР·Р±СЂР°РЅРёС‚Рµ?'; # Are you sure you want to move the selected topic/s?
 
-$lang['Move_to_forum'] = iconv('CP1251',_CHARSET, 'Преместете във форум'); # Move to forum
-$lang['Leave_shadow_topic'] = iconv('CP1251',_CHARSET, 'Остави линк към преместения топик в стария форум'); # Leave shadow topic in old forum.
+$lang['Move_to_forum'] = 'РџСЂРµРјРµСЃС‚РµС‚Рµ РІСЉРІ С„РѕСЂСѓРј'; # Move to forum
+$lang['Leave_shadow_topic'] = 'РћСЃС‚Р°РІРё Р»РёРЅРє РєСЉРј РїСЂРµРјРµСЃС‚РµРЅРёСЏ С‚РѕРїРёРє РІ СЃС‚Р°СЂРёСЏ С„РѕСЂСѓРј'; # Leave shadow topic in old forum.
 
-$lang['Split_Topic'] = iconv('CP1251',_CHARSET, 'Панел за разделяне на теми'); # Split Topic Control Panel
-$lang['Split_Topic_explain'] = iconv('CP1251',_CHARSET, 'С помощта на формата по-долу можете да разделяте теми на две, като поставите избраните мнения в нови теми или просто разделите темата на две след избрано мнение.'); # Using the form below you can split a topic in two, either by selecting the posts individually or by splitting at a selected post
-$lang['Split_title'] = iconv('CP1251',_CHARSET, 'Заглавие на новата тема'); # New topic title
-$lang['Split_forum'] = iconv('CP1251',_CHARSET, 'Форум за новата тема'); # Forum for new topic
-$lang['Split_posts'] = iconv('CP1251',_CHARSET, 'Разделете избраните мнения'); # Split selected posts
-$lang['Split_after'] = iconv('CP1251',_CHARSET, 'Разделете темата след избраното мнение'); # Split from selected post
-$lang['Topic_split'] = iconv('CP1251',_CHARSET, 'Темата е успешно разделена'); # The selected topic has been split successfully
+$lang['Split_Topic'] = 'РџР°РЅРµР» Р·Р° СЂР°Р·РґРµР»СЏРЅРµ РЅР° С‚РµРјРё'; # Split Topic Control Panel
+$lang['Split_Topic_explain'] = 'РЎ РїРѕРјРѕС‰С‚Р° РЅР° С„РѕСЂРјР°С‚Р° РїРѕ-РґРѕР»Сѓ РјРѕР¶РµС‚Рµ РґР° СЂР°Р·РґРµР»СЏС‚Рµ С‚РµРјРё РЅР° РґРІРµ, РєР°С‚Рѕ РїРѕСЃС‚Р°РІРёС‚Рµ РёР·Р±СЂР°РЅРёС‚Рµ РјРЅРµРЅРёСЏ РІ РЅРѕРІРё С‚РµРјРё РёР»Рё РїСЂРѕСЃС‚Рѕ СЂР°Р·РґРµР»РёС‚Рµ С‚РµРјР°С‚Р° РЅР° РґРІРµ СЃР»РµРґ РёР·Р±СЂР°РЅРѕ РјРЅРµРЅРёРµ.'; # Using the form below you can split a topic in two, either by selecting the posts individually or by splitting at a selected post
+$lang['Split_title'] = 'Р—Р°РіР»Р°РІРёРµ РЅР° РЅРѕРІР°С‚Р° С‚РµРјР°'; # New topic title
+$lang['Split_forum'] = 'Р¤РѕСЂСѓРј Р·Р° РЅРѕРІР°С‚Р° С‚РµРјР°'; # Forum for new topic
+$lang['Split_posts'] = 'Р Р°Р·РґРµР»РµС‚Рµ РёР·Р±СЂР°РЅРёС‚Рµ РјРЅРµРЅРёСЏ'; # Split selected posts
+$lang['Split_after'] = 'Р Р°Р·РґРµР»РµС‚Рµ С‚РµРјР°С‚Р° СЃР»РµРґ РёР·Р±СЂР°РЅРѕС‚Рѕ РјРЅРµРЅРёРµ'; # Split from selected post
+$lang['Topic_split'] = 'РўРµРјР°С‚Р° Рµ СѓСЃРїРµС€РЅРѕ СЂР°Р·РґРµР»РµРЅР°'; # The selected topic has been split successfully
 
-$lang['Too_many_error'] = iconv('CP1251',_CHARSET, 'Селектирали сте прекалено много мнения! Трябва да изберете само едно мнение, след което искате да разделите темата!'); # You have selected too many posts. You can only select one post to split a topic after!
+$lang['Too_many_error'] = 'РЎРµР»РµРєС‚РёСЂР°Р»Рё СЃС‚Рµ РїСЂРµРєР°Р»РµРЅРѕ РјРЅРѕРіРѕ РјРЅРµРЅРёСЏ! РўСЂСЏР±РІР° РґР° РёР·Р±РµСЂРµС‚Рµ СЃР°РјРѕ РµРґРЅРѕ РјРЅРµРЅРёРµ, СЃР»РµРґ РєРѕРµС‚Рѕ РёСЃРєР°С‚Рµ РґР° СЂР°Р·РґРµР»РёС‚Рµ С‚РµРјР°С‚Р°!'; # You have selected too many posts. You can only select one post to split a topic after!
 
-$lang['None_selected'] = iconv('CP1251',_CHARSET, 'Не сте избрали тема, на която да приложите тази операция! Моля върнете се обратно и изберете поне една.'); # You have no selected any topics to preform this operation on. Please go back and select at least one.
-$lang['New_forum'] = iconv('CP1251',_CHARSET, 'Нов форум'); # New forum
+$lang['None_selected'] = 'РќРµ СЃС‚Рµ РёР·Р±СЂР°Р»Рё С‚РµРјР°, РЅР° РєРѕСЏС‚Рѕ РґР° РїСЂРёР»РѕР¶РёС‚Рµ С‚Р°Р·Рё РѕРїРµСЂР°С†РёСЏ! РњРѕР»СЏ РІСЉСЂРЅРµС‚Рµ СЃРµ РѕР±СЂР°С‚РЅРѕ Рё РёР·Р±РµСЂРµС‚Рµ РїРѕРЅРµ РµРґРЅР°.'; # You have no selected any topics to preform this operation on. Please go back and select at least one.
+$lang['New_forum'] = 'РќРѕРІ С„РѕСЂСѓРј'; # New forum
 
-$lang['This_posts_IP'] = iconv('CP1251',_CHARSET, 'IP адрес за това мнение'); # IP for this post
-$lang['Other_IP_this_user'] = iconv('CP1251',_CHARSET, 'Други IP адреси, от които е писал този потребител'); # Other IP addresses this user has posted from
-$lang['Users_this_IP'] = iconv('CP1251',_CHARSET, 'Потребители, писали от този IP адрес'); # Users posting from this IP
-$lang['IP_info'] = iconv('CP1251',_CHARSET, 'Информация за IP адреса'); # IP Information
-$lang['Lookup_IP'] = iconv('CP1251',_CHARSET, 'Виж IP адреса'); # Look up IP
+$lang['This_posts_IP'] = 'IP Р°РґСЂРµСЃ Р·Р° С‚РѕРІР° РјРЅРµРЅРёРµ'; # IP for this post
+$lang['Other_IP_this_user'] = 'Р”СЂСѓРіРё IP Р°РґСЂРµСЃРё, РѕС‚ РєРѕРёС‚Рѕ Рµ РїРёСЃР°Р» С‚РѕР·Рё РїРѕС‚СЂРµР±РёС‚РµР»'; # Other IP addresses this user has posted from
+$lang['Users_this_IP'] = 'РџРѕС‚СЂРµР±РёС‚РµР»Рё, РїРёСЃР°Р»Рё РѕС‚ С‚РѕР·Рё IP Р°РґСЂРµСЃ'; # Users posting from this IP
+$lang['IP_info'] = 'РРЅС„РѕСЂРјР°С†РёСЏ Р·Р° IP Р°РґСЂРµСЃР°'; # IP Information
+$lang['Lookup_IP'] = 'Р’РёР¶ IP Р°РґСЂРµСЃР°'; # Look up IP
 
 
 //
 // Timezones ... for display on each page
 //
-$lang['All_times'] = iconv('CP1251',_CHARSET, 'Времената са в %s'); // eg. All times are GMT - 12 Hours (times from next block)
+$lang['All_times'] = 'Р’СЂРµРјРµРЅР°С‚Р° СЃР° РІ %s'; // eg. All times are GMT - 12 Hours (times from next block)
 
-$lang['-12'] = iconv('CP1251',_CHARSET, 'GMT - 12 ч');
-$lang['-11'] = iconv('CP1251',_CHARSET, 'GMT - 11 ч');
-$lang['-10'] = iconv('CP1251',_CHARSET, 'GMT - 10 ч');
-$lang['-9'] = iconv('CP1251',_CHARSET, 'GMT - 9 ч');
-$lang['-8'] = iconv('CP1251',_CHARSET, 'GMT - 8 ч');
-$lang['-7'] = iconv('CP1251',_CHARSET, 'GMT - 7 ч');
-$lang['-6'] = iconv('CP1251',_CHARSET, 'GMT - 6 ч');
-$lang['-5'] = iconv('CP1251',_CHARSET, 'GMT - 5 ч');
-$lang['-4'] = iconv('CP1251',_CHARSET, 'GMT - 4 ч');
-$lang['-3.5'] = iconv('CP1251',_CHARSET, 'GMT - 3.5 ч');
-$lang['-3'] = iconv('CP1251',_CHARSET, 'GMT - 3 ч');
-$lang['-2'] = iconv('CP1251',_CHARSET, 'GMT - 2 ч');
-$lang['-1'] = iconv('CP1251',_CHARSET, 'GMT - 1 ч');
-$lang['0'] = iconv('CP1251',_CHARSET, 'GMT');
-$lang['1'] = iconv('CP1251',_CHARSET, 'GMT + 1 ч');
-$lang['2'] = iconv('CP1251',_CHARSET, 'GMT + 2 ч');
-$lang['3'] = iconv('CP1251',_CHARSET, 'GMT + 3 ч');
-$lang['3.5'] = iconv('CP1251',_CHARSET, 'GMT + 3.5 ч');
-$lang['4'] = iconv('CP1251',_CHARSET, 'GMT + 4 ч');
-$lang['4.5'] = iconv('CP1251',_CHARSET, 'GMT + 4.5 ч');
-$lang['5'] = iconv('CP1251',_CHARSET, 'GMT + 5 ч');
-$lang['5.5'] = iconv('CP1251',_CHARSET, 'GMT + 5.5 ч');
-$lang['6'] = iconv('CP1251',_CHARSET, 'GMT + 6 ч');
-$lang['6.5'] = iconv('CP1251',_CHARSET, 'GMT + 6.5 ч');
-$lang['7'] = iconv('CP1251',_CHARSET, 'GMT + 7 ч');
-$lang['8'] = iconv('CP1251',_CHARSET, 'GMT + 8 ч');
-$lang['9'] = iconv('CP1251',_CHARSET, 'GMT + 9 ч');
-$lang['9.5'] = iconv('CP1251',_CHARSET, 'GMT + 9.5 ч');
-$lang['10'] = iconv('CP1251',_CHARSET, 'GMT + 10 ч');
-$lang['11'] = iconv('CP1251',_CHARSET, 'GMT + 11 ч');
-$lang['12'] = iconv('CP1251',_CHARSET, 'GMT + 12 ч');
-$lang['13'] = iconv('CP1251',_CHARSET, 'GMT + 13 ч');
+$lang['-12'] = 'GMT - 12 С‡';
+$lang['-11'] = 'GMT - 11 С‡';
+$lang['-10'] = 'GMT - 10 С‡';
+$lang['-9'] = 'GMT - 9 С‡';
+$lang['-8'] = 'GMT - 8 С‡';
+$lang['-7'] = 'GMT - 7 С‡';
+$lang['-6'] = 'GMT - 6 С‡';
+$lang['-5'] = 'GMT - 5 С‡';
+$lang['-4'] = 'GMT - 4 С‡';
+$lang['-3.5'] = 'GMT - 3.5 С‡';
+$lang['-3'] = 'GMT - 3 С‡';
+$lang['-2'] = 'GMT - 2 С‡';
+$lang['-1'] = 'GMT - 1 С‡';
+$lang['0'] = 'GMT';
+$lang['1'] = 'GMT + 1 С‡';
+$lang['2'] = 'GMT + 2 С‡';
+$lang['3'] = 'GMT + 3 С‡';
+$lang['3.5'] = 'GMT + 3.5 С‡';
+$lang['4'] = 'GMT + 4 С‡';
+$lang['4.5'] = 'GMT + 4.5 С‡';
+$lang['5'] = 'GMT + 5 С‡';
+$lang['5.5'] = 'GMT + 5.5 С‡';
+$lang['6'] = 'GMT + 6 С‡';
+$lang['6.5'] = 'GMT + 6.5 С‡';
+$lang['7'] = 'GMT + 7 С‡';
+$lang['8'] = 'GMT + 8 С‡';
+$lang['9'] = 'GMT + 9 С‡';
+$lang['9.5'] = 'GMT + 9.5 С‡';
+$lang['10'] = 'GMT + 10 С‡';
+$lang['11'] = 'GMT + 11 С‡';
+$lang['12'] = 'GMT + 12 С‡';
+$lang['13'] = 'GMT + 13 С‡';
 
 // These are displayed in the timezone select box
-$lang['tz']['-12'] = iconv('CP1251',_CHARSET, 'GMT - 12 ч');
-$lang['tz']['-11'] = iconv('CP1251',_CHARSET, 'GMT - 11 ч');
-$lang['tz']['-10'] = iconv('CP1251',_CHARSET, 'GMT - 10 ч');
-$lang['tz']['-9'] = iconv('CP1251',_CHARSET, 'GMT - 9 ч');
-$lang['tz']['-8'] = iconv('CP1251',_CHARSET, 'GMT - 8 ч');
-$lang['tz']['-7'] = iconv('CP1251',_CHARSET, 'GMT - 7 ч');
-$lang['tz']['-6'] = iconv('CP1251',_CHARSET, 'GMT - 6 ч');
-$lang['tz']['-5'] = iconv('CP1251',_CHARSET, 'GMT - 5 ч');
-$lang['tz']['-4'] = iconv('CP1251',_CHARSET, 'GMT - 4 ч');
-$lang['tz']['-3.5'] = iconv('CP1251',_CHARSET, 'GMT - 3.5 ч');
-$lang['tz']['-3'] = iconv('CP1251',_CHARSET, 'GMT - 3 ч');
-$lang['tz']['-2'] = iconv('CP1251',_CHARSET, 'GMT - 2 ч');
-$lang['tz']['-1'] = iconv('CP1251',_CHARSET, 'GMT - 1 ч');
-$lang['tz']['0'] = iconv('CP1251',_CHARSET, 'GMT');
-$lang['tz']['1'] = iconv('CP1251',_CHARSET, 'GMT + 1 ч');
-$lang['tz']['2'] = iconv('CP1251',_CHARSET, 'GMT + 2 ч');
-$lang['tz']['3'] = iconv('CP1251',_CHARSET, 'GMT + 3 ч');
-$lang['tz']['3.5'] = iconv('CP1251',_CHARSET, 'GMT + 3.5 ч');
-$lang['tz']['4'] = iconv('CP1251',_CHARSET, 'GMT + 4 ч');
-$lang['tz']['4.5'] = iconv('CP1251',_CHARSET, 'GMT + 4.5 ч');
-$lang['tz']['5'] = iconv('CP1251',_CHARSET, 'GMT + 5 ч');
-$lang['tz']['5.5'] = iconv('CP1251',_CHARSET, 'GMT + 5.5 ч');
-$lang['tz']['6'] = iconv('CP1251',_CHARSET, 'GMT + 6 ч');
-$lang['tz']['6.5'] = iconv('CP1251',_CHARSET, 'GMT + 6.5 ч');
-$lang['tz']['7'] = iconv('CP1251',_CHARSET, 'GMT + 7 ч');
-$lang['tz']['8'] = iconv('CP1251',_CHARSET, 'GMT + 8 ч');
-$lang['tz']['9'] = iconv('CP1251',_CHARSET, 'GMT + 9 ч');
-$lang['tz']['9.5'] = iconv('CP1251',_CHARSET, 'GMT + 9.5 ч');
-$lang['tz']['10'] = iconv('CP1251',_CHARSET, 'GMT + 10 ч');
-$lang['tz']['11'] = iconv('CP1251',_CHARSET, 'GMT + 11 ч');
-$lang['tz']['12'] = iconv('CP1251',_CHARSET, 'GMT + 12 ч');
-$lang['tz']['13'] = iconv('CP1251',_CHARSET, 'GMT + 13 ч');
+$lang['tz']['-12'] = 'GMT - 12 С‡';
+$lang['tz']['-11'] = 'GMT - 11 С‡';
+$lang['tz']['-10'] = 'GMT - 10 С‡';
+$lang['tz']['-9'] = 'GMT - 9 С‡';
+$lang['tz']['-8'] = 'GMT - 8 С‡';
+$lang['tz']['-7'] = 'GMT - 7 С‡';
+$lang['tz']['-6'] = 'GMT - 6 С‡';
+$lang['tz']['-5'] = 'GMT - 5 С‡';
+$lang['tz']['-4'] = 'GMT - 4 С‡';
+$lang['tz']['-3.5'] = 'GMT - 3.5 С‡';
+$lang['tz']['-3'] = 'GMT - 3 С‡';
+$lang['tz']['-2'] = 'GMT - 2 С‡';
+$lang['tz']['-1'] = 'GMT - 1 С‡';
+$lang['tz']['0'] = 'GMT';
+$lang['tz']['1'] = 'GMT + 1 С‡';
+$lang['tz']['2'] = 'GMT + 2 С‡';
+$lang['tz']['3'] = 'GMT + 3 С‡';
+$lang['tz']['3.5'] = 'GMT + 3.5 С‡';
+$lang['tz']['4'] = 'GMT + 4 С‡';
+$lang['tz']['4.5'] = 'GMT + 4.5 С‡';
+$lang['tz']['5'] = 'GMT + 5 С‡';
+$lang['tz']['5.5'] = 'GMT + 5.5 С‡';
+$lang['tz']['6'] = 'GMT + 6 С‡';
+$lang['tz']['6.5'] = 'GMT + 6.5 С‡';
+$lang['tz']['7'] = 'GMT + 7 С‡';
+$lang['tz']['8'] = 'GMT + 8 С‡';
+$lang['tz']['9'] = 'GMT + 9 С‡';
+$lang['tz']['9.5'] = 'GMT + 9.5 С‡';
+$lang['tz']['10'] = 'GMT + 10 С‡';
+$lang['tz']['11'] = 'GMT + 11 С‡';
+$lang['tz']['12'] = 'GMT + 12 С‡';
+$lang['tz']['13'] = 'GMT + 13 С‡';
 
-$lang['datetime']['Sunday'] = iconv('CP1251',_CHARSET, 'неделя');
-$lang['datetime']['Monday'] = iconv('CP1251',_CHARSET, 'понеделник');
-$lang['datetime']['Tuesday'] = iconv('CP1251',_CHARSET, 'вторник');
-$lang['datetime']['Wednesday'] = iconv('CP1251',_CHARSET, 'сряда');
-$lang['datetime']['Thursday'] = iconv('CP1251',_CHARSET, 'четвъртък');
-$lang['datetime']['Friday'] = iconv('CP1251',_CHARSET, 'петък');
-$lang['datetime']['Saturday'] = iconv('CP1251',_CHARSET, 'събота');
-$lang['datetime']['Sun'] = iconv('CP1251',_CHARSET, 'Sun');
-$lang['datetime']['Mon'] = iconv('CP1251',_CHARSET, 'Mon');
-$lang['datetime']['Tue'] = iconv('CP1251',_CHARSET, 'Tue');
-$lang['datetime']['Wed'] = iconv('CP1251',_CHARSET, 'Wed');
-$lang['datetime']['Thu'] = iconv('CP1251',_CHARSET, 'Thu');
-$lang['datetime']['Fri'] = iconv('CP1251',_CHARSET, 'Fri');
-$lang['datetime']['Sat'] = iconv('CP1251',_CHARSET, 'Sat');
-$lang['datetime']['January'] = iconv('CP1251',_CHARSET, 'януари');
-$lang['datetime']['February'] = iconv('CP1251',_CHARSET, 'февруари');
-$lang['datetime']['March'] = iconv('CP1251',_CHARSET, 'март');
-$lang['datetime']['April'] = iconv('CP1251',_CHARSET, 'април');
-$lang['datetime']['May'] = iconv('CP1251',_CHARSET, 'май');
-$lang['datetime']['June'] = iconv('CP1251',_CHARSET, 'юни');
-$lang['datetime']['July'] = iconv('CP1251',_CHARSET, 'юли');
-$lang['datetime']['August'] = iconv('CP1251',_CHARSET, 'август');
-$lang['datetime']['September'] = iconv('CP1251',_CHARSET, 'септември');
-$lang['datetime']['October'] = iconv('CP1251',_CHARSET, 'октомври');
-$lang['datetime']['November'] = iconv('CP1251',_CHARSET, 'ноември');
-$lang['datetime']['December'] = iconv('CP1251',_CHARSET, 'декември');
-$lang['datetime']['Jan'] = iconv('CP1251',_CHARSET, 'яну');
-$lang['datetime']['Feb'] = iconv('CP1251',_CHARSET, 'фев');
-$lang['datetime']['Mar'] = iconv('CP1251',_CHARSET, 'мар');
-$lang['datetime']['Apr'] = iconv('CP1251',_CHARSET, 'апр');
-$lang['datetime']['May'] = iconv('CP1251',_CHARSET, 'май');
-$lang['datetime']['Jun'] = iconv('CP1251',_CHARSET, 'юни');
-$lang['datetime']['Jul'] = iconv('CP1251',_CHARSET, 'юли');
-$lang['datetime']['Aug'] = iconv('CP1251',_CHARSET, 'авг');
-$lang['datetime']['Sep'] = iconv('CP1251',_CHARSET, 'сеп');
-$lang['datetime']['Oct'] = iconv('CP1251',_CHARSET, 'окт');
-$lang['datetime']['Nov'] = iconv('CP1251',_CHARSET, 'ное');
-$lang['datetime']['Dec'] = iconv('CP1251',_CHARSET, 'дек');
+$lang['datetime']['Sunday'] = 'РЅРµРґРµР»СЏ';
+$lang['datetime']['Monday'] = 'РїРѕРЅРµРґРµР»РЅРёРє';
+$lang['datetime']['Tuesday'] = 'РІС‚РѕСЂРЅРёРє';
+$lang['datetime']['Wednesday'] = 'СЃСЂСЏРґР°';
+$lang['datetime']['Thursday'] = 'С‡РµС‚РІСЉСЂС‚СЉРє';
+$lang['datetime']['Friday'] = 'РїРµС‚СЉРє';
+$lang['datetime']['Saturday'] = 'СЃСЉР±РѕС‚Р°';
+$lang['datetime']['Sun'] = 'Sun';
+$lang['datetime']['Mon'] = 'Mon';
+$lang['datetime']['Tue'] = 'Tue';
+$lang['datetime']['Wed'] = 'Wed';
+$lang['datetime']['Thu'] = 'Thu';
+$lang['datetime']['Fri'] = 'Fri';
+$lang['datetime']['Sat'] = 'Sat';
+$lang['datetime']['January'] = 'СЏРЅСѓР°СЂРё';
+$lang['datetime']['February'] = 'С„РµРІСЂСѓР°СЂРё';
+$lang['datetime']['March'] = 'РјР°СЂС‚';
+$lang['datetime']['April'] = 'Р°РїСЂРёР»';
+$lang['datetime']['May'] = 'РјР°Р№';
+$lang['datetime']['June'] = 'СЋРЅРё';
+$lang['datetime']['July'] = 'СЋР»Рё';
+$lang['datetime']['August'] = 'Р°РІРіСѓСЃС‚';
+$lang['datetime']['September'] = 'СЃРµРїС‚РµРјРІСЂРё';
+$lang['datetime']['October'] = 'РѕРєС‚РѕРјРІСЂРё';
+$lang['datetime']['November'] = 'РЅРѕРµРјРІСЂРё';
+$lang['datetime']['December'] = 'РґРµРєРµРјРІСЂРё';
+$lang['datetime']['Jan'] = 'СЏРЅСѓ';
+$lang['datetime']['Feb'] = 'С„РµРІ';
+$lang['datetime']['Mar'] = 'РјР°СЂ';
+$lang['datetime']['Apr'] = 'Р°РїСЂ';
+$lang['datetime']['May'] = 'РјР°Р№';
+$lang['datetime']['Jun'] = 'СЋРЅРё';
+$lang['datetime']['Jul'] = 'СЋР»Рё';
+$lang['datetime']['Aug'] = 'Р°РІРі';
+$lang['datetime']['Sep'] = 'СЃРµРї';
+$lang['datetime']['Oct'] = 'РѕРєС‚';
+$lang['datetime']['Nov'] = 'РЅРѕРµ';
+$lang['datetime']['Dec'] = 'РґРµРє';
 
 //
 // Errors (not related to a
 // specific failure on a page)
 //
-$lang['Information'] = iconv('CP1251',_CHARSET, 'Информация'); # Information
-$lang['Critical_Information'] = iconv('CP1251',_CHARSET, 'Критична информация'); # Critical Information
+$lang['Information'] = 'РРЅС„РѕСЂРјР°С†РёСЏ'; # Information
+$lang['Critical_Information'] = 'РљСЂРёС‚РёС‡РЅР° РёРЅС„РѕСЂРјР°С†РёСЏ'; # Critical Information
 
-$lang['General_Error'] = iconv('CP1251',_CHARSET, 'Грешка'); # General Error
-$lang['Critical_Error'] = iconv('CP1251',_CHARSET, 'Критична грешка'); # Critical Error
-$lang['An_error_occured'] = iconv('CP1251',_CHARSET, 'Възникнала е грешка'); # An Error Occurred
-$lang['A_critical_error'] = iconv('CP1251',_CHARSET, 'Възникнала е критична грешка'); # A Critical Error Occurred
+$lang['General_Error'] = 'Р“СЂРµС€РєР°'; # General Error
+$lang['Critical_Error'] = 'РљСЂРёС‚РёС‡РЅР° РіСЂРµС€РєР°'; # Critical Error
+$lang['An_error_occured'] = 'Р’СЉР·РЅРёРєРЅР°Р»Р° Рµ РіСЂРµС€РєР°'; # An Error Occurred
+$lang['A_critical_error'] = 'Р’СЉР·РЅРёРєРЅР°Р»Р° Рµ РєСЂРёС‚РёС‡РЅР° РіСЂРµС€РєР°'; # A Critical Error Occurred
 
 //
 // That's all Folks!
 // -------------------------------------------------
-
-?>

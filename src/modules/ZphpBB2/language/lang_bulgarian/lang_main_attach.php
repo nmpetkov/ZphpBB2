@@ -23,116 +23,112 @@
 // Attachment Mod Main Language Variables
 //
 
-if (!defined('_CHARSET')) define('_CHARSET', 'utf-8');
-
 // Auth Related Entries
-$lang['Rules_attach_can'] = iconv('CP1251',_CHARSET, 'Вие <b>можете</b> да прикрепяте файлове в този форум'); # You <b>can</b> attach files in this forum
-$lang['Rules_attach_cannot'] = iconv('CP1251',_CHARSET, 'Вие <b>не можете</b> да прикрепяте файлове в този форум'); # You <b>cannot</b> attach files in this forum
-$lang['Rules_download_can'] = iconv('CP1251',_CHARSET, 'Вие <b>можете</b> да теглите файлове в този форум'); # You <b>can</b> download files in this forum
-$lang['Rules_download_cannot'] = iconv('CP1251',_CHARSET, 'Вие <b>не можете</b> да теглите файлове в този форум'); # You <b>cannot</b> download files in this forum
-$lang['Sorry_auth_view_attach'] = iconv('CP1251',_CHARSET, 'Съжаляваме, но вие нямата права да виждате или теглите този файл'); # Sorry but you are not authorized to view or download this Attachment
+$lang['Rules_attach_can'] = 'Р’РёРµ <b>РјРѕР¶РµС‚Рµ</b> РґР° РїСЂРёРєСЂРµРїСЏС‚Рµ С„Р°Р№Р»РѕРІРµ РІ С‚РѕР·Рё С„РѕСЂСѓРј'; # You <b>can</b> attach files in this forum
+$lang['Rules_attach_cannot'] = 'Р’РёРµ <b>РЅРµ РјРѕР¶РµС‚Рµ</b> РґР° РїСЂРёРєСЂРµРїСЏС‚Рµ С„Р°Р№Р»РѕРІРµ РІ С‚РѕР·Рё С„РѕСЂСѓРј'; # You <b>cannot</b> attach files in this forum
+$lang['Rules_download_can'] = 'Р’РёРµ <b>РјРѕР¶РµС‚Рµ</b> РґР° С‚РµРіР»РёС‚Рµ С„Р°Р№Р»РѕРІРµ РІ С‚РѕР·Рё С„РѕСЂСѓРј'; # You <b>can</b> download files in this forum
+$lang['Rules_download_cannot'] = 'Р’РёРµ <b>РЅРµ РјРѕР¶РµС‚Рµ</b> РґР° С‚РµРіР»РёС‚Рµ С„Р°Р№Р»РѕРІРµ РІ С‚РѕР·Рё С„РѕСЂСѓРј'; # You <b>cannot</b> download files in this forum
+$lang['Sorry_auth_view_attach'] = 'РЎСЉР¶Р°Р»СЏРІР°РјРµ, РЅРѕ РІРёРµ РЅСЏРјР°С‚Р° РїСЂР°РІР° РґР° РІРёР¶РґР°С‚Рµ РёР»Рё С‚РµРіР»РёС‚Рµ С‚РѕР·Рё С„Р°Р№Р»'; # Sorry but you are not authorized to view or download this Attachment
 
 // Viewtopic -> Display of Attachments
-$lang['Description'] = iconv('CP1251',_CHARSET, 'Описание'); # Description// used in Administration Panel too...
-$lang['Downloaded'] = iconv('CP1251',_CHARSET, 'Изтеглен'); # Downloaded
-$lang['Download'] = iconv('CP1251',_CHARSET, 'Изтегли'); # Download// this Language Variable is defined in lang_admin.php too, but we are unable to access it from the main Language File
-$lang['Filesize'] = iconv('CP1251',_CHARSET, 'Размер'); # Filesize
-$lang['Viewed'] = iconv('CP1251',_CHARSET, 'Видяно'); # Viewed
-$lang['Download_number'] = iconv('CP1251',_CHARSET, '%d път(и)'); # %d Time(s)// replace %d with count
-$lang['Extension_disabled_after_posting'] = iconv('CP1251',_CHARSET, 'Разширението \'%s\' е деактивирано от администратора, файла не може да се покаже.'); # The Extension \'%s\' was deactivated by an board admin, therefore this Attachment is not displayed. // used in Posts and PM's, replace %s with mime type
+$lang['Description'] = 'РћРїРёСЃР°РЅРёРµ'; # Description// used in Administration Panel too...
+$lang['Downloaded'] = 'РР·С‚РµРіР»РµРЅ'; # Downloaded
+$lang['Download'] = 'РР·С‚РµРіР»Рё'; # Download// this Language Variable is defined in lang_admin.php too, but we are unable to access it from the main Language File
+$lang['Filesize'] = 'Р Р°Р·РјРµСЂ'; # Filesize
+$lang['Viewed'] = 'Р’РёРґСЏРЅРѕ'; # Viewed
+$lang['Download_number'] = '%d РїСЉС‚(Рё)'; # %d Time(s)// replace %d with count
+$lang['Extension_disabled_after_posting'] = 'Р Р°Р·С€РёСЂРµРЅРёРµС‚Рѕ \'%s\' Рµ РґРµР°РєС‚РёРІРёСЂР°РЅРѕ РѕС‚ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР°, С„Р°Р№Р»Р° РЅРµ РјРѕР¶Рµ РґР° СЃРµ РїРѕРєР°Р¶Рµ.'; # The Extension \'%s\' was deactivated by an board admin, therefore this Attachment is not displayed. // used in Posts and PM's, replace %s with mime type
 
 // Posting/PM -> Initial Display
-$lang['Attach_posting_cp'] = iconv('CP1251',_CHARSET, 'Контролен панел за прикрепяне на файлове'); # Attachment Posting Control Panel
-$lang['Attach_posting_cp_explain'] = iconv('CP1251',_CHARSET, 'Ако изберете Прикрепяне на файл, ще се отвори каре за тази цел.<br />Ако изберете Прикрепени файлове, ще видите списък с вече прикрепените файлове и ще можете да ги редактирате.<br />Ако искате да подмените някой файл (Подмени с нова версия), трябва да изберете и двете връзки. Добавете файл по нормалната процедура, след това не избирайте Прикрепи файл, а изберете Подмени с нова версия за файла, който искате да подмените.'); # If you click on Add an Attachment, you will see the box for adding Attachments.<br />If you click on Posted Attachments, you will see a list of already attached Files and you are able to edit them.<br />If you want to Replace (Upload new Version) an Attachment, you have to click both links. Add the Attachment as you normally would do, thereafter don\'t click on Add Attachment, rather click on Upload New Version at the Attachment Entry you intend to update.
+$lang['Attach_posting_cp'] = 'РљРѕРЅС‚СЂРѕР»РµРЅ РїР°РЅРµР» Р·Р° РїСЂРёРєСЂРµРїСЏРЅРµ РЅР° С„Р°Р№Р»РѕРІРµ'; # Attachment Posting Control Panel
+$lang['Attach_posting_cp_explain'] = 'РђРєРѕ РёР·Р±РµСЂРµС‚Рµ РџСЂРёРєСЂРµРїСЏРЅРµ РЅР° С„Р°Р№Р», С‰Рµ СЃРµ РѕС‚РІРѕСЂРё РєР°СЂРµ Р·Р° С‚Р°Р·Рё С†РµР».<br />РђРєРѕ РёР·Р±РµСЂРµС‚Рµ РџСЂРёРєСЂРµРїРµРЅРё С„Р°Р№Р»РѕРІРµ, С‰Рµ РІРёРґРёС‚Рµ СЃРїРёСЃСЉРє СЃ РІРµС‡Рµ РїСЂРёРєСЂРµРїРµРЅРёС‚Рµ С„Р°Р№Р»РѕРІРµ Рё С‰Рµ РјРѕР¶РµС‚Рµ РґР° РіРё СЂРµРґР°РєС‚РёСЂР°С‚Рµ.<br />РђРєРѕ РёСЃРєР°С‚Рµ РґР° РїРѕРґРјРµРЅРёС‚Рµ РЅСЏРєРѕР№ С„Р°Р№Р» (РџРѕРґРјРµРЅРё СЃ РЅРѕРІР° РІРµСЂСЃРёСЏ), С‚СЂСЏР±РІР° РґР° РёР·Р±РµСЂРµС‚Рµ Рё РґРІРµС‚Рµ РІСЂСЉР·РєРё. Р”РѕР±Р°РІРµС‚Рµ С„Р°Р№Р» РїРѕ РЅРѕСЂРјР°Р»РЅР°С‚Р° РїСЂРѕС†РµРґСѓСЂР°, СЃР»РµРґ С‚РѕРІР° РЅРµ РёР·Р±РёСЂР°Р№С‚Рµ РџСЂРёРєСЂРµРїРё С„Р°Р№Р», Р° РёР·Р±РµСЂРµС‚Рµ РџРѕРґРјРµРЅРё СЃ РЅРѕРІР° РІРµСЂСЃРёСЏ Р·Р° С„Р°Р№Р»Р°, РєРѕР№С‚Рѕ РёСЃРєР°С‚Рµ РґР° РїРѕРґРјРµРЅРёС‚Рµ.'; # If you click on Add an Attachment, you will see the box for adding Attachments.<br />If you click on Posted Attachments, you will see a list of already attached Files and you are able to edit them.<br />If you want to Replace (Upload new Version) an Attachment, you have to click both links. Add the Attachment as you normally would do, thereafter don\'t click on Add Attachment, rather click on Upload New Version at the Attachment Entry you intend to update.
 
 // Posting/PM -> Posting Attachments
-$lang['Add_attachment'] = iconv('CP1251',_CHARSET, 'Прикрепи файл'); # Add Attachment
-$lang['Add_attachment_title'] = iconv('CP1251',_CHARSET, 'Прикрепяне на файл'); # Add an Attachment
-$lang['Add_attachment_explain'] = iconv('CP1251',_CHARSET, 'Ако не желаете да прикрепяте файлове към съобщението си, моля оставете полетата празни'); # If you do not want to add an Attachment to your Post, please leave the Fields blank
-$lang['File_name'] = iconv('CP1251',_CHARSET, 'Име на файла'); # Filename
-$lang['File_comment'] = iconv('CP1251',_CHARSET, 'Коментар'); # File Comment
+$lang['Add_attachment'] = 'РџСЂРёРєСЂРµРїРё С„Р°Р№Р»'; # Add Attachment
+$lang['Add_attachment_title'] = 'РџСЂРёРєСЂРµРїСЏРЅРµ РЅР° С„Р°Р№Р»'; # Add an Attachment
+$lang['Add_attachment_explain'] = 'РђРєРѕ РЅРµ Р¶РµР»Р°РµС‚Рµ РґР° РїСЂРёРєСЂРµРїСЏС‚Рµ С„Р°Р№Р»РѕРІРµ РєСЉРј СЃСЉРѕР±С‰РµРЅРёРµС‚Рѕ СЃРё, РјРѕР»СЏ РѕСЃС‚Р°РІРµС‚Рµ РїРѕР»РµС‚Р°С‚Р° РїСЂР°Р·РЅРё'; # If you do not want to add an Attachment to your Post, please leave the Fields blank
+$lang['File_name'] = 'РРјРµ РЅР° С„Р°Р№Р»Р°'; # Filename
+$lang['File_comment'] = 'РљРѕРјРµРЅС‚Р°СЂ'; # File Comment
 
 // Posting/PM -> Posted Attachments
-$lang['Posted_attachments'] = iconv('CP1251',_CHARSET, 'Прикрепени файлове'); # Posted Attachments
-$lang['Options'] = iconv('CP1251',_CHARSET, 'Възможности'); # Options
-$lang['Update_comment'] = iconv('CP1251',_CHARSET, 'Промени коментар'); # Update Comment
-$lang['Delete_attachments'] = iconv('CP1251',_CHARSET, 'Изтрий файловете'); # Delete Attachments
-$lang['Delete_attachment'] = iconv('CP1251',_CHARSET, 'Изтрий файла'); # Delete Attachment
-$lang['Delete_thumbnail'] = iconv('CP1251',_CHARSET, 'Изтрий иконата'); # Delete Thumbnail
-$lang['Upload_new_version'] = iconv('CP1251',_CHARSET, 'Подмени с нова версия'); # Upload New Version
+$lang['Posted_attachments'] = 'РџСЂРёРєСЂРµРїРµРЅРё С„Р°Р№Р»РѕРІРµ'; # Posted Attachments
+$lang['Options'] = 'Р’СЉР·РјРѕР¶РЅРѕСЃС‚Рё'; # Options
+$lang['Update_comment'] = 'РџСЂРѕРјРµРЅРё РєРѕРјРµРЅС‚Р°СЂ'; # Update Comment
+$lang['Delete_attachments'] = 'РР·С‚СЂРёР№ С„Р°Р№Р»РѕРІРµС‚Рµ'; # Delete Attachments
+$lang['Delete_attachment'] = 'РР·С‚СЂРёР№ С„Р°Р№Р»Р°'; # Delete Attachment
+$lang['Delete_thumbnail'] = 'РР·С‚СЂРёР№ РёРєРѕРЅР°С‚Р°'; # Delete Thumbnail
+$lang['Upload_new_version'] = 'РџРѕРґРјРµРЅРё СЃ РЅРѕРІР° РІРµСЂСЃРёСЏ'; # Upload New Version
 
 // Errors -> Posting Attachments
-$lang['Invalid_filename'] = iconv('CP1251',_CHARSET, '%s е навалидно име на файл'); # %s is an invalid filename // replace %s with given filename
-$lang['Attachment_php_size_na'] = iconv('CP1251',_CHARSET, 'Файлът е твърде голям.<br />Не може да се вземе от системата ограничението по размер в PHP.'); # The Attachment is too big.<br />Couldn\'t get the maximum Size defined in PHP.<br />The Attachment Mod is unable to determine the maximum Upload Size defined in the php.ini.
-$lang['Attachment_php_size_overrun'] = iconv('CP1251',_CHARSET, 'Файлът е твърде голям.<br />Максимален размер за качване: %d MB.<br />Ограничението е зададено в PHP системата на сървъра.'); # The Attachment is too big.<br />Maximum Upload Size: %d MB.<br />Please note that this Size is defined in php.ini, this means it\'s set by PHP and the Attachment Mod can not override this value. // replace %d with ini_get('upload_max_filesize')
-$lang['Disallowed_extension'] = iconv('CP1251',_CHARSET, 'Разширението %s не е позволено'); # The Extension %s is not allowed // replace %s with extension (e.g. .php) 
-$lang['Disallowed_extension_within_forum'] = iconv('CP1251',_CHARSET, 'Не е позволено да качвате файлове с разширение %s в този форум'); #You are not allowed to post Files with the Extension %s within this Forum // replace %s with the Extension
-$lang['Attachment_too_big'] = iconv('CP1251',_CHARSET, 'Файлът е твърде голям.<br />Максимален размер: %d %s'); # The Attachment is too big.<br />Max Size: %d %s // replace %d with maximum file size, %s with size var
-$lang['Attach_quota_reached'] = iconv('CP1251',_CHARSET, 'Съжаляваме. но е достигнат максималния размер на прикрепените файлове. Моля контактувайте с администратора на форума ако имате въпроси.'); # Sorry, but the maximum filesize for all Attachments is reached. Please contact the Board Administrator if you have questions.
-$lang['Too_many_attachments'] = iconv('CP1251',_CHARSET, 'Файлът не може да бъде прикачен, тъй като е достигнат максимания брой от %d файла за това съобщение'); # Attachment cannot be added, since the max. number of %d Attachments in this post was achieved // replace %d with maximum number of attachments
-$lang['Error_imagesize'] = iconv('CP1251',_CHARSET, 'Прикаченото изображение трябва да бъде по-малко от %d пиксела ширина и %d пиксела височина');  # The Attachment/Image must be less than %d pixels wide and %d pixels high
-$lang['General_upload_error'] = iconv('CP1251',_CHARSET, 'Грешка при качването: Не може да се запише файла на %s.'); # Upload Error: Could not upload Attachment to %s. // replace %s with local path
+$lang['Invalid_filename'] = '%s Рµ РЅР°РІР°Р»РёРґРЅРѕ РёРјРµ РЅР° С„Р°Р№Р»'; # %s is an invalid filename // replace %s with given filename
+$lang['Attachment_php_size_na'] = 'Р¤Р°Р№Р»СЉС‚ Рµ С‚РІСЉСЂРґРµ РіРѕР»СЏРј.<br />РќРµ РјРѕР¶Рµ РґР° СЃРµ РІР·РµРјРµ РѕС‚ СЃРёСЃС‚РµРјР°С‚Р° РѕРіСЂР°РЅРёС‡РµРЅРёРµС‚Рѕ РїРѕ СЂР°Р·РјРµСЂ РІ PHP.'; # The Attachment is too big.<br />Couldn\'t get the maximum Size defined in PHP.<br />The Attachment Mod is unable to determine the maximum Upload Size defined in the php.ini.
+$lang['Attachment_php_size_overrun'] = 'Р¤Р°Р№Р»СЉС‚ Рµ С‚РІСЉСЂРґРµ РіРѕР»СЏРј.<br />РњР°РєСЃРёРјР°Р»РµРЅ СЂР°Р·РјРµСЂ Р·Р° РєР°С‡РІР°РЅРµ: %d MB.<br />РћРіСЂР°РЅРёС‡РµРЅРёРµС‚Рѕ Рµ Р·Р°РґР°РґРµРЅРѕ РІ PHP СЃРёСЃС‚РµРјР°С‚Р° РЅР° СЃСЉСЂРІСЉСЂР°.'; # The Attachment is too big.<br />Maximum Upload Size: %d MB.<br />Please note that this Size is defined in php.ini, this means it\'s set by PHP and the Attachment Mod can not override this value. // replace %d with ini_get('upload_max_filesize')
+$lang['Disallowed_extension'] = 'Р Р°Р·С€РёСЂРµРЅРёРµС‚Рѕ %s РЅРµ Рµ РїРѕР·РІРѕР»РµРЅРѕ'; # The Extension %s is not allowed // replace %s with extension (e.g. .php) 
+$lang['Disallowed_extension_within_forum'] = 'РќРµ Рµ РїРѕР·РІРѕР»РµРЅРѕ РґР° РєР°С‡РІР°С‚Рµ С„Р°Р№Р»РѕРІРµ СЃ СЂР°Р·С€РёСЂРµРЅРёРµ %s РІ С‚РѕР·Рё С„РѕСЂСѓРј'; #You are not allowed to post Files with the Extension %s within this Forum // replace %s with the Extension
+$lang['Attachment_too_big'] = 'Р¤Р°Р№Р»СЉС‚ Рµ С‚РІСЉСЂРґРµ РіРѕР»СЏРј.<br />РњР°РєСЃРёРјР°Р»РµРЅ СЂР°Р·РјРµСЂ: %d %s'; # The Attachment is too big.<br />Max Size: %d %s // replace %d with maximum file size, %s with size var
+$lang['Attach_quota_reached'] = 'РЎСЉР¶Р°Р»СЏРІР°РјРµ. РЅРѕ Рµ РґРѕСЃС‚РёРіРЅР°С‚ РјР°РєСЃРёРјР°Р»РЅРёСЏ СЂР°Р·РјРµСЂ РЅР° РїСЂРёРєСЂРµРїРµРЅРёС‚Рµ С„Р°Р№Р»РѕРІРµ. РњРѕР»СЏ РєРѕРЅС‚Р°РєС‚СѓРІР°Р№С‚Рµ СЃ Р°РґРјРёРЅРёСЃС‚СЂР°С‚РѕСЂР° РЅР° С„РѕСЂСѓРјР° Р°РєРѕ РёРјР°С‚Рµ РІСЉРїСЂРѕСЃРё.'; # Sorry, but the maximum filesize for all Attachments is reached. Please contact the Board Administrator if you have questions.
+$lang['Too_many_attachments'] = 'Р¤Р°Р№Р»СЉС‚ РЅРµ РјРѕР¶Рµ РґР° Р±СЉРґРµ РїСЂРёРєР°С‡РµРЅ, С‚СЉР№ РєР°С‚Рѕ Рµ РґРѕСЃС‚РёРіРЅР°С‚ РјР°РєСЃРёРјР°РЅРёСЏ Р±СЂРѕР№ РѕС‚ %d С„Р°Р№Р»Р° Р·Р° С‚РѕРІР° СЃСЉРѕР±С‰РµРЅРёРµ'; # Attachment cannot be added, since the max. number of %d Attachments in this post was achieved // replace %d with maximum number of attachments
+$lang['Error_imagesize'] = 'РџСЂРёРєР°С‡РµРЅРѕС‚Рѕ РёР·РѕР±СЂР°Р¶РµРЅРёРµ С‚СЂСЏР±РІР° РґР° Р±СЉРґРµ РїРѕ-РјР°Р»РєРѕ РѕС‚ %d РїРёРєСЃРµР»Р° С€РёСЂРёРЅР° Рё %d РїРёРєСЃРµР»Р° РІРёСЃРѕС‡РёРЅР°';  # The Attachment/Image must be less than %d pixels wide and %d pixels high
+$lang['General_upload_error'] = 'Р“СЂРµС€РєР° РїСЂРё РєР°С‡РІР°РЅРµС‚Рѕ: РќРµ РјРѕР¶Рµ РґР° СЃРµ Р·Р°РїРёС€Рµ С„Р°Р№Р»Р° РЅР° %s.'; # Upload Error: Could not upload Attachment to %s. // replace %s with local path
 
-$lang['Error_empty_add_attachbox'] = iconv('CP1251',_CHARSET, 'Трябва да въведете стойности в карето \'Прикрепяне на файл\''); # You have to enter values in the \'Add an Attachment\' Box
-$lang['Error_missing_old_entry'] = iconv('CP1251',_CHARSET, 'Не може да се направи подмяната, тъй като не е намерен стария файл'); # Unable to Update Attachment, could not find old Attachment Entry
+$lang['Error_empty_add_attachbox'] = 'РўСЂСЏР±РІР° РґР° РІСЉРІРµРґРµС‚Рµ СЃС‚РѕР№РЅРѕСЃС‚Рё РІ РєР°СЂРµС‚Рѕ \'РџСЂРёРєСЂРµРїСЏРЅРµ РЅР° С„Р°Р№Р»\''; # You have to enter values in the \'Add an Attachment\' Box
+$lang['Error_missing_old_entry'] = 'РќРµ РјРѕР¶Рµ РґР° СЃРµ РЅР°РїСЂР°РІРё РїРѕРґРјСЏРЅР°С‚Р°, С‚СЉР№ РєР°С‚Рѕ РЅРµ Рµ РЅР°РјРµСЂРµРЅ СЃС‚Р°СЂРёСЏ С„Р°Р№Р»'; # Unable to Update Attachment, could not find old Attachment Entry
 
 // Errors -> PM Related
-$lang['Attach_quota_sender_pm_reached'] = iconv('CP1251',_CHARSET, 'Съжаляваме, но е достигнат сумарния максималния размер на файловете във вашата папка с лични съобщения. Моля изтрийте част от файловете.'); # Sorry, but the maximum filesize for all Attachments in your Private Message Folder has been reached. Please delete some of your received/sent Attachments.
-$lang['Attach_quota_receiver_pm_reached'] = iconv('CP1251',_CHARSET, 'Съжаляваме, но е достигнат сумарния максималния размер на файловете в папката с лични съобщения на %s. Моля уведомете го(я), или изчакайте докато тя/той освободи място в личната си папка.'); # Sorry, but the maximum filesize for all Attachments in the Private Message Folder of \'%s\' has been reached. Please let him know, or wait until he/she has deleted some of his/her Attachments.
+$lang['Attach_quota_sender_pm_reached'] = 'РЎСЉР¶Р°Р»СЏРІР°РјРµ, РЅРѕ Рµ РґРѕСЃС‚РёРіРЅР°С‚ СЃСѓРјР°СЂРЅРёСЏ РјР°РєСЃРёРјР°Р»РЅРёСЏ СЂР°Р·РјРµСЂ РЅР° С„Р°Р№Р»РѕРІРµС‚Рµ РІСЉРІ РІР°С€Р°С‚Р° РїР°РїРєР° СЃ Р»РёС‡РЅРё СЃСЉРѕР±С‰РµРЅРёСЏ. РњРѕР»СЏ РёР·С‚СЂРёР№С‚Рµ С‡Р°СЃС‚ РѕС‚ С„Р°Р№Р»РѕРІРµС‚Рµ.'; # Sorry, but the maximum filesize for all Attachments in your Private Message Folder has been reached. Please delete some of your received/sent Attachments.
+$lang['Attach_quota_receiver_pm_reached'] = 'РЎСЉР¶Р°Р»СЏРІР°РјРµ, РЅРѕ Рµ РґРѕСЃС‚РёРіРЅР°С‚ СЃСѓРјР°СЂРЅРёСЏ РјР°РєСЃРёРјР°Р»РЅРёСЏ СЂР°Р·РјРµСЂ РЅР° С„Р°Р№Р»РѕРІРµС‚Рµ РІ РїР°РїРєР°С‚Р° СЃ Р»РёС‡РЅРё СЃСЉРѕР±С‰РµРЅРёСЏ РЅР° %s. РњРѕР»СЏ СѓРІРµРґРѕРјРµС‚Рµ РіРѕ(СЏ), РёР»Рё РёР·С‡Р°РєР°Р№С‚Рµ РґРѕРєР°С‚Рѕ С‚СЏ/С‚РѕР№ РѕСЃРІРѕР±РѕРґРё РјСЏСЃС‚Рѕ РІ Р»РёС‡РЅР°С‚Р° СЃРё РїР°РїРєР°.'; # Sorry, but the maximum filesize for all Attachments in the Private Message Folder of \'%s\' has been reached. Please let him know, or wait until he/she has deleted some of his/her Attachments.
 
 // Errors -> Download
-$lang['No_attachment_selected'] = iconv('CP1251',_CHARSET, 'Не сте избрали файл за изтегляне или преглед.'); # You haven\'t selected an attachment to download or view.
-$lang['Error_no_attachment'] = iconv('CP1251',_CHARSET, 'Избраният файл вече го няма на сървъра'); # The selected Attachment does not exist anymore
+$lang['No_attachment_selected'] = 'РќРµ СЃС‚Рµ РёР·Р±СЂР°Р»Рё С„Р°Р№Р» Р·Р° РёР·С‚РµРіР»СЏРЅРµ РёР»Рё РїСЂРµРіР»РµРґ.'; # You haven\'t selected an attachment to download or view.
+$lang['Error_no_attachment'] = 'РР·Р±СЂР°РЅРёСЏС‚ С„Р°Р№Р» РІРµС‡Рµ РіРѕ РЅСЏРјР° РЅР° СЃСЉСЂРІСЉСЂР°'; # The selected Attachment does not exist anymore
 
 // Delete Attachments
-$lang['Confirm_delete_attachments'] = iconv('CP1251',_CHARSET, 'Сигурни ли сте, че искате да изтриете избраните файлове?'); # Are you sure you want to delete the selected Attachments?
-$lang['Deleted_attachments'] = iconv('CP1251',_CHARSET, 'Избраните файлове са изтрити.'); # The selected Attachments have been deleted.
-$lang['Error_deleted_attachments'] = iconv('CP1251',_CHARSET, 'Файловете не могат да бъдат изтрити.'); # Could not delete Attachments.
-$lang['Confirm_delete_pm_attachments'] = iconv('CP1251',_CHARSET, 'Сигурни ли сте, че искате да изтриете файловете в това лично съобщение?'); # Are you sure you want to delete all Attachments posted in this PM?
+$lang['Confirm_delete_attachments'] = 'РЎРёРіСѓСЂРЅРё Р»Рё СЃС‚Рµ, С‡Рµ РёСЃРєР°С‚Рµ РґР° РёР·С‚СЂРёРµС‚Рµ РёР·Р±СЂР°РЅРёС‚Рµ С„Р°Р№Р»РѕРІРµ?'; # Are you sure you want to delete the selected Attachments?
+$lang['Deleted_attachments'] = 'РР·Р±СЂР°РЅРёС‚Рµ С„Р°Р№Р»РѕРІРµ СЃР° РёР·С‚СЂРёС‚Рё.'; # The selected Attachments have been deleted.
+$lang['Error_deleted_attachments'] = 'Р¤Р°Р№Р»РѕРІРµС‚Рµ РЅРµ РјРѕРіР°С‚ РґР° Р±СЉРґР°С‚ РёР·С‚СЂРёС‚Рё.'; # Could not delete Attachments.
+$lang['Confirm_delete_pm_attachments'] = 'РЎРёРіСѓСЂРЅРё Р»Рё СЃС‚Рµ, С‡Рµ РёСЃРєР°С‚Рµ РґР° РёР·С‚СЂРёРµС‚Рµ С„Р°Р№Р»РѕРІРµС‚Рµ РІ С‚РѕРІР° Р»РёС‡РЅРѕ СЃСЉРѕР±С‰РµРЅРёРµ?'; # Are you sure you want to delete all Attachments posted in this PM?
 
 // General Error Messages
-$lang['Attachment_feature_disabled'] = iconv('CP1251',_CHARSET, 'Възможността за прикачване на файлове е деактивирана.'); # The Attachment Feature is disabled.
+$lang['Attachment_feature_disabled'] = 'Р’СЉР·РјРѕР¶РЅРѕСЃС‚С‚Р° Р·Р° РїСЂРёРєР°С‡РІР°РЅРµ РЅР° С„Р°Р№Р»РѕРІРµ Рµ РґРµР°РєС‚РёРІРёСЂР°РЅР°.'; # The Attachment Feature is disabled.
 
-$lang['Directory_does_not_exist'] = iconv('CP1251',_CHARSET, 'Папка \'%s\' не съществува или не може да бъде намерена.'); # The Directory \'%s\' does not exist or couldn\'t be found. // replace %s with directory
-$lang['Directory_is_not_a_dir'] = iconv('CP1251',_CHARSET, 'Моля проверете дали \'%s\' е папка.'); # Please check if \'%s\' is a directory. // replace %s with directory
-$lang['Directory_not_writeable'] = iconv('CP1251',_CHARSET, 'В папка \'%s\' е забранено писането. Трябва да я създадете и смените атрибутите на 777 (или да смените собственика на сървъра) за да качвате файлове.<br />Ако имате само обикновен ftp-достъп сменете атрибутите на папката до rwxrwxrwx.'); # Directory \'%s\' is not writeable. You\'ll have to create the upload path and chmod it to 777 (or change the owner to you httpd-servers owner) to upload files.<br />If you have only plain ftp-access change the \'Attribute\' of the directory to rwxrwxrwx. // replace %s with directory
+$lang['Directory_does_not_exist'] = 'РџР°РїРєР° \'%s\' РЅРµ СЃСЉС‰РµСЃС‚РІСѓРІР° РёР»Рё РЅРµ РјРѕР¶Рµ РґР° Р±СЉРґРµ РЅР°РјРµСЂРµРЅР°.'; # The Directory \'%s\' does not exist or couldn\'t be found. // replace %s with directory
+$lang['Directory_is_not_a_dir'] = 'РњРѕР»СЏ РїСЂРѕРІРµСЂРµС‚Рµ РґР°Р»Рё \'%s\' Рµ РїР°РїРєР°.'; # Please check if \'%s\' is a directory. // replace %s with directory
+$lang['Directory_not_writeable'] = 'Р’ РїР°РїРєР° \'%s\' Рµ Р·Р°Р±СЂР°РЅРµРЅРѕ РїРёСЃР°РЅРµС‚Рѕ. РўСЂСЏР±РІР° РґР° СЏ СЃСЉР·РґР°РґРµС‚Рµ Рё СЃРјРµРЅРёС‚Рµ Р°С‚СЂРёР±СѓС‚РёС‚Рµ РЅР° 777 (РёР»Рё РґР° СЃРјРµРЅРёС‚Рµ СЃРѕР±СЃС‚РІРµРЅРёРєР° РЅР° СЃСЉСЂРІСЉСЂР°) Р·Р° РґР° РєР°С‡РІР°С‚Рµ С„Р°Р№Р»РѕРІРµ.<br />РђРєРѕ РёРјР°С‚Рµ СЃР°РјРѕ РѕР±РёРєРЅРѕРІРµРЅ ftp-РґРѕСЃС‚СЉРї СЃРјРµРЅРµС‚Рµ Р°С‚СЂРёР±СѓС‚РёС‚Рµ РЅР° РїР°РїРєР°С‚Р° РґРѕ rwxrwxrwx.'; # Directory \'%s\' is not writeable. You\'ll have to create the upload path and chmod it to 777 (or change the owner to you httpd-servers owner) to upload files.<br />If you have only plain ftp-access change the \'Attribute\' of the directory to rwxrwxrwx. // replace %s with directory
 
-$lang['Ftp_error_connect'] = iconv('CP1251',_CHARSET, 'Could not connect to FTP Server: \'%s\'. Please check your FTP-Settings.');
-$lang['Ftp_error_login'] = iconv('CP1251',_CHARSET, 'Could not login to FTP Server. The Username \'%s\' or the Password is wrong. Please check your FTP-Settings.');
-$lang['Ftp_error_path'] = iconv('CP1251',_CHARSET, 'Could not access ftp directory: \'%s\'. Please check your FTP Settings.');
-$lang['Ftp_error_upload'] = iconv('CP1251',_CHARSET, 'Could not upload files to ftp directory: \'%s\'. Please check your FTP Settings.');
-$lang['Ftp_error_delete'] = iconv('CP1251',_CHARSET, 'Could not delete files in ftp directory: \'%s\'. Please check your FTP Settings.<br />Another reason for this error could be the non-existence of the Attachment, please check this first in Shadow Attachments.');
-$lang['Ftp_error_pasv_mode'] = iconv('CP1251',_CHARSET, 'Unable to enable/disable FTP Passive Mode');
+$lang['Ftp_error_connect'] = 'Could not connect to FTP Server: \'%s\'. Please check your FTP-Settings.';
+$lang['Ftp_error_login'] = 'Could not login to FTP Server. The Username \'%s\' or the Password is wrong. Please check your FTP-Settings.';
+$lang['Ftp_error_path'] = 'Could not access ftp directory: \'%s\'. Please check your FTP Settings.';
+$lang['Ftp_error_upload'] = 'Could not upload files to ftp directory: \'%s\'. Please check your FTP Settings.';
+$lang['Ftp_error_delete'] = 'Could not delete files in ftp directory: \'%s\'. Please check your FTP Settings.<br />Another reason for this error could be the non-existence of the Attachment, please check this first in Shadow Attachments.';
+$lang['Ftp_error_pasv_mode'] = 'Unable to enable/disable FTP Passive Mode';
 
 // Attach Rules Window
-$lang['Rules_page'] = iconv('CP1251',_CHARSET, 'Правила за прикачени файлове'); # Attachment Rules
-$lang['Attach_rules_title'] = iconv('CP1251',_CHARSET, 'Позволени групи разширения и размерите им'); # Allowed Extension Groups and their Sizes
-$lang['Group_rule_header'] = iconv('CP1251',_CHARSET, '%s -> Максимален размер на файловете: %s'); // Replace first %s with Extension Group, second one with the Size STRING
-$lang['Allowed_extensions_and_sizes'] = iconv('CP1251',_CHARSET, 'Позволени разширения и размери'); # Allowed Extensions and Sizes
-$lang['Note_user_empty_group_permissions'] = iconv('CP1251',_CHARSET, 'Бележка:<br />Нормално ви е разрешено да прикрепяте файлове в този форум, но няма зададени групи от разчирения и вие няма да можете да прикрепяте файлове. Ако опитате, <br />ще получите съобщение за грешка.<br />'); # NOTE:<br />You are normally allowed to attach files within this Forum, <br />but since no Extension Group is allowed to be attached here, <br />you are unable to attach anything. If you try, <br />you will receive an Error Message.<br />
+$lang['Rules_page'] = 'РџСЂР°РІРёР»Р° Р·Р° РїСЂРёРєР°С‡РµРЅРё С„Р°Р№Р»РѕРІРµ'; # Attachment Rules
+$lang['Attach_rules_title'] = 'РџРѕР·РІРѕР»РµРЅРё РіСЂСѓРїРё СЂР°Р·С€РёСЂРµРЅРёСЏ Рё СЂР°Р·РјРµСЂРёС‚Рµ РёРј'; # Allowed Extension Groups and their Sizes
+$lang['Group_rule_header'] = '%s -> РњР°РєСЃРёРјР°Р»РµРЅ СЂР°Р·РјРµСЂ РЅР° С„Р°Р№Р»РѕРІРµС‚Рµ: %s'; // Replace first %s with Extension Group, second one with the Size STRING
+$lang['Allowed_extensions_and_sizes'] = 'РџРѕР·РІРѕР»РµРЅРё СЂР°Р·С€РёСЂРµРЅРёСЏ Рё СЂР°Р·РјРµСЂРё'; # Allowed Extensions and Sizes
+$lang['Note_user_empty_group_permissions'] = 'Р‘РµР»РµР¶РєР°:<br />РќРѕСЂРјР°Р»РЅРѕ РІРё Рµ СЂР°Р·СЂРµС€РµРЅРѕ РґР° РїСЂРёРєСЂРµРїСЏС‚Рµ С„Р°Р№Р»РѕРІРµ РІ С‚РѕР·Рё С„РѕСЂСѓРј, РЅРѕ РЅСЏРјР° Р·Р°РґР°РґРµРЅРё РіСЂСѓРїРё РѕС‚ СЂР°Р·С‡РёСЂРµРЅРёСЏ Рё РІРёРµ РЅСЏРјР° РґР° РјРѕР¶РµС‚Рµ РґР° РїСЂРёРєСЂРµРїСЏС‚Рµ С„Р°Р№Р»РѕРІРµ. РђРєРѕ РѕРїРёС‚Р°С‚Рµ, <br />С‰Рµ РїРѕР»СѓС‡РёС‚Рµ СЃСЉРѕР±С‰РµРЅРёРµ Р·Р° РіСЂРµС€РєР°.<br />'; # NOTE:<br />You are normally allowed to attach files within this Forum, <br />but since no Extension Group is allowed to be attached here, <br />you are unable to attach anything. If you try, <br />you will receive an Error Message.<br />
 
 // Quota Variables
-$lang['Upload_quota'] = iconv('CP1251',_CHARSET, 'Квота за качване'); # Upload Quota
-$lang['Pm_quota'] = iconv('CP1251',_CHARSET, 'Квота за лични съобщения'); # PM Quota
-$lang['User_upload_quota_reached'] = iconv('CP1251',_CHARSET, 'Съжаляваме, достигнали сте максималната си квота за качени файлове от %d %s'); # Sorry, you have reached your maximum Upload Quota Limit of %d %s // replace %d with Size, %s with Size Lang (MB for example)
+$lang['Upload_quota'] = 'РљРІРѕС‚Р° Р·Р° РєР°С‡РІР°РЅРµ'; # Upload Quota
+$lang['Pm_quota'] = 'РљРІРѕС‚Р° Р·Р° Р»РёС‡РЅРё СЃСЉРѕР±С‰РµРЅРёСЏ'; # PM Quota
+$lang['User_upload_quota_reached'] = 'РЎСЉР¶Р°Р»СЏРІР°РјРµ, РґРѕСЃС‚РёРіРЅР°Р»Рё СЃС‚Рµ РјР°РєСЃРёРјР°Р»РЅР°С‚Р° СЃРё РєРІРѕС‚Р° Р·Р° РєР°С‡РµРЅРё С„Р°Р№Р»РѕРІРµ РѕС‚ %d %s'; # Sorry, you have reached your maximum Upload Quota Limit of %d %s // replace %d with Size, %s with Size Lang (MB for example)
 
 // User Attachment Control Panel
-$lang['User_acp_title'] = iconv('CP1251',_CHARSET, 'Потребителски КП'); # User ACP
-$lang['UACP'] = iconv('CP1251',_CHARSET, 'Потребителски контролен панел за прикачени файлове'); # User Attachment Control Panel
-$lang['User_uploaded_profile'] = iconv('CP1251',_CHARSET, 'Качени: %s'); # Uploaded: %s
-$lang['User_quota_profile'] = iconv('CP1251',_CHARSET, 'Квота: %s'); # Quota: %s
-$lang['Upload_percent_profile'] = iconv('CP1251',_CHARSET, '%d%% от общо'); # %d%% of total
+$lang['User_acp_title'] = 'РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРё РљРџ'; # User ACP
+$lang['UACP'] = 'РџРѕС‚СЂРµР±РёС‚РµР»СЃРєРё РєРѕРЅС‚СЂРѕР»РµРЅ РїР°РЅРµР» Р·Р° РїСЂРёРєР°С‡РµРЅРё С„Р°Р№Р»РѕРІРµ'; # User Attachment Control Panel
+$lang['User_uploaded_profile'] = 'РљР°С‡РµРЅРё: %s'; # Uploaded: %s
+$lang['User_quota_profile'] = 'РљРІРѕС‚Р°: %s'; # Quota: %s
+$lang['Upload_percent_profile'] = '%d%% РѕС‚ РѕР±С‰Рѕ'; # %d%% of total
 
 // Common Variables
-$lang['Bytes'] = iconv('CP1251',_CHARSET, 'байта'); # Bytes
-$lang['KB'] = iconv('CP1251',_CHARSET, 'KB');
-$lang['MB'] = iconv('CP1251',_CHARSET, 'MB');
-$lang['Attach_search_query'] = iconv('CP1251',_CHARSET, 'Търси прикачени файлове'); # Search Attachments
-$lang['Test_settings'] = iconv('CP1251',_CHARSET, 'Тествай настройките'); # Test Settings
-$lang['Not_assigned'] = iconv('CP1251',_CHARSET, 'Не е асоциирано'); # Not Assigned
-$lang['No_file_comment_available'] = iconv('CP1251',_CHARSET, 'Няма коментар за файла'); # No File Comment available
-$lang['Attachbox_limit'] = iconv('CP1251',_CHARSET, 'Папката ви с файлове е %d%% пълна'); # Your Attachbox is %d%% full
-$lang['No_quota_limit'] = iconv('CP1251',_CHARSET, 'Няма зададена квота'); # No Quota Limit
-$lang['Unlimited'] = iconv('CP1251',_CHARSET, 'Неограничен'); # Unlimited
-
-?>
+$lang['Bytes'] = 'Р±Р°Р№С‚Р°'; # Bytes
+$lang['KB'] = 'KB';
+$lang['MB'] = 'MB';
+$lang['Attach_search_query'] = 'РўСЉСЂСЃРё РїСЂРёРєР°С‡РµРЅРё С„Р°Р№Р»РѕРІРµ'; # Search Attachments
+$lang['Test_settings'] = 'РўРµСЃС‚РІР°Р№ РЅР°СЃС‚СЂРѕР№РєРёС‚Рµ'; # Test Settings
+$lang['Not_assigned'] = 'РќРµ Рµ Р°СЃРѕС†РёРёСЂР°РЅРѕ'; # Not Assigned
+$lang['No_file_comment_available'] = 'РќСЏРјР° РєРѕРјРµРЅС‚Р°СЂ Р·Р° С„Р°Р№Р»Р°'; # No File Comment available
+$lang['Attachbox_limit'] = 'РџР°РїРєР°С‚Р° РІРё СЃ С„Р°Р№Р»РѕРІРµ Рµ %d%% РїСЉР»РЅР°'; # Your Attachbox is %d%% full
+$lang['No_quota_limit'] = 'РќСЏРјР° Р·Р°РґР°РґРµРЅР° РєРІРѕС‚Р°'; # No Quota Limit
+$lang['Unlimited'] = 'РќРµРѕРіСЂР°РЅРёС‡РµРЅ'; # Unlimited

@@ -35,15 +35,15 @@
         </tr>
         <tr align="center">
           <td>
-            <a href="{U_LOGIN_LOGOUT}"> {L_LOGIN_LOGOUT}</a>
+            <a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a>
             <!-- BEGIN switch_allow_sub_change -->
-            &nbsp;&#8226; &nbsp;<a href="{U_SUBFORUM}"> {L_SUBFORUM}</a>
+            &nbsp;&#8226; &nbsp;<a href="{U_SUBFORUM}">{L_SUBFORUM}</a>
             <!-- END switch_allow_sub_change -->
             <!-- BEGIN switch_allow_full_page -->
-            &nbsp;&#8226; &nbsp;<a href="{U_MIN_MAX}"> {L_MIN_MAX}</a>
+            &nbsp;&#8226; &nbsp;<a href="{U_MIN_MAX}">{L_MIN_MAX}</a>
             <!-- END switch_allow_full_page -->
             <!-- BEGIN switch_admin -->
-            &nbsp;&#8226; &nbsp;<a href="{U_ADMIN_LINK}"> {L_ADMIN_INFO}</a>
+            &nbsp;&#8226; &nbsp;<a href="{U_ADMIN_LINK}">{L_ADMIN_INFO}</a>
             <!-- END switch_admin -->
           </td>
         </tr>
