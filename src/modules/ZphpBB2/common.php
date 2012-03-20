@@ -283,8 +283,6 @@ $board_config['default_dateformat'] = '%d.%m.%Y %H:%M';
 
 $board_config['server_name'] = pnGetBaseURL();
 $board_config['module_url'] = "index." . $phpEx . "?module=" . $ModUrl . "&file=";
-//$board_config['module_url'] = "index." . $phpEx . "?name=" . $ModName . "&file=";
-// $board_config['module_url'] = "modules." . $phpEx . "?op=modload&name=" . $ModName . "&file=";
 
 $board_config['sitename'] = pnConfigGetVar('sitename'); 
 $board_config['site_desc'] = pnConfigGetVar('slogan'); 

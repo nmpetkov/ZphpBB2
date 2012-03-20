@@ -27,6 +27,21 @@ define("IN_LOGIN", true);
 include($phpbb_root_path . 'extension.inc');
 include($phpbb_root_path . 'common.'.$phpEx);
 
+// @nmpetkov - login =>
+$authid = FormUtil::getPassedValue('authid', '', 'POST');
+if (!empty($authid) and $authid==SecurityUtil::generateAuthKey("Users")) {
+	$uname = FormUtil::getPassedValue('uname', '', 'POST');
+	$pass = FormUtil::getPassedValue('pass', '', 'POST');
+	$rememberme = FormUtil::getPassedValue('autologin', '', 'POST');
+	$url = FormUtil::getPassedValue('url', '', 'POST');
+	if (UserUtil::login($uname, $pass, $rememberme)) {
+		return System::redirect($url);
+	} else {
+		return System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => $url)));
+	}
+}
+// @nmpetkov - login <=
+
 //
 // Set page ID for session management
 //
@@ -50,111 +65,7 @@ if( isset($HTTP_POST_VARS['login']) || isset($HTTP_GET_VARS['login']) || isset($
 {
  	if( ( isset($HTTP_POST_VARS['login']) || isset($HTTP_GET_VARS['login']) ) && (!$userdata['session_logged_in'] || isset($HTTP_POST_VARS['admin'])) )
 	{
-// Begin PNphpBB2 Module
-//		$username = isset($HTTP_POST_VARS['username']) ? phpbb_clean_username($HTTP_POST_VARS['username']) : '';
-//		$password = isset($HTTP_POST_VARS['password']) ? $HTTP_POST_VARS['password'] : '';
 		die("Login problem, code logic should not have brought you here!");
-/*
-		$sql = "SELECT user_id, username, user_password, user_active, user_level, user_login_tries, user_last_login_try
-			FROM " . USERS_TABLE . "
-			WHERE username = '" . str_replace("\\'", "''", $username) . "'";
-		if ( !($result = $db->sql_query($sql)) )
-		{
-			message_die(GENERAL_ERROR, 'Error in obtaining userdata', '', __LINE__, __FILE__, $sql);
-		}
-
-		if( $row = $db->sql_fetchrow($result) )
-		{
-			if( $row['user_level'] != ADMIN && $board_config['board_disable'] )
-			{
-				redirect(append_sid("index.$phpEx", true));
-			}
-			else
-			{
-				// If the last login is more than x minutes ago, then reset the login tries/time
-				if ($row['user_last_login_try'] && $board_config['login_reset_time'] && $row['user_last_login_try'] < (time() - ($board_config['login_reset_time'] * 60)))
-				{
-					$db->sql_query('UPDATE ' . USERS_TABLE . ' SET user_login_tries = 0, user_last_login_try = 0 WHERE user_id = ' . $row['user_id']);
-					$row['user_last_login_try'] = $row['user_login_tries'] = 0;
-				}
-				
-				// Check to see if user is allowed to login again... if his tries are exceeded
-				if ($row['user_last_login_try'] && $board_config['login_reset_time'] && $board_config['max_login_attempts'] && 
-					$row['user_last_login_try'] >= (time() - ($board_config['login_reset_time'] * 60)) && $row['user_login_tries'] >= $board_config['max_login_attempts'] && $userdata['user_level'] != ADMIN)
-				{
-					message_die(GENERAL_MESSAGE, sprintf($lang['Login_attempts_exceeded'], $board_config['max_login_attempts'], $board_config['login_reset_time']));
-				}
-
-				if( md5($password) == $row['user_password'] && $row['user_active'] )
-				{
-					$autologin = ( isset($HTTP_POST_VARS['autologin']) ) ? TRUE : 0;
-
-					$admin = (isset($HTTP_POST_VARS['admin'])) ? 1 : 0;
-					$session_id = session_begin($row['user_id'], $user_ip, PAGE_INDEX, FALSE, $autologin, $admin);
-
-					// Reset login tries
-					$db->sql_query('UPDATE ' . USERS_TABLE . ' SET user_login_tries = 0, user_last_login_try = 0 WHERE user_id = ' . $row['user_id']);
-
-					if( $session_id )
-					{
-						$url = ( !empty($HTTP_POST_VARS['redirect']) ) ? str_replace('&amp;', '&', htmlspecialchars($HTTP_POST_VARS['redirect'])) : "index.$phpEx";
-						redirect(append_sid($url, true));
-					}
-					else
-					{
-						message_die(CRITICAL_ERROR, "Couldn't start session : login", "", __LINE__, __FILE__);
-					}
-				}
-				// Only store a failed login attempt for an active user - inactive users can't login even with a correct password
-				elseif( $row['user_active'] )
-				{
-					// Save login tries and last login
-					if ($row['user_id'] != ANONYMOUS)
-					{
-						$sql = 'UPDATE ' . USERS_TABLE . '
-							SET user_login_tries = user_login_tries + 1, user_last_login_try = ' . time() . '
-							WHERE user_id = ' . $row['user_id'];
-						$db->sql_query($sql);
-					}
-				}
-
-				$redirect = ( !empty($HTTP_POST_VARS['redirect']) ) ? str_replace('&amp;', '&', htmlspecialchars($HTTP_POST_VARS['redirect'])) : '';
-				$redirect = str_replace('?', '&', $redirect);
-
-				if (strstr(urldecode($redirect), "\n") || strstr(urldecode($redirect), "\r") || strstr(urldecode($redirect), ';url'))
-				{
-					message_die(GENERAL_ERROR, 'Tried to redirect to potentially insecure url.');
-				}
-
-				$template->assign_vars(array(
-					'META' => "<meta http-equiv=\"refresh\" content=\"3;url=login.$phpEx?redirect=$redirect\">")
-				);
-
-				$message = $lang['Error_login'] . '<br /><br />' . sprintf($lang['Click_return_login'], "<a href=\"login.$phpEx?redirect=$redirect\">", '</a>') . '<br /><br />' .  sprintf($lang['Click_return_index'], '<a href="' . append_sid("index.$phpEx") . '">', '</a>');
-
-				message_die(GENERAL_MESSAGE, $message);
-			}
-		}
-		else
-		{
-			$redirect = ( !empty($HTTP_POST_VARS['redirect']) ) ? str_replace('&amp;', '&', htmlspecialchars($HTTP_POST_VARS['redirect'])) : "";
-			$redirect = str_replace("?", "&", $redirect);
-
-			if (strstr(urldecode($redirect), "\n") || strstr(urldecode($redirect), "\r") || strstr(urldecode($redirect), ';url'))
-			{
-				message_die(GENERAL_ERROR, 'Tried to redirect to potentially insecure url.');
-			}
-
-			$template->assign_vars(array(
-				'META' => "<meta http-equiv=\"refresh\" content=\"3;url=login.$phpEx?redirect=$redirect\">")
-			);
-
-			$message = $lang['Error_login'] . '<br /><br />' . sprintf($lang['Click_return_login'], "<a href=\"login.$phpEx?redirect=$redirect\">", '</a>') . '<br /><br />' .  sprintf($lang['Click_return_index'], '<a href="' . append_sid("index.$phpEx") . '">', '</a>');
-
-			message_die(GENERAL_MESSAGE, $message);
-		}
-*/
-// End PNphpBB2 Module
 	}
 	else if( ( isset($HTTP_GET_VARS['logout']) || isset($HTTP_POST_VARS['logout']) ) && $userdata['session_logged_in'] )
 	{
@@ -267,8 +178,10 @@ else
 /* Begin PNphpBB2 Module */
 /*			'U_SEND_PASSWORD' => append_sid("profile.$phpEx?mode=sendpassword"), */
 			//'U_SEND_PASSWORD' => "user.$phpEx?op=lostpassscreen&amp;module=NS-LostPassword",
-			'U_SEND_PASSWORD' => "user.$phpEx?op=lostpassscreen&amp;module=LostPassword",
-	 		'S_LOGIN_ACTION' => "index.php?module=Users&func=login",
+			//'U_SEND_PASSWORD' => "user.$phpEx?op=lostpassscreen&amp;module=LostPassword",
+			'U_SEND_PASSWORD' => ModUtil::url('Users', 'user', 'lostPwdUname'), // @nmpetkov
+	 		//'S_LOGIN_ACTION' => "index.php?module=Users&func=login",
+	 		'S_LOGIN_ACTION' => "index.php?module=" . $modinfo['url'] . "&amp;file=login",
 			'AUTHID' => SecurityUtil::generateAuthKey("Users"),
 			'URL' => append_sid($forward_page),
 /* End PNphpBB2 Module */
@@ -286,5 +199,3 @@ else
 	}
 
 }
-
-?>

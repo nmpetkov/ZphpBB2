@@ -114,7 +114,8 @@ if ( $userdata['session_logged_in'] )
 // Begin PNphpBB2 Module
 //	$u_login_logout = 'login.'.$phpEx.'?logout=true&amp;sid=' . $userdata['session_id'];
 //	$l_login_logout = $lang['Logout'] . ' [ ' . $userdata['username'] . ' ]';
-	$u_login_logout = 'user.' . $phpEx . "?module=User&op=logout";
+	//$u_login_logout = 'user.' . $phpEx . "?module=User&op=logout";
+	$u_login_logout = ModUtil::url('Users', 'user', 'logout'); // @nmpetkov
 	$l_login_logout = $lang['Logout'] . ' [ ' . pnVarPrepForDisplay($userdata['username']) . ' ]';
 // End PNphpBB2 Module
 }

@@ -51,7 +51,7 @@ define('_GUESTS','guests');
 define('_NOGUESTS','No');
 define('_MEMBER','member');
 define('_MEMBERS','members');
-define('_YOUAREANON','You are an anonymous user. You can register for free by clicking <a href="user.php?op=check_age&amp;module=NS-NewUser"><b>here</b></a>');
+define('_YOUAREANON','You are an anonymous user. You can register for free by clicking <a href="index.php?module=users&type=user&func=register"><b>here</b></a>');
 define('_USE_PN_PM','Use Zikula personal message notification');
 define('_DISPLAY_TO_ANNON','Display online users to anonymous users');
 define("_AMT_PRIVATEMSG","Amount of private message(s)!");

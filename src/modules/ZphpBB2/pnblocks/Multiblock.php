@@ -580,7 +580,8 @@ function ZphpBB2_Multiblockblock_display($blockinfo)
 								 
 						$blockinfo['content'] .= '<tr><td><img src="' . $phpbb_root_path . 'pnimages/arrow_rs.gif" alt=""></td><td><font size="1">';
 						if ($vars['pn_pm']) {
-							$blockinfo['content'] .= '<a href="user.php?op=userinfo&amp;uname=' . $uname . '" title="' . $uname . '">';
+							//$blockinfo['content'] .= '<a href="user.php?op=userinfo&amp;uname=' . $uname . '" title="' . $uname . '">';
+							$blockinfo['content'] .= '<a href="'.ModUtil::url('Profile', 'user', 'view', array('uname' => $uname)).'" title="' . $uname . '">';
 						} else {
 							$blockinfo['content'] .= '<a href="' . $link_url . 'profile&amp;mode=viewprofile&u=' . $uname . '" title="' . $uname . '">';
 						}
