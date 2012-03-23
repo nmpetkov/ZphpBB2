@@ -1,9 +1,9 @@
-This project aims to refactor the old PNphpBB2 Postnuke/Zikula module to work in Zikula 1.3+ environment. PNphpBB2 module is forum solution, based over phpBB 2. All credits for this work goes to the project teams, see http://www.phpbb.com/, http://zafenio.com/.
+ZphpBB2 is refactored PNphpBB2 Postnuke/Zikula module to work in Zikula 1.3+ environment. PNphpBB2 module is forum solution, based on phpBB 2. Credits for this work goes to the project teams, see http://www.phpbb.com/, http://zafenio.com/. 
 
-The purpose of ZphpBB2 project is not to develop this module with new features, but to help upgrading sites from Zikula 1.2 to Zikula 1.3, providing working upgrade for forums already running PNphpBB2. Otherwise this process is blocked, as there is two visible possibilities to upgrade PNphpbb2 module, and both don?t work for now.
-- import forums data into Dizkus module (there is no working version for Zikula 1.3 for now);
-- waiting Zafenio project to be production ready to work in Zikula 1.3 (it will step over phpBB 3).
+ZphpBB2 helps upgrading sites running PNphpBB2 from Zikula 1.2 to Zikula 1.3.
 
-Version from which refactoring is started is: PNphpBB2 1.2j.
+ZphpBB2 does not work in Zikula 1.2. Minimum version required is Zikula 1.3.2. Upgrade is possible from PNphpBB2 1.2j or 1.2i.
 
-Also in tools directory are provided some export/import tools.
+Working stage: module works and can be used to upgrade. Download as zip file.
+
+In tools directory are provided some export/import tools.
