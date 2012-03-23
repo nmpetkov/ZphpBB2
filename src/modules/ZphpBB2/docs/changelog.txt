@@ -7,5 +7,4 @@ CHANGELOG
 		* Base directory is renamed from PNphpBB2 to ZphpBB2 (also nessesery changes in the code).
 		* Module calls are refactored and now is possible to call with different module url, for example http://yoursite.com/index.php?module=forum.
 		* Block Multiblock is included in the distribution.
-		* Login screen refactored to work with Zikula 1.3 user login process.
 

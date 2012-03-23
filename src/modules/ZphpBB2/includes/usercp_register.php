@@ -304,7 +304,7 @@ if (isset($HTTP_POST_VARS['refreshprofile']))
 	$user_avatar = '';
 
 	// Obtain PN user password
-	$sql = "SELECT pn_pass FROM " . pnConfigGetVar('prefix') . "_users WHERE pn_uid='" . $user_id . "'";
+	$sql = "SELECT pass FROM users WHERE uid='" . $user_id . "'";
 	if ( !($result = $db->sql_query($sql)) )
 	{
 		message_die(CRITICAL_ERROR, 'Could not obtain PN user table', '', __LINE__, __FILE__, $sql);

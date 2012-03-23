@@ -426,7 +426,7 @@ $lang['Styles_tip'] = 'Tip: Styles can be applied quickly to selected text.';
 //
 $lang['Private_Messaging'] = 'Private Messaging';
 
-$lang['Login_check_pm'] = 'Log in to check your private messages';
+$lang['Login_check_pm'] = 'Private messages';
 $lang['New_pms'] = 'You have %d new messages'; // You have 2 new messages
 $lang['New_pm'] = 'You have %d new message'; // You have 1 new message
 $lang['No_new_pm'] = 'You have no new messages';

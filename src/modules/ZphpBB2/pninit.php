@@ -12,61 +12,27 @@
  *
  ***************************************************************************/
  
-// Check for AutoTheme
-
-// modification mouzaia .71
-$cWhereIsPerso = WHERE_IS_PERSO;
-if ( !(empty($cWhereIsPerso)) ) { 
-	include("modules/NS-Multisites/head.inc.php"); 
-} else {
-	$thistheme = pnVarPrepForOs(pnUserGetTheme());
-	global $themesarein;
-	if (@file(WHERE_IS_PERSO . "themes/" . $thistheme . "/theme.php")) {
-		$themesarein = WHERE_IS_PERSO;
-	} else {
-		$themesarein = "";
-	}
-}
-if ( @file($themesarein . "themes/" . $thistheme . "/theme.cfg") )
-{
-  $ModName = 'ZphpBB2';
-  $phpbb_root_path = './modules/' . $ModName . '/';
-  define('IN_PHPBB', true);
-  include($phpbb_root_path.'extension.inc');
-	$starttime = 0;
-  // Get PostNuke's Default Language and use this for ZphpBB2 default.
-  if (!function_exists('getPNlanguage'))
-  {
-    include_once($phpbb_root_path . 'includes/functions.' . $phpEx);
-  }
-  $language = getPNlanguage();
-
-  // If no language files exist for PostNuke language then use english
-  if ( !file_exists($phpbb_root_path . 'language/lang_' . $language . '/lang_pnphpbb2_admin.' . $phpEx))
-  {
+$ModName = 'ZphpBB2';
+$phpbb_root_path = './modules/' . $ModName . '/';
+define('IN_PHPBB', true);
+include($phpbb_root_path.'extension.inc');
+$starttime = 0;
+include_once($phpbb_root_path . 'includes/functions.' . $phpEx);
+$language = getPNlanguage();
+// If no language files exist for PostNuke language then use english
+if ( !file_exists($phpbb_root_path . 'language/lang_' . $language . '/lang_pnphpbb2_admin.' . $phpEx)) {
     $language = "english";
-  }
-
-  define('PNPHPBB_INSTALL', true);
-  include_once($phpbb_root_path . 'language/lang_' . $language . '/lang_pnphpbb2_admin.' . $phpEx);
-  if ( !empty($lang['AutoTheme_Support']) )
-  {
-    echo $lang['AutoTheme_Support'];
-  }
-  else
-  {
-    echo "You are using AutoTheme, please select a non-AutoTheme theme to perforum the install/upgrade/removal.";
-  }
-  die;
 }
+define('PNPHPBB_INSTALL', true);
+include_once($phpbb_root_path . 'language/lang_' . $language . '/lang_pnphpbb2_admin.' . $phpEx);
 
 function ZphpBB2_init()
 {
+  if (!pnSecAuthAction(0, 'ZphpBB2::', '::', ACCESS_ADMIN)) {
+    return false;
+  }
   global $phpbb_root_path, $table_prefix, $lang, $modversion;
-
-  //list($dbconn) = pnDBGetConn();
-  $pntable = pnDBGetTables();
-  
+ 
   $ModName = 'ZphpBB2';
   $phpbb_root_path = './modules/' . $ModName . '/';
   define('IN_PHPBB', true);
@@ -74,10 +40,7 @@ function ZphpBB2_init()
   $table_prefix = pnConfigGetVar('prefix') . "_phpbb_";
 
   // Get PostNuke's Default Language and use this for ZphpBB2 default.
-  if (!function_exists('getPNlanguage'))
-  {
-    include_once($phpbb_root_path . 'includes/functions.' . $phpEx);
-  }
+  include_once($phpbb_root_path . 'includes/functions.' . $phpEx);
   $language = getPNlanguage();
 
   // If no language files exist for PostNuke language then use english
@@ -92,313 +55,214 @@ function ZphpBB2_init()
   include_once($phpbb_root_path . 'language/lang_' . $language . '/lang_admin.' . $phpEx);
   include_once($phpbb_root_path . 'language/lang_' . $language . '/lang_pnphpbb2_admin.' . $phpEx);
 
-	include_once($phpbb_root_path . 'install/includes/functions_install.' . $phpEx);
+  include_once($phpbb_root_path . 'install/includes/functions_install.' . $phpEx);
 
-  $upgrade = pnVarCleanFromInput('UpgradephpBB2');
+  // determine if module have been installed
+  $test_installed = zExecuteSQLobject1row("SHOW TABLES LIKE '" . $table_prefix . "users" . "'");
 
-  if ($upgrade == "Cancel")
-  {
-    return false;
+  if (!$test_installed) {
+	// INSTALL MODULE
+	global $remove_remarks, $delimiter, $db, $errored, $error_ary;
+
+	error_reporting  (E_ERROR | E_WARNING | E_PARSE); // This will NOT report uninitialized variables
+
+	$error = false;
+
+	// Include some required functions
+	include($phpbb_root_path . 'includes/constants.' . $phpEx);
+	// include($phpbb_root_path . 'includes/template.' . $phpEx);
+
+	// Define schema info
+	$available_dbms = array(
+		'mysql'=> array(
+			'LABEL'			=> 'MySQL 3.x',
+			'SCHEMA'		=> 'mysql', 
+			'DELIM'			=> ';',
+			'DELIM_BASIC'	=> ';',
+			'COMMENTS'		=> 'remove_remarks'
+		), 
+		'mysql4' => array(
+			'LABEL'			=> 'MySQL 4.x/5.x',
+			'SCHEMA'		=> 'mysql', 
+			'DELIM'			=> ';', 
+			'DELIM_BASIC'	=> ';',
+			'COMMENTS'		=> 'remove_remarks'
+		), 
+		'postgres' => array(
+			'LABEL'			=> 'PostgreSQL 7.x',
+			'SCHEMA'		=> 'postgres', 
+			'DELIM'			=> ';', 
+			'DELIM_BASIC'	=> ';',
+			'COMMENTS'		=> 'remove_comments'
+		), 
+		'mssql' => array(
+			'LABEL'			=> 'MS SQL Server 7/2000',
+			'SCHEMA'		=> 'mssql', 
+			'DELIM'			=> 'GO', 
+			'DELIM_BASIC'	=> ';',
+			'COMMENTS'		=> 'remove_comments'
+		),
+		'msaccess' => array(
+			'LABEL'			=> 'MS Access [ ODBC ]',
+			'SCHEMA'		=> '', 
+			'DELIM'			=> '', 
+			'DELIM_BASIC'	=> ';',
+			'COMMENTS'		=> ''
+		),
+		'mssql-odbc' =>	array(
+			'LABEL'			=> 'MS SQL Server [ ODBC ]',
+			'SCHEMA'		=> 'mssql', 
+			'DELIM'			=> 'GO',
+			'DELIM_BASIC'	=> ';',
+			'COMMENTS'		=> 'remove_comments'
+		)
+	);
+
+	list($dbms, $dbhost, $dbuser, $dbpasswd, $dbname) = get_pndb_config();
+
+	// Obtain the server domain
+	if (empty($_SERVER['HTTP_HOST']))
+	{
+	  $server_name = getenv('HTTP_HOST');
+	}
+	else
+	{
+	  $server_name = $_SERVER['HTTP_HOST'];
+	}
+
+	$server_port = '80';
+
+	if (isset($dbms))
+	{
+		switch($dbms)
+		{
+			case 'msaccess':
+			case 'mssql-odbc':
+				$check_exts = 'odbc';
+				$check_other = 'odbc';
+				break;
+
+			case 'mssql':
+				$check_exts = 'mssql';
+				$check_other = 'sybase';
+				break;
+
+			case 'mysql':
+			case 'mysql4':
+				$check_exts = 'mysql';
+				$check_other = 'mysql';
+				break;
+
+			case 'postgres':
+				$check_exts = 'pgsql';
+				$check_other = 'pgsql';
+				break;
+		}
+		
+
+		if (!extension_loaded($check_exts) && !extension_loaded($check_other))
+		{	
+			LogUtil::registerError($lang['Install_No_Ext']);
+			return false;
+		}
+
+		include($phpbb_root_path . 'includes/db.' . $phpEx);
+	}
+	$dbms_schema = $phpbb_root_path . 'install/schemas/' . $available_dbms[$dbms]['SCHEMA'] . '_schema.sql';
+	$dbms_basic = $phpbb_root_path . 'install/schemas/' . $available_dbms[$dbms]['SCHEMA'] . '_basic.sql';
+	$dbms_attach_schema = $phpbb_root_path . 'install/schemas/attach_' . $available_dbms[$dbms]['SCHEMA'] . '_schema.sql';
+	$dbms_attach_basic = $phpbb_root_path . 'install/schemas/attach_' . $available_dbms[$dbms]['SCHEMA'] . '_basic.sql';
+	//$dbms_pnphpbb2_schema = $phpbb_root_path . 'install/schemas/pnphpbb2_' . $available_dbms[$dbms]['SCHEMA'] . '_schema.sql';
+	$dbms_pnphpbb2_basic = $phpbb_root_path . 'install/schemas/pnphpbb2_' . $available_dbms[$dbms]['SCHEMA'] . '_basic.sql';
+
+
+	$remove_remarks = $available_dbms[$dbms]['COMMENTS'];;
+	$delimiter = $available_dbms[$dbms]['DELIM']; 
+	$delimiter_basic = $available_dbms[$dbms]['DELIM_BASIC']; 
+
+	$error_ary = array();
+	$errored = FALSE;
+
+	if ($dbms != 'msaccess')
+	{
+	// Load in the sql parser
+		include($phpbb_root_path.'includes/sql_parse.'.$phpEx);
+
+		// Ok we have the db info go ahead and read in the relevant schema
+		// and work on building the table.. probably ought to provide some
+		// kind of feedback to the user as we are working here in order
+		// to let them know we are actually doing something.
+
+		$sql_query = @fread(@fopen($dbms_schema, 'r'), @filesize($dbms_schema));
+	  
+		// Ok now lest do the same for the attachment mod schema
+		$sql_query .= @fread(@fopen($dbms_attach_schema, 'r'), @filesize($dbms_attach_schema));
+
+		// Ok now lest do the same for the pnphpbb2 schema
+	  // $sql_query .= @fread(@fopen($dbms_pnphpbb2_schema, 'r'), @filesize($dbms_pnphpbb2_schema));
+
+		$result = evaluate_statement($sql_query, sprintf($lang['ZphpBB2_Install_Title'], $table_prefix) , false, true);
+
+		// Ok tables have been built, let's fill in the basic information
+		$sql_query = @fread(@fopen($dbms_basic, 'r'), @filesize($dbms_basic));
+
+		// Ok tables have been built, let's fill in the basic information for the attachment mod
+		$sql_query .= @fread(@fopen($dbms_attach_basic, 'r'), @filesize($dbms_attach_basic));
+
+	  // Ok tables have been built, let's fill in the basic information for ZphpBB2
+		$sql_query .= @fread(@fopen($dbms_pnphpbb2_basic, 'r'), @filesize($dbms_pnphpbb2_basic));
+		$result = evaluate_statement($sql_query, $lang['Populate_DB_PNphpBB'], false, true);
+
+	}
+
+	$sql_query = '';
+
+	// Update the default admin user with their information.
+	$sql_query .= "INSERT INTO " . $table_prefix . "config (config_name, config_value) VALUES ('board_startdate', " . time() . ");";
+
+	$sql_query .= "INSERT INTO " . $table_prefix . "config (config_name, config_value) VALUES ('default_lang', '" . str_replace("\'", "''", $language) . "');";
+
+	$update_config = array(
+		'board_email'	=> pnConfigGetVar('adminmail'),
+		'script_path'	=> $phpbb_root_path,
+		'server_port'	=> $server_port,
+		'server_name'	=> $server_name
+	);
+
+	while (list($config_name, $config_value) = each($update_config))
+	{
+		$sql_query .= "UPDATE " . $table_prefix . "config SET config_value = '$config_value' WHERE config_name = '$config_name';";
+	}
+
+	$admin_name=pnUserGetVar('uname');
+	// Obtain PN user password
+	$sql = "SELECT pass FROM users WHERE uid='2'";
+
+	if ( !($result = $db->sql_query($sql)) )
+	{
+		 message_die(CRITICAL_ERROR, 'Could not obtain PN user table', '', __LINE__, __FILE__, $sql);
+	}
+	list($admin_pass_md5) = $db->sql_fetchrow($result);
+
+	$sql_query .= "UPDATE " . $table_prefix . "users SET username = '" . str_replace("\'", "''", $admin_name) . "', user_password='" . str_replace("\'", "''", $admin_pass_md5) . "', user_lang = '" . str_replace("\'", "''", $language) . "', user_email='" . str_replace("\'", "''", pnConfigGetVar('adminmail')) . "' WHERE username = 'Admin';";
+
+	$sql_query .= "UPDATE " . $table_prefix . "users SET user_regdate = " . time() . ";";
+
+	$result = evaluate_statement($sql_query, $lang['Populate_DB_Admin'], false, false);
+
+	if ($errored)
+	{
+		LogUtil::registerError("Error! ".$lang['ZphpBB2_Some_Failed']);
+
+		for ($i = 0; $i < count($error_ary['sql']); $i++)
+		{
+			LogUtil::registerError("<li>Error :: <b>" . $error_ary['error_code'][$i]['message'] . "</b><br />");
+			LogUtil::registerError("SQL &nbsp; :: <b>" . $error_ary['sql'][$i] . "</b><br /></li>");
+		}
+	}
+
   }
 
-  // Check for the existance of the ZphpBB2 forum database if it does not 
-  // exist then create it.
-  list($dbms, $dbhost, $dbuser, $dbpasswd, $dbname) = get_pndb_config();
-  $id = pnModGetIDFromName($ModName);
-
-  // Determin if the user already has an older version of the forum installed
-  // in phpbb_ rather than the new way.
-
-  //$test = $dbconn->Execute("SELECT user_id FROM " . $table_prefix . "users");
-  $test = DBUtil::executeSQL("SELECT uid FROM users LIMIT 1");
-  if ($test)
-  {
-    define('PHPBB_INSTALLED', true);
-    //$test->Close();
-  }
-   
-  // Check to see if a stand alone phpBB table set exists
-  // only if a PNphpBB table set does not (Helps to eliminate duplicate code)
-  if ( !defined("PHPBB_INSTALLED") )
-  {
-    //$test = $dbconn->Execute("SELECT user_id FROM phpbb_users");
-	$test = DBUtil::executeSQL("SELECT user_id FROM phpbb_users");
-    if ($test)
-    {
-      define('OLD_PHPBB_INSTALLED', true);
-      //$test->Close();
-    }
-  }
-  
-  // Code to check to make sure proper files/directories are writable.
-  // modules/ZphpBB2/templates/PNTheme/styles
-  // modules/ZphpBB2/templates/PNTheme/cellpics
-  $check = pnVarCleanFromInput('writable');
-
-  if ( $check <> "good" && empty($upgrade) )
-  {
-    page_header($lang['ZphpBB2_Install'], 'index.php?module=Modules&amp;type=admin&amp;func=initialise&amp;id=' . $id . '&amp;authid=' . pnSecGenAuthKey());
-
-    page_common_text($lang['Write_Perm_Desc'], "left", true);
-    page_common_text("-", "center");
-
-    $file = $phpbb_root_path . "templates/PNTheme/styles";
-    
-    if ( $ModName == "ZphpBB2" ) 
-    {
-      echo "              <tr>\n";
-      echo "                <td align=\"left\">\n";
-      echo "                  <img src='" . $phpbb_root_path . "install/green_check.gif'  alt='' border='0' align='absmiddle'><font class=\"pn-title\">" . $lang['Write_Perm_1'] . "</font>\n";
-      echo "                </td>\n";
-      echo "              </tr>\n";
-      $baddir = 0;
-    }
-    else
-    {
-      echo "              <tr>\n";
-      echo "                <td align=\"left\">\n";
-      echo "                  <img src='" . $phpbb_root_path . "install/red_check.gif'  alt='' border='0' align='absmiddle'><font class=\"pn-title\">" . $lang['Write_Perm_2'] . "</font>\n";
-      echo "                </td>\n";
-      echo "              </tr>\n";
-      $baddir = 1;
-    } 
-
-    if ( is_writable($file) ) 
-    {
-      echo "              <tr>\n";
-      echo "                <td align=\"left\">\n";
-      echo "                  <img src='" . $phpbb_root_path . "install/green_check.gif'  alt='' border='0' align='absmiddle'><font class=\"pn-title\">" . $lang['Write_Perm_3'] . "</font>\n";
-      echo "                </td>\n";
-      echo "              </tr>\n";
-      $chmod = 0;
-    }
-    else
-    {
-      echo "              <tr>\n";
-      echo "                <td align=\"left\">\n";
-      echo "                  <img src='" . $phpbb_root_path . "install/red_check.gif'  alt='' border='0' align='absmiddle'><font class=\"pn-title\">" . $lang['Write_Perm_4'] . "</font>\n";
-      echo "                </td>\n";
-      echo "              </tr>\n";
-      $chmod = 1;
-    } 
-  
-    $file = $phpbb_root_path . "templates/PNTheme/cellpics";
-    
-    if ( is_writable($file) ) 
-    {
-      echo "              <tr>\n";
-      echo "                <td align=\"left\">\n";
-      echo "                  <img src='" . $phpbb_root_path . "install/green_check.gif'  alt='' border='0' align='absmiddle'><font class=\"pn-title\">" . $lang['Write_Perm_5'] . "</font>\n";
-      echo "                </td>\n";
-      echo "              </tr>\n";
-      $chmod = 0;
-    }
-    else
-    {
-      echo "              <tr>\n";
-      echo "                <td align=\"left\">\n";
-      echo "                  <img src='" . $phpbb_root_path . "install/red_check.gif'  alt='' border='0' align='absmiddle'><font class=\"pn-title\">" . $lang['Write_Perm_6'] . "</font>\n";
-      echo "                </td>\n";
-      echo "              </tr>\n";
-      $chmod = 1;
-    } 
-
-    page_common_text("-", "center");
-
-    if ($chmod == 1 || $baddir == 1 )
-    {
-      if ( $chmod == 1 )
-      {
-        page_common_text($lang['Write_Perm_Correct'] . "<br>", "left", true);
-      }
-      if ( $baddir == 1 )
-      {
-        page_common_text($lang['Location_Correct'] . "  " . $lang['Current_Location'] . ".modules/" . $ModName, "left", true);
-      }
-      page_common_text($lang['Please_Correct'], "left", true);
-
-      echo "              <tr>\n";
-      echo "                <td align=\"center\">\n";
-      echo "                  <br><input type=\"hidden\" name=\"writable\" value=\"check\"><input type=\"submit\" value=\"" . $lang['Re_Check'] . "\">\n";
-      echo "                </td>\n";
-      echo "              </tr>\n";
-    }
-    else
-    {
-      if ($chmod == 0)
-      {
-        page_common_text($lang['Write_Perm_Good'], "left", true);
-        echo "              <tr>\n";
-        echo "                <td align=\"center\">\n";
-        echo "                  <br><input type=\"hidden\" name=\"writable\" value=\"good\"><input type=\"submit\" value=\"" . $lang['Check_Continue'] . "\">\n";
-        echo "                </td>\n";
-        echo "              </tr>\n";
-      }
-    } 
-    page_footer();
-    /* exit; @nikp */ return;
-  }
-  
-  if ( !defined("PHPBB_INSTALLED") && !defined("OLD_PHPBB_INSTALLED") || $upgrade == "New" )
-  {
-    include('./modules/' . $ModName . '/install/install.' . $phpEx);
-    return true;
-  }
-
-  // Check to see if we need to upgrade an existing install or convert from a stand alone
-  // version of phpBB.
-
-  // We need to not only look in the OLD prefix, but the new preofix.
-  // The may be a better way to dtermin this but I am setteling for the easy way
-  // right now :-)
-   
-  // Check the OLD locations first because if we are upgrading we need to know this!
-   
-  if (defined('OLD_PHPBB_INSTALLED'))
-  {
-    //$version_info=$dbconn->Execute("SELECT config_value FROM " . $modversion['old_table_prefix'] . "config WHERE config_name = 'version'");
-    $version_info = zExecuteSQLobject1row("SELECT config_value FROM " . $modversion['old_table_prefix'] . "config WHERE config_name = 'version'");
-  }
-  else
-  {
-    $version_info = zExecuteSQLobject1row("SELECT config_value FROM " . $table_prefix . "config WHERE config_name = 'version'");
-  }
-
-  if ($version_info)
-  {
-    //list($version) = $version_info->fields;
-	$version = $version_info->config_value;
-    //$version_info->Close();
-  }
-  else
-  {
-    if (in_array('ZphpBB2_no_version',$lang))
-    {
-      die($lang['ZphpBB2_no_version']);
-    }
-    else
-    {
-      die("Could not obtain version information.");
-    }
-  }
- 
-  if (defined('OLD_PHPBB_INSTALLED'))
-  {
-    //$attachmod_install=$dbconn->Execute("SELECT config_name FROM " . $modversion['old_table_prefix'] . "attachments_config WHERE config_name = 'attach_version'");
-    $attachmod_install=zExecuteSQLobject1row("SELECT config_name FROM " . $modversion['old_table_prefix'] . "attachments_config WHERE config_name = 'attach_version'");
-  }
-  else
-  {
-    //$attachmod_install=$dbconn->Execute("SELECT config_name FROM " . $table_prefix . "attachments_config WHERE config_name = 'attach_version'");
-    $attachmod_install=zExecuteSQLobject1row("SELECT config_name FROM " . $table_prefix . "attachments_config WHERE config_name = 'attach_version'");
-  }
-
-  if ($attachmod_install)
-  {
-    //list($attach_version) = $attachmod_install->fields;
-	$attach_version = $attachmod_install->config_name;
-    //$attachmod_install->Close();
-    if ( (int) str_replace(".","",$attach_version) < (int) str_replace(".","", $modversion['attach_version']))
-    {
-      define('ATTACH_UPDATE', true);
-    }
-  }
-  else
-  {  
-    define('ATTACH_INSTALL', true);
-  }
-  
-  $vercheck = intval( substr($version,3,2) );
-  
-  if ($vercheck > 0)
-  {
-    define("PNPHPBB2_UPGRADE", true);
-  }
-  else
-  {
-    page_header($lang['ZphpBB2_Install'], 'index.php');
-    page_common_text($lang['ZphpBB2_bad_version'] . $version, "center", true, true);
-    page_common_form('', $lang['ZphpBB2_Done']);
-    page_footer();
-    return false;
-  }
-
-  if (defined("OLD_PHPBB_INSTALLED") && empty($upgrade))
-  {
-    // Old prefix information found. Ask if we are upgrading a stand alone version of phpBB2 or older version
-    // ZphpBB2 or phpBB2pnmod-F, 203, 203-Attachments
-     
-    page_header($lang['ZphpBB2_Install'], 'index.php?module=Modules&amp;type=admin&amp;func=initialise&amp;id=' . $id . '&amp;authid=' . pnSecGenAuthKey());
-
-    echo "              <tr>\n";
-    echo "                <td align=\"center\">\n";
-    echo "                  <font style=\"font-size:150%;\"><b>" . $lang["ZphpBB2_Important"] . "</b></font>\n";
-    echo "                </td>\n";
-    echo "              </tr>\n";
-    echo "              <tr>\n";
-    echo "                <td align=\"center\">\n";
-    echo "                  <font color=\"red\"><b>" . $lang["ZphpBB2_phpBB_Tables_Found"] . "</b></font>\n";
-    echo "                </td>\n";
-    echo "              </tr>\n";
-    echo "              <tr>\n";
-    echo "                <td align=\"center\">\n";
-    echo "                  <b><font style=\"font-size:120%;\">" . $lang["ZphpBB2_three_options"] . "</font></b>\n";
-    echo "                </td>\n";
-    echo "              </tr>\n";
-    echo "              <tr>\n";
-    echo "                <td align=\"left\">\n";
-    echo "                  <input type=\"radio\" name=\"UpgradephpBB2\" value=\"Module\">\n";
-    echo "                  <font style=\"font-size:110%;\">" . $lang["ZphpBB2_option_one"] . "</font>\n";
-    echo "                </td>\n";
-    echo "              </tr>\n";
-    echo "              <tr>\n";
-    echo "                <td align=\"left\">\n";
-    echo "                  <input type=\"radio\" name=\"UpgradephpBB2\" value=\"phpBB\">\n";
-    echo "                  <font style=\"font-size:120%;\">" . $lang["ZphpBB2_option_two"] . "</font>\n";
-    echo "                </td>\n";
-    echo "              </tr>\n";
-    echo "              <tr>\n";
-    echo "                <td align=\"left\">\n";
-    echo "                  <input type=\"radio\" name=\"UpgradephpBB2\" value=\"New\">\n";
-    echo "                  <font style=\"font-size:120%;\">" . $lang["ZphpBB2_option_three"] . "</font>\n";
-    echo "                </td>\n";
-    echo "              </tr>\n";
-    echo "              <tr>\n";
-    echo "                <td align=\"left\">\n";
-    echo "                  <input type=\"radio\" name=\"UpgradephpBB2\" value=\"Cancel\" checked>\n";
-    echo "                  <font style=\"font-size:120%;\">" . $lang["ZphpBB2_option_four"] . "</font>\n";
-    echo "                  <br><br>\n";
-    echo "                </td>\n";
-    echo "              </tr>\n";
-    echo "              <tr>\n";
-    echo "                <td colspan=\"3\" align=\"left\"><font style=\"font-size:120%;\">" . $lang["ZphpBB2_Upgrade_Disclaimer"] . "</font></td>\n";
-    echo "              </tr>\n";
-    echo "              <tr>\n";
-    echo "                <td align=\"center\">\n";
-    echo "                  <br><input  type=\"submit\" name=\"Continue\" value=\"" . $lang["Submit"] . "\" style=\"font-size: 12pt; font-weight: bold\">\n";
-    echo "                </td>\n";
-    echo "              </tr>\n";
-
-    page_footer();
-    return false;
-  }
-
-  if ($upgrade == "phpBB")
-  {
-    define('PHPBB2_TO_PNPHPBB2', true);
-  }
-
-  if (!file_exists($phpbb_root_path . 'install/'))
-  {
-    return true;
-  }
-   
-
-  if (defined("PNPHPBB2_UPGRADE") || defined("ATTACH_INSTALL") || defined("ATTACH_UPDATE") || empty($upgrade) )
-  {
-    // We need to upgrade versions
-    include("./modules/$ModName/install/pnphpbb2_update.$phpEx");
-  }
   return true;
 }
 
@@ -408,12 +272,7 @@ function ZphpBB2_init()
 
 function ZphpBB2_upgrade()
 {
-  global $phpbb_root_path, $table_prefix, $lang, $modversion;
-  // Same code is used for both install and upgrades so we call the 
-  // init function and return the results ;-)
-
   // @nikp N.Petkov: realy on fact we upgraded before moving to Zikula 1.3
-  //return ZphpBB2_init();
   return true;
 }
 
@@ -423,161 +282,20 @@ function ZphpBB2_upgrade()
 
 function ZphpBB2_delete()
 {
-  global $phpbb_root_path, $table_prefix, $lang, $modversion;
+	$retok = true;
 
-  //list($dbconn) = pnDBGetConn(); 
-  $pntable = pnDBGetTables();
-  
-  $ModName = 'ZphpBB2';
-  $phpbb_root_path = './modules/' . $ModName . '/';
-  define('IN_PHPBB', true);
-	$starttime = 0;
-  include($phpbb_root_path.'extension.inc');
+	$table_prefix = pnConfigGetVar('prefix') . "_phpbb_";
 
-  $table_prefix = pnConfigGetVar('prefix') . "_phpbb_";
+	$query = "SHOW TABLES LIKE '" . $table_prefix . "_%';";
+	$result = zExecuteSQLarray($query);
 
-  // Get PostNuke's Default Language and use this for ZphpBB2 default.
-  if (!function_exists('getPNlanguage'))
-  {
-    include_once($phpbb_root_path . 'includes/functions.' . $phpEx);
-  }
-  $language = getPNlanguage();
-
-  // If no language files exist for PostNuke language then use english
-  if ( !file_exists($phpbb_root_path . 'language/lang_' . $language . '/lang_pnphpbb2_admin.' . $phpEx))
-  {
-    $language = "english";
-  }
-
-  define('PNPHPBB_INSTALL', true);
-  include_once($phpbb_root_path . "pnversion.php");
-  include_once($phpbb_root_path . 'language/lang_' . $language . '/lang_main.' . $phpEx);
-  include_once($phpbb_root_path . 'language/lang_' . $language . '/lang_admin.' . $phpEx);
-  include_once($phpbb_root_path . 'language/lang_' . $language . '/lang_pnphpbb2_admin.' . $phpEx);
-
-	include_once($phpbb_root_path . 'install/includes/functions_install.' . $phpEx);
-
-  $remove_pnphpbb = pnVarCleanFromInput('remove');
-  $cancel = pnVarCleanFromInput('cancel');
-  
-  if ( $cancel )
-  {
-    pnredirect('index.php?module=Modules&type=admin&func=list');
-  }
-  
-  if ( $remove_pnphpbb )
-  {
-    define('IN_PHPBB', true);
-    define('LOADED_AS_MODULE', true);
-    $ok_to_remove_pnphpbb2 =  pnVarCleanFromInput('ok_to_remove_pnphpbb2');
-
-    if ( $remove_pnphpbb && $ok_to_remove_pnphpbb2 == "whynot" )
-    {
-	    include($phpbb_root_path . "install/remove_pnphpbb2.$phpEx");
-      return $removed;
-    }
-    else
-    {
-      pnredirect("index.$phpEx");
- 	    /* exit; @nikp */ return;
-    }
-  }
-  
-  list($dbms, $dbhost, $dbuser, $dbpasswd, $dbname) = get_pndb_config();
-
- 	$id = pnModGetIDFromName($ModName);
-
-  //$test = $dbconn->Execute("SELECT user_id FROM " . $table_prefix . "users");
-  $test = DBUtil::executeSQL("SELECT uid FROM users LIMIT 1");
-  if ($test)
-  {
-    define('PHPBB_INSTALLED', true);
-    //$test->Close();
-  }
- 
-  if (!defined("PHPBB_INSTALLED") || !file_exists($phpbb_root_path . 'install/remove_pnphpbb2.' . $phpEx))
-  {
-    // Assume ZphpBB2 has been removed, or the remove script does not exist.
-    // Return to PostNuke and allow to be removed from module list
-    return true;
-  }
-
-  page_header($lang['ZphpBB2_Remove_Prompt'], "index.php?module=Modules&amp;type=admin&amp;func=remove&amp;id=" . $id . "&amp;authid=". pnSecGenAuthKey(), "remove");
-  page_common_text("-", "center");
-
-  page_common_text(sprintf($lang["ZphpBB2_Remove_Text"],$table_prefix), "center", true);
-  page_common_text("-", "center");
+	foreach ($result as $r) {
+		$query = "DROP TABLE `" . $r[0] . "`";
+		if (!DBUtil::executeSQL($query)) {
+			LogUtil::registerError();
+			$retok = false;
+		}
+	}
 	
-	echo "					  <tr>\n"; 
-	echo "			 			  <td align=\"center\" colspan=\"2\">\n";
-	echo "							  <input type=\"submit\" name=\"remove\" value=\"" . $lang["ZphpBB2_Remove_Prompt"] . "\" style=\"font-size: 120%;\" />&nbsp;&nbsp;&nbsp;\n";
-	echo "							  <input type=\"submit\" name=\"cancel\" value=\"" . $lang["ZphpBB2_Cancel"] . "\" style=\"font-size: 120%; font-weight: bold\"/>\n";
-	echo "								<input type=\"hidden\" name=\"ok_to_remove_pnphpbb2\" value=\"whynot\" />\n";
-	echo "							</td>\n";
-	echo "						</tr>\n";
-
-  page_footer();
-  // CloseTable();
-  // /* include 'footer.php'; */
-  /* exit; @nikp */ return;
-}
-
-$ModName = 'ZphpBB2';
-if ($ModName <> "ZphpBB2")
-{
-  //list($dbconn) = pnDBGetConn();
-  $pntable = pnDBGetTables();
-  
-  $ModName = 'ZphpBB2';
-  $phpbb_root_path = './modules/' . $ModName . '/';
-  define('IN_PHPBB', true);
-	$starttime = 0;
-  include($phpbb_root_path.'extension.inc');
-  $table_prefix = pnConfigGetVar('prefix') . "_phpbb_";
- 	$id = pnModGetIDFromName($ModName);
-
-  // Get PostNuke's Default Language and use this for ZphpBB2 default.
-  if (!function_exists('getPNlanguage'))
-  {
-    include_once($phpbb_root_path . 'includes/functions.' . $phpEx);
-  }
-  $language = getPNlanguage();
-
-  // If no language files exist for PostNuke language then use english
-  if ( !file_exists($phpbb_root_path . 'language/lang_' . $language . '/lang_pnphpbb2_admin.' . $phpEx))
-  {
-    $language = "english";
-  }
-
-  define('PNPHPBB_INSTALL', true);
-  include_once($phpbb_root_path . "pnversion.php");
-  include_once($phpbb_root_path . 'language/lang_' . $language . '/lang_main.' . $phpEx);
-  include_once($phpbb_root_path . 'language/lang_' . $language . '/lang_admin.' . $phpEx);
-  include_once($phpbb_root_path . 'language/lang_' . $language . '/lang_pnphpbb2_admin.' . $phpEx);
-
-	include_once($phpbb_root_path . 'install/includes/functions_install.' . $phpEx);
-
-  page_header($lang['ZphpBB2_Install'], 'index.php?module=Modules&amp;type=admin&amp;func=regenerate&amp;authid=' . pnSecGenAuthKey());
-
-  page_common_text($lang['Write_Perm_Desc'], "left", true);
-  page_common_text("-", "center");
-
-  echo "                <td align=\"left\">\n";
-  echo "                  <img src='" . $phpbb_root_path . "install/red_check.gif'  alt='' border='0' align='absmiddle'><font class=\"pn-title\">" . $lang['Write_Perm_2'] . "</font>\n";
-  echo "                </td>\n";
-  echo "              </tr>\n";
-
-  page_common_text("-", "center");
-
-  page_common_text($lang['Location_Correct'] . "  " . $lang['Current_Location'] . ".modules/" . $ModName, "left", true);
-//  page_common_text($lang['Please_Correct'], "left", true);
-
-  echo "              <tr>\n";
-  echo "                <td align=\"center\">\n";
-  echo "                  <br><input type=\"hidden\" name=\"writable\" value=\"check\"><input type=\"submit\" value=\"" . _REGENERATE . "\">\n";
-  echo "                </td>\n";
-  echo "              </tr>\n";
-
-  page_footer();
-  /* exit; @nikp */ return;
+	return $retok;
 }

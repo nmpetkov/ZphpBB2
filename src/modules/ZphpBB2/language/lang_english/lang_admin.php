@@ -61,7 +61,7 @@ $lang['Restore_DB'] = 'Restore Database';
 //
 $lang['Admin'] = 'Administration';
 $lang['Not_admin'] = 'You are not authorised to administer this board';
-$lang['Welcome_phpBB'] = 'Welcome to PNphpBB';
+$lang['Welcome_phpBB'] = 'Welcome to ZphpBB';
 $lang['Admin_intro'] = 'Thank you for choosing phpBB as your forum solution. This screen will give you a quick overview of all the various statistics of your board. You can get back to this page by clicking on the <u>Admin Index</u> link in the left pane. To return to the index of your board, click the phpBB logo also in the left pane. The other links on the left hand side of this screen will allow you to control every aspect of your forum experience. Each screen will have instructions on how to use the tools.';
 $lang['Main_index'] = 'Forum Index';
 $lang['Forum_stats'] = 'Forum Statistics';

@@ -165,7 +165,6 @@ function session_begin($user_id, $user_ip, $page_id, $auto_create = 0, $enable_a
 
 			// Obtain PN user password
 			// N.Petkov changes: Zikula 1.3.
-			/* $sql = "SELECT pn_pass FROM " . pnConfigGetVar('prefix') . "_users WHERE pn_uid='" . $user_id . "'"; */
 			$sql = "SELECT pass FROM users WHERE uid='" . $user_id . "'";
 			if ( !($result = $db->sql_query($sql)) )
 			{
@@ -209,7 +208,6 @@ function session_begin($user_id, $user_ip, $page_id, $auto_create = 0, $enable_a
 
 			// Obtain PN user password
 			// N.Petkov changes: Zikula 1.3.
-			/* $sql = "SELECT pn_pass FROM " . pnConfigGetVar('prefix') . "_users WHERE pn_uid='" . $user_id . "'"; */
 			$sql = "SELECT pass FROM users WHERE uid='" . $user_id . "'";
 			if ( !($result = $db->sql_query($sql)) )
 			{

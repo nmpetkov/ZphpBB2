@@ -11,6 +11,13 @@
  * Please see the NOTICE file distributed with this source code for further
  * information regarding copyright and licensing.
  */
+ // N.Petkov: if we like for some time... comptability, CEO
+ if (!isset($_GET['module']) && isset($_GET['name'])) {
+	$_GET['module'] = $_GET['name'];
+	unset($_GET['name']);
+	if ($_GET['module'] == 'PNphpBB2') $_GET['module'] = 'forum';
+ }
+// end
 
 include 'lib/bootstrap.php';
 $core->init();
@@ -21,13 +28,6 @@ $core->getEventManager()->notify(new Zikula_Event('frontcontroller.predispatch')
 $module = FormUtil::getPassedValue('module', '', 'GETPOST', FILTER_SANITIZE_STRING);
 $type   = FormUtil::getPassedValue('type', '', 'GETPOST', FILTER_SANITIZE_STRING);
 $func   = FormUtil::getPassedValue('func', '', 'GETPOST', FILTER_SANITIZE_STRING);
-
-// N.Petkov - comptability, CEO
-$name = FormUtil::getPassedValue('name', null, 'GETPOST');
-if (empty($module) && !empty($name)) {
-    $module = $name;
-}
-// end
 
 // check requested module
 $arguments = array();
@@ -66,7 +66,7 @@ if ($modinfo) {
 }
 
 // N.Petkov: old-old style of loading modules (for ZphpBB2)
-if (($module=='PNphpBB2' or $module=='forum') and !empty($modinfo['directory'])) {
+if (($module=='ZphpBB2' or $module=='forum') and !empty($modinfo['directory'])) {
 	define('LOADED_AS_MODULE', '1');
 	if ($type=='admin') {
 		$file = 'admin'; # ZphpBB2
@@ -104,8 +104,8 @@ try {
         // we have a static homepage
         $return = ' ';
     } elseif ($modinfo) {
-		// call the requested/homepage module
-		$return = ModUtil::func($modinfo['name'], $type, $func, $arguments);
+        // call the requested/homepage module
+        $return = ModUtil::func($modinfo['name'], $type, $func, $arguments);
     }
 
     if (!$return) {

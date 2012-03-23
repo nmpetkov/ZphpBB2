@@ -209,23 +209,12 @@ $table_prefix = pnConfigGetVar('prefix') . "_phpbb_";
 //$pntable = pnDBGetTables(); 
 
 // Can we find the users table?
-//$test = $dbconn->Execute("SELECT user_id FROM " . $table_prefix . "users LIMIT 1");
-$test = DBUtil::executeSQL("SELECT uid FROM users LIMIT 1");
-if ($test) {
-   define('PHPBB_INSTALLED', true);
-	 //$test->Close();
+$test_installed = zExecuteSQLobject1row("SHOW TABLES LIKE '" . $table_prefix . "users" . "'");
+if (!$test_installed) {
+	LogUtil::registerError("Error! Unable to access " . $table_prefix . "users table, table is missing.");
+	return;
 }
 // End PNphpBB2 Module
-
-if( !defined("PHPBB_INSTALLED") )
-{
-// Begin PNphpBB2 Module
-//	header('Location: ' . $phpbb_root_path . 'install/install.' . $phpEx);
-	die("Unable to access " . $table_prefix . "users table, Instalation was either not completed or table is missing.");
-// End PNphpBB2 Module
-
-	exit;
-}
 
 include($phpbb_root_path . 'includes/constants.'.$phpEx);
 // Begin PNphpBB2 Module

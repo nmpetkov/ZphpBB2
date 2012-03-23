@@ -22,7 +22,6 @@
             <strong><a href="{U_SEARCH}"> {L_SEARCH}</a></strong>&nbsp; &#8226;&nbsp;
             <!-- BEGIN switch_user_logged_in -->
             <a href="{U_MEMBERLIST}"> {L_MEMBERLIST}</a>&nbsp; &#8226;&nbsp; 
-            <a href="{U_GROUP_CP}"> {L_USERGROUPS}</a>&nbsp; &#8226;&nbsp;
             <!-- END switch_user_logged_in -->
             <!-- BEGIN switch_user_logged_out -->
             <a href="index.php?module=Users&func=loginscreen"> {L_REGISTER}</a>&nbsp; &#8226;&nbsp;
@@ -31,11 +30,7 @@
             <a href="{U_PROFILE}"> {L_PROFILE}</a>&nbsp; &#8226;&nbsp;
             <!-- END switch_user_logged_in -->
             <a href="{U_PRIVATEMSGS}"> {PRIVATE_MESSAGE_INFO}</a>
-          </td>
-        </tr>
-        <tr align="center">
-          <td>
-            <a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a>
+            &nbsp;&#8226; &nbsp;<a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a>
             <!-- BEGIN switch_allow_sub_change -->
             &nbsp;&#8226; &nbsp;<a href="{U_SUBFORUM}">{L_SUBFORUM}</a>
             <!-- END switch_allow_sub_change -->

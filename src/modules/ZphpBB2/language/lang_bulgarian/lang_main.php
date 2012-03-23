@@ -426,7 +426,7 @@ $lang['Styles_tip'] = 'Съвет: стиловете се прилагат къ
 //
 $lang['Private_Messaging'] = 'Лични съобщения'; # Private Messaging
 
-$lang['Login_check_pm'] = 'Регистрирайте се за да проверите своите лични съобщения'; # Login to check your private messages
+$lang['Login_check_pm'] = 'Лични съобщения'; # Login to check your private messages
 $lang['New_pms'] = 'Имате %d нови съобщения'; # You have %d new messages // You have 2 new messages
 $lang['New_pm'] = 'Имате %d ново съобщение'; # You have %d new message // You have 1 new message
 $lang['No_new_pm'] = 'Нямате нови съобщения'; # You have no new messages

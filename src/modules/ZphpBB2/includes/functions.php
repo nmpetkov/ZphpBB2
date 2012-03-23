@@ -1361,7 +1361,7 @@ function message_die($msg_code, $msg_text = '', $msg_title = '', $err_line = '',
 			{
 // Begin PNphpBB2 Module
 //				$msg_title = 'phpBB : <b>' . $lang['Critical_Error'] . '</b>';
-				$msg_title = 'PNphpBB : <b>' . $lang['Critical_Error'] . '</b>';
+				$msg_title = 'ZphpBB2 : <b>' . $lang['Critical_Error'] . '</b>';
 // End PNphpBB2 Module
 			}
 			break;
@@ -1672,31 +1672,6 @@ function get_pndb_config() {
 // @nikp N.Petkov: added functions to work in Zikula 1.3
 //
 
-// return query result as array (rows) of objects, usage: foreach ($result as $r) {
-function zExecuteSQLobject($query){
-	$result = DBUtil::executeSQL($query);
-	if ($result) return $result->fetchAll(Doctrine::FETCH_OBJ);	// Array of rows - accesible as objects (as return mysql_fetch_object)
-	return false;
-}
-
-// return 1-st row from query result as object
-function zExecuteSQLobject1row($query){
-	$result = DBUtil::executeSQL($query);
-	if ($result) {
-		$r = $result->fetchAll(Doctrine::FETCH_OBJ);	// Array of rows - accesible as objects (as return mysql_fetch_object)
-		return $r[0];
-	}
-	return false;
-}
-
-// return query result as array (rows) of arrays
-function zExecuteSQLarray($query, $fetchStyle = Doctrine_Core::FETCH_BOTH){
-	$result = DBUtil::executeSQL($query);
-	if ($result) return $result->fetchAll($fetchStyle);	// Array of rows - accesible as array (as return mysql_fetch_array)
-	else cg_die("Bad query: ".$query);
-	return false;
-}
-
 /**
  * Timezone Function, need fot ZphpBB2 (from Zikula 1.2 compat funcs)
  *
@@ -1782,4 +1757,29 @@ function pnUserDynamicAlias($label)
     }
 
     return $label;
+}
+
+// return query result as array (rows) of objects, usage: foreach ($result as $r) {
+function zExecuteSQLobject($query){
+	$result = DBUtil::executeSQL($query);
+	if ($result) return $result->fetchAll(Doctrine::FETCH_OBJ);	// Array of rows - accesible as objects (as return mysql_fetch_object)
+	return false;
+}
+
+// return 1-st row from query result as object
+function zExecuteSQLobject1row($query){
+	$result = DBUtil::executeSQL($query);
+	if ($result) {
+		$r = $result->fetchAll(Doctrine::FETCH_OBJ);	// Array of rows - accesible as objects (as return mysql_fetch_object)
+		return $r[0];
+	}
+	return false;
+}
+
+// return query result as array (rows) of arrays
+function zExecuteSQLarray($query, $fetchStyle = Doctrine_Core::FETCH_BOTH){
+	$result = DBUtil::executeSQL($query);
+	if ($result) return $result->fetchAll($fetchStyle);	// Array of rows - accesible as array (as return mysql_fetch_array)
+	else cg_die("Bad query: ".$query);
+	return false;
 }
