@@ -1759,27 +1759,33 @@ function pnUserDynamicAlias($label)
     return $label;
 }
 
-// return query result as array (rows) of objects, usage: foreach ($result as $r) {
-function zExecuteSQLobject($query){
-	$result = DBUtil::executeSQL($query);
-	if ($result) return $result->fetchAll(Doctrine::FETCH_OBJ);	// Array of rows - accesible as objects (as return mysql_fetch_object)
-	return false;
+if (!function_exists("zExecuteSQLobject")) {
+    // return query result as array (rows) of objects, usage: foreach ($result as $r) {
+    function zExecuteSQLobject($query){
+        $result = DBUtil::executeSQL($query);
+        if ($result) return $result->fetchAll(Doctrine::FETCH_OBJ);	// Array of rows - accesible as objects (as return mysql_fetch_object)
+        return false;
+    }
 }
 
-// return 1-st row from query result as object
-function zExecuteSQLobject1row($query){
-	$result = DBUtil::executeSQL($query);
-	if ($result) {
-		$r = $result->fetchAll(Doctrine::FETCH_OBJ);	// Array of rows - accesible as objects (as return mysql_fetch_object)
-		return $r[0];
-	}
-	return false;
+if (!function_exists("zExecuteSQLobject1row")) {
+    // return 1-st row from query result as object
+    function zExecuteSQLobject1row($query){
+        $result = DBUtil::executeSQL($query);
+        if ($result) {
+            $r = $result->fetchAll(Doctrine::FETCH_OBJ);	// Array of rows - accesible as objects (as return mysql_fetch_object)
+            return $r[0];
+        }
+        return false;
+    }
 }
 
+if (!function_exists("zExecuteSQLarray")) {
 // return query result as array (rows) of arrays
-function zExecuteSQLarray($query, $fetchStyle = Doctrine_Core::FETCH_BOTH){
-	$result = DBUtil::executeSQL($query);
-	if ($result) return $result->fetchAll($fetchStyle);	// Array of rows - accesible as array (as return mysql_fetch_array)
-	else cg_die("Bad query: ".$query);
-	return false;
+    function zExecuteSQLarray($query, $fetchStyle = Doctrine_Core::FETCH_BOTH){
+        $result = DBUtil::executeSQL($query);
+        if ($result) return $result->fetchAll($fetchStyle);	// Array of rows - accesible as array (as return mysql_fetch_array)
+        else cg_die("Bad query: ".$query);
+        return false;
+    }
 }

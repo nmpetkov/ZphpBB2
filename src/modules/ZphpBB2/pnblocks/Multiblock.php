@@ -192,7 +192,7 @@ function ZphpBB2_Multiblockblock_display($blockinfo)
 			$result = zExecuteSQLarray($query);
 			if (!$result) {
 				$blockinfo['content'] = _POSTINFO_ERROR;
-				return themesideblock($blockinfo);
+				return BlockUtil::themesideblock($blockinfo);
 	   		}
 			$blockinfo['content'] .= "<table align=\"center\" width=\"98%\" cellpadding=\"1\" cellspacing=\"0\" border=\"0\">";
 			if ($vars['sep_bar_psosts']) {
@@ -245,7 +245,7 @@ function ZphpBB2_Multiblockblock_display($blockinfo)
 				}
 				if ($blockinfo['position'] == 'c' || $blockinfo['position'] == 't' || $blockinfo['position'] == 'b') {
 						if ($vars['last_X_scroll'] && $ie_marquee) {
-				   	 $blockinfo['content'] .= "<a href=\"" . $link_url . "viewtopic&amp;p=$post_id#" . $post_id . "\" title=\"" . _GOTO_POST . "\"><img src=\"" . $phpbb_root_path . "pnimages/" . $replyicon . ".gif\" border=0 alt=\"" . _GOTO_POST . "\"></a>&nbsp;&nbsp;";
+				   	 $blockinfo['content'] .= "<a href=\"" . $link_url . "viewtopic&amp;p=$post_id#" . $post_id . "\" title=\"" . _GOTO_POST . "\"><img src=\"" . $phpbb_root_path . "pnimages/" . $replyicon . ".gif\" border=\"0\" alt=\"" . _GOTO_POST . "\" /></a>&nbsp;&nbsp;";
 				      $blockinfo['content'] .= "<a href=\"" . $link_url . "viewtopic&amp;t=" . $topic_id . "\" title=\"" . $cat_title . '/' . $forum_name . '/' . $topic_subject . "\">" . $topic_subject . "</a>&nbsp;<strong>" . _TOPIC_REPLIES . "</strong>&nbsp;(" . $post_replies . ")&nbsp;<strong>" . _TOPIC_VIEWS . "</strong>&nbsp;(" . $post_views . ")</span><br />";
 				      $blockinfo['content'] .= "&nbsp;&nbsp;&nbsp;<font color=\"#666666\"><i>" . _POST_BY . "&nbsp;<a href=\"" . $profile_url . "\">" . pnVarPrepForDisplay($post_username) . "</a>&nbsp;in&nbsp;<a href=\"" . $link_url . "viewforum&amp;f=$forum_id\">$forum_name&nbsp;</a>";
 				      if ($vars['display_date']) {
@@ -258,7 +258,7 @@ function ZphpBB2_Multiblockblock_display($blockinfo)
 				      $blockinfo['content'] .= "</i></font><br>";
 					} else {
 				      $blockinfo['content'] .= "<tr>";
-				      $blockinfo['content'] .= "<td align=\"left\"><span class=\"z-normal\"><a class=\"z-normal\" href=\"" . $link_url . "viewtopic&amp;p=$post_id#" . $post_id . "\" title=\"" . _GOTO_POST . "\"><img src=\"" . $phpbb_root_path . "pnimages/" . $replyicon . ".gif\" border=0 alt=\"" . _GOTO_POST . "\"></a></span>";
+				      $blockinfo['content'] .= "<td align=\"left\"><span class=\"z-normal\"><a class=\"z-normal\" href=\"" . $link_url . "viewtopic&amp;p=$post_id#" . $post_id . "\" title=\"" . _GOTO_POST . "\"><img src=\"" . $phpbb_root_path . "pnimages/" . $replyicon . ".gif\" border=\"0\" alt=\"" . _GOTO_POST . "\" /></a></span>";
 				      $blockinfo['content'] .= "&nbsp;<a class=\"z-normal\" href=\"" . $link_url . "viewtopic&amp;t=" . $topic_id . "\" title=\"" . $cat_title . '/' . $forum_name . '/' . $topic_subject . "\">" . $topic_short . "</a></span></td>";
 				      $blockinfo['content'] .= "<td>&nbsp;</td>";
 				      $blockinfo['content'] .= "<td align=\"right\" valign=\"top\"><span class=\"z-normal\">(" . $post_replies . ")</span></td>";
@@ -282,7 +282,7 @@ function ZphpBB2_Multiblockblock_display($blockinfo)
 					}
 				} else {
 				   if ($vars['last_X_scroll'] && $ie_marquee) {
-				      $blockinfo['content'] .=  "<a href=\"" . $link_url . "viewtopic&amp;p=$post_id#" . $post_id . "\" title=\"" . _GOTO_POST . "\"><img src=\"" . $phpbb_root_path . "pnimages/" . $replyicon . ".gif\" border=0 alt=\"" . _GOTO_POST . "\"></a><a href=\"" . $link_url . "viewtopic&amp;t=" . $topic_id . "\"><strong> $topic_subject (" . $post_replies . ")</strong></a><br><font color=\"#666666\"><i>" . _POST_BY . " <a href=\"" . $profile_url . "\">" . pnVarPrepForDisplay($post_username) . "</a> in <a href=\"" . $link_url . "viewforum&amp;f=$forum_id\">&nbsp;$forum_name</a>&nbsp;";
+				      $blockinfo['content'] .=  "<a href=\"" . $link_url . "viewtopic&amp;p=$post_id#" . $post_id . "\" title=\"" . _GOTO_POST . "\"><img src=\"" . $phpbb_root_path . "pnimages/" . $replyicon . ".gif\" border=\"0\" alt=\"" . _GOTO_POST . "\" /></a><a href=\"" . $link_url . "viewtopic&amp;t=" . $topic_id . "\"><strong> $topic_subject (" . $post_replies . ")</strong></a><br><font color=\"#666666\"><i>" . _POST_BY . " <a href=\"" . $profile_url . "\">" . pnVarPrepForDisplay($post_username) . "</a> in <a href=\"" . $link_url . "viewforum&amp;f=$forum_id\">&nbsp;$forum_name</a>&nbsp;";
 				      if ($vars['display_date']) {
 				      		$blockinfo['content'] .=  "<strong>" . _POST_ON . "</strong> " . $post_date . "&nbsp;";
 				      }
@@ -293,7 +293,7 @@ function ZphpBB2_Multiblockblock_display($blockinfo)
 				      $blockinfo['content'] .=  "<br>";
 				   } else {
 				      $blockinfo['content'] .= "<tr>";
-				      $blockinfo['content'] .= "<td align=\"left\"><span class=\"z-normal\"><a class=\"z-normal\" href=\"" . $link_url . "viewtopic&amp;p=$post_id#" . $post_id . "\" title=\"" . _GOTO_POST . "\"><img src=\"" . $phpbb_root_path . "pnimages/" . $replyicon . ".gif\" border=0 alt=\"" . _GOTO_POST . "\"></a></span></td>";
+				      $blockinfo['content'] .= "<td align=\"left\"><span class=\"z-normal\"><a class=\"z-normal\" href=\"" . $link_url . "viewtopic&amp;p=$post_id#" . $post_id . "\" title=\"" . _GOTO_POST . "\"><img src=\"" . $phpbb_root_path . "pnimages/" . $replyicon . ".gif\" border=\"0\" alt=\"" . _GOTO_POST . "\" /></a></span></td>";
 				      $blockinfo['content'] .= "<td width=\"100%\" valign=\"top\"><span class=\"z-normal\"><a class=\"z-normal\" href=\"" . $link_url . "viewtopic&amp;t=" . $topic_id . "\" title=\"" . $cat_title . '/' . $forum_name . '/' . $topic_subject . "\">" . $topic_short . "</a>";
 				      $blockinfo['content'] .= "&nbsp;<strong>" . _POST_BY . "&nbsp;<a class=\"z-normal\" href=\"" . $profile_url . "\" title=\"" . $post_username . "\">" . pnVarPrepForDisplay($username_short) . "</a></strong>";
 				      $blockinfo['content'] .= "</span></td>";
@@ -345,7 +345,7 @@ function ZphpBB2_Multiblockblock_display($blockinfo)
 	   		$query = "SELECT config_value FROM " . CONFIG_TABLE . " WHERE config_name = 'default_dateformat' or config_name = 'board_startdate' or config_name = 'board_timezone'";
 			$result = zExecuteSQLarray($query);
 	   		if (!$result) {
-	   			 return themesideblock($blockinfo);
+	   			 return BlockUtil::themesideblock($blockinfo);
 	   		}
 	   		list($deafault_dateformat) = $result[0];
 	   		list($board_startdate) = $result[0];
@@ -691,7 +691,7 @@ function ZphpBB2_Multiblockblock_display($blockinfo)
 		}
 		// if ($vars['display_members']
 		
-		$content = themesideblock($blockinfo);
+		$content = BlockUtil::themesideblock($blockinfo);
 	}
 
 	if ($write_to_cache and !empty($content)) {
