@@ -10,7 +10,8 @@ class Newsletter_DBObject_PluginZphpBB2Array extends Newsletter_DBObject_PluginB
         $this->Newsletter_DBObject_PluginBaseArray();
     }
 
-    function getPluginData($lang=null)
+    // $filtAfterDate is null if is not set, or in format yyyy-mm-dd hh:mm:ss
+    function getPluginData($lang=null, $filtAfterDate=null)
     {
         if (!ModUtil::available('ZphpBB2')) {
             return array();
@@ -105,6 +106,14 @@ class Newsletter_DBObject_PluginZphpBB2Array extends Newsletter_DBObject_PluginB
                 $items[$k]['profile_url'] = ($items[$k]['poster_id'] != ANONYMOUS) ? $link_url . "profile&amp;mode=viewprofile&amp;u=".$items[$k]['poster_id'] : "";
                 $items[$k]['topicurl'] = $link_url . 'viewtopic&t=' . $items[$k]['topic_id'];
                 $items[$k]['posturl'] = $link_url . 'viewtopic&p=' . $items[$k]['post_id'] .'#'. $items[$k]['post_id'];
+                $items[$k]['postdate'] = DateUtil::getDatetime($items[$k]['post_time']);
+
+                // filter by date is given, remove older data
+                if ($filtAfterDate) {
+                    if ($items[$k]['postdate'] < $filtAfterDate) {
+                        unset($items[$k]);
+                    }
+                }
             }
         }
 
