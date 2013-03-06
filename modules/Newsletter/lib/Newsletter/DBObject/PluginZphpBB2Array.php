@@ -5,116 +5,87 @@
 
 class Newsletter_DBObject_PluginZphpBB2Array extends Newsletter_DBObject_PluginBaseArray
 {
-    function Newsletter_DBObject_PluginZphpBB2Array($init=null, $where='')
+    function pluginAvailable()
     {
-        $this->Newsletter_DBObject_PluginBaseArray();
+        return ModUtil::available('ZphpBB2');
     }
 
     // $filtAfterDate is null if is not set, or in format yyyy-mm-dd hh:mm:ss
     function getPluginData($lang=null, $filtAfterDate=null)
     {
-        if (!ModUtil::available('ZphpBB2')) {
+        if (!$this->pluginAvailable()) {
             return array();
         }
-        // get module information
+        if (empty($lang)) {
+            $lang = System::getVar('language_i18n', 'en');
+        }
+
         $modinfo = ModUtil::getInfoFromName("ZphpBB2");
-
         $nItems = ModUtil::getVar ('Newsletter', 'plugin_ZphpBB2_nItems', 1);
+        $userNewsletter  = (int)ModUtil::getVar ('Newsletter', 'newsletter_userid', 1);
 
-        ModUtil::dbInfoLoad('ZphpBB2');
-        $table_prefix = System::getVar('prefix') . "_phpbb_";
-        $link_url = "index.php?module=" . $modinfo['url'] . "&amp;file=";
-
-        // include some files
-        define('IN_PHPBB', true);
-        $phpbb_root_path = "./modules/" . $modinfo['directory'] . "/";
-        include($phpbb_root_path . "extension.inc");
-        include_once($phpbb_root_path . "includes/constants.php");
-        include_once($phpbb_root_path . "includes/functions.php");
-        $langfile = $phpbb_root_path . 'pnlang/'.ZLanguage::getLanguageCodeLegacy().'/Lastposts.php';
-        if (!file_exists($langfile)) {
-            $langfile = $phpbb_root_path . 'pnlang/eng/Lastposts.php';
-        }
-        include_once($langfile);
-
-        //do we want every topic to appear just once?
-        $group_topics = false;
-        if ($group_topics) {
-            $connkeys_posts = TOPICS_TABLE . ".topic_last_post_id = " . POSTS_TABLE . ".post_id";
-        } else {
-            $connkeys_posts = TOPICS_TABLE . ".topic_id = " . POSTS_TABLE . ".topic_id";
-        }
-        //limit to certain forums?
-        $excluded_forums = null;
-        if (!is_null ($excluded_forums)) {
-             $excluded_forums = in_array("", $excluded_forums) ? "" : "AND " . FORUMS_TABLE . ".forum_id NOT IN (" . implode(", ", $excluded_forums) . ")";
-        }
-        $lastvisit  = 0;
-        //list of forums user can see if private
-        $viewforums = "";
-        //list of forums user can look into if private
-        $readforums = "";
-        //list of forums where user is moderator
-        $modforums  = "";
-        //just for guests
-        $userstate  = 0; 
-        //let's see if we can optimize the query
-        $view_private = !empty($viewforums) ? " OR (" . FORUMS_TABLE . ".auth_view = ". AUTH_ACL . " AND " . TOPICS_TABLE . ".forum_id IN ($viewforums)) " : "";
-        $read_private = !empty($readforums) ? " OR (" . FORUMS_TABLE . ".auth_read = ". AUTH_ACL . " AND " . TOPICS_TABLE . ".forum_id IN ($readforums)) " : "";
-        if (!empty($modforums)) {
-           $view_mod = " OR (" . FORUMS_TABLE . ".auth_view = ". AUTH_MOD . " AND " . TOPICS_TABLE . ".forum_id IN ($modforums)) ";
-           $read_mod = " OR (" . FORUMS_TABLE . ".auth_read = ". AUTH_MOD . " AND " . TOPICS_TABLE . ".forum_id IN ($modforums)) ";
-        } else {
-           $view_mod = $read_mod = "";
-        }
-        //now for the main query - plz don't expect me to explain this monster
-        $postslimit = ($nItems) ? $nItems : 10;
-        $query = "SELECT " . TOPICS_TABLE . ".topic_title, 
-                   " . TOPICS_TABLE . ".topic_replies, 
-                     " . TOPICS_TABLE . ".topic_views, 
-                     " . TOPICS_TABLE . ".topic_id, 
-                     " . USERS_TABLE . ".username, 
-                     " . POSTS_TABLE . ".post_id, 
-                     " . POSTS_TABLE . ".poster_id, 
-                     " . POSTS_TABLE . ".post_time, 
-                     " . POSTS_TEXT_TABLE . ".post_subject, 
-                     " . POSTS_TEXT_TABLE . ".post_text, 
-                     " . FORUMS_TABLE . ".forum_id, 
-                     " . FORUMS_TABLE . ".forum_name,
-                     " . CATEGORIES_TABLE . ".cat_title 
-                     FROM ((" . TOPICS_TABLE . " 
-                     INNER JOIN " . POSTS_TABLE . " ON $connkeys_posts) 
-                     INNER JOIN " . USERS_TABLE . " ON " . USERS_TABLE . ".user_id = " . POSTS_TABLE . ".poster_id 
-                     INNER JOIN " . POSTS_TEXT_TABLE . " ON " . POSTS_TEXT_TABLE . ".post_id = " . POSTS_TABLE . ".post_id) 
-                     INNER JOIN " . FORUMS_TABLE . " ON " . FORUMS_TABLE . ".forum_id = " . TOPICS_TABLE . ".forum_id 
-                     INNER JOIN " . CATEGORIES_TABLE . " ON " . CATEGORIES_TABLE . ".cat_id = " . FORUMS_TABLE . ".cat_id 
-                     WHERE (" . FORUMS_TABLE . ".auth_view <= $userstate $view_private $view_mod)
-                     AND   (" . FORUMS_TABLE . ".auth_read <= $userstate $read_private $read_mod) $excluded_forums 
-                     AND   " . TOPICS_TABLE . ".topic_status <> " . TOPIC_MOVED . "
-                     ORDER BY post_time DESC LIMIT ".$postslimit;
-
-        $result = DBUtil::executeSQL($query);
-        if ($result) {
-            $items = $result->fetchAll(Doctrine_Core::FETCH_BOTH);
+        if (!SecurityUtil::checkPermission('ZphpBB2::', '::', ACCESS_READ, $userNewsletter)) {
+            return array();
         }
 
-        if ($items) {
-            foreach (array_keys($items) as $k) {
-                //list($topic_subject, $post_replies, $post_views, $topic_id, $post_username, $post_id, $poster_id, $post_time, $forum_id, $forum_name, $cat_title) = $r;
-                $items[$k]['replyicon'] = ($lastvisit > 0 && $items[$k]['post_time'] > $lastvisit) ? "icon_newest_reply" : "icon_latest_reply";
-                $items[$k]['post_username'] = ($items[$k]['poster_id'] != ANONYMOUS) ? $items[$k]['username'] : _BOARD_GUEST;
-                $items[$k]['profile_url'] = ($items[$k]['poster_id'] != ANONYMOUS) ? $link_url . "profile&amp;mode=viewprofile&amp;u=".$items[$k]['poster_id'] : "";
-                $items[$k]['topicurl'] = $link_url . 'viewtopic&t=' . $items[$k]['topic_id'];
-                $items[$k]['posturl'] = $link_url . 'viewtopic&p=' . $items[$k]['post_id'] .'#'. $items[$k]['post_id'];
-                $items[$k]['postdate'] = DateUtil::getDatetime($items[$k]['post_time']);
+        $prefix = System::getVar('prefix');
+        $prefix = $prefix ? $prefix.'_' : '';
+        $TOPICS_TABLE = $prefix."phpbb_topics";
+        $POSTS_TABLE = $prefix."phpbb_posts";
+        $POSTS_TEXT_TABLE = $prefix."phpbb_posts_text";
+        $FORUMS_TABLE = $prefix."phpbb_forums";
 
-                // filter by date is given, remove older data
-                if ($filtAfterDate) {
-                    if ($items[$k]['postdate'] < $filtAfterDate) {
-                        unset($items[$k]);
-                    }
-                }
+        $connection = Doctrine_Manager::getInstance()->getCurrentConnection();
+        $sql = "SELECT forum_id, forum_name FROM $FORUMS_TABLE WHERE auth_view <= 0 AND auth_read <= 0";
+        $stmt = $connection->prepare($sql);
+        try {
+            $stmt->execute();
+        } catch (Exception $e) {
+            return LogUtil::registerError(__('Error in plugin').' ZphpBB2: ' . $e->getMessage());
+        }
+        $userforums = $stmt->fetchAll(Doctrine_Core::FETCH_ASSOC);
+        $allowedforums = array();
+        foreach (array_keys($userforums) as $k) {
+            if (SecurityUtil::checkPermission('ZphpBB2::', ":".$userforums[$k]['forum_id'].":", ACCESS_READ, $userNewsletter)) {
+                $allowedforums[] = $userforums[$k]['forum_id'];
             }
+        }
+        if (count($allowedforums)==0) {
+            // user is not allowed to read any forum at all
+            return array();
+        }
+
+        $sql = "SELECT $TOPICS_TABLE.topic_title, $TOPICS_TABLE.topic_replies, $TOPICS_TABLE.topic_views, $TOPICS_TABLE.topic_id, 
+                     $POSTS_TABLE.post_id, $POSTS_TABLE.poster_id, $POSTS_TABLE.post_time, 
+                     $POSTS_TEXT_TABLE.post_subject, $POSTS_TEXT_TABLE.post_text, 
+                     $FORUMS_TABLE.forum_name 
+                     FROM $TOPICS_TABLE 
+                     INNER JOIN $POSTS_TABLE ON $POSTS_TABLE.topic_id = $TOPICS_TABLE.topic_id 
+                     INNER JOIN $POSTS_TEXT_TABLE ON $POSTS_TEXT_TABLE.post_id = $POSTS_TABLE.post_id 
+                     INNER JOIN $FORUMS_TABLE ON $FORUMS_TABLE.forum_id = $TOPICS_TABLE.forum_id";
+        $sql .= " WHERE $TOPICS_TABLE.forum_id IN (" . implode(',', $allowedforums) . ")";
+        if ($filtAfterDate) {
+            $sql .= " AND FROM_UNIXTIME(post_time)>='".$filtAfterDate."'";
+        }
+        $sql .= " ORDER BY post_time DESC LIMIT ".$nItems;
+        $stmt = $connection->prepare($sql);
+        try {
+            $stmt->execute();
+        } catch (Exception $e) {
+            return LogUtil::registerError(__('Error in plugin').' ZphpBB2: ' . $e->getMessage());
+        }
+        $items = $stmt->fetchAll(Doctrine_Core::FETCH_BOTH);
+
+        foreach (array_keys($items) as $k) {
+            $items[$k]['topicurl'] = 'index.php?module=' . $modinfo['url'] . '&amp;file=viewtopic&t=' . $items[$k]['topic_id'];
+            $items[$k]['posturl'] = 'index.php?module=' . $modinfo['url'] . '&amp;file=viewtopic&p=' . $items[$k]['post_id'] .'#'. $items[$k]['post_id'];
+            $items[$k]['postdate'] = DateUtil::getDatetime($items[$k]['post_time']);
+            $items[$k]['username']= UserUtil::getVar('uname', $items[$k]['poster_id']);
+
+            $items[$k]['nl_title'] = $items[$k]['topic_title'];
+            $items[$k]['nl_url_title'] = System::getBaseUrl().$items[$k]['posturl'];
+            $items[$k]['nl_content'] = $items[$k]['forum_name'].', '.$items[$k]['username']."<br />\n".$items[$k]['post_text'];
+            $items[$k]['nl_url_readmore'] = $items[$k]['nl_url_title'];
         }
 
         return $items;
