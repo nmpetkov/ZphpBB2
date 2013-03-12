@@ -3,28 +3,31 @@
  * Newletter Plugin - ZphpBB2
  */
 
-class Newsletter_DBObject_PluginZphpBB2Array extends Newsletter_DBObject_PluginBaseArray
+class Newsletter_NewsletterPlugin_ZphpBB2 extends Newsletter_AbstractPlugin
 {
-    function pluginAvailable()
+    public function getModname()
     {
-        return ModUtil::available('ZphpBB2');
+        return 'ZphpBB2';
+    }
+
+    public function getTitle()
+    {
+        return $this->__('Latest forum posts');
+    }
+
+    public function getDescription()
+    {
+        return $this->__('Displays a list of the latest forum topics.');
     }
 
     // $filtAfterDate is null if is not set, or in format yyyy-mm-dd hh:mm:ss
-    function getPluginData($lang=null, $filtAfterDate=null)
+    function getPluginData($filtAfterDate=null)
     {
         if (!$this->pluginAvailable()) {
             return array();
         }
-        if (empty($lang)) {
-            $lang = System::getVar('language_i18n', 'en');
-        }
 
-        $modinfo = ModUtil::getInfoFromName("ZphpBB2");
-        $nItems = ModUtil::getVar ('Newsletter', 'plugin_ZphpBB2_nItems', 1);
-        $userNewsletter  = (int)ModUtil::getVar ('Newsletter', 'newsletter_userid', 1);
-
-        if (!SecurityUtil::checkPermission('ZphpBB2::', '::', ACCESS_READ, $userNewsletter)) {
+        if (!SecurityUtil::checkPermission('ZphpBB2::', '::', ACCESS_READ, $this->userNewsletter)) {
             return array();
         }
 
@@ -46,7 +49,7 @@ class Newsletter_DBObject_PluginZphpBB2Array extends Newsletter_DBObject_PluginB
         $userforums = $stmt->fetchAll(Doctrine_Core::FETCH_ASSOC);
         $allowedforums = array();
         foreach (array_keys($userforums) as $k) {
-            if (SecurityUtil::checkPermission('ZphpBB2::', ":".$userforums[$k]['forum_id'].":", ACCESS_READ, $userNewsletter)) {
+            if (SecurityUtil::checkPermission('ZphpBB2::', ":".$userforums[$k]['forum_id'].":", ACCESS_READ, $this->userNewsletter)) {
                 $allowedforums[] = $userforums[$k]['forum_id'];
             }
         }
@@ -67,7 +70,7 @@ class Newsletter_DBObject_PluginZphpBB2Array extends Newsletter_DBObject_PluginB
         if ($filtAfterDate) {
             $sql .= " AND FROM_UNIXTIME(post_time)>='".$filtAfterDate."'";
         }
-        $sql .= " ORDER BY post_time DESC LIMIT ".$nItems;
+        $sql .= " ORDER BY post_time DESC LIMIT ".$this->nItems;
         $stmt = $connection->prepare($sql);
         try {
             $stmt->execute();
@@ -77,8 +80,8 @@ class Newsletter_DBObject_PluginZphpBB2Array extends Newsletter_DBObject_PluginB
         $items = $stmt->fetchAll(Doctrine_Core::FETCH_BOTH);
 
         foreach (array_keys($items) as $k) {
-            $items[$k]['topicurl'] = 'index.php?module=' . $modinfo['url'] . '&amp;file=viewtopic&t=' . $items[$k]['topic_id'];
-            $items[$k]['posturl'] = 'index.php?module=' . $modinfo['url'] . '&amp;file=viewtopic&p=' . $items[$k]['post_id'] .'#'. $items[$k]['post_id'];
+            $items[$k]['topicurl'] = 'index.php?module=' . $this->modinfo['url'] . '&amp;file=viewtopic&t=' . $items[$k]['topic_id'];
+            $items[$k]['posturl'] = 'index.php?module=' . $this->modinfo['url'] . '&amp;file=viewtopic&p=' . $items[$k]['post_id'] .'#'. $items[$k]['post_id'];
             $items[$k]['postdate'] = DateUtil::getDatetime($items[$k]['post_time']);
             $items[$k]['username']= UserUtil::getVar('uname', $items[$k]['poster_id']);
 
