@@ -11,14 +11,6 @@
  * Please see the NOTICE file distributed with this source code for further
  * information regarding copyright and licensing.
  */
- 
-// ZphpBB2: if we like for some time... comptability, CEO
-if (!isset($_GET['module']) && isset($_GET['name'])) {
-	$_GET['module'] = $_GET['name'];
-	unset($_GET['name']);
-	if ($_GET['module'] == 'PNphpBB2') $_GET['module'] = 'forum';
- }
-// end
 
 include 'lib/bootstrap.php';
 $core->init();
