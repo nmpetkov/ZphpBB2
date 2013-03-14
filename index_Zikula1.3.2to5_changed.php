@@ -11,8 +11,9 @@
  * Please see the NOTICE file distributed with this source code for further
  * information regarding copyright and licensing.
  */
- // N.Petkov: if we like for some time... comptability, CEO
- if (!isset($_GET['module']) && isset($_GET['name'])) {
+ 
+// ZphpBB2: if we like for some time... comptability, CEO
+if (!isset($_GET['module']) && isset($_GET['name'])) {
 	$_GET['module'] = $_GET['name'];
 	unset($_GET['name']);
 	if ($_GET['module'] == 'PNphpBB2') $_GET['module'] = 'forum';
@@ -65,7 +66,7 @@ if ($modinfo) {
     }
 }
 
-// N.Petkov: old-old style of loading modules (for ZphpBB2)
+// ZphpBB2: old-old style of loading modules
 if (($module=='ZphpBB2' or $module=='forum') and !empty($modinfo['directory'])) {
 	define('LOADED_AS_MODULE', '1');
 	if ($type=='admin') {
