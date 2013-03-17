@@ -1,0 +1,3 @@
+{insert name='getstatusmsg'}
+
+{$content}

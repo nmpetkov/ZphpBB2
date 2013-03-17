@@ -11,7 +11,7 @@
  * Please see the NOTICE file distributed with this source code for further
  * information regarding copyright and licensing.
  */
-
+ 
 include 'lib/bootstrap.php';
 $core->init();
 
@@ -58,28 +58,11 @@ if ($modinfo) {
     }
 }
 
-// ZphpBB2: old-old style of loading modules
-if (($module=='ZphpBB2' or $module=='forum') and !empty($modinfo['directory'])) {
-	define('LOADED_AS_MODULE', '1');
-	if ($type=='admin') {
-		$file = 'admin'; # ZphpBB2
-		$pnadmin = 'admin';
-	} else {
-		$file = FormUtil::getPassedValue('file', 'index', 'GETPOST');
-	}
-	$zview = Zikula_View_Theme::getInstance();
-	if ($file=='admin') $noztheme = 1; # ZphpBB2
-	$zview->assign('module', $module); // !!!
-	include 'modules/'.$modinfo['directory'].'/'.$file.'.php';
-	if ($noztheme) {
-		System::shutdown();
-	} else {
-		$zview->themefooter();
-		System::shutdown();
-	}
-	return;
+// ZphpBB2 =>
+if ($modinfo['name'] == 'ZphpBB2') {
+    include 'modules/'.$modinfo['directory'].'/index_include.php';
 }
-// end old-old style
+// <= ZphpBB2
 
 $httpCode = 404;
 $message = '';
