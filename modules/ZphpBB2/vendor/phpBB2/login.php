@@ -22,7 +22,6 @@
 
 // ZphpBB2 - use Zikula login and redirect after
 $url = FormUtil::getPassedValue('redirect', '', 'GETPOST');
-die($url);
 $url = str_replace('.php', '', $url);
 $url = str_replace('&amp;', '&', $url);
 $arrParams = explode('&', $url);
