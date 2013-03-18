@@ -956,6 +956,7 @@ if ( !empty($forum_topic_data['topic_vote']) )
 			}
 
 			$template->assign_vars(array(
+				'L_POLL' => $lang['Poll'],
 				'L_TOTAL_VOTES' => $lang['Total_votes'],
 				'TOTAL_VOTES' => $vote_results_sum)
 			);
@@ -981,6 +982,7 @@ if ( !empty($forum_topic_data['topic_vote']) )
 			}
 
 			$template->assign_vars(array(
+				'L_POLL' => $lang['Poll'],
 				'L_SUBMIT_VOTE' => $lang['Submit_vote'],
 				'L_VIEW_RESULTS' => $lang['View_results'],
 

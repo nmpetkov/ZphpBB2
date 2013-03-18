@@ -263,6 +263,7 @@ $lang['View_next_topic'] = 'View next topic';
 $lang['View_previous_topic'] = 'View previous topic';
 $lang['Submit_vote'] = 'Submit Vote';
 $lang['View_results'] = 'View Results';
+$lang['Poll'] = 'Poll';
 
 $lang['No_newer_topics'] = 'There are no newer topics in this forum';
 $lang['No_older_topics'] = 'There are no older topics in this forum';

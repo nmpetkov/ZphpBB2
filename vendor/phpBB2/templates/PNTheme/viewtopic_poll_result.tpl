@@ -1,6 +1,6 @@
 <table width="100%" border="0" cellpadding="3" cellspacing="1" class="forumline">
 <tr> 
-<th>Poll</th>
+<th>{L_POLL}</th>
 </tr>
 <tr>
 <td class="row2"><table cellspacing="0" cellpadding="4" border="0" align="center">

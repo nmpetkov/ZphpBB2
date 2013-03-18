@@ -261,6 +261,7 @@ $lang['View_next_topic'] = 'Следваща тема'; # View next topic
 $lang['View_previous_topic'] = 'Предишна тема'; # View previous topic
 $lang['Submit_vote'] = 'Гласувам'; # Submit Vote
 $lang['View_results'] = 'Резултати'; # View Results
+$lang['Poll'] = 'Анкета';
 
 $lang['No_newer_topics'] = 'Няма по-нови теми в този форум'; # There are no newer topics in this forum
 $lang['No_older_topics'] = 'Няма по-стари теми в този форум'; # There are no older topics in this forum
