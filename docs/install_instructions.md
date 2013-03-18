@@ -10,6 +10,7 @@ if ($modinfo['name'] == 'ZphpBB2') {
 }
 // <= ZphpBB2
     ```
+There is an example in tools directory.
 
 UPGRADE FROM PNphpBB2
 
