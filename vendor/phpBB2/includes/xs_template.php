@@ -1104,6 +1104,7 @@ class Template {
 		global $board_config;
     
 // Begin PNphpBB2 Module
+        global $gen_simple_header;
 		if (!defined('PNPHPBB_TEMPLATE') && empty($gen_simple_header) && (SessionUtil::getVar('fullpage') == 0))
 		{
   	 	 $search = array ("'<\!doctype\s+.*?>'si",

@@ -119,6 +119,7 @@ for ($i = 0; $i < $num_rows; $i++)
 	}
 }
 
+global $gen_simple_header;
 $gen_simple_header = TRUE;
 $page_title = $lang['Attach_rules_title'];
 include($phpbb_root_path . 'includes/page_header.' . $phpEx);

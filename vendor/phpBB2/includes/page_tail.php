@@ -25,7 +25,7 @@ if ( !defined('IN_PHPBB') )
 	die('Hacking attempt');
 }
 
-global $do_gzip_compress;
+global $do_gzip_compress, $gen_simple_header;
 
 //
 // Show the overall footer.

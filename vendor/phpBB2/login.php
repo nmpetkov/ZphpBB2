@@ -35,7 +35,7 @@ if ($arrParams[2]) {
     $params[$arrParam[0]] = $arrParam[1];
 }
 $returnurl = ModUtil::url('ZphpBB2', 'user', $arrParams[0], $params);
-return System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => $returnurl)));
+return System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode($returnurl))));
 // <= ZphpBB2
 
 define("IN_LOGIN", true);
@@ -53,7 +53,7 @@ if (!empty($authid) and $authid==SecurityUtil::generateAuthKey("Users")) {
 	if (UserUtil::login($uname, $pass, $rememberme)) {
 		return System::redirect($url);
 	} else {
-		return System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => $url)));
+		return System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode($url))));
 	}
 }
 // ZphpBB2 - login <=

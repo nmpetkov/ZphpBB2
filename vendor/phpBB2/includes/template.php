@@ -305,7 +305,7 @@ class Template {
 	function compile($code, $do_not_echo = false, $retvar = '')
 	{
 // Begin PNphpBB2 Module
- 		global $board_config;
+ 		global $board_config, $gen_simple_header;
 		if (!defined('PNPHPBB_TEMPLATE') && empty($gen_simple_header) && (SessionUtil::getVar('fullpage') == 0))
 		{
   	 	 $search = array ("'<\!doctype\s+.*?>'si",

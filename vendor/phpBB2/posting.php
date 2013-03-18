@@ -20,6 +20,25 @@
  *
  ***************************************************************************/
 
+ // ZphpBB2 =>
+if (isset($_POST['mode']) || isset($_GET['mode'])) {
+    $mode = ( isset($_POST['mode']) ) ? $_POST['mode'] : $_GET['mode'];
+    if ( $mode == 'smilies' || $mode == 'postimages' ) {
+        include($phpbb_root_path . 'extension.inc');
+        include($phpbb_root_path . 'common.'.$phpEx);
+        $starttime = 0;
+        include($phpbb_root_path . 'includes/functions_post.'.$phpEx);
+        if ( $mode == 'smilies' ) {
+            generate_smilies('window', PAGE_POSTING);
+        } else {
+            generate_post_images('window', PAGE_POSTING);
+        }
+
+        exit; // also for ZphpBB2
+    }
+}
+// <= ZphpBB2
+
 include($phpbb_root_path . 'extension.inc');
 include($phpbb_root_path . 'common.'.$phpEx);
 include($phpbb_root_path . 'includes/bbcode.'.$phpEx);
@@ -84,20 +103,21 @@ if ( $mode == 'topicreview' )
 else if ( $mode == 'smilies' )
 {
 	generate_smilies('window', PAGE_POSTING);
+  	exit; // also for ZphpBB2
 }
 /* -- mod : File Attachment Mod v2 Version 2.4.3 ---------------------------------------------------- */
 else if ( $mode == 'rules' && !intval($attach_config['disable_mod']))
 {
   include($phpbb_root_path . 'attach_mod/attach_rules.'.$phpEx);
-	/* exit; ZphpBB2 */ return;
+  exit; // also for ZphpBB2
 }
 /* -- fin : File Attachment Mod v2 Version 2.4.3 ---------------------------------------------------- */
 
 // Begin PNphpBB2 Module
 else if ( $mode == 'postimages')
 {
-   generate_post_images('window', PAGE_POSTING);
-	 /* exit; ZphpBB2 */ return;
+    generate_post_images('window', PAGE_POSTING);
+    exit; // also for ZphpBB2
 }
 // End PNphpBB2 Module
 

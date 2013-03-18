@@ -100,6 +100,7 @@ function topic_review($topic_id, $is_inline_review)
 	//
 	if ( !$is_inline_review )
 	{
+        global $gen_simple_header;
 		$gen_simple_header = TRUE;
 
 		$page_title = $lang['Topic_review'] . ' - ' . $topic_title;

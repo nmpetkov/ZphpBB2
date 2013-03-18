@@ -21,37 +21,26 @@
  *
  ***************************************************************************/
 
-/* Begin PNphpBB2 Module */
-if (!defined('IN_PHPBB')) {
-	/* This code path is used only to create the popup with the smilies
-	 * common.php must be included at this point since HTTP_POST_VARS
-	 * may be unavailable
-	 */
-	include($phpbb_root_path . 'extension.inc');
-	include($phpbb_root_path . 'common.'.$phpEx);
+// ZphpBB2 =>
+if (isset($_POST['qmode']) || isset($_GET['qmode'])) {
+    $mode = ( isset($_POST['qmode']) ) ? $_POST['qmode'] : $_GET['qmode'];
+    if ( $mode == 'smilies' || $mode == 'postimages' ) {
+        include($phpbb_root_path . 'extension.inc');
+        include($phpbb_root_path . 'common.'.$phpEx);
+        $starttime = 0;
+        include($phpbb_root_path . 'includes/functions_post.'.$phpEx);
+        if ( $mode == 'smilies' ) {
+            generate_smilies('window', PAGE_POSTING);
+        } else {
+            generate_post_images('window', PAGE_POSTING);
+        }
 
-	if (isset($_POST['qmode']) || isset($_GET['qmode'])) {
-		$mode = ( isset($_POST['qmode']) ) ? $_POST['qmode'] : $_GET['qmode'];
-		$mode = htmlspecialchars($mode);
-	} else {
-		$mode = '';
-	}
-
-	if ( $mode == 'smilies' || $mode == 'postimages' ) {
-		$starttime = 0;
-		include($phpbb_root_path . 'includes/functions_post.'.$phpEx);
-		if ( $mode == 'smilies' ) {
-			generate_smilies('window', PAGE_POSTING);
-		} else {
-       			generate_post_images('window', PAGE_POSTING);
-		}
-
-		/* exit; ZphpBB2 */ return;
-	}
-
-	die('Hacking attempt1');
+        exit; // also for ZphpBB2
+    } else {
+        return;
+    }
 }
-/* End PNphpBB2 Module */
+// <= ZphpBB2
 
 $template->set_filenames(array(
   'quick_reply_output' => 'quick_reply.tpl')
@@ -98,21 +87,21 @@ $last_msg = '[quote="' . DataUtil::formatForDisplay($last_poster) . '"]' . DataU
 
 if ( !empty($orig_word) )
 {
-	$subject = ( !empty($subject) ) ? preg_replace($orig_word, $replace_word, $subject) : '';
-	$last_msg = ( !empty($last_msg) ) ? preg_replace($orig_word, $replace_word, $last_msg) : '';
+    $subject = ( !empty($subject) ) ? preg_replace($orig_word, $replace_word, $subject) : '';
+    $last_msg = ( !empty($last_msg) ) ? preg_replace($orig_word, $replace_word, $last_msg) : '';
 }
 if ( !preg_match('/^' . $lang['Re'] . '/', $subject) && strlen($subject) > 0 )
 {
-	$subject = $lang['Re'] . ' ' . $subject;
+    $subject = $lang['Re'] . ' ' . $subject;
 }
 
 $attach_sig = (( $userdata['session_logged_in'] ) ? $userdata['user_attachsig'] : 0) ? "checked='checked'" : '';
 $notify_user = (( $userdata['session_logged_in'] ) ? $userdata['user_notify'] : 0) ? "checked='checked'" : '';
-	
+    
 if( $userdata['session_logged_in'])
 {
   $template->assign_block_vars('user_logged_in', array(
-	  'ATTACH_SIGNATURE' => $attach_sig,
+      'ATTACH_SIGNATURE' => $attach_sig,
     'NOTIFY_ON_REPLY' => $notify_user)
   );
 }
@@ -127,7 +116,7 @@ $template->assign_vars(array(
   'SUBJECT' => $subject,
   'SID' => $userdata['session_id'],
   'LAST_MESSAGE' => $last_msg,
-	'REPLY_TITLE' => $lang['Re'] . " " . $topic_title,
+    'REPLY_TITLE' => $lang['Re'] . " " . $topic_title,
   'U_MORE_SMILIES' => append_sid("quick_reply.$phpEx?qmode=smilies", true),
   'U_MORE_POST_IMAGES' => append_sid("quick_reply.$phpEx?qmode=postimages", true),
   'L_USERNAME' => $lang['Username'],

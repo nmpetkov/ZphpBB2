@@ -140,6 +140,7 @@ if (!intval($attach_config['disable_mod']))
 //
 if ( $mode == 'newpm' )
 {
+    global $gen_simple_header;
 	$gen_simple_header = TRUE;
 
 	$page_title = $lang['Private_Messaging'];

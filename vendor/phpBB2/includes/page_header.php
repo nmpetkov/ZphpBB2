@@ -102,6 +102,7 @@ if ($board_config['pnphpbb2_allow_full_page'] == 1 || $board_config['pnphpbb2_fu
 }
 // End PNphpBB2 Module
 
+global $gen_simple_header;
 $template->set_filenames(array(
 	'overall_header' => ( empty($gen_simple_header) ) ? 'overall_header.tpl' : 'simple_header.tpl')
 );

@@ -789,10 +789,11 @@ function generate_smilies($mode, $page_id)
 		$userdata = session_pagestart($user_ip, $page_id);
 		init_userprefs($userdata);
 
+        global $gen_simple_header;
 		$gen_simple_header = TRUE;
 
 		$page_title = $lang['Emoticons'];
-		include($phpbb_root_path . 'includes/page_header.'.$phpEx);
+		include($phpbb_root_path . 'includes/page_header.'.$phpEx); 
 
 		$template->set_filenames(array(
 			'smiliesbody' => 'posting_smilies.tpl')
@@ -881,6 +882,7 @@ function generate_smilies($mode, $page_id)
 		$template->pparse('smiliesbody');
 
 		include($phpbb_root_path . 'includes/page_tail.'.$phpEx);
+        exit; // ZphpBB2 added
 	}
 }
 
@@ -905,6 +907,7 @@ function generate_post_images($mode, $page_id)
 		$userdata = session_pagestart($user_ip, $page_id);
 		init_userprefs($userdata);
 
+        global $gen_simple_header;
 		$gen_simple_header = TRUE;
 
 		$page_title = $lang['Review_topic'] . " - $topic_title";
@@ -1012,6 +1015,7 @@ function generate_post_images($mode, $page_id)
 		$template->pparse('postimagesbody');
 
 		include($phpbb_root_path . 'includes/page_tail.'.$phpEx);
+        exit; // ZphpBB2 added
 	}
 	else
 	{
