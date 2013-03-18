@@ -106,21 +106,22 @@
 <!-- END switch_members_online -->
 <!-- BEGIN switch_user_logged_out -->
 <br />
-<form action="{modurl modname='Users' type='user' func='login'}index.php?module=Users&amp;func=login" method="post" >
+<form action="index.php?module=Users&amp;type=user&amp;func=login" method="post" >
+    <input type="hidden" name="authentication_method[modname]" value="Users" />
+    <input type="hidden" name="authentication_method[method]" value="uname" />
+    <input type="hidden" name="returnpage" value="{ZLOGIN_RETURNPAGE}" />
+    <input type="hidden" name="csrftoken" value="{ZLOGIN_CSRFTOKEN}" />
+    <input type="hidden" name="event_type" value="login_screen" />
 <table width="100%" cellpadding="3" cellspacing="1" border="0" class="forumline">
 <tr>
 <td class="cat">{L_LOGIN_LOGOUT}</td>
 </tr>
 <tr>
 <td class="row1 gensmall" align="center">{L_USERNAME}:
-<input type="text" name="uname" size="10" maxlength="25">
+<input type="text" name="authentication_info[login_id]" size="10" maxlength="64" />
 &nbsp;&nbsp;&nbsp;{L_PASSWORD}:
-<input type="password" name="pass" size="10" maxlength="32">
-<input type="hidden" name="url" value="index.php?name={T_MODNAME}">
-<input type="hidden" name="module" value="Users">
-<input type="hidden" name="authid" value="{USERS_MODULE_AUTHID}">
-<input type="hidden" name="op" value="login">
-<input type="submit" class="mainoption" name="login" value="{L_LOGIN}" />
+<input type="password" name="authentication_info[pass]" size="10" maxlength="32" />
+<input type="submit" class="mainoption" name="submit" value="{L_LOGIN}" />
 </td>
 </tr>
 </table>

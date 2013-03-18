@@ -407,6 +407,14 @@ if( ( $total_categories = count($category_rows) ) )
 		'U_MARK_READ' => append_sid("index.$phpEx?mark=forums$mark"))
 /* End PNphpBB2 Categories Hierarchie Mod */
 	);
+    // ZphpBB2 =>
+    if (!$userdata['session_logged_in']) {
+        $template->assign_vars(array(
+            'ZLOGIN_CSRFTOKEN' => SecurityUtil::generateCsrfToken(), 
+            'ZLOGIN_RETURNPAGE' => DataUtil::formatForDisplay(System::getCurrentUri()))
+        );
+    }
+    // <= ZphpBB2
 
 // Begin PNphpBB2 Module
 	if ( !$board_config['pnphpbb2_members_online'] && (!$board_config['pnphpbb2_members_online_annon'] || $userdata['session_logged_in']))
