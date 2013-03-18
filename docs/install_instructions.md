@@ -3,13 +3,13 @@ INSTALL
 1. Install as any other Zikula module (copy ZphpBB2 directory to modules directory, go to Admin panel, Extensions and install).
 2. To make all functions to work, you must insert 3 lines in Zikula main index.php file.
     Open index.php, and at line 61 (for Zikula 1.3.2, 1.3.3, 1.3.4, 1.3.5) - after $modinfo "if" section, insert:
-    ```
+```
 // ZphpBB2 =>
 if ($modinfo['name'] == 'ZphpBB2') {
     include 'modules/'.$modinfo['directory'].'/index_include.php';
 }
 // <= ZphpBB2
-    ```
+```
 There is an example in tools directory.
 
 UPGRADE FROM PNphpBB2
