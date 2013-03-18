@@ -5,8 +5,8 @@
 <meta http-equiv="Content-Type" content="text/html;">
 </head>
 <frameset cols="170,*" rows="*" border="2" framespacing="0" frameborder="yes"> 
-<frame src="{S_FRAME_NAV}" name="nav" marginwidth="3" marginheight="3" scrolling="auto">
-<frame src="{S_FRAME_MAIN}" name="main" marginwidth="10" marginheight="10" scrolling="auto">
+<frame src="{S_FRAME_NAV}" name="nav" style="margin-left:3px;margin-right:3px;" scrolling="auto">
+<frame src="{S_FRAME_MAIN}" name="main" style="margin-left:10px;margin-right:10px;" scrolling="auto">
 </frameset>
 <noframes> 
 <body bgcolor="#FFFFFF" text="#000000">

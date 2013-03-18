@@ -77,9 +77,16 @@ $l_timezone = (count($l_timezone) > 1 && $l_timezone[count($l_timezone)-1] != 0)
 // in a template. Note that all URL's should be wrapped in append_sid, as
 // should all S_x_ACTIONS for forms.
 //
+// ZphpBB2 =>
+$admintheme = ModUtil::getVar('Admin', 'admintheme');
+if (empty($admintheme)) {
+    $admintheme = $board_config['theme_name'];
+}
+// <= ZphpBB2
+
 $template->assign_vars(array(
 /* Begin PNphpBB2 Module */
-	'CSS_PNTHEME' => $board_config['theme_name'],
+	'CSS_PNTHEME' => $admintheme,
 	'CSS_PNPHPBB' => $board_config['style_name'],
 /* End PNphpBB2 Module */
 	'SITENAME' => $board_config['sitename'],
