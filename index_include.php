@@ -16,7 +16,11 @@ if ($includetype) {
         $file = 'index';
     }
     $zview = Zikula_View_Theme::getInstance();
-    include __DIR__.'/vendor/phpBB2/'.$file.'.php';
+
+    $phpbb_root_path = __DIR__.'/vendor/phpBB2/';
+    include $phpbb_root_path.'includezik.php';
+    include $phpbb_root_path.$file.'.php';
+
     $zview->themefooter();
     System::shutdown();
 }

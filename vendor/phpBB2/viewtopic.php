@@ -20,8 +20,6 @@
  *
  ***************************************************************************/
 
-include ("includezik.php"); # @nikp N.Petkov: Zikula 1.3
-
 include($phpbb_root_path . 'extension.inc');
 include($phpbb_root_path . 'common.'.$phpEx);
 include($phpbb_root_path . 'includes/bbcode.'.$phpEx);
@@ -462,7 +460,7 @@ $sql = "SELECT u.username, u.user_id, u.user_posts, u.user_from, u.user_website,
 	LIMIT $start, ".$board_config['posts_per_page'];
 */	
 
-// npetkov: removed u.user_firstname, u.user_lastname
+// ZphpBB2: removed u.user_firstname, u.user_lastname
 $sql = "SELECT u.username, u.user_level, u.user_id, u.user_posts, u.user_from, u.user_website, u.user_email, u.user_icq, u.user_aim, u.user_yim, u.user_regdate, u.user_msnm, u.user_viewemail, u.user_rank, u.user_sig, u.user_sig_bbcode_uid, u.user_avatar, u.user_avatar_type, u.user_allowavatar, u.user_allowsmile, u.user_allow_viewonline, u.user_session_time, p.*,  pt.post_text, pt.post_subject, pt.bbcode_uid
 	FROM " . POSTS_TABLE . " p, " . USERS_TABLE . " u, " . POSTS_TEXT_TABLE . " pt
 	WHERE p.topic_id = $topic_id
@@ -1051,7 +1049,7 @@ for($i = 0; $i < $total_posts; $i++)
 
 	$poster_from = ( $postrow[$i]['user_from'] && $postrow[$i]['user_id'] != ANONYMOUS ) ? $lang['Location'] . ': ' . $postrow[$i]['user_from'] : '';
 
-	// N.Petkov - Slavi
+	// ZphpBB2
 	//$poster_firstlastnames = ( $postrow[$i]['user_firstname'] && $postrow[$i]['user_id'] != ANONYMOUS ) ? $postrow[$i]['user_firstname'].' '.$postrow[$i]['user_lastname'] : '';
     $poster_firstlastnames = '';
 
@@ -1164,7 +1162,7 @@ for($i = 0; $i < $total_posts; $i++)
 		if ( $board_config['pnphpbb2_pn_pm'] )
 		{
 		  if (ModUtil::available('InterCom')) {
-		    // N.Petkov
+		    // ZphpBB2
             $temp_url = ModUtil::url('InterCom', 'user', 'newpm', array('uname' => $poster));
 		  }
 		}

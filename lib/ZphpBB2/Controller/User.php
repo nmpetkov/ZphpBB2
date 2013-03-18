@@ -116,7 +116,9 @@ class ZphpBB2_Controller_User extends Zikula_AbstractController
         $this->throwForbiddenUnless(SecurityUtil::checkPermission('ZphpBB2::', '::', ACCESS_READ), LogUtil::getErrorMsgPermission());
 
         ob_start();
-        include 'modules/ZphpBB2/vendor/phpBB2/'.$this->phpBBfile.'.php';
+        $phpbb_root_path = 'modules/ZphpBB2/vendor/phpBB2/';
+        include $phpbb_root_path.'includezik.php';
+        include $phpbb_root_path.$this->phpBBfile.'.php';
         $content = ob_get_contents();
         ob_end_clean();
 

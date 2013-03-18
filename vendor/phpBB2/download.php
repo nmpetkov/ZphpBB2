@@ -14,8 +14,6 @@ if (defined('IN_PHPBB'))
 	exit;
 }
 
-include ("includezik.php"); # @nikp N.Petkov: Zikula 1.3
-
 include($phpbb_root_path . 'extension.inc');
 include($phpbb_root_path . 'common.' . $phpEx);
 
@@ -227,7 +225,7 @@ function send_file_to_browser($attachment, $upload_dir)
 		message_die(GENERAL_ERROR, $lang['Error_no_attachment'] . "<br /><br /><b>404 File Not Found:</b> The File <i>" . $filename . "</i> does not exist.");
 	}
 
-	/* exit; @nikp */ return;
+	/* exit; ZphpBB2 */ return;
 }
 //
 // End Functions

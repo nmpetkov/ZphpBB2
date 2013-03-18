@@ -315,7 +315,7 @@ if ( ($userdata['session_logged_in']) && (empty($gen_simple_header)) )
 	if ($board_config['pnphpbb2_pn_pm'])
 	{
 		if (ModUtil::available('InterCom')) {
-			// N.Petkov
+			// ZphpBB2
 			ModUtil::load('InterCom');
 			$info = ModUtil::apiFunc('InterCom', 'user', 'getmessagecount');
 			$unread = $info['unread'];
@@ -774,7 +774,7 @@ header ('Pragma: no-cache');
 // Begin PNphpBB2 Module
 // global $additional_header; 
 // $additional_header[] = "<link rel=\"StyleSheet\" href=\"".$board_config['style_name']."\" type=\"text/css\">\n";
-PageUtil::addVar('stylesheet', $board_config['style_name']); // @nikp: N.Petkov: Zikula 1.3
+PageUtil::addVar('stylesheet', $board_config['style_name']); // ZphpBB2: Zikula 1.3
 
 if (empty($gen_simple_header) && empty($full_page))
 {

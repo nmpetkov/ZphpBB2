@@ -20,8 +20,6 @@
  *
  ***************************************************************************/
  
- include ("includezik.php"); # @nikp N.Petkov: Zikula 1.3
-
 include($phpbb_root_path . 'extension.inc');
 include($phpbb_root_path . 'common.'.$phpEx);
 
@@ -105,7 +103,7 @@ if ( isset($_GET['mode']) || isset($_POST['mode']) )
 	if ( $mode == 'viewprofile' )
 	{
 		include($phpbb_root_path . 'includes/usercp_viewprofile.'.$phpEx);
-		return; # @nikp exit;
+		return; # ZphpBB2 exit;
 	}
 // Begin PNphpBB2 Module
 /*	else if ( $mode == 'editprofile' || $mode == 'register' )
@@ -116,28 +114,28 @@ if ( isset($_GET['mode']) || isset($_POST['mode']) )
 		}
 
 		include($phpbb_root_path . 'includes/usercp_register.'.$phpEx);
-		return; # @nikp exit;
+		return; # ZphpBB2 exit;
 	}
 	else if ( $mode == 'confirm' )
 	{
 		// Visual Confirmation
 		if ( $userdata['session_logged_in'] )
 		{
-			return; # @nikp exit;
+			return; # ZphpBB2 exit;
 		}
 
 		include($phpbb_root_path . 'includes/usercp_confirm.'.$phpEx);
-		return; # @nikp exit;
+		return; # ZphpBB2 exit;
 	}
 	else if ( $mode == 'sendpassword' )
 	{
 		include($phpbb_root_path . 'includes/usercp_sendpasswd.'.$phpEx);
-		return; # @nikp exit;
+		return; # ZphpBB2 exit;
 	}
 	else if ( $mode == 'activate' )
 	{
 		include($phpbb_root_path . 'includes/usercp_activate.'.$phpEx);
-		return; # @nikp exit;
+		return; # ZphpBB2 exit;
 	}
 */
 	else if ( $mode == 'editprofile' )
@@ -148,13 +146,13 @@ if ( isset($_GET['mode']) || isset($_POST['mode']) )
 		}
 
 		include($phpbb_root_path . 'includes/usercp_register.'.$phpEx);
- 		/* exit; @nikp */ return;
+ 		/* exit; ZphpBB2 */ return;
  	}
 // End PNphpBB2 Module
 	else if ( $mode == 'email' )
 	{
 		include($phpbb_root_path . 'includes/usercp_email.'.$phpEx);
-		/* exit; @nikp */ return;
+		/* exit; ZphpBB2 */ return;
 	}
 }
 

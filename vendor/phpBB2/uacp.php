@@ -7,8 +7,6 @@
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License 
 */
 
-include ("includezik.php"); # @nikp N.Petkov: Zikula 1.3
-
 include($phpbb_root_path . 'extension.inc');
 include($phpbb_root_path . 'common.'.$phpEx);
 
@@ -206,7 +204,7 @@ else if ($delete && sizeof($delete_id_list) > 0)
 	
 	include($phpbb_root_path . 'includes/page_tail.'.$phpEx);
 
-	/* exit; @nikp */ return;
+	/* exit; ZphpBB2 */ return;
 }
 
 $hidden_fields = '';

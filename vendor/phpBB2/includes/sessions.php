@@ -164,7 +164,7 @@ function session_begin($user_id, $user_ip, $page_id, $auto_create = 0, $enable_a
 			$user_avatar = (UserUtil::getVar('pn_user_avatar') != "blank.gif") ? "'" . DataUtil::formatForStore(UserUtil::getVar('pn_user_avatar')) . "', 3, " : "'' , 0, ";
 
 			// Obtain PN user password
-			// N.Petkov changes: Zikula 1.3.
+			// ZphpBB2: Zikula 1.3.
 			$sql = "SELECT pass FROM users WHERE uid='" . $user_id . "'";
 			if ( !($result = $db->sql_query($sql)) )
 			{
@@ -207,11 +207,11 @@ function session_begin($user_id, $user_ip, $page_id, $auto_create = 0, $enable_a
 			$user_avatar = '';
 
 			// Obtain PN user password
-			// N.Petkov changes: Zikula 1.3.
+			// ZphpBB2: Zikula 1.3.
 			$sql = "SELECT pass FROM users WHERE uid='" . $user_id . "'";
 			if ( !($result = $db->sql_query($sql)) )
 			{
-				message_die(CRITICAL_ERROR, 'Could not obtain PN user table', '', __LINE__, __FILE__, $sql);
+				message_die(CRITICAL_ERROR, 'Could not obtain Zk user table', '', __LINE__, __FILE__, $sql);
 			}
       list($pn_user_pass) = $db->sql_fetchrow($result);
 

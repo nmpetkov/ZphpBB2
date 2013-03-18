@@ -5,11 +5,11 @@
 <meta http-equiv="Content-Style-Type" content="text/css">
 {META}
 <title>{SITENAME} - {L_PHPBB_ADMIN}</title>
-{* <link rel="stylesheet" href="themes/{CSS_PNTHEME}/style/style.css" type="text/css"> N.Petkov *}
+{* <link rel="stylesheet" href="themes/{CSS_PNTHEME}/style/style.css" type="text/css"> *}
 <link rel="stylesheet" href="{CSS_PNPHPBB}" type="text/css">
 {* <style type="text/css">
 @import url("themes/{CSS_PNTHEME}/style/style.css");
-</style> N.Petkov *}
+</style> *}
 </head>
 <body bgcolor="{T_BODY_BGCOLOR}" text="{T_BODY_TEXT}" link="{T_BODY_LINK}" vlink="{T_BODY_VLINK}">
 <a name="top"></a>

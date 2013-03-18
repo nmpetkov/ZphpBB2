@@ -38,14 +38,12 @@ $returnurl = ModUtil::url('ZphpBB2', 'user', $arrParams[0], $params);
 return System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => $returnurl)));
 // <= ZphpBB2
 
-include ("includezik.php"); # @nikp N.Petkov: Zikula 1.3
-
 define("IN_LOGIN", true);
 
 include($phpbb_root_path . 'extension.inc');
 include($phpbb_root_path . 'common.'.$phpEx);
 
-// @nmpetkov - login =>
+// ZphpBB2 - login =>
 $authid = FormUtil::getPassedValue('authid', '', 'POST');
 if (!empty($authid) and $authid==SecurityUtil::generateAuthKey("Users")) {
 	$uname = FormUtil::getPassedValue('uname', '', 'POST');
@@ -58,7 +56,7 @@ if (!empty($authid) and $authid==SecurityUtil::generateAuthKey("Users")) {
 		return System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => $url)));
 	}
 }
-// @nmpetkov - login <=
+// ZphpBB2 - login <=
 
 //
 // Set page ID for session management

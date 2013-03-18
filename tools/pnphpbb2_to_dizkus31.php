@@ -2,8 +2,8 @@
 /*
  PHP script to take data from PNphpBB2 (PNphpBB2-1.2i-patch4-RC2, PNphpBB2-1.2j, possibly earlier) to a fresh install of Dizkus 3.1.
  
- @mjturn MJ Turner - author, 2009-11-12
- @nikp N. Petkov - updated according to Dizkus 3.0 to 3.1 structure chages, 2012-03-12
+ MJ Turner - author, 2009-11-12
+ N. Petkov - updated according to Dizkus 3.0 to 3.1 structure chages, 2012-03-12
  This code (~~Dizkus 3.0) is first published here:
  http://community.zikula.org/module-Forum-viewtopic-topic-57286-start-0.htm
 */

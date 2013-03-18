@@ -584,7 +584,7 @@ function init_userprefs($userdata)
 			$default_lang = 'english';
 		}
 
-		// @nikp N.Petkov: one more chance...
+		// ZphpBB2: one more chance...
 		if ( !file_exists(@phpbb_realpath($phpbb_root_path . 'language/lang_' . $default_lang . '/lang_main.'.$phpEx)) )
 		{
 			$default_lang = 'english';
@@ -1539,7 +1539,7 @@ function getPNlanguage()
 	$lang['ukr'] = "Ukrainian";
 	$lang['yid'] = "Yiddish";
 
-		// @nikp N.Petkov: Zikula 1.3
+    // ZphpBB2
 	//return strtolower($lang[SessionUtil::getVar('lang')]);
 	return strtolower($lang[ZLanguage::getLanguageCodeLegacy()]);
 }
@@ -1659,7 +1659,7 @@ function forum_mod_status ($forum_id)
 
 // End PNphpBB2 Module
 
-// @nikp N.Petkov: added functions to work in Zikula 1.3
+// ZphpBB2: added functions to work in Zikula 1.3
 //
 
 /**

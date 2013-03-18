@@ -1,6 +1,4 @@
 <?php
-include ("includezik.php"); # @nikp N.Petkov: Zikula 1.3
-
 global $post_id;
 
 include($phpbb_root_path . 'extension.inc');

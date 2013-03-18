@@ -20,8 +20,6 @@
  *
  ***************************************************************************/
 
-include ("includezik.php"); # @nikp N.Petkov: Zikula 1.3
-
 include($phpbb_root_path . 'extension.inc');
 include($phpbb_root_path . 'common.'.$phpEx);
 include($phpbb_root_path . 'includes/bbcode.'.$phpEx);
@@ -81,7 +79,7 @@ if ( $mode == 'topicreview' )
 	require($phpbb_root_path . 'includes/topic_review.'.$phpEx);
 
 	topic_review($topic_id, false);
-	/* exit; @nikp */ return;
+	/* exit; ZphpBB2 */ return;
 }
 else if ( $mode == 'smilies' )
 {
@@ -91,7 +89,7 @@ else if ( $mode == 'smilies' )
 else if ( $mode == 'rules' && !intval($attach_config['disable_mod']))
 {
   include($phpbb_root_path . 'attach_mod/attach_rules.'.$phpEx);
-	/* exit; @nikp */ return;
+	/* exit; ZphpBB2 */ return;
 }
 /* -- fin : File Attachment Mod v2 Version 2.4.3 ---------------------------------------------------- */
 
@@ -99,7 +97,7 @@ else if ( $mode == 'rules' && !intval($attach_config['disable_mod']))
 else if ( $mode == 'postimages')
 {
    generate_post_images('window', PAGE_POSTING);
-	 /* exit; @nikp */ return;
+	 /* exit; ZphpBB2 */ return;
 }
 // End PNphpBB2 Module
 

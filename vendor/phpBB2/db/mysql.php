@@ -65,7 +65,7 @@ class sql_db
 					$this->db_connect_id = $dbselect;
 				}
 			}
-			mysql_query('SET NAMES UTF8'); # @nikp N.Petkov: Zikula 1.3
+			mysql_query('SET NAMES UTF8'); // ZphpBB2
 			return $this->db_connect_id;
 		}
 		else

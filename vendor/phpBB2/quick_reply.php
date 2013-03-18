@@ -27,7 +27,6 @@ if (!defined('IN_PHPBB')) {
 	 * common.php must be included at this point since HTTP_POST_VARS
 	 * may be unavailable
 	 */
-	include ("includezik.php"); # @nikp N.Petkov: Zikula 1.3
 	include($phpbb_root_path . 'extension.inc');
 	include($phpbb_root_path . 'common.'.$phpEx);
 
@@ -47,14 +46,12 @@ if (!defined('IN_PHPBB')) {
        			generate_post_images('window', PAGE_POSTING);
 		}
 
-		/* exit; @nikp */ return;
+		/* exit; ZphpBB2 */ return;
 	}
 
 	die('Hacking attempt1');
 }
 /* End PNphpBB2 Module */
-
-include_once ("includezik.php"); # @nikp N.Petkov: Zikula 1.3
 
 $template->set_filenames(array(
   'quick_reply_output' => 'quick_reply.tpl')

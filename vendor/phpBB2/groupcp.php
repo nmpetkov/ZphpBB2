@@ -20,8 +20,6 @@
  *
  ***************************************************************************/
 
-include ("includezik.php"); # @nikp N.Petkov: Zikula 1.3
-
 include($phpbb_root_path . 'extension.inc');
 include($phpbb_root_path . 'common.'.$phpEx);
 
@@ -89,7 +87,7 @@ function generate_user_info(&$row, $date_format, $group_mod, &$from, &$posts, &$
 	if ($board_config['pnphpbb2_pn_pm'])
 	{
 		if (ModUtil::available('InterCom')) {
-		  // N.Petkov
+		  // ZphpBB2
 	 	  $temp_url = ModUtil::url('InterCom', 'user', 'newpm', array('uname' => $row['username']));
 	 	}
 	}

@@ -63,7 +63,7 @@ if ($row = $db->sql_fetchrow($result))
 }
 else
 {
-	/* exit; @nikp */ return;
+	/* exit; ZphpBB2 */ return;
 }
 
 // We can we will generate a single filtered png 

@@ -1,8 +1,6 @@
 <?php
 //PNphpBB2
 
-include ("includezik.php"); # @nikp N.Petkov: Zikula 1.3
-
 include($phpbb_root_path . 'extension.inc');
 
 if (!SecurityUtil::checkPermission('ZphpBB2::', '::', ACCESS_ADMIN)) {
@@ -28,7 +26,7 @@ if ( $remove_pnphpbb )
   }
 }
 
-if (empty($pnadmin)) $pnadmin = FormUtil::getPassedValue('pnadmin', '', 'GETPOST'); # @nikp N.Petkov: Zikula 1.3
+if (empty($pnadmin)) $pnadmin = FormUtil::getPassedValue('pnadmin', '', 'GETPOST'); // ZphpBB2
 
 if (ereg("admin_",$pnadmin))
 {
