@@ -102,4 +102,21 @@ class ZphpBB2_Controller_Admin extends Zikula_AbstractController
 
         return System::redirect(ModUtil::url($this->name, 'admin', 'main'));
     }
+
+    public function export_form()
+    {
+		$this->throwForbiddenUnless(SecurityUtil::checkPermission($this->name . '::', '::', ACCESS_ADMIN));
+
+        $this->view->setCaching(false);
+
+        return $this->view->fetch('admin/export.tpl');
+    }
+
+    public function export_perform()
+    {
+        $this->checkCsrfToken(); // confirm the forms authorisation key
+		$this->throwForbiddenUnless(SecurityUtil::checkPermission($this->name . '::', '::', ACCESS_ADMIN));
+
+        return System::redirect(ModUtil::url($this->name, 'admin', 'main'));
+    }
 }
