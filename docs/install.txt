@@ -14,14 +14,15 @@ There is an example in tools directory.
 
 UPGRADE FROM PNphpBB2
 
-1. Module directory is changed from PNphpBB2 to ZphpBB2. Make following changes to database and files:
+1. Upgrade is possible from PNphpBB2 1.2j or 1.2i.
+2. Module directory is changed from PNphpBB2 to ZphpBB2. Make following changes to database and files:
 	Cnages in database (use phpMyAdmin or similar tool:
 		- in "modules" table find record with name=PNphpBB2, cahge it to ZphpBB2, also change field directory=ZphpBB2
 	Changes in file system:
 		- Delete modules/PNphpBB2 directory. Keep in mind to backup folders with user uploaded files (files, avatars). If you are not sure, keep modules/PNphpBB2 folder, but rename it to modules/ZphpBB2 (in next step - overwrite files).
-2. To upgrade, copy files in website "modules" folder, and upgrade from website Admin panel, "Extensions".
-3. If you like can change display URL for the module (upgraded version supports  this). Also from website Admin panel, "Extensions", "edit" icon for this module.
-4. Make changes to main index.php file of the web site. Unfortunately (for now) have to make manually changes to main index.php file of the site.
+3. To upgrade, copy files in website "modules" folder, and upgrade from website Admin panel, "Extensions".
+4. If you like can change display URL for the module (upgraded version supports  this). Also from website Admin panel, "Extensions", "edit" icon for this module.
+5. Make changes to main index.php file of the web site. Unfortunately (for now) have to make manually changes to main index.php file of the site.
 Simply compare this two provided files and see necessary changes. If you retain PNphpBB2 module in URL, change fragment $module=='forum' in index.php to $module=='ZphpBB2'or $module=='PNphpBB2', or if you specify your own module URL, then change accordingly.
 
 CUSTOMIZE
