@@ -177,6 +177,7 @@ if ( $mode == 'newpm' )
 	$template->pparse('body');
 
 	include($phpbb_root_path . 'includes/page_tail.'.$phpEx);
+    return; // ZphpBB2 - added this return, as in page_tail.php db connection closes!
 	
 }
 else if ( $mode == 'read' )
@@ -672,6 +673,7 @@ else if ( $mode == 'read' )
 	$template->pparse('body');
 
 	include($phpbb_root_path . 'includes/page_tail.'.$phpEx);
+    return; // ZphpBB2 - added this return, as in page_tail.php db connection closes!
 
 }
 else if ( ( $delete && $mark_list ) || $delete_all )
@@ -719,6 +721,7 @@ else if ( ( $delete && $mark_list ) || $delete_all )
 		$template->pparse('confirm_body');
 
 		include($phpbb_root_path . 'includes/page_tail.'.$phpEx);
+        return; // ZphpBB2 - added this return, as in page_tail.php db connection closes!
 
 	}
 	else if ( $confirm )
@@ -1911,6 +1914,7 @@ else if ( $submit || $refresh || $mode != '' )
 	$template->pparse('body');
 
 	include($phpbb_root_path . 'includes/page_tail.'.$phpEx);
+    return; // ZphpBB2 - added this return, as in page_tail.php db connection closes!
 }
 
 //
