@@ -16,7 +16,7 @@ UPGRADE FROM PNphpBB2
 
 1. Upgrade is possible from PNphpBB2 1.2j or 1.2i.
 2. Module directory is changed from PNphpBB2 to ZphpBB2. Make following changes to database and files:
-	Cnages in database (use phpMyAdmin or similar tool:
+	Changes in database (use phpMyAdmin or similar tool:
 		- in "modules" table find record with name=PNphpBB2, cahge it to ZphpBB2, also change field directory=ZphpBB2
 	Changes in file system:
 		- Delete modules/PNphpBB2 directory. Keep in mind to backup folders with user uploaded files (files, avatars). If you are not sure, keep modules/PNphpBB2 folder, but rename it to modules/ZphpBB2 (in next step - overwrite files).

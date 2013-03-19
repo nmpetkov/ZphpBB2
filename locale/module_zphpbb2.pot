@@ -30,3 +30,6 @@ msgstr ""
 
 msgid "Latest forum posts"
 msgstr ""
+
+msgid "Profile in forum"
+msgstr ""
