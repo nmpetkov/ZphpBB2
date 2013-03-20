@@ -24,7 +24,7 @@
             <a href="{U_MEMBERLIST}"> {L_MEMBERLIST}</a>&nbsp; &#8226;&nbsp; 
             <!-- END switch_user_logged_in -->
             <!-- BEGIN switch_user_logged_out -->
-            <a href="index.php?module=Users&func=loginscreen"> {L_REGISTER}</a>&nbsp; &#8226;&nbsp;
+            <a href="index.php?module=Users&func=register"> {L_REGISTER}</a>&nbsp; &#8226;&nbsp;
             <!-- END switch_user_logged_out -->
             <!-- BEGIN switch_user_logged_in -->
             <a href="{U_PROFILE}"> {L_PROFILE}</a>&nbsp; &#8226;&nbsp;

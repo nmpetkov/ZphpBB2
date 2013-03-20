@@ -30,10 +30,10 @@
 //
 
 // Profiles/Registration
-$lang['ZphpBB2_Change_Profile'] = 'Change Your Zikula Profile';
-$lang['ZphpBB2_Refresh_Profile'] = 'Refresh Your Zikula Profile';
-$lang['ZphpBB2_Profile_Info'] = 'This information is used in ZphpBB2 only. All profile information that is shared between Zikula and ZphpBB2 is set in the Zikula Profile Settings.';
-$lang['ZphpBB2_Get_PN_Avatar'] = 'From Zikula';
+$lang['ZphpBB2_Change_Profile'] = 'Change site profile';
+$lang['ZphpBB2_Refresh_Profile'] = 'Refresh from site profile';
+$lang['ZphpBB2_Profile_Info'] = 'This information is used in the forum only. All profile information that is shared between main site and forum is set in the site Profile Settings.';
+$lang['ZphpBB2_Get_PN_Avatar'] = 'From main site';
 
 // Advanced Quick Reply Mod
 $lang['Post_Image'] = "Msg Icon";
@@ -169,8 +169,6 @@ $lang['Jump_Page'] = 'Enter the page number you wish to goto';
 // Replace existing phpBB language entries
 $lang['Search_new'] = 'View unread posts';
 
-// Gravatrs
-$lang['Use_gravatar'] = "Use your <a href=\"http://www.gravatar.com\">Gravatar</a>";
 //
 // That's all Folks!
 // -------------------------------------------------

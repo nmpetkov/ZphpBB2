@@ -49,7 +49,8 @@ function generate_user_info(&$row, $date_format, $group_mod, &$from, &$posts, &$
 //				$poster_avatar = ( $board_config['allow_avatar_local'] ) ? '<img src="' . $board_config['avatar_gallery_path'] . '/' . $row['user_avatar'] . '" alt="" border="0" />' : '';
 	 			if (!preg_match('/\//', $row['user_avatar']))
 				{
-					 $poster_avatar = ( $board_config['allow_avatar_local'] ) ? '<img src="' .$phpbb_root_path. 'images/avatar/' . $row['user_avatar'] . '" alt="" border="0" />' : '';
+                     // ZphpBB2 - removed prefix $phpbb_root_path, now default is site root
+					 $poster_avatar = ( $board_config['allow_avatar_local'] ) ? '<img src="' . 'images/avatar/' . $row['user_avatar'] . '" alt="" border="0" />' : '';
 				}
 				else
 				{

@@ -282,6 +282,29 @@ $lang['Rank_image'] = 'Rank Image';
 $lang['Rank_image_explain'] = 'Use this to define a small image associated with the rank.';
 $lang['Rank_image_explain'] .= '<br/>This is relative to ZphpBB2 root path if you include a path relative to the where the images are located.<br/>(NOTE: If only the image is specified (image.gif), then an attempt will be made to use the image based on the template name, Postnuke theme, and language.)'; 
 
+$lang['PNphpBB_Version'] = 'PNphpBB Version';
+$lang['phpBB_Version'] = 'phpBB Version';
+$lang['PNphpBB_Config'] = 'PNphpBB Config';
+$lang['Utility'] = 'Utilities';
+
+// limited post edit time MOD 
+$lang['edit_time'] = 'Post Edit time'; 
+$lang['edit_time_explain'] = 'The time (in minutes) the user has to edit his/her post. Setting this value to 0, the time is unlimited.'; 
+
+// Enable-Disable theme matching functions
+$lang['theme_matching'] = "Enable Theme Matching";
+$lang['theme_matching_explain'] = "Enable or disable the use of the theme matching feature. Theme matching will attempt to create a style sheet and a set of cell pics for the current theme if a set is not already available. <br><b>Note:</b> With theme matching disabled the forum will uses default.css and cellpics found in the root of the cellpics directory.";
+
+// Exclude forum from global announcments
+$lang['Exclude_global_announce'] = 'Exclude this forum from global announcments';
+$lang['Exclude_global_announce_explain'] = 'If this option is selected this forum will be excluded from listing its announcments on the index.';
+
+// Support forum
+$lang['Support_forum'] = 'This is a support forum';
+$lang['Support_forum_explain'] = 'If this forum will be sued as a support forum, you can choose this option to display a list of user defined status flags on the topic level to indicate the status of the service request. This item can be updated by the administrator or moderator of the forum.';
+
+// Gravatars
+$lang['Allow_gravatars'] = "Allow <a href=\"http://www.gravtar.com\">Gravatars</a>";
 //
 // That's all Folks!
 // -------------------------------------------------

@@ -297,9 +297,9 @@ $lang['Max_filesize_explain'] = 'For uploaded avatar files';
 $lang['Max_avatar_size'] = 'Maximum Avatar Dimensions';
 $lang['Max_avatar_size_explain'] = '(Height x Width in pixels)';
 $lang['Avatar_storage_path'] = 'Avatar Storage Path';
-$lang['Avatar_storage_path_explain'] = 'Path under your phpBB root dir, e.g. images/avatar';
+$lang['Avatar_storage_path_explain'] = 'Path under your site root dir, e.g. images/avatar'; // ZphpBB2 - change to site root
 $lang['Avatar_gallery_path'] = 'Avatar Gallery Path';
-$lang['Avatar_gallery_path_explain'] = 'Path under your phpBB root dir for pre-loaded images, e.g. images/avatar/gallery';
+$lang['Avatar_gallery_path_explain'] = 'Path under your site root dir for pre-loaded images, e.g. images/avatar/gallery'; // ZphpBB2 - change to site root
 
 $lang['COPPA_settings'] = 'COPPA Settings';
 $lang['COPPA_fax'] = 'COPPA Fax Number';

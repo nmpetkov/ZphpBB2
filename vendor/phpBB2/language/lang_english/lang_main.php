@@ -585,7 +585,7 @@ $lang['Link_remote_Avatar_explain'] = 'Enter the URL of the location containing 
 $lang['Avatar_URL'] = 'URL of Avatar Image';
 $lang['Select_from_gallery'] = 'Select Avatar from gallery';
 $lang['View_avatar_gallery'] = 'Show gallery';
-$lang['Use_Gravatar'] = 'Enable Gravatar';
+$lang['Use_Gravatar'] = "Use your <a href=\"http://www.gravatar.com\">Gravatar</a>";
 
 $lang['Select_avatar'] = 'Select avatar';
 $lang['Return_profile'] = 'Cancel avatar';

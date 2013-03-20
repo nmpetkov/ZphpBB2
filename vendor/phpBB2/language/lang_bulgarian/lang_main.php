@@ -152,7 +152,7 @@ $lang['Search_new'] = 'Вижте само новите съобщения'; # V
 $lang['Search_your_posts'] = 'Вижте собствените съобщения'; # View your posts
 $lang['Search_unanswered'] = 'Вижте съобщенията без отговор'; # View unanswered posts
 
-$lang['Register'] = 'Регистрация'; # Register
+$lang['Register'] = 'Нов профил'; # Register
 $lang['Profile'] = 'Профил'; # Profile
 $lang['Edit_profile'] = 'Редактирай своя профил'; # Edit your profile
 $lang['Search'] = 'Търси'; # Search
@@ -579,17 +579,18 @@ $lang['password_confirm_if_changed'] = 'Трябва да потвърдите �
 
 $lang['Avatar'] = 'Аватар (образ)'; # Avatar
 $lang['Avatar_explain'] = 'Показва се малко изображение под вашите данни в съобщенията. Само едно изображение се показва, ширината му не може да надвишава %d пиксела, височината %d пиксела, размера на файла да не надвишава %d Kb.'; # Displays a small graphic image below your details in posts. Only one image can be displayed at a time, its width can be no greater than %d pixels, a height no greater than %d pixels and a file size no more than %dkB. $lang['Upload_Avatar_file'] = 'Upload Avatar from your machine';
-$lang['Upload_Avatar_file'] = 'Качете аватар (образ) от вашия компютър'; # Upload Avatar from your machine
-$lang['Upload_Avatar_URL'] = 'Качете аватар (образ) от зададен URL'; # Upload Avatar from a URL
+$lang['Upload_Avatar_file'] = 'Качете аватар (изображение) от вашия компютър'; # Upload Avatar from your machine
+$lang['Upload_Avatar_URL'] = 'Качете аватар (изображение) от зададен URL'; # Upload Avatar from a URL
 $lang['Upload_Avatar_URL_explain'] = 'Въведете адреса на аватара (образа), от където той ще бъде копиран тук.'; # Enter the URL of the location containing the Avatar image, it will be copied to this site.
-$lang['Pick_local_Avatar'] = 'Изберете аватар (образ) от галерията'; # Select Avatar from the gallery
-$lang['Link_remote_Avatar'] = 'Динамичен аватар (образ)'; # Link to off-site Avatar
+$lang['Pick_local_Avatar'] = 'Изберете аватар от галерията'; # Select Avatar from the gallery
+$lang['Link_remote_Avatar'] = 'Динамичен аватар'; # Link to off-site Avatar
 $lang['Link_remote_Avatar_explain'] = 'Въведете URL, от където образа ще се зарежда директно.'; # Enter the URL of the location containing the Avatar image you wish to link to.
-$lang['Avatar_URL'] = 'Адрес на аватара (образа)'; # URL of Avatar Image
-$lang['Select_from_gallery'] = 'Изберете аватар (образ) от галерията'; # Select Avatar from gallery
+$lang['Avatar_URL'] = 'Адрес (url) на аватара'; # URL of Avatar Image
+$lang['Select_from_gallery'] = 'Изберете аватар от галерията'; # Select Avatar from gallery
 $lang['View_avatar_gallery'] = 'Вижте галерията'; # Show gallery
+$lang['Use_Gravatar'] = "Използвай своя граватар: <a href=\"http://www.gravatar.com\">Gravatar</a>";
 
-$lang['Select_avatar'] = 'Изберете аватар (образ)'; # Select avatar
+$lang['Select_avatar'] = 'Изберете аватар (изображение)'; # Select avatar
 $lang['Return_profile'] = 'Върнете се обратно'; # Cancel avatar
 $lang['Select_category'] = 'Изберете категория'; # Select category
 

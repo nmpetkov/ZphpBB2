@@ -267,8 +267,8 @@ if (!$subforum)
 {
  	 SessionUtil::setVar('subforum', $board_config['pnphpbb2_sub_forum']);
 }
-$board_config['avatar_gallery_path']= $phpbb_root_path. $board_config['avatar_gallery_path'];
-$board_config['avatar_path']= $phpbb_root_path. $board_config['avatar_path'];
+$board_config['avatar_gallery_path']= $board_config['avatar_gallery_path']; // ZphpBB2 - path is from site root now, removed prefix $phpbb_root_path
+$board_config['avatar_path']= $board_config['avatar_path']; // ZphpBB2 - path is from site root now, removed prefix $phpbb_root_path
 
 /* -- mod : File Attachment Mod v2 Version 2.4.3 ---------------------------------------------------- */
 include($phpbb_root_path . 'attach_mod/attachment_mod.'.$phpEx);

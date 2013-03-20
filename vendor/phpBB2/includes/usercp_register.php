@@ -253,7 +253,7 @@ if (
 		{
 // Begin PNphpBB2 Module
 //			$user_avatar = $user_avatar_category . '/' . $user_avatar_local;
-			if ($user_avatar_category == "PostNuke")
+			if ($user_avatar_category == 'Main_site')
 			{
 				$user_avatar = $user_avatar_local;
 			}
@@ -284,7 +284,7 @@ if ($mode == 'register' && ($userdata['session_logged_in'] || $username == $user
 // Begin PNphpBB2 Module
 if (isset($_POST['changeprofile']))
 {
-	// Postnuke change user info
+	// Zikula change user info
 	System::redirect(ModUtil::url(System::getVar('profilemodule', ''), 'user', 'modify'));
 }
 
@@ -292,51 +292,25 @@ if (isset($_POST['refreshprofile']))
 {
 	$user_id = intval($_POST['user_id']);
 
-	// Does the user have admin rights?
-	$admin_rights = SecurityUtil::checkPermission('ZphpBB2::', '::', ACCESS_ADMIN) ? 1 : 0;
-
-	// Update user rights
-	$admin_rights = $admin_rights == 0 && $userdata['user_level'] <> 0 ? $admin_rights = $userdata['user_level'] : $admin_rights;
-
-	// Postnuke refresh profile
-	$user_site_url = (UserUtil::getVar('url')) ? "http://" . preg_replace ("'http://'i", '',  UserUtil::getVar('url')) : '';
-	//	$user_avatar = (UserUtil::getVar('pn_user_avatar') != "blank.gif") ? "user_avatar = '" . DataUtil::formatForStore(UserUtil::getVar('pn_user_avatar')) . "', user_avatar_type = 3, " : '';
-	$user_avatar = '';
-
-	// Obtain PN user password
-	$sql = "SELECT pass FROM users WHERE uid='" . $user_id . "'";
-	if ( !($result = $db->sql_query($sql)) )
-	{
-		message_die(CRITICAL_ERROR, 'Could not obtain PN user table', '', __LINE__, __FILE__, $sql);
-	}
- 	list($pn_user_pass) = $db->sql_fetchrow($result);
-
-	// Update the user record
- 	$sql = "UPDATE " . USERS_TABLE . " SET " . $user_avatar . "username = '" . DataUtil::formatForStore(UserUtil::getVar('uname')) . "' ,user_password = '" . $pn_user_pass . "', user_email =  '" . DataUtil::formatForStore(UserUtil::getVar('email')) . "', user_icq = '" . DataUtil::formatForStore(UserUtil::getVar('user_icq')) . "', user_website = '" . DataUtil::formatForStore($user_site_url) . "', user_occ = '" . DataUtil::formatForStore(UserUtil::getVar('user_occ')) . "', user_from = '" . DataUtil::formatForStore(UserUtil::getVar('user_from')) . "', user_interests = '" . DataUtil::formatForStore(UserUtil::getVar('user_intrest')) . "', user_aim = '" . DataUtil::formatForStore(UserUtil::getVar('user_aim')) . "', user_yim = '" . DataUtil::formatForStore(UserUtil::getVar('user_yim')) . "', user_msnm = '" . DataUtil::formatForStore(UserUtil::getVar('user_msnm')) . "', user_timezone = " . (UserUtil::getVar('timezone_offset') - 12) . ", user_level = " . $admin_rights . " WHERE user_id = $user_id";
-
-	if ( !($result = $db->sql_query($sql)) )
-	{
-		message_die(CRITICAL_ERROR, 'Could not update users table', '', __LINE__, __FILE__, $sql);
-	}
-		
-	$message = $lang['Profile_updated'] . '<br /><br />' . sprintf($lang['Click_return_index'],  '<a href="' . append_sid("index") . '">', '</a>');
-
-	$template->assign_vars(array(
-			"META" => '<meta http-equiv="refresh" content="5;url=' . append_sid("profile&mode=editprofile") . '">')
-	);
-
-	message_die(GENERAL_MESSAGE, $message);
+    // ZphpBB2 => Main user synchronization
+    if (ZphpBB2_Util::phpBBupdateAccountById($user_id)) {
+        $message = $lang['Profile_updated'] . '<br /><br />' . sprintf($lang['Click_return_index'],  '<a href="' . append_sid("index") . '">', '</a>');
+        $template->assign_vars(array("META" => '<meta http-equiv="refresh" content="5;url=' . append_sid("profile&mode=editprofile") . '">'));
+        message_die(GENERAL_MESSAGE, $message);
+    }
+    // <= ZphpBB2
 }
 
 if (isset($_POST['getpnavatar']))
 {
 	$user_id = intval($_POST['user_id']);
 
-	// Get Postnuke Avatar
-	$user_avatar = (UserUtil::getVar('pn_user_avatar') != "blank.gif") ? "user_avatar = '" . DataUtil::formatForStore(UserUtil::getVar('pn_user_avatar')) . "', user_avatar_type = 3" : '';
- 	if ($user_avatar)
+	// Get Zikula Avatar
+    // ZphpBB2 =>
+    $userZkAttrib = UserUtil::getVar('__ATTRIBUTES__');
+ 	if ($userZkAttrib['avatar'] != "blank.gif")
 	{
-		$sql = "UPDATE " . USERS_TABLE . " SET " . $user_avatar . " WHERE user_id = $user_id";
+		$sql = "UPDATE " . USERS_TABLE . " SET user_avatar = '" . DataUtil::formatForStore($userZkAttrib['avatar']) . "', user_avatar_type = 3 WHERE user_id = ".$user_id;
 
 		if ( !($result = $db->sql_query($sql)) )
 		{
@@ -344,7 +318,8 @@ if (isset($_POST['getpnavatar']))
 		}
 
 		redirect (append_sid("profile&mode=editprofile", true));
-	}		
+	}
+    // <= ZphpBB2
 }
 // End PNphpBB2 Module
 	
@@ -1035,7 +1010,8 @@ else
 //				$avatar_img = ( $board_config['allow_avatar_local'] ) ? '<img src="' . $board_config['avatar_gallery_path'] . '/' . $user_avatar . '" alt="" />' : '';
 				if (!preg_match('/\//', $user_avatar))
 				{
-					$avatar_img = ( $board_config['allow_avatar_local'] ) ? '<img src="' .$phpbb_root_path. 'images/avatar/' . $user_avatar . '" alt="" />' : '';
+                    // ZphpBB2 - removed prefix $phpbb_root_path, now default is site root
+					$avatar_img = ( $board_config['allow_avatar_local'] ) ? '<img src="' . 'images/avatar/' . $user_avatar . '" alt="" />' : '';
 				}
 				else
 				{
@@ -1302,7 +1278,7 @@ else
 		'P_CHANGE_PROFILE' => $lang['ZphpBB2_Change_Profile'],
 		'P_REFRESH_PROFILE' => $lang['ZphpBB2_Refresh_Profile'],
 		'P_PROFILE_INFO' => $lang['ZphpBB2_Profile_Info'],
-		'P_AVATAR_RETRIEVE' => ($lang['ZphpBB2_Get_PN_Avatar']) ? $lang['ZphpBB2_Get_PN_Avatar'] : "PostNuke",
+		'P_AVATAR_RETRIEVE' => ($lang['ZphpBB2_Get_PN_Avatar']) ? $lang['ZphpBB2_Get_PN_Avatar'] : "Zikula",
 /* End PNphpBB2 Module */		
 		'S_PROFILE_ACTION' => append_sid("profile.$phpEx"))
 	);

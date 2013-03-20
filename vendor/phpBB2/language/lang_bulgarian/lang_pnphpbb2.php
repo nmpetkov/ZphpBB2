@@ -31,8 +31,8 @@
 
 // Profiles/Registration
 $lang['ZphpBB2_Change_Profile'] = 'Промени профила си в сайта'; # Change Your PostNuke Profile
-$lang['ZphpBB2_Refresh_Profile'] = 'Опресни профила си в сайта'; # Refresh Your PostNuke Profile
-$lang['ZphpBB2_Profile_Info'] = 'Тази информация се използва само във форума. Общите данни за форума  и другите секции на сайта се настройват от "Моят профил" в менюто на сайта.'; # This information is used in ZphpBB2 only. All profile information that is shared between PostNuke and ZphpBB2 is set in the PostNuke Profile Settings.
+$lang['ZphpBB2_Refresh_Profile'] = 'Опресни профила си от сайта'; # Refresh Your PostNuke Profile
+$lang['ZphpBB2_Profile_Info'] = 'Тази информация се използва само във форума. Общите данни за форума  и другите секции на сайта се настройват от "Моят профил" в менюто на сайта.';
 $lang['ZphpBB2_Get_PN_Avatar'] = 'От сайта'; # From PostNuke
 
 // Advanced Quick Reply Mod
@@ -133,6 +133,45 @@ $lang['Merge_topic_done'] = 'Темите са обединени успешно
 //limited post edit time MOD 
 $lang['edit_time_past'] = 'Не може да редактирате своето съобщение. Бихте могли да го редактирате в рамките на <b>%d</b> минути след като сте го изпратили.'; # You are not allowed to edit your post. You have to edit your post within <b>%d</b> minutes, after you posted your message.
 
+
+// Support status items
+$lang['Support_topic'] = 'Support Topic';
+$lang['support_status'][-1] = 'Select status';
+$lang['support_status'][0] = 'Submitted';
+$lang['support_status'][1] = 'Reported';
+$lang['support_status'][2] = 'Confirmed';
+$lang['support_status'][3] = 'Assigned';
+$lang['support_status'][4] = 'Fixed';
+$lang['support_status'][5] = 'Solved';
+$lang['support_status'][6] = 'User Error';
+$lang['support_status'][7] = 'More Input Needed';
+$lang['support_status'][8] = 'Already Reported';
+$lang['support_status'][9] = 'Abandoned';
+$lang['support_status'][10] = 'Answered';
+$lang['support_status'][11] = 'Completed';
+
+$lang['support_color'][1] = 'blue';
+$lang['support_color'][2] = 'red';
+$lang['support_color'][3] = 'magenta';
+$lang['support_color'][4] = 'green';
+$lang['support_color'][5] = 'purple';
+$lang['support_color'][6] = 'brown';
+$lang['support_color'][7] = 'orange';
+$lang['support_color'][8] = 'gray';
+$lang['support_color'][9] = 'black';
+$lang['support_color'][10] = 'green';
+$lang['support_color'][11] = 'green';
+
+// Pagination
+$lang['Navigation'] = 'Навигация';
+$lang['First_Post'] = 'Първи постинг';
+$lang['Jump_Page'] = 'Страница на която искате да отидете';
+
+// Replace existing phpBB language entries
+$lang['Search_new'] = 'Виж непрочетените постинги';
+
 //
 // That's all Folks!
 // -------------------------------------------------
+
+?>

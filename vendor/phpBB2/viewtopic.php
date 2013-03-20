@@ -1073,7 +1073,8 @@ for($i = 0; $i < $total_posts; $i++)
 //				$poster_avatar = ( $board_config['allow_avatar_local'] ) ? '<img src="' . $board_config['avatar_gallery_path'] . '/' . $postrow[$i]['user_avatar'] . '" alt="" border="0" />' : '';
 				if (!preg_match('/\//', $postrow[$i]['user_avatar']))
 				{
-					$poster_avatar = ( $board_config['allow_avatar_local'] ) ? '<img src="' .$phpbb_root_path. 'images/avatar/' . $postrow[$i]['user_avatar'] . '" alt="" border="0" />' : '';
+                    // ZphpBB2 - removed prefix $phpbb_root_path, now default is site root
+					$poster_avatar = ( $board_config['allow_avatar_local'] ) ? '<img src="' . 'images/avatar/' . $postrow[$i]['user_avatar'] . '" alt="" border="0" />' : '';
 				}
 				else
 				{

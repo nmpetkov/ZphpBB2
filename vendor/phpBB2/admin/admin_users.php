@@ -718,15 +718,16 @@ if ( $mode == 'edit' || $mode == 'save' && ( isset($_POST['username']) || isset(
 				$user_avatar_remoteurl = "http://" . $user_avatar_remoteurl;
 			}
 
-			if( preg_match("#^(http:\/\/[a-z0-9\-]+?\.([a-z0-9\-]+\.)*[a-z]+\/.*?\.(gif|jpg|png)$)#is", $user_avatar_remoteurl) )
-			{
+            // ZphpBB2 - nowaday this check is not valid, so comment it
+			//if( preg_match("#^(http:\/\/[a-z0-9\-]+?\.([a-z0-9\-]+\.)*[a-z]+\/.*?\.(gif|jpg|png)$)#is", $user_avatar_remoteurl) )
+			//{
 				$avatar_sql = ", user_avatar = '" . str_replace("\'", "''", $user_avatar_remoteurl) . "', user_avatar_type = " . USER_AVATAR_REMOTE;
-			}
-			else
-			{
-				$error = true;
-				$error_msg = ( !empty($error_msg) ) ? $error_msg . "<br />" . $lang['Wrong_remote_avatar_format'] : $lang['Wrong_remote_avatar_format'];
-			}
+			//}
+			//else
+			//{
+			//	$error = true;
+			//	$error_msg = ( !empty($error_msg) ) ? $error_msg . "<br />" . $lang['Wrong_remote_avatar_format'] : $lang['Wrong_remote_avatar_format'];
+			//}
 		}
 		else if( $user_avatar_local != "" && $avatar_sql == "" && !$error )
 		{
@@ -960,8 +961,9 @@ if ( $mode == 'edit' || $mode == 'save' && ( isset($_POST['username']) || isset(
 
 // Begin PNphpBB2 Module (PostNuke Avatars)
 	
-	 		$file = "PostNuke";
-			$sub_dir = @opendir('./images/avatar');
+	 		$file = 'Main_site';
+            // ZphpBB2 - removed prefix ./, now default is site root
+			$sub_dir = @opendir('images/avatar');
 
 			$avatar_row_count = 0;
 			$avatar_col_count = 0;
@@ -969,8 +971,8 @@ if ( $mode == 'edit' || $mode == 'save' && ( isset($_POST['username']) || isset(
 			{
 			 	if( preg_match('/(\.gif$|\.png$|\.jpg|\.jpeg)$/is', $sub_file) && !preg_match('/blank./is',$sub_file))
 				{
-				 	$avatar_images['PostNuke'][$avatar_row_count][$avatar_col_count] = $sub_file; 
-					$avatar_name['PostNuke'][$avatar_row_count][$avatar_col_count] = ucfirst(str_replace("_", " ", preg_replace('/^(.*)\..*$/', '\1', $sub_file)));
+				 	$avatar_images['Main_site'][$avatar_row_count][$avatar_col_count] = $sub_file; 
+					$avatar_name['Main_site'][$avatar_row_count][$avatar_col_count] = ucfirst(str_replace("_", " ", preg_replace('/^(.*)\..*$/', '\1', $sub_file)));
 
 					$avatar_col_count++;
 					if( $avatar_col_count == 5 )
@@ -1015,9 +1017,10 @@ if ( $mode == 'edit' || $mode == 'save' && ( isset($_POST['username']) || isset(
 // Begin PNphpBB2 Module (PostNuke avatar patch)
 //					$template->assign_block_vars("avatar_row.avatar_column", array(
 //						"AVATAR_IMAGE" => "../" . $board_config['avatar_gallery_path'] . '/' . $category . '/' . $avatar_images[$category][$i][$j])
-		 		 	if ($category == 'PostNuke')
+		 		 	if ($category == 'Main_site')
 					{
-			 	 	 	 $avatar_path = './images/avatar';
+                         // ZphpBB2 - removed prefix ./, now default is site root
+			 	 	 	 $avatar_path = 'images/avatar';
 					}
 					else
 					{
@@ -1120,7 +1123,8 @@ if ( $mode == 'edit' || $mode == 'save' && ( isset($_POST['username']) || isset(
 //					$avatar = '<img src="../' . $board_config['avatar_gallery_path'] . '/' . $user_avatar . '" alt="" />';
 	 			 	if (!preg_match('/\//', $user_avatar))
 					{
-						$avatar = '<img src="./images/avatar/' . $user_avatar . '" alt="" />';
+                        // ZphpBB2 - removed prefix ./, now default is site root
+						$avatar = '<img src="images/avatar/' . $user_avatar . '" alt="" />';
 					}
 					else
 					{

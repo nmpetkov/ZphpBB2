@@ -92,9 +92,10 @@ function user_avatar_gallery($mode, &$error, &$error_msg, $avatar_filename, $ava
 	}
 */
 // Is the returned avatar path a PostNuke avatar?
-	if ($avatar_category == "PostNuke")
+	if ($avatar_category == 'Main_site')
 	{
-		if ( file_exists(@phpbb_realpath($phpbb_root_path.'images/avatar/' . $avatar_filename)) && ($mode == 'editprofile') )
+        // ZphpBB2 - removed prefix $phpbb_root_path, now default is site root
+		if ( file_exists(@phpbb_realpath('images/avatar/' . $avatar_filename)) && ($mode == 'editprofile') )
 		{
 			$return = ", user_avatar = '" . str_replace("\'", "''", $avatar_filename) . "', user_avatar_type = " . USER_AVATAR_GALLERY;
 		}
@@ -129,12 +130,13 @@ function user_avatar_url($mode, &$error, &$error_msg, $avatar_filename)
 
 	$avatar_filename = substr($avatar_filename, 0, 100);
 
-	if ( !preg_match("#^((ht|f)tp://)([^ \?&=\#\"\n\r\t<]*?(\.(jpg|jpeg|gif|png))$)#is", $avatar_filename) )
-	{
-		$error = true;
-		$error_msg = ( !empty($error_msg) ) ? $error_msg . '<br />' . $lang['Wrong_remote_avatar_format'] : $lang['Wrong_remote_avatar_format'];
-		return;
-	}
+    // ZphpBB2 - nowaday this check is not valid, so comment it
+	//if ( !preg_match("#^((ht|f)tp://)([^ \?&=\#\"\n\r\t<]*?(\.(jpg|jpeg|gif|png))$)#is", $avatar_filename) )
+	//{
+	//	$error = true;
+	//	$error_msg = ( !empty($error_msg) ) ? $error_msg . '<br />' . $lang['Wrong_remote_avatar_format'] : $lang['Wrong_remote_avatar_format'];
+	//	return;
+	//}
 
 	return ( $mode == 'editprofile' ) ? ", user_avatar = '" . str_replace("\'", "''", $avatar_filename) . "', user_avatar_type = " . USER_AVATAR_REMOTE : '';
 
@@ -392,7 +394,7 @@ function display_avatar_gallery($mode, &$category, &$user_id, &$email, &$current
 	@closedir($dir);
 // Begin PNphpBB2 Module (PostNuke Avatars)
 	
-	$file = "PostNuke";
+	$file = 'Main_site';
 	$sub_dir = @opendir('./images/avatar');
 
 	$avatar_row_count = 0;
@@ -401,8 +403,8 @@ function display_avatar_gallery($mode, &$category, &$user_id, &$email, &$current
 	{
 		if( preg_match('/(\.gif$|\.png$|\.jpg|\.jpeg)$/is', $sub_file) && !preg_match('/blank./is',$sub_file))
 		{
-			$avatar_images['PostNuke'][$avatar_row_count][$avatar_col_count] = $sub_file; 
-			$avatar_name['PostNuke'][$avatar_row_count][$avatar_col_count] = ucfirst(str_replace("_", " ", preg_replace('/^(.*)\..*$/', '\1', $sub_file)));
+			$avatar_images['Main_site'][$avatar_row_count][$avatar_col_count] = $sub_file; 
+			$avatar_name['Main_site'][$avatar_row_count][$avatar_col_count] = ucfirst(str_replace("_", " ", preg_replace('/^(.*)\..*$/', '\1', $sub_file)));
 
 			$avatar_col_count++;
 			if( $avatar_col_count == 5 )
@@ -450,9 +452,10 @@ function display_avatar_gallery($mode, &$category, &$user_id, &$email, &$current
 				"AVATAR_NAME" => $avatar_name[$category][$i][$j])
 			);
 */
-		 	if ($category == 'PostNuke')
+		 	if ($category == 'Main_site')
 			{
-			 	 $avatar_path = $phpbb_root_path.'images/avatar/';
+                // ZphpBB2 - removed prefix $phpbb_root_path, now default is site root
+			 	$avatar_path = 'images/avatar/';
 			}
 			else
 			{

@@ -74,7 +74,7 @@ $lang['Topics_per_day'] = 'Теми на ден'; # Topics per day
 $lang['Number_users'] = 'Брой потребители'; # Number of users
 $lang['Users_per_day'] = 'Потребители на ден'; # Users per day
 $lang['Board_started'] = 'Старт на борда'; # Board started
-$lang['Avatar_dir_size'] = 'Размер на папката с аватари (образи)'; # Avatar directory size
+$lang['Avatar_dir_size'] = 'Размер на папката с аватари'; # Avatar directory size
 $lang['Database_size'] = 'Размер на базата данни'; # Database size
 $lang['Gzip_compression'] = 'Gzip компресия'; # Gzip compression
 $lang['Not_available'] = 'Няма данни'; # Not available
@@ -282,18 +282,19 @@ $lang['Max_sig_length_explain'] = 'Максимален брой на симво
 $lang['Allow_name_change'] = 'Разрешени смени на потребителско име'; # Allow Username changes
 
 $lang['Avatar_settings'] = 'Аватари (образи) - настройки'; # Avatar Settings
-$lang['Allow_local'] = 'Разрешена галерията с образи'; # Enable gallery avatars
-$lang['Allow_remote'] = 'Разрешени външни аватари (образи)'; # Enable remote avatars
-$lang['Allow_remote_explain'] = 'Образи, качени на друг сайт и поставени тук с връзка'; # Avatars linked to from another website
-$lang['Allow_upload'] = 'Разрешено качването на образи'; # Enable avatar uploading
-$lang['Max_filesize'] = 'Максимален размер на файла с образа'; # Maximum Avatar File Size
-$lang['Max_filesize_explain'] = 'Отнася се за качените файлове с образи'; # For uploaded avatar files
+$lang['Allow_gravatars'] = 'Разрешени граватари (глобални аватари)';
+$lang['Allow_local'] = 'Разрешена галерията с аватари'; # Enable gallery avatars
+$lang['Allow_remote'] = 'Разрешени външни аватари'; # Enable remote avatars
+$lang['Allow_remote_explain'] = 'Изображения качени на друг сайт и поставени тук с връзка'; # Avatars linked to from another website
+$lang['Allow_upload'] = 'Разрешено качването на аватари'; # Enable avatar uploading
+$lang['Max_filesize'] = 'Максимален размер на аватар файла'; # Maximum Avatar File Size
+$lang['Max_filesize_explain'] = 'Отнася се за качените файлове с аватари'; # For uploaded avatar files
 $lang['Max_avatar_size'] = 'Максимален размер на файла'; # Maximum Avatar Dimensions
 $lang['Max_avatar_size_explain'] = '(Височина x Ширина в пиксели)'; # (Height x Width in pixels)
-$lang['Avatar_storage_path'] = 'Папка за съхранение на образите'; # Avatar Storage Path
-$lang['Avatar_storage_path_explain'] = 'Път, спрямо основната папка на phpBB, напр. images/avatar'; # Path under your phpBB root dir, e.g. images/avatar
-$lang['Avatar_gallery_path'] = 'Папка за галерията с образи'; # Avatar Gallery Path
-$lang['Avatar_gallery_path_explain'] = 'Път, спрямо основната папка на phpBB, към папка с изображения за галерията с образи'; # Path under your phpBB root dir for pre-loaded images, e.g. images/avatar/gallery
+$lang['Avatar_storage_path'] = 'Папка за съхранение на аватарите'; # Avatar Storage Path
+$lang['Avatar_storage_path_explain'] = 'Път, спрямо основната папка на сайта, напр. images/avatar'; # Path under your phpBB root dir, e.g. images/avatar
+$lang['Avatar_gallery_path'] = 'Папка за галерията с аватари'; # Avatar Gallery Path
+$lang['Avatar_gallery_path_explain'] = 'Път, спрямо основната папка на сайта, към папка с изображения за галерията с аватари'; # Path under your phpBB root dir for pre-loaded images, e.g. images/avatar/gallery
 
 $lang['COPPA_settings'] = 'Настройки на COPPA'; # COPPA Settings
 $lang['COPPA_fax'] = 'COPPA Факс номер'; # COPPA Fax Number
@@ -434,7 +435,7 @@ $lang['User_status'] = 'Потребителя е активен'; # User is act
 $lang['User_allowpm'] = 'Може да праща лични съобщения'; # Can send Private Messages
 $lang['User_allowavatar'] = 'Може да показва аватар (образ)'; # Can display avatar
 
-$lang['Admin_avatar_explain'] = 'Тук можете да видите и изтриете аватара (образа) на потребителя.'; # Here you can see and delete the user\'s current avatar.
+$lang['Admin_avatar_explain'] = 'Тук можете да видите и изтриете аватара на потребителя.'; # Here you can see and delete the user\'s current avatar.
 
 $lang['User_special'] = 'Специални полета, досъпни само на администратора'; # Special admin-only fields
 $lang['User_special_explain'] = 'Тези полета не могат да бъдат променяни от потребителите. Тук можете да настроите някой достъпни само за администраторите опции.'; # These fields are not able to be modified by the users.  Here you can set their status and other options that are not given to users.

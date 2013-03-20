@@ -115,7 +115,8 @@ if ( $profiledata['user_avatar_type'] && $profiledata['user_allowavatar'] )
 // Begin PNphpBB2 Module (PostNuke avatar patch)
 			if (!preg_match('/\//', $profiledata['user_avatar']))
 			{
-				$avatar_img = ( $board_config['allow_avatar_local'] ) ? '<img src="./images/avatar/' . $profiledata['user_avatar'] . '" alt="" border="0" />' : '';
+                // ZphpBB2 - removed prefix ./, now default is site root
+				$avatar_img = ( $board_config['allow_avatar_local'] ) ? '<img src="images/avatar/' . $profiledata['user_avatar'] . '" alt="" border="0" />' : '';
 			}
 			else
 			{
