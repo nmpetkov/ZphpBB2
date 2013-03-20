@@ -14,7 +14,7 @@ class ZphpBB2_Version extends Zikula_AbstractVersion
         $meta['oldnames']       = array('PNphpBB2');
         $meta['url']            = 'forum';
         $meta['description']    = $this->__('Zikula Forum based on phpBB2');
-        $meta['version']        = '2.1.0';
+        $meta['version']        = '2.1.1';
         $meta['capabilities']   = array(HookUtil::SUBSCRIBER_CAPABLE => array('enabled' => true));
         $meta['securityschema'] = array('ZphpBB2::' => '::');
         $meta['core_min']       = '1.3.0';

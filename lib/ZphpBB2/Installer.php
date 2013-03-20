@@ -252,6 +252,11 @@ class ZphpBB2_Installer extends Zikula_AbstractInstaller
         // Register hooks
         HookUtil::registerSubscriberBundles($this->version->getHookSubscriberBundles());
 
+        // Register event handlers
+        EventUtil::registerPersistentModuleHandler('ZphpBB2', 'user.account.create', array('ZphpBB2_Listener_UsersSynch', 'createAccountListener'));
+        EventUtil::registerPersistentModuleHandler('ZphpBB2', 'user.account.update', array('ZphpBB2_Listener_UsersSynch', 'updateAccountListener'));
+        EventUtil::registerPersistentModuleHandler('ZphpBB2', 'user.account.delete', array('ZphpBB2_Listener_UsersSynch', 'deleteAccountListener'));
+
         return true;
     }
     
@@ -304,6 +309,12 @@ class ZphpBB2_Installer extends Zikula_AbstractInstaller
                 HookUtil::registerSubscriberBundles($this->version->getHookSubscriberBundles());
 
             case '2.1.0':
+                // Register event handlers
+                EventUtil::registerPersistentModuleHandler('ZphpBB2', 'user.account.create', array('ZphpBB2_Listener_UsersSynch', 'createAccountListener'));
+                EventUtil::registerPersistentModuleHandler('ZphpBB2', 'user.account.update', array('ZphpBB2_Listener_UsersSynch', 'updateAccountListener'));
+                EventUtil::registerPersistentModuleHandler('ZphpBB2', 'user.account.delete', array('ZphpBB2_Listener_UsersSynch', 'deleteAccountListener'));
+
+        case '2.1.1':
 				// future upgrade routines
         }
         return true;
@@ -338,7 +349,12 @@ class ZphpBB2_Installer extends Zikula_AbstractInstaller
                 }
             }
         }
-        
+
+        // Unregister event handlers
+        EventUtil::unregisterPersistentModuleHandler('ZphpBB2', 'user.account.create', array('ZphpBB2_Listener_UsersSynch', 'createAccountListener'));
+        EventUtil::unregisterPersistentModuleHandler('ZphpBB2', 'user.account.update', array('ZphpBB2_Listener_UsersSynch', 'updateAccountListener'));
+        EventUtil::unregisterPersistentModuleHandler('ZphpBB2', 'user.account.delete', array('ZphpBB2_Listener_UsersSynch', 'deleteAccountListener'));
+
         return true;
     }
 }
