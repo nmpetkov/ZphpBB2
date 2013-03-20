@@ -25,6 +25,15 @@ UPGRADE FROM PNphpBB2
 5. Make changes to main index.php file of the web site. Unfortunately (for now) have to make manually changes to main index.php file of the site.
 Simply compare this two provided files and see necessary changes. If you retain PNphpBB2 module in URL, change fragment $module=='forum' in index.php to $module=='ZphpBB2'or $module=='PNphpBB2', or if you specify your own module URL, then change accordingly.
 
+UPGRADE GENERALS
+
+1. Avatars. Directory for avatars is now changed from "...forum directory.../images/avatar" to
+    "...Zikula root directory.../images/avatar"
+    Please manually move respective images/folders.
+    The presumption is to make installation directory clean from any uploads/runtime changes
+2 Please check avatars and file (attachments) directories - they have to be created at respective places.
+    Move there files if any.
+
 CUSTOMIZE
 
 1. If you like to use "Maximize" link on top forum links, you need to do this:
