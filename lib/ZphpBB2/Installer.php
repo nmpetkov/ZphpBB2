@@ -23,7 +23,8 @@ class ZphpBB2_Installer extends Zikula_AbstractInstaller
         $this->setVar('table_prefix', $table_prefix);
 
         // check for existing tables like phpbb*
-        $stmt = $connection->prepare("SHOW TABLES LIKE '" . $table_prefix . "%'");
+        // str_replace is because _ is wildcard character, as %
+        $stmt = $connection->prepare("SHOW TABLES LIKE '" . str_replace('_', '\_', $table_prefix) . "%'");
         $stmt->execute();
         $tablesexist = $stmt->fetchAll(Doctrine_Core::FETCH_NUM);
         if ($tablesexist) {
