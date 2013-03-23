@@ -332,7 +332,8 @@ class ZphpBB2_Installer extends Zikula_AbstractInstaller
         $tablenames = ZphpBB2_Util::getTableNames();
 
         $connection = Doctrine_Manager::getInstance()->getCurrentConnection();
-        $stmt = $connection->prepare("SHOW TABLES LIKE '%" . $table_prefix . "_%'");
+        // str_replace is because _ is wildcard character, as %
+        $stmt = $connection->prepare("SHOW TABLES LIKE '" . str_replace('_', '\_', $table_prefix) . "%'");
         try {
             $stmt->execute();
         } catch (Exception $e) {
