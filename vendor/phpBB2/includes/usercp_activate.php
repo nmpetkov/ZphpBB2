@@ -51,7 +51,10 @@ if ( $row = $db->sql_fetchrow($result) )
 		{
 			if (!$userdata['session_logged_in'])
 			{
-				redirect(append_sid('login.' . $phpEx . '?redirect=profile.' . $phpEx . '&mode=activate&' . POST_USERS_URL . '=' . $row['user_id'] . '&act_key=' . trim($_GET['act_key'])));
+                // ZphpBB2 - use Zikula login and redirect
+				//redirect(append_sid('login.' . $phpEx . '?redirect=profile.' . $phpEx . '&mode=activate&' . POST_USERS_URL . '=' . $row['user_id'] . '&act_key=' . trim($_GET['act_key'])));
+                System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode(System::getCurrentUri()))));
+                // <= ZphpBB2
 			}
 			else if ($userdata['user_level'] != ADMIN)
 			{

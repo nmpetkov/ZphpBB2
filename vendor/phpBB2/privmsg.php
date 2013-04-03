@@ -192,7 +192,10 @@ else if ( $mode == 'read' )
 
 	if ( !$userdata['session_logged_in'] )
 	{
-		redirect(append_sid("login.$phpEx?redirect=privmsg.$phpEx&folder=$folder&mode=$mode&" . POST_POST_URL . "=$privmsgs_id", true));
+        // ZphpBB2 - use Zikula login and redirect
+		//redirect(append_sid("login.$phpEx?redirect=privmsg.$phpEx&folder=$folder&mode=$mode&" . POST_POST_URL . "=$privmsgs_id", true));
+        System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode(System::getCurrentUri()))));
+        // <= ZphpBB2
 	}
 
 	//
@@ -679,7 +682,10 @@ else if ( ( $delete && $mark_list ) || $delete_all )
 {
 	if ( !$userdata['session_logged_in'] )
 	{
-		redirect(append_sid("login.$phpEx?redirect=privmsg.$phpEx&folder=inbox", true));
+        // ZphpBB2 - use Zikula login and redirect
+		//redirect(append_sid("login.$phpEx?redirect=privmsg.$phpEx&folder=inbox", true));
+        System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode(System::getCurrentUri()))));
+        // <= ZphpBB2
 	}
 
 	if ( isset($mark_list) && !is_array($mark_list) )
@@ -924,7 +930,10 @@ else if ( $save && $mark_list && $folder != 'savebox' && $folder != 'outbox' )
 {
 	if ( !$userdata['session_logged_in'] )
 	{
-		redirect(append_sid("login.$phpEx?redirect=privmsg.$phpEx&folder=inbox", true));
+        // ZphpBB2 - use Zikula login and redirect
+		//redirect(append_sid("login.$phpEx?redirect=privmsg.$phpEx&folder=inbox", true));
+        System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode(System::getCurrentUri()))));
+        // <= ZphpBB2
 	}
 	
 	if (sizeof($mark_list))
@@ -1111,7 +1120,10 @@ else if ( $submit || $refresh || $mode != '' )
 	if ( !$userdata['session_logged_in'] )
 	{
 		$user_id = ( isset($_GET[POST_USERS_URL]) ) ? '&' . POST_USERS_URL . '=' . intval($_GET[POST_USERS_URL]) : '';
-		redirect(append_sid("login.$phpEx?redirect=privmsg.$phpEx&folder=$folder&mode=$mode" . $user_id, true));
+        // ZphpBB2 - use Zikula login and redirect
+		//redirect(append_sid("login.$phpEx?redirect=privmsg.$phpEx&folder=$folder&mode=$mode" . $user_id, true));
+        System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode(System::getCurrentUri()))));
+        // <= ZphpBB2
 	}
 	
 	//
@@ -1921,7 +1933,10 @@ else if ( $submit || $refresh || $mode != '' )
 //
 if ( !$userdata['session_logged_in'] )
 {
-	redirect(append_sid("login.$phpEx?redirect=privmsg.$phpEx&folder=inbox", true));
+    // ZphpBB2 - use Zikula login and redirect
+	//redirect(append_sid("login.$phpEx?redirect=privmsg.$phpEx&folder=inbox", true));
+    System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode(System::getCurrentUri()))));
+    // <= ZphpBB2
 }
 
 //

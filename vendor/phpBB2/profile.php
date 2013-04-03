@@ -62,7 +62,10 @@ if (!$userdata['session_logged_in'])
 	{
 		$user_id = "";
 	}
-	redirect(append_sid("login.$phpEx?redirect=profile.$phpEx&mode=$mode" . $user_id, true));
+    // ZphpBB2 - use Zikula login and redirect
+	//redirect(append_sid("login.$phpEx?redirect=profile.$phpEx&mode=$mode" . $user_id, true));
+    System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode(System::getCurrentUri()))));
+    // <= ZphpBB2
 }
 // End PNphpBB2 Module
 
@@ -142,7 +145,10 @@ if ( isset($_GET['mode']) || isset($_POST['mode']) )
 	{
 		if ( !$userdata['session_logged_in'] )
 		{
-			redirect(append_sid("login.$phpEx?redirect=profile.$phpEx&mode=editprofile", true));
+            // ZphpBB2 - use Zikula login and redirect
+			//redirect(append_sid("login.$phpEx?redirect=profile.$phpEx&mode=editprofile", true));
+            System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode(System::getCurrentUri()))));
+            // <= ZphpBB2
 		}
 
 		include($phpbb_root_path . 'includes/usercp_register.'.$phpEx);

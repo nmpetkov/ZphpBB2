@@ -191,7 +191,10 @@ else if ( $search_keywords != '' || $search_author != '' || $search_id )
 				}
 				else
 				{
-					redirect(append_sid("login.$phpEx?redirect=search.$phpEx&search_id=newposts", true));
+                    // ZphpBB2 - use Zikula login and redirect
+					//redirect(append_sid("login.$phpEx?redirect=search.$phpEx&search_id=newposts", true));
+                    System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode(System::getCurrentUri()))));
+                    // <= ZphpBB2
 				}
 
 				$show_results = 'topics';
@@ -208,7 +211,10 @@ else if ( $search_keywords != '' || $search_author != '' || $search_id )
 				}
 				else
 				{
-					redirect(append_sid("login.$phpEx?redirect=search.$phpEx&search_id=egosearch", true));
+                    // ZphpBB2 - use Zikula login and redirect
+					//redirect(append_sid("login.$phpEx?redirect=search.$phpEx&search_id=egosearch", true));
+                    System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode(System::getCurrentUri()))));
+                    // <= ZphpBB2
 				}
 
 				$show_results = 'topics';

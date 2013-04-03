@@ -112,7 +112,10 @@ if ( !$is_auth['auth_read'] || !$is_auth['auth_view'] )
 	if ( !$userdata['session_logged_in'] )
 	{
 		$redirect = POST_FORUM_URL . "=$forum_id" . ( ( isset($start) ) ? "&start=$start" : '' );
-		redirect(append_sid("login.$phpEx?redirect=viewforum.$phpEx&$redirect", true));
+        // ZphpBB2 - use Zikula login and redirect
+		//redirect(append_sid("login.$phpEx?redirect=viewforum.$phpEx&$redirect", true));
+        System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode(System::getCurrentUri()))));
+        // <= ZphpBB2
 	}
 	//
 	// The user is not authed to read this forum ...

@@ -413,7 +413,10 @@ if ( !$is_auth[$is_auth_type] )
 			break;
 	}
 
-	redirect(append_sid("login.$phpEx?redirect=posting.$phpEx&" . $redirect, true));
+    // ZphpBB2 - use Zikula login and redirect
+	//redirect(append_sid("login.$phpEx?redirect=posting.$phpEx&" . $redirect, true));
+    System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode(System::getCurrentUri()))));
+    // <= ZphpBB2
 }
 
 //

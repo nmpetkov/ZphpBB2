@@ -148,7 +148,10 @@ init_userprefs($userdata);
 // Begin PNphpBB2 Module
 if (!$userdata['session_logged_in'])
 {
-	redirect(append_sid("login.$phpEx?redirect=groupcp.$phpEx", true));
+    // ZphpBB2 - use Zikula login and redirect
+	//redirect(append_sid("login.$phpEx?redirect=groupcp.$phpEx", true));
+    System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode(System::getCurrentUri()))));
+    // <= ZphpBB2
 }
 // End PNphpBB2 Module
 
@@ -196,7 +199,10 @@ if ( isset($_POST['groupstatus']) && $group_id )
 {
 	if ( !$userdata['session_logged_in'] )
 	{
-		redirect(append_sid("login.$phpEx?redirect=groupcp.$phpEx&" . POST_GROUPS_URL . "=$group_id", true));
+        // ZphpBB2 - use Zikula login and redirect
+		//redirect(append_sid("login.$phpEx?redirect=groupcp.$phpEx&" . POST_GROUPS_URL . "=$group_id", true));
+        System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode(System::getCurrentUri()))));
+        // <= ZphpBB2
 	}
 
 	$sql = "SELECT group_moderator 
@@ -245,7 +251,10 @@ else if ( isset($_POST['joingroup']) && $group_id )
 	//
 	if ( !$userdata['session_logged_in'] )
 	{
-		redirect(append_sid("login.$phpEx?redirect=groupcp.$phpEx&" . POST_GROUPS_URL . "=$group_id", true));
+        // ZphpBB2 - use Zikula login and redirect
+		//redirect(append_sid("login.$phpEx?redirect=groupcp.$phpEx&" . POST_GROUPS_URL . "=$group_id", true));
+        System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode(System::getCurrentUri()))));
+        // <= ZphpBB2
 	}
 
 	$sql = "SELECT ug.user_id, g.group_type
@@ -356,7 +365,10 @@ else if ( isset($_POST['unsub']) || isset($_POST['unsubpending']) && $group_id )
 	}
 	elseif ( !$userdata['session_logged_in'] )
 	{
-		redirect(append_sid("login.$phpEx?redirect=groupcp.$phpEx&" . POST_GROUPS_URL . "=$group_id", true));
+        // ZphpBB2 - use Zikula login and redirect
+		//redirect(append_sid("login.$phpEx?redirect=groupcp.$phpEx&" . POST_GROUPS_URL . "=$group_id", true));
+        System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode(System::getCurrentUri()))));
+        // <= ZphpBB2
 	}
 
 	if ( $confirm )
@@ -439,7 +451,10 @@ else if ( $group_id )
 	{
 		if ( !$userdata['session_logged_in'] )
 		{
-			redirect(append_sid("login.$phpEx?redirect=groupcp.$phpEx&" . POST_GROUPS_URL . "=$group_id", true));
+            // ZphpBB2 - use Zikula login and redirect
+			//redirect(append_sid("login.$phpEx?redirect=groupcp.$phpEx&" . POST_GROUPS_URL . "=$group_id", true));
+            System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode(System::getCurrentUri()))));
+            // <= ZphpBB2
 		}
 	}
 
@@ -503,7 +518,10 @@ else if ( $group_id )
 		{
 			if ( !$userdata['session_logged_in'] )
 			{
-				redirect(append_sid("login.$phpEx?redirect=groupcp.$phpEx&" . POST_GROUPS_URL . "=$group_id", true));
+                // ZphpBB2 - use Zikula login and redirect
+				//redirect(append_sid("login.$phpEx?redirect=groupcp.$phpEx&" . POST_GROUPS_URL . "=$group_id", true));
+                System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode(System::getCurrentUri()))));
+                // <= ZphpBB2
 			}
 
 			if ( !$is_moderator )

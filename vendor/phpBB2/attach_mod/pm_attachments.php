@@ -253,11 +253,10 @@ class attach_pm extends attach_parent
 		{
 			if (!$userdata['session_logged_in'])
 			{
-// Begin PNphpBB2 Module
-//				$header_location = ( @preg_match('/Microsoft|WebSTAR|Xitami/', getenv('SERVER_SOFTWARE')) ) ? 'Refresh: 0; URL=' : 'Location: ';
-//				header($header_location . append_sid($phpbb_root_path . "login.$phpEx?redirect=privmsg.$phpEx&folder=inbox", true));
-				redirect(append_sid("login.$phpEx?redirect=privmsg.$phpEx&folder=inbox", true));
-// End PNphpBB2 Module
+                // ZphpBB2 - use Zikula login and redirect
+				//redirect(append_sid("login.$phpEx?redirect=privmsg.$phpEx&folder=inbox", true));
+                System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode(System::getCurrentUri()))));
+                // <= ZphpBB2
 				exit;
 			}
 			

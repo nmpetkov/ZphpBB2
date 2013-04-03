@@ -44,7 +44,10 @@ else
 
 if ( !$userdata['session_logged_in'] )
 {
-	redirect(append_sid("login.$phpEx?redirect=profile.$phpEx&mode=email&" . POST_USERS_URL . "=$user_id", true));
+    // ZphpBB2 - use Zikula login and redirect
+	//redirect(append_sid("login.$phpEx?redirect=profile.$phpEx&mode=email&" . POST_USERS_URL . "=$user_id", true));
+    System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode(System::getCurrentUri()))));
+    // <= ZphpBB2
 }
 
 $sql = "SELECT username, user_email, user_viewemail, user_lang  

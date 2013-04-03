@@ -19,7 +19,10 @@ init_userprefs($userdata);
 
 if (!$userdata['session_logged_in']) 
 { 
-	redirect(append_sid("login.$phpEx?redirect=tellafriend.$phpEx&topic=$topic_title&link=" . POST_TOPIC_URL . "=$topic_id", true));
+    // ZphpBB2 - use Zikula login and redirect
+	//redirect(append_sid("login.$phpEx?redirect=tellafriend.$phpEx&topic=$topic_title&link=" . POST_TOPIC_URL . "=$topic_id", true));
+    System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode(System::getCurrentUri()))));
+    // <= ZphpBB2
 } 
         
 $mail_body = str_replace("{TOPIC}", trim(stripslashes($topic)), $lang['Tell_Friend_Body']);

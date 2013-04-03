@@ -222,7 +222,10 @@ if( !$is_auth['auth_view'] || !$is_auth['auth_read'] )
 	{
 		$redirect = ($post_id) ? POST_POST_URL . "=$post_id" : POST_TOPIC_URL . "=$topic_id";
 		$redirect .= ($start) ? "&start=$start" : '';
-		redirect(append_sid("login.$phpEx?redirect=viewtopic.$phpEx&$redirect", true));
+        // ZphpBB2 - use Zikula login and redirect
+		//redirect(append_sid("login.$phpEx?redirect=viewtopic.$phpEx&$redirect", true));
+        System::redirect(ModUtil::url('Users', 'user', 'login', array('returnpage' => urlencode(System::getCurrentUri()))));
+        // <= ZphpBB2
 	}
 
 	$message = ( !$is_auth['auth_view'] ) ? $lang['Topic_post_not_exist'] : sprintf($lang['Sorry_auth_read'], $is_auth['auth_read_type']);
