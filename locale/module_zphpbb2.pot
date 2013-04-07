@@ -8,28 +8,220 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Zikula 1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-21 20:17+0000\n"
+"POT-Creation-Date: 2013-04-07 15:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "Goto post"
+#: tools/index_Zikula1.3.2to5_changed.php:89
+msgid "Page not found."
 msgstr ""
 
-msgid "by"
+#: tools/index_Zikula1.3.2to5_changed.php:120
+msgid "Error! The transaction failed. Performing rollback."
 msgstr ""
 
-msgid "on"
+#: tools/index_Zikula1.3.2to5_changed.php:123
+msgid "Error! The transaction failed."
 msgstr ""
 
-msgid "at"
+#: tools/index_Zikula1.3.2to5_changed.php:150
+#, php-format
+msgid "Could not load the '%1$s' module at '%2$s'."
 msgstr ""
 
+#: tools/index_Zikula1.3.2to5_changed.php:160
+#, php-format
+msgid "The '%1$s' module returned an error in '%2$s'."
+msgstr ""
+
+#: lib/ZphpBB2/Util.php:29
+msgid "Error: Could not obtain config information."
+msgstr ""
+
+#: lib/ZphpBB2/Util.php:53
+msgid "Error: Could not obtain user information, Id "
+msgstr ""
+
+#: lib/ZphpBB2/Block/Lastposts.php:26
+msgid "Last forum posts"
+msgstr ""
+
+#: lib/ZphpBB2/Block/Lastposts.php:179
+msgid "Guest"
+msgstr ""
+
+#: lib/ZphpBB2/NewsletterPlugin/ZphpBB2.php:9
 msgid "Latest forum posts"
 msgstr ""
 
+#: lib/ZphpBB2/NewsletterPlugin/ZphpBB2.php:14
+msgid "Displays a list of the latest forum topics."
+msgstr ""
+
+#: lib/ZphpBB2/NewsletterPlugin/ZphpBB2.php:41
+#: lib/ZphpBB2/NewsletterPlugin/ZphpBB2.php:72
+msgid "Error in plugin"
+msgstr ""
+
+#: lib/ZphpBB2/Installer.php:285 lib/ZphpBB2/Installer.php:295
+#: lib/ZphpBB2/Installer.php:340 lib/ZphpBB2/Installer.php:350
+#: lib/ZphpBB2/Controller/Admin.php:80 lib/ZphpBB2/Controller/Admin.php:91
+msgid "Error: "
+msgstr ""
+
+#: lib/ZphpBB2/Version.php:16
+msgid "Zikula Forum based on phpBB2"
+msgstr ""
+
+#: lib/ZphpBB2/Version.php:28
+msgid "ZphpBB2 Items Hooks"
+msgstr ""
+
+#: lib/ZphpBB2/Api/Admin.php:22
+msgid "Administration"
+msgstr ""
+
+#: lib/ZphpBB2/Api/Admin.php:27
+msgid "Settings"
+msgstr ""
+
+#: lib/ZphpBB2/Api/Admin.php:32 templates/admin/export.tpl:4
+#: templates/admin/export.tpl:19
+msgid "Export"
+msgstr ""
+
+#: lib/ZphpBB2/Api/Account.php:24
 msgid "Profile in forum"
+msgstr ""
+
+#: lib/ZphpBB2/Controller/Admin.php:72
+msgid "Error: table prefix must contain fragment <b>phpbb</b>."
+msgstr ""
+
+#: lib/ZphpBB2/Controller/Admin.php:101
+msgid "Done! Module configuration updated."
+msgstr ""
+
+#: templates/admin/main.tpl:4
+msgid "Welcome to ZphpBB2"
+msgstr ""
+
+#: templates/admin/main.tpl:9
+msgid "Project page"
+msgstr ""
+
+#: templates/admin/main.tpl:11
+msgid "Frontend"
+msgstr ""
+
+#: templates/admin/modifyconfig.tpl:4
+msgid "Module settings"
+msgstr ""
+
+#: templates/admin/modifyconfig.tpl:11
+msgid "General settings"
+msgstr ""
+
+#: templates/admin/modifyconfig.tpl:13
+msgid "Table prefix"
+msgstr ""
+
+#: templates/admin/modifyconfig.tpl:15
+msgid ""
+"This will change module table prefix in database. Must contain <b>phpbb</b>."
+msgstr ""
+
+#: templates/admin/modifyconfig.tpl:19
+msgid "Forum SEO metatags"
+msgstr ""
+
+#: templates/admin/modifyconfig.tpl:21
+msgid ""
+"This information is for SEO and are metatags inserted in head section of "
+"generated HTML."
+msgstr ""
+
+#: templates/admin/modifyconfig.tpl:24
+msgid "Page title"
+msgstr ""
+
+#: templates/admin/modifyconfig.tpl:28
+msgid "Page description"
+msgstr ""
+
+#: templates/admin/modifyconfig.tpl:32
+msgid "Robots"
+msgstr ""
+
+#: templates/admin/modifyconfig.tpl:34
+msgid ""
+"To index: <i>index, follow</i>, to prevent indexing: <i>noindex, nofollow, "
+"noarchive</i>"
+msgstr ""
+
+#: templates/admin/modifyconfig.tpl:38
+msgid "Save"
+msgstr ""
+
+#: templates/admin/modifyconfig.tpl:39 templates/admin/export.tpl:20
+msgid "Cancel"
+msgstr ""
+
+#: templates/admin/export.tpl:11
+msgid "Export to Dizkus"
+msgstr ""
+
+#: templates/blocks/lastposts_modify.tpl:3
+msgid "Cache time (enter positive number in seconds to enable cache)"
+msgstr ""
+
+#: templates/blocks/lastposts_modify.tpl:7
+msgid "Cache directory name (within Zikula Temp directory)"
+msgstr ""
+
+#: templates/blocks/lastposts_modify.tpl:11
+msgid "Display Last Forum Posts in block"
+msgstr ""
+
+#: templates/blocks/lastposts_modify.tpl:14
+msgid "Number of entries to display"
+msgstr ""
+
+#: templates/blocks/lastposts_modify.tpl:18
+msgid "Display Date"
+msgstr ""
+
+#: templates/blocks/lastposts_modify.tpl:22
+msgid "Display Time"
+msgstr ""
+
+#: templates/blocks/lastposts_modify.tpl:26
+msgid "Show only the last post of every topic"
+msgstr ""
+
+#: templates/blocks/lastposts_modify.tpl:30
+msgid ""
+"Do not show posts of the following forums (CTRL+LEFT CLICK sets/clears "
+"selections)"
+msgstr ""
+
+#: templates/blocks/lastposts.tpl:4 templates/blocks/lastposts.tpl:5
+msgid "Goto post"
+msgstr ""
+
+#: templates/blocks/lastposts.tpl:8
+msgid "by"
+msgstr ""
+
+#: templates/blocks/lastposts.tpl:12
+msgid "on"
+msgstr ""
+
+#: templates/blocks/lastposts.tpl:15
+msgid "at"
 msgstr ""
