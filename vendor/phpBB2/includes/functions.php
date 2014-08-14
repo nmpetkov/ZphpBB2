@@ -1426,7 +1426,7 @@ function message_die($msg_code, $msg_text = '', $msg_title = '', $err_line = '',
     if (defined('IN_ADMIN')) {
         exit;
     } else {
-        if (Zikula_Core::VERSION_NUM > '1.3.5') {
+        if (Zikula_Core::VERSION_NUM >= '1.4.0') {
             LogUtil::registerStatus($content);
             System::redirect(ModUtil::url('ZphpBB2', 'user', 'message'));
         } else {
